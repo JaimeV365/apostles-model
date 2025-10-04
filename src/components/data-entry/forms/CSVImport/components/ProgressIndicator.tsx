@@ -7,6 +7,7 @@ export interface ProgressState {
   progress: number;
   fileName: string;
   fileSize: string;
+  message?: string; // 🚀 Added for chunked processing progress messages
 }
 
 interface ProgressIndicatorProps {
@@ -14,7 +15,7 @@ interface ProgressIndicatorProps {
 }
 
 export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ progress }) => {
-  const { stage, progress: progressValue, fileName, fileSize } = progress;
+  const { stage, progress: progressValue, fileName, fileSize, message } = progress;
   
   const getStatusText = () => {
     switch (stage) {
@@ -54,6 +55,12 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ progress }
           }}
         />
       </div>
+      {/* 🚀 PERFORMANCE OPTIMIZATION: Show detailed progress message */}
+      {message && (
+        <div className="csv-progress-indicator__message">
+          {message}
+        </div>
+      )}
       <div className="csv-progress-indicator__file-info">
         <FileText size={16} className="csv-progress-indicator__file-info-icon" />
         <div className="csv-progress-indicator__file-info-details">

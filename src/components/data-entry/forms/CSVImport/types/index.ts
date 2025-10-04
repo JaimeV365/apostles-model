@@ -69,6 +69,7 @@ export interface ProgressState {
   progress: number;
   fileName: string;
   fileSize: string;
+  message?: string; // 🚀 Added for chunked processing progress messages
 }
 
 export interface ValidationResult {
