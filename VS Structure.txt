@@ -1,0 +1,25 @@
+APOSTLES-MODEL/
+│
+├── node_modules/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── CSVImport.tsx
+│   │   ├── DataDisplay.tsx
+│   │   ├── DataInput.tsx
+│   │   └── ScaleSelector.ts
+│   ├── App.css
+│   ├── App.test.tsx
+│   ├── App.tsx
+│   ├── index.css
+│   ├── index.tsx
+│   ├── logo.svg
+│   ├── papaparse.d.ts
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   └── setupTests.ts
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+└── tsconfig.json

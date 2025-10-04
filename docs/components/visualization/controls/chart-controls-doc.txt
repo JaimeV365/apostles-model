@@ -1,0 +1,110 @@
+# ChartControls Component
+
+## Overview
+The ChartControls component manages all visualization settings in the Apostles Model, including model terminology, grid display, labeling, and frequency filtering. It provides a unified interface for controlling chart appearance and behavior.
+
+## Features
+- Model terminology switching (Classic/Modern)
+- Grid display controls
+- Label management
+- Frequency filtering
+- Scale number display
+- Legend management
+
+## Interface
+
+### Props
+```typescript
+interface ChartControlsProps {
+  /** Model controls */
+  isClassicModel: boolean;
+  setIsClassicModel: (value: boolean) => void;
+  
+  /** Grid controls */
+  showGrid: boolean;
+  setShowGrid: (show: boolean) => void;
+  
+  /** Label controls */
+  labelMode: 'all' | 'quadrants' | 'sub-sections' | 'none';
+  setLabelMode: (mode: 'all' | 'quadrants' | 'sub-sections' | 'none') => void;
+  
+  /** Frequency filtering */
+  frequencyFilterEnabled: boolean;
+  frequencyThreshold: number;
+  setFrequencyFilterEnabled: (enabled: boolean) => void;
+  setFrequencyThreshold: (threshold: number) => void;
+  frequencyData: {
+    maxFrequency: number;
+    hasOverlaps: boolean;
+  };
+  
+  /** Scale and Legend controls */
+  showScaleNumbers: boolean;
+  setShowScaleNumbers: (show: boolean) => void;
+  showLegends: boolean;
+  setShowLegends: (show: boolean) => void;
+}
+```
+
+## Usage
+
+### Basic Usage
+```tsx
+function VisualizationContainer() {
+  const [isClassicModel, setIsClassicModel] = useState(false);
+  const [showGrid, setShowGrid] = useState(true);
+  const [labelMode, setLabelMode] = useState<LabelMode>('all');
+
+  return (
+    <ChartControls
+      isClassicModel={isClassicModel}
+      setIsClassicModel={setIsClassicModel}
+      showGrid={showGrid}
+      setShowGrid={setShowGrid}
+      labelMode={labelMode}
+      setLabelMode={setLabelMode}
+      // ... other props
+    />
+  );
+}
+```
+
+## Control Groups
+
+### Model Settings
+- Classic/Modern terminology switch
+- Label visibility controls
+- Grid display toggle
+
+### Frequency Controls
+- Filter toggle
+- Threshold adjustment
+- Visualization options
+
+### Display Options
+- Scale numbers toggle
+- Legend visibility
+- Grid lines toggle
+
+## Dependencies
+- Uses BarChart for visualizations
+- Requires FrequencySlider component
+- Integrates with premium features
+
+## Styling
+Uses dedicated CSS for control layout:
+```css
+.chart-controls-wrapper {}
+.control-group {}
+.control-section {}
+```
+
+## Premium Features
+- Enhanced control options
+- Advanced filtering
+- Custom visualization settings
+
+## Notes
+- Maintains consistent state
+- Handles control dependencies
+- Supports responsive layout

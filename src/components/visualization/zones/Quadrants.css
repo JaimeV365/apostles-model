@@ -1,0 +1,36 @@
+.quadrant {
+  position: absolute;
+  transition: all 0.3s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.quadrant-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.loyalists {
+  background-color: rgba(197, 224, 180, 0.3);
+}
+
+.mercenaries {
+  background-color: rgba(255, 242, 204, 0.3);
+}
+
+.hostages {
+  background-color: rgba(180, 199, 231, 0.3);
+}
+
+.defectors {
+  background-color: rgba(230, 153, 153, 0.3);
+}

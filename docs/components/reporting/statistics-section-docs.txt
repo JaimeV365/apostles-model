@@ -1,0 +1,110 @@
+# StatisticsSection Component
+
+## Overview
+The StatisticsSection component handles the visualization and display of satisfaction and loyalty statistics in the Apostles Model. It uses BarChart for distribution visualization and manages premium color customization features.
+
+## Features
+- Distribution visualization
+- Average and mode statistics
+- Custom color management
+- Premium interactivity
+- Side-by-side comparison
+
+## Interface
+
+### Props
+```typescript
+interface StatisticsSectionProps {
+  satisfaction: {
+    distribution: Record<number, number>;
+    average: number;
+    mode: number;
+  };
+  loyalty: {
+    distribution: Record<number, number>;
+    average: number;
+    mode: number;
+  };
+  scales: {
+    satisfaction: string;
+    loyalty: string;
+  };
+  isPremium: boolean;
+  onColorChange?: (metric: string, value: number, color: string) => void;
+}
+```
+
+## Usage
+
+### Basic Usage
+```tsx
+<StatisticsSection
+  satisfaction={satisfactionData}
+  loyalty={loyaltyData}
+  scales={{
+    satisfaction: "1-5",
+    loyalty: "1-5"
+  }}
+  isPremium={false}
+/>
+```
+
+### With Premium Features
+```tsx
+<StatisticsSection
+  {...props}
+  isPremium={true}
+  onColorChange={(metric, value, color) => {
+    console.log(`Changed ${metric} value ${value} to ${color}`);
+  }}
+/>
+```
+
+## Data Handling
+
+### Data Transformation
+```typescript
+const transformData = (
+  distribution: Record<number, number>, 
+  maxValue: number
+): BarChartData[] => {
+  return Array.from({ length: maxValue }, (_, i) => ({
+    value: i + 1,
+    count: distribution[i + 1] || 0
+  }));
+};
+```
+
+### Color Management
+```typescript
+interface ChartColors {
+  satisfaction: Record<number, string>;
+  loyalty: Record<number, string>;
+}
+```
+
+## Layout
+- Side-by-side charts
+- Statistics below charts
+- Premium features indicator
+- Color customization UI
+
+## Premium Features
+- Bar color customization
+- Interactive tooltips
+- Color persistence
+- Enhanced statistics
+
+## Styling
+Uses dedicated CSS classes for layout:
+```css
+.report-stats-comparison  // Grid layout for side-by-side display
+.report-stats-column     // Individual statistic columns
+.report-column-title     // Column headers
+```
+
+## Notes
+- Uses BarChart for visualizations
+- Handles color state management
+- Maintains consistent styling
+- Responsive grid layout

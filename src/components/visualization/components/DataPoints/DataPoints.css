@@ -1,0 +1,39 @@
+.data-points-container {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .data-point-wrapper {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  
+  .data-point {
+    position: absolute;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    z-index: 30;
+    left: 50%;
+    bottom: 50%;
+  }
+  
+  .data-point--grouped {
+    z-index: 32;
+  }
+  
+  .data-point--selected {
+    z-index: 35;
+  }
+
+  .data-point:hover {
+  transform: translate(-50%, 50%) scale(1.2) !important;
+  z-index: 40;
+}

@@ -1,0 +1,159 @@
+.duplicate-handler-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.duplicate-handler-modal {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px; /* Increased for side-by-side layout */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+}
+
+.duplicate-handler-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFBEB; /* Light orange background */
+}
+
+.duplicate-handler-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #92400E; /* Darker warning orange */
+}
+
+.duplicate-handler-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.duplicate-handler-content {
+  padding: 20px;
+}
+
+.duplicate-handler-description {
+  font-size: 15px;
+  color: #92400E; /* Darker warning orange */
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.duplicate-handler-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.duplicate-handler-entry {
+  background-color: #f9fafb;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.duplicate-handler-entry-existing {
+  border-left: 4px solid #6B7280; /* Grey for existing */
+}
+
+.duplicate-handler-entry-new {
+  border-left: 4px solid #3a863e; /* Green for new */
+}
+
+.duplicate-handler-entry h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #374151;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.duplicate-handler-entry div {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.duplicate-handler-message {
+  font-size: 16px;
+  color: #374151;
+  margin-top: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.duplicate-handler-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background-color: #f9fafb;
+  border-radius: 0 0 8px 8px;
+}
+
+.duplicate-handler-button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.duplicate-handler-button:hover {
+  transform: translateY(-1px);
+}
+
+.duplicate-handler-button:active {
+  transform: translateY(0);
+}
+
+.duplicate-handler-button--secondary {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.duplicate-handler-button--secondary:hover {
+  background-color: #e5e7eb;
+}
+
+/* Updated warning button with less bright orange */
+.duplicate-handler-button--warning {
+  background-color: #D97706; /* Amber 600 - more muted orange */
+  color: white;
+}
+
+.duplicate-handler-button--warning:hover {
+  background-color: #B45309; /* Amber 700 */
+}
+
+/* Primary button remains green for consistency */
+.duplicate-handler-button--primary {
+  background-color: #3a863e;
+  color: white;
+}
+
+.duplicate-handler-button--primary:hover {
+  background-color: #2f6f32;
+}

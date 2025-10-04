@@ -1,0 +1,124 @@
+.grid-system {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Grid Lines */
+.grid-line {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.grid-line.vertical {
+  width: 1px;
+  height: 100%;
+}
+
+.grid-line.horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+/* Define spaces for scale numbers and legends */
+.scale-space {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.scale-x {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.scale-y {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -24px;
+  width: 20px;
+}
+
+.scale-marker {
+  position: absolute;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.scale-y .scale-marker {
+  transform: translate(-100%, 50%);
+  padding-right: 4px;
+  text-align: right;
+}
+
+.scale-x .scale-marker {
+  transform: translate(-50%, 100%);
+  text-align: center;
+}
+
+/* Legend space, further out than scale numbers */
+.axis-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Satisfaction legend */
+.x-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* When both visible */
+  bottom: -75px;  /* Further from grid than scale numbers */
+  /* When only legend visible */
+  .grid-container:not(.show-scales) & {
+    bottom: -45px;  /* Closer to grid when no scale numbers */
+  }
+}
+
+/* Loyalty legend */
+.y-label {
+  position: absolute;
+  top: 50%;
+  /* When both visible */
+  left: -60px;
+  /* When only legend visible */
+  .grid-container:not(.show-scales) & {
+    left: -30px;
+  }
+  transform-origin: left center;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Common legend styling */
+.x-label, .y-label {
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+.label-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.range {
+  font-size: 12px;
+  color: #6b7280;
+  padding-left: 8px;
+  border-left: 1px solid #e5e7eb;
+}

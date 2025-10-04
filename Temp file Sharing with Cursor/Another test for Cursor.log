@@ -1,0 +1,1280 @@
+Error: Not allowed to define cross-origin object as property on [Object] or [Array] XrayWrapper 3 content-script.js:376:604
+Feature Policy: Skipping unsupported feature name “clipboard-read”. content-script.js:39:3880
+Feature Policy: Skipping unsupported feature name “clipboard-write”. content-script.js:39:3880
+Feature Policy: Skipping unsupported feature name “clipboard-read”. content-script.js:39:89374
+Feature Policy: Skipping unsupported feature name “clipboard-write”. content-script.js:39:89374
+Error: Not allowed to define cross-origin object as property on [Object] or [Array] XrayWrapper 3 content-script.js:376:604
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.5,5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.47304603601127415 at (5,5.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (5,5.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.5714536988992857 at (5,4.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (5,4.5) -> MERCENARIES: sat >= 3 BUT loy < 5 bundle.js:25386:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC123 at (5,5) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,5): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 Point (5,5) is on grid edge - testing inward directions bundle.js:29911:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_edge_0.35073866268455367 at (4.9,5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.9,5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 Final boundary options for (5,5): 
+Array [ "Loyalists", "Mercenaries" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC124 at (4,6) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,6): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC124 at (4,6) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,6): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 Point (4,6) - Visual: Loyalists, Context: loyalists bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (4,6) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC124 at (4,6) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,6): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getBoundaryOptions called for point (4,6) - current quadrant: loyalists bundle.js:29765:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.9694228873741059 at (4.5,6) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.5,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.39469180895411726 at (3.5,6) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (3.5,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.02204362419424366 at (4,6.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4,6.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.6953722923328193 at (4,5.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4,5.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 Final boundary options for (4,6): 
+Array [ "Loyalists" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC125 at (3,4) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (3,4): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (3,4) -> MERCENARIES: sat >= 3 BUT loy < 5 bundle.js:30322:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC125 at (3,4) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (3,4): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (3,4) -> MERCENARIES: sat >= 3 BUT loy < 5 bundle.js:30322:15
+🔍 Point (3,4) - Visual: Mercenaries, Context: mercenaries bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (3,4) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC125 at (3,4) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (3,4): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (3,4) -> MERCENARIES: sat >= 3 BUT loy < 5 bundle.js:30322:15
+🔍 getBoundaryOptions called for point (3,4) - current quadrant: mercenaries bundle.js:29765:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.35463198187314693 at (3.5,4) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (3.5,4) -> MERCENARIES: sat >= 3 BUT loy < 5 bundle.js:25386:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.3496497474931006 at (2.5,4) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (2.5,4) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:25395:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.6249591293281916 at (3,4.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (3,4.5) -> MERCENARIES: sat >= 3 BUT loy < 5 bundle.js:25386:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.0991371534869171 at (3,3.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (3,3.5) -> MERCENARIES: sat >= 3 BUT loy < 5 bundle.js:25386:15
+🔍 Final boundary options for (3,4): 
+Array [ "Mercenaries", "Defectors" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC126 at (5,8) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,8): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=true, isInInterior=false bundle.js:30296:19
+🎯 Point (5,8) -> NEAR-APOSTLES (bottom edge) bundle.js:30298:21
+🔍 getNaturalQuadrantForPoint called for point ID: ABC126 at (5,8) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,8): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=true, isInInterior=false bundle.js:30296:19
+🎯 Point (5,8) -> NEAR-APOSTLES (bottom edge) bundle.js:30298:21
+🔍 Point (5,8) - Visual: Near-Advocates, Context: near_apostles bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (5,8) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC126 at (5,8) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,8): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=true, isInInterior=false bundle.js:30296:19
+🎯 Point (5,8) -> NEAR-APOSTLES (bottom edge) bundle.js:30298:21
+🔍 getBoundaryOptions called for point (5,8) - current quadrant: near_apostles bundle.js:29765:13
+🔍 Processing near-zone boundaries for near_apostles bundle.js:29808:15
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔍 Near-apostles boundary detection for point (5,8) bundle.js:29816:19
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.822984150372862 at (4.5,8) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.5,8) -> NEAR-APOSTLES (bottom edge): sat>=4, loy=8 bundle.js:25349:21
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.4395126798023381 at (5,8.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (5,8.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.06339245419363793 at (5,7.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (5,7.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 Near-zone early return for (5,8): found 2 neighbors: 
+Array [ "near_apostles", "loyalists" ]
+bundle.js:29860:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC127 at (2,3) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (2,3): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (2,3) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:30328:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC127 at (2,3) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (2,3): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (2,3) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:30328:15
+🔍 Point (2,3) - Visual: Defectors, Context: defectors bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (2,3) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC127 at (2,3) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (2,3): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (2,3) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:30328:15
+🔍 getBoundaryOptions called for point (2,3) - current quadrant: defectors bundle.js:29765:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.17436472938546754 at (2.5,3) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (2.5,3) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:25395:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.5616081119164152 at (1.5,3) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (1.5,3) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:25395:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.02316106954729591 at (2,3.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (2,3.5) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:25395:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.10686139215543045 at (2,2.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (2,2.5) -> DEFECTORS: sat < 3 AND loy < 5 bundle.js:25395:13
+🔍 Final boundary options for (2,3): 
+Array [ "Defectors" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC128 at (4,7) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,7): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,7) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC128 at (4,7) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,7): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,7) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 Point (4,7) - Visual: Loyalists, Context: loyalists bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (4,7) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC128 at (4,7) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,7): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,7) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getBoundaryOptions called for point (4,7) - current quadrant: loyalists bundle.js:29765:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.2261086396875166 at (4.5,7) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.5,7) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.28484952754813286 at (3.5,7) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (3.5,7) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.7633464425277445 at (4,7.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4,7.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.5018264953945397 at (4,6.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4,6.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 Final boundary options for (4,7): 
+Array [ "Loyalists" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC129 at (5,9) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,9): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,9) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 getNaturalQuadrantForPoint called for point ID: ABC129 at (5,9) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,9): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,9) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 Point (5,9) - Visual: Advocates, Context: apostles bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (5,9) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC129 at (5,9) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,9): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,9) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 getBoundaryOptions called for point (5,9) - current quadrant: apostles bundle.js:29765:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.6799628870862109 at (4.5,9) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.5,9) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:25369:17
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.9351482077238386 at (5,9.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (5,9.5) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:25369:17
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.8858807980706841 at (5,8.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (5,8.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC129 at (5,9) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,9): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,9) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 Final boundary options for (5,9): 
+Array [ "Advocates", "Loyalists" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC130 at (3,5) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (3,5): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (3,5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC130 at (3,5) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (3,5): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (3,5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 Point (3,5) - Visual: Loyalists, Context: loyalists bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (3,5) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC130 at (3,5) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (3,5): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (3,5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getBoundaryOptions called for point (3,5) - current quadrant: loyalists bundle.js:29765:13
+🎯 Point (3,5) is exactly on midpoint intersection - showing all 4 quadrants bundle.js:29798:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC131 at (4,6) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,6): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC131 at (4,6) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,6): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 Point (4,6) - Visual: Loyalists, Context: loyalists bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (4,6) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC131 at (4,6) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (4,6): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (4,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:30319:15
+🔍 getBoundaryOptions called for point (4,6) - current quadrant: loyalists bundle.js:29765:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.2038609812846307 at (4.5,6) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.5,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.07976500613217241 at (3.5,6) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (3.5,6) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.7428371755142289 at (4,6.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4,6.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.28723415502613114 at (4,5.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4,5.5) -> LOYALISTS: sat >= 3 AND loy >= 5 bundle.js:25382:15
+🔍 Final boundary options for (4,6): 
+Array [ "Loyalists" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC132 at (5,10) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,10): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,10) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 getNaturalQuadrantForPoint called for point ID: ABC132 at (5,10) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,10): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,10) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 Point (5,10) - Visual: Advocates, Context: apostles bundle.js:24135:15
+🔍 About to call getBoundaryOptions for (5,10) bundle.js:24140:15
+🔍 getNaturalQuadrantForPoint called for point ID: ABC132 at (5,10) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,10): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,10) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 getBoundaryOptions called for point (5,10) - current quadrant: apostles bundle.js:29765:13
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.6730340937998167 at (4.5,10) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (4.5,10) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:25369:17
+🔍 getNaturalQuadrantForPoint called for point ID: test_0.6267561955520493 at (5,9.5) bundle.js:25303:13
+🔍 This function should NOT check manual assignments bundle.js:25304:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:25320:13
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:25321:13
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:25322:13
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:25332:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:25339:19
+🎯 Point (5,9.5) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:25369:17
+🔍 getNaturalQuadrantForPoint called for point ID: ABC132 at (5,10) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,10): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,10) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+🔍 Final boundary options for (5,10): 
+Array [ "Advocates" ]
+bundle.js:29947:13
+🔍 getNaturalQuadrantForPoint called for point ID: ABC129 at (5,9) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,9): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,9) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+📋 InfoBox for (5,9) - quadrantInfo.group: Advocates, context: apostles bundle.js:23748:23
+🔍 getNaturalQuadrantForPoint called for point ID: ABC129 at (5,9) bundle.js:30261:13
+🔍 This function should NOT check manual assignments bundle.js:30262:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-5, loyaltyScale=0-10 bundle.js:31276:11
+🔧 Parsed scales: satMin=1, satMax=5, loyMin=0, loyMax=10 bundle.js:31277:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:31306:11
+🔧 Apostles zone: satisfaction >= 4, loyalty >= 9 bundle.js:31307:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:31308:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:30268:15
+🔍 getNaturalQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:30269:15
+📍 Current midpoint in classification: sat=3, loy=5 bundle.js:30270:15
+🔍 Near-apostles space check: apostlesMinSat=4, apostlesMinLoy=9, hasSpace=true bundle.js:30277:17
+🔍 Near-apostles bounds: nearSat=3, nearLoy=8, apostlesSat>=4, apostlesLoy>=9 bundle.js:30281:19
+🔍 Near-Apostles check for (5,9): bundle.js:30293:19
+🔍   nearApostlesMinSat=3, apostlesMinSat=4 bundle.js:30294:19
+🔍   nearApostlesMinLoy=8, apostlesMinLoy=9 bundle.js:30295:19
+🔍   isInLeftEdge=false, isInBottomEdge=false, isInInterior=false bundle.js:30296:19
+🎯 Point (5,9) -> APOSTLES: coordinates >= (4,9), creates 1x1 area bundle.js:30306:17
+📋 InfoBox for (5,9) - quadrantInfo.group: Advocates, context: apostles bundle.js:23748:23

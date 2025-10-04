@@ -1,0 +1,58 @@
+.three-state-switch {
+  position: relative;
+  width: 160px;  /* Increased for better label spacing */
+  height: 26px;
+  background: #f3f4f6;
+  border-radius: 16px;
+  padding: 3px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.switch-slider {
+  position: absolute;
+  width: calc(33.33% - 4px);
+  height: calc(100% - 4px);
+  background: #3a863e;  /* Matched to other switches */
+  border-radius: 14px;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.slider-all { left: 2px; }
+.slider-some { left: calc(33.33% + 2px); }
+.slider-none { left: calc(66.66% + 2px); }
+
+.switch-labels {
+  position: relative;
+  display: flex;
+  height: 100%;
+  z-index: 2;
+  padding: 0 8px;  /* Added for better label spacing */
+  justify-content: space-between;  /* Better distribution of labels */
+}
+
+.label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  color: #333;
+  padding: 0 4px;  /* Added spacing between labels */
+}
+
+.label.active {
+  color: white;  /* Changed to white for better contrast on green */
+}
+
+.three-state-switch:hover .switch-slider {
+  background: #0ea271;  /* Slightly darker on hover */
+}
+
+.three-state-switch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

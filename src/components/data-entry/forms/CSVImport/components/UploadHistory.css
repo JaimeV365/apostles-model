@@ -1,0 +1,37 @@
+.csv-upload-history {
+    margin-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+  }
+  
+  .csv-upload-history__title {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .csv-upload-history__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .csv-upload-history__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #6b7280;
+    padding: 4px 0;
+  }
+  
+  .csv-upload-history__item-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .csv-upload-history__deleted {
+    color: #dc2626;
+  }

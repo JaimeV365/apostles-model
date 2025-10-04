@@ -1,0 +1,50 @@
+.midpoint-handle {
+  position: absolute;
+  transform: translate(-50%, 50%);
+  width: 24px;
+  height: 24px;
+  cursor: grab;
+  z-index: 48;
+  user-select: none;
+}
+
+.midpoint-handle:active {
+  cursor: grabbing;
+}
+
+.midpoint-dot {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.midpoint-dot--half {
+  border-color: #000;
+  background-color: white;
+  transform: scale(1.1);
+}
+
+.midpoint-handle:hover .midpoint-dot {
+  transform: scale(1.1);
+  background-color: #f9fafb;
+}
+
+.midpoint-handle:active .midpoint-dot {
+  transform: scale(0.95);
+  background-color: #f3f4f6;
+}
+
+.midpoint-handle:focus {
+  outline: none;
+}
+
+.midpoint-handle:focus .midpoint-dot {
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.4);
+}

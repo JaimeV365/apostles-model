@@ -1,0 +1,213 @@
+.quadrant-chart {
+  width: 100%;
+}
+
+.chart-container {
+  position: relative;
+  width: calc(100% - 80px);
+  height: calc(600px + 80px); 
+  margin: 40px auto;
+  padding-bottom: 40px;
+  background-color: white;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+/* Quadrants */
+.quadrant {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+/* Special Cells */
+.special-cell {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* Cell Labels */
+.cell-label {
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  z-index: 3;
+}
+
+/* Grid Lines */
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grid-line {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.grid-line.vertical {
+  width: 1px;
+  height: 100%;
+}
+
+.grid-line.horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+/* Midpoint */
+.midpoint {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+  cursor: move;
+  z-index: 20;
+  pointer-events: all;
+  transform: translate(-50%, 50%);
+  transition: all 0.2s ease;
+}
+
+.midpoint:hover {
+  transform: translate(-50%, 50%) scale(1.2);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.midpoint:active {
+  transform: translate(-50%, 50%) scale(0.9);
+  background-color: #333;
+}
+
+/* Data Points */
+.data-point {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.data-point:hover {
+  transform: translate(-50%, 50%) scale(1.2) !important;
+  z-index: 40;
+}
+
+/* Tooltip */
+.data-point-tooltip {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  pointer-events: none;
+  min-width: 200px;
+}
+
+.tooltip-header {
+  font-weight: 500;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tooltip-content {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.tooltip-content > div {
+  margin: 2px 0;
+}
+
+/* Resize Handles */
+.resize-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
+
+/* Grid Scale */
+.grid-scale {
+  position: absolute;
+  inset: -24px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.scale-marker {
+  position: absolute;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  min-width: 20px;
+}
+
+.scale-x {
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 0;
+}
+
+.scale-y {
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 0;
+}
+
+.scale-x .scale-marker {
+  bottom: -20px;
+  transform: translateX(-50%);
+}
+
+.scale-y .scale-marker {
+  left: -20px;
+  transform: translateY(50%);
+}
+
+/* Special Zone Handles */
+.apostles-handle {
+  right: 0;
+  top: 0;
+}
+
+.terrorists-handle {
+  left: 0;
+  bottom: 0;
+}
+
+.resize-handles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 120;
+}
+
+.resize-handle {
+  pointer-events: all;
+}

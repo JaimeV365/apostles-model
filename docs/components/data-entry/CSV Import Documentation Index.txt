@@ -1,0 +1,123 @@
+CSV Import Documentation Index
+Technical Implementation Documents
+
+CSVImport.md
+
+Overview of CSV import system
+Component structure
+Key features and functionality
+Technical implementation details
+
+
+csv-import-components.md
+
+Detailed breakdown of CSV import components
+Props and interfaces for each component
+Specific component responsibilities
+Implementation details for:
+
+FileUploader
+ProgressIndicator
+ValidationError
+DuplicateReport
+UploadHistory
+ImportModeModal
+
+
+
+
+csv-import-hooks.md
+
+Hooks for CSV import functionality
+useCSVParser implementation
+State management for CSV parsing
+Validation and error handling hooks
+Workflow for CSV import process
+
+
+
+Utility and Support Documents
+
+csv-format-guide.md
+
+CSV file format requirements
+Header conventions
+Scale and date format specifications
+Template structure
+Supported scales and formats
+
+
+csv-import-utilities.md
+
+Utility functions for CSV import
+File handling
+Date processing
+Duplicate detection
+Scale validation
+Error handling utilities
+
+
+
+Integration and Usage
+
+csv-import-integration.md
+
+How to integrate CSV import into applications
+Example implementations
+Best practices
+Error handling
+State management
+Premium feature integration
+
+
+
+Specific Aspect Documentation
+
+date-handling.md
+
+Date input validation
+Formatting rules
+Error handling for dates
+Specific to CSV import date processing
+
+
+
+Performance and Testing
+
+testing-strategy.md
+
+Testing approaches for CSV import
+Test cases
+Validation scenarios
+Performance considerations
+
+
+
+Maintenance and Troubleshooting
+
+maintenance.md
+
+Maintenance guidelines
+Common issues
+Troubleshooting steps
+Update procedures
+
+
+
+Recommended Reading Order
+
+CSVImport.md - Overall system overview
+csv-format-guide.md - Understanding file requirements
+csv-import-components.md - Detailed component breakdown
+csv-import-hooks.md - Understand parsing and validation logic
+csv-import-utilities.md - Deep dive into utility functions
+csv-import-integration.md - How to use in your project
+
+Key Focus Areas
+
+File format validation
+Scale and date handling
+Error detection and reporting
+Performance optimization
+Seamless integration
+Robust parsing mechanism

@@ -1,0 +1,116 @@
+.data-point-info {
+  position: absolute;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  pointer-events: all;
+  min-width: 240px;
+  color: #333;
+  font-size: 14px;
+  z-index: 50;
+  transition: left 0.2s ease, bottom 0.2s ease;
+}
+  
+.data-point-info__header {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+  
+.data-point-info__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 4px;
+}
+  
+.data-point-info__id {
+  color: #666;
+  font-size: 13px;
+}
+  
+.data-point-info__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin-bottom: 12px;
+}
+  
+.data-point-info__label {
+  color: #666;
+}
+  
+.data-point-info__boundary {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+  
+.data-point-info__boundary-text {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+  
+.data-point-info__buttons {
+  display: flex;
+  gap: 8px;
+}
+  
+.data-point-info__button {
+  padding: 4px 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  flex: 1;
+}
+  
+.data-point-info__multiple {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+  
+.data-point-info__multiple-header {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+  
+.data-point-info__points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+  
+.data-point-info__point {
+  font-size: 13px;
+  padding-left: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+  
+.data-point-info__point-id {
+  color: #666;
+}
+
+.data-point-info__button.active {
+  cursor: default !important;
+  transform: none !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.data-point-info__button.active:hover {
+  transform: none !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.active-indicator {
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}

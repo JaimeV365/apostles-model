@@ -1,0 +1,148 @@
+/* FrequencyThresholdSlider.css - FIXED VERSION */
+
+.frequency-threshold-slider {
+  margin-bottom: 1rem;
+  width: 100%; /* ADD: Ensure full width */
+  max-width: 100%; /* ADD: Prevent overflow */
+  box-sizing: border-box; /* ADD: Include padding in width */
+}
+
+.frequency-threshold-slider.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.slider-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.slider-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3a863e;
+  background: #f0f9f0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #c6f6d5;
+}
+
+.slider-container {
+  position: relative;
+  margin-bottom: 0.5rem;
+  width: 100%; /* ADD: Ensure full width */
+  box-sizing: border-box; /* ADD: Include padding in width */
+}
+
+.frequency-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box; /* ADD: Include padding in width */
+}
+
+.frequency-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #3a863e;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.frequency-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(58, 134, 62, 0.3);
+}
+
+.frequency-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #3a863e;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.frequency-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(58, 134, 62, 0.3);
+}
+
+.slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0 9px; /* Half thumb width for alignment */
+}
+
+.tick {
+  font-size: 0.625rem;
+  color: #9ca3af;
+  text-align: center;
+  min-width: 12px;
+  transition: all 0.2s ease;
+}
+
+.tick.active {
+  color: #3a863e;
+  font-weight: 600;
+  transform: scale(1.1);
+}
+
+.slider-description {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.slider-description .text-xs {
+  font-size: 0.75rem;
+}
+
+.slider-description .text-gray-500 {
+  color: #6b7280;
+}
+
+/* Simple contained styling for when it's within a premium section */
+.frequency-threshold-slider.in-premium-section {
+  background: white;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.frequency-threshold-slider.in-premium-section:last-child {
+  margin-bottom: 0;
+}
+
+/* ADD: Simple contained styling for when it's within a premium section */
+.frequency-threshold-slider.in-premium-section {
+  background: white;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.frequency-threshold-slider.in-premium-section:last-child {
+  margin-bottom: 0;
+}

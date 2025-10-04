@@ -1,0 +1,47 @@
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+  min-width: 160px;  /* Added for consistent spacing */
+  justify-content: space-between;  /* Added for better label distribution */
+}
+
+.switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  background-color: #E5E7EB;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s;
+}
+
+.switch--checked {
+  background-color: #3a863e;  /* Updated to match other greens */
+}
+
+.switch-thumb {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.switch--checked .switch-thumb {
+  transform: translateX(18px);
+}
+
+.switch-label {
+  font-size: 14px;
+  color: #374151;
+  white-space: nowrap;  /* Added to prevent wrapping */
+}

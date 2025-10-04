@@ -1,0 +1,128 @@
+# Reporting Section
+
+## Overview
+The Reporting section provides comprehensive data visualization and analysis of customer satisfaction and loyalty data. It consists of multiple components that work together to present statistics, distributions, and insights.
+
+## Component Structure
+```
+/components/reporting/
+├── components/
+│   ├── BarChart/               # Core visualization component
+│   │   ├── index.tsx
+│   │   └── styles.css
+│   └── DataReport/
+│       ├── index.tsx
+│       ├── DataReportComponent.tsx
+│       ├── StatisticsSection.tsx
+│       ├── QuadrantDetails.tsx
+│       └── DistributionSection.tsx
+├── types/
+│   └── index.ts               # Shared type definitions
+└── ReportingSection.css       # Main reporting styles
+```
+
+## Key Components
+
+### BarChart
+Core visualization component used for displaying data distributions:
+- Vertical bar charts
+- Interactive features
+- Premium color customization
+- Mini variant for detailed views
+
+### DataReport
+Main report container handling:
+- Overall report structure
+- Basic information display
+- Statistics visualization
+- Distribution analysis
+
+### StatisticsSection
+Handles statistics visualization:
+```typescript
+interface StatisticsSectionProps {
+  satisfaction: {
+    distribution: Record<number, number>;
+    average: number;
+    mode: number;
+  };
+  loyalty: {
+    distribution: Record<number, number>;
+    average: number;
+    mode: number;
+  };
+  scales: {
+    satisfaction: string;
+    loyalty: string;
+  };
+  isPremium: boolean;
+  onColorChange?: (metric: string, value: number, color: string) => void;
+}
+```
+
+### QuadrantDetails
+Displays detailed quadrant information:
+```typescript
+interface QuadrantDetailsProps {
+  quadrant: QuadrantType;
+  stats: QuadrantStatistics;
+  isPremium: boolean;
+  satisfactionScale: string;
+  loyaltyScale: string;
+}
+```
+
+## Data Flow
+
+### Data Transformation
+```typescript
+// Converting distribution data to BarChart format
+const transformData = (
+  distribution: Record<number, number>, 
+  maxValue: number
+): BarChartData[] => {
+  return Array.from({ length: maxValue }, (_, i) => ({
+    value: i + 1,
+    count: distribution[i + 1] || 0
+  }));
+};
+```
+
+### Premium Features
+- Bar color customization
+- Interactive tooltips
+- Enhanced insights
+- Custom analysis options
+
+## Styling
+
+### Organization
+- Component-specific styles in respective CSS files
+- Shared report styles in ReportingSection.css
+- CSS modules for encapsulation
+
+### Key Style Classes
+```css
+.report-card        // Main report container
+.report-section     // Report sections
+.report-stat-item   // Statistics items
+.quadrant-cell      // Quadrant display
+```
+
+## Usage Example
+```tsx
+<ReportingSection
+  data={reportData}
+  isPremium={true}
+  isClassicModel={true}
+  onCustomize={handleCustomize}
+  onExport={handleExport}
+  onShare={handleShare}
+/>
+```
+
+## Notes
+- Uses BarChart for all distribution visualizations
+- Maintains consistent styling across reports
+- Handles premium feature states
+- Supports classic/modern terminology

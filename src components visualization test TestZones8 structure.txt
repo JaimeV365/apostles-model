@@ -1,0 +1,40 @@
+test\TestZones8
+├── components
+│   ├── ui
+│   │   ├── Switch.css
+│   │   ├── Switch.tsx
+│   │   ├── TwoStateToggle.css
+│   │   └── TwoStateToggle.tsx
+│   ├── ChartControls.tsx
+│   ├── DataPointInfoBox.tsx
+│   ├── DataPointRenderer.tsx
+│   ├── FrequencySlider.tsx
+│   ├── GridSystem.tsx
+│   ├── Quadrants.tsx
+│   ├── ResizeHandle.tsx
+│   ├── ScaleControls.tsx
+│   ├── SpecialZones.tsx
+│   ├── ThreeStateSwitch.tsx
+│   ├── Watermark.tsx
+│   └── ZoneLabel.tsx
+├── styles
+│   ├── ChartControls.css
+│   ├── DataPointInfoBox.css
+│   ├── DataPoints.css
+│   ├── FrequencySlider.css
+│   ├── GridSystem.css
+│   ├── LabelControls.css
+│   ├── Labels.css
+│   ├── MidpointHandle.css
+│   ├── Quadrants.css
+│   ├── ScaleControls.css
+│   ├── SpecialZones.css
+│   ├── TestZones8.css
+│   └── ThreeStateSwitch.css
+├── utils
+│   ├── gridCalculator.ts
+│   ├── midpointCalculator.ts
+│   ├── positionCalculator.ts
+│   ├── types.ts
+│   └── zoneCalculator.ts
+└── Index.tsx

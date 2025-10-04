@@ -1,0 +1,198 @@
+.enhanced-report-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  
+  .report-panel {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .report-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .report-panel--error {
+    border: 1px solid #FCA5A5;
+    background-color: #FEF2F2;
+  }
+  
+  .report-panel--warning {
+    border: 1px solid #FCD34D;
+    background-color: #FFFBEB;
+  }
+  
+  .report-panel__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .report-panel--error .report-panel__header {
+    color: #B91C1C;
+    background-color: rgba(252, 165, 165, 0.2);
+  }
+  
+  .report-panel--warning .report-panel__header {
+    color: #B45309;
+    background-color: rgba(252, 211, 77, 0.2);
+  }
+  
+  .report-panel__icon {
+    flex-shrink: 0;
+  }
+  
+  .report-panel--error .report-panel__icon {
+    color: #EF4444;
+  }
+  
+  .report-panel--warning .report-panel__icon {
+    color: #F59E0B;
+  }
+  
+  .report-panel__content {
+    padding: 0;
+  }
+  
+  .report-item {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .report-item:last-child {
+    border-bottom: none;
+  }
+  
+  .report-item--with-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .report-item__content {
+    flex: 1;
+  }
+  
+  .report-item__title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .report-panel--error .report-item__title {
+    color: #B91C1C;
+  }
+  
+  .report-panel--warning .report-item__title {
+    color: #B45309;
+  }
+  
+  .report-item__count {
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 4px;
+  }
+  
+  .report-panel--error .report-item__count {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #B91C1C;
+  }
+  
+  .report-panel--warning .report-item__count {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #B45309;
+  }
+  
+  .report-item__message {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .report-panel--error .report-item__message {
+    color: #991B1B;
+  }
+  
+  .report-panel--warning .report-item__message {
+    color: #92400E;
+  }
+  
+  .report-item__details {
+    margin: 8px 0 0 0;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: monospace;
+    white-space: pre-wrap;
+  }
+  
+  .report-panel--error .report-item__details {
+    color: #991B1B;
+    background-color: rgba(239, 68, 68, 0.05);
+  }
+  
+  .report-item__fix {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .report-panel--error .report-item__fix {
+    color: #991B1B;
+    border-left-color: #FCA5A5;
+  }
+  
+  .report-action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    white-space: nowrap;
+    border: none;
+  }
+  
+  .report-action-button--error {
+    background-color: white;
+    border: 1px solid #EF4444;
+    color: #B91C1C;
+  }
+  
+  .report-action-button--error:hover {
+    background-color: #FEF2F2;
+    border-color: #DC2626;
+  }
+  
+  .report-action-button--warning {
+    background-color: white;
+    border: 1px solid #F59E0B;
+    color: #92400E;
+  }
+  
+  .report-action-button--warning:hover {
+    background-color: #FFFBEB;
+    border-color: #D97706;
+  }

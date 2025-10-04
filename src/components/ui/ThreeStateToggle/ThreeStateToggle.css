@@ -1,0 +1,113 @@
+.three-state-toggle {
+  position: relative;
+  width: 100%;
+}
+
+.three-state-toggle__buttons {
+  display: flex;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.three-state-toggle__button {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 13px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.three-state-toggle__button:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+
+.three-state-toggle__button:nth-child(2) {
+  border-right: none;
+  border-left: none;
+}
+
+.three-state-toggle__button:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+}
+
+.three-state-toggle__button.active {
+  background-color: #3a863e;
+  color: white;
+  border-color: #3a863e;
+  font-weight: 500;
+}
+
+/* Disabled styles */
+.three-state-toggle.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.three-state-toggle.disabled .three-state-toggle__button {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #f3f4f6;
+}
+
+.three-state-toggle.disabled .three-state-toggle__button.active {
+  background-color: #9ca3af;
+  border-color: #9ca3af;
+}
+
+/* Tooltip styles */
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #374151;
+  color: white;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 100;
+  margin-bottom: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #374151 transparent transparent transparent;
+}
+
+.three-state-toggle.disabled:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.three-state-toggle__button.disabled,
+.three-state-toggle__button.three-state-toggle__button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f3f4f6 !important;
+  color: #9ca3af !important;
+  border-color: #e5e7eb !important;
+}
+
+.three-state-toggle__button.three-state-toggle__button--disabled:hover {
+  background-color: #f3f4f6 !important;
+  color: #9ca3af !important;
+}

@@ -1,0 +1,81 @@
+# MidpointHandle Component
+
+## Overview
+The MidpointHandle component controls the quadrant division point in the visualization. It manages grid snapping, position constraints, and interactions with special zones.
+
+## Features
+- Draggable midpoint control
+- Grid snapping
+- Half-grid positions
+- Position constraints
+- Near-apostles management
+
+## Interface
+
+### Props
+```typescript
+interface MidpointHandleProps {
+  /** Current position */
+  position: Position;
+  /** Midpoint coordinates */
+  midpoint: Midpoint;
+  /** Grid dimensions */
+  dimensions: GridDimensions;
+  /** Scale formats */
+  satisfactionScale: ScaleFormat;
+  loyaltyScale: ScaleFormat;
+  /** Position change callback */
+  onMidpointChange: (newMidpoint: Midpoint) => void;
+  /** Enable/disable handle */
+  isAdjustable?: boolean;
+  /** Zone sizes */
+  apostlesZoneSize: number;
+  terroristsZoneSize: number;
+  /** Near-apostles management */
+  showNearApostles: boolean;
+  onShowNearApostlesChange: (show: boolean) => void;
+}
+```
+
+## Position Constraints
+```typescript
+// Minimum positions (stay away from special zones)
+const minSat = terroristsZoneSize + 1;
+const maxSat = dimensions.totalCols - apostlesZoneSize;
+const minLoy = terroristsZoneSize + 1;
+const maxLoy = dimensions.totalRows - apostlesZoneSize;
+```
+
+## Near-apostles Management
+- Auto-deactivates when moving into near-apostles space
+- Prevents invalid states
+- Maintains smooth transitions
+
+## Usage
+```tsx
+<MidpointHandle
+  position={position}
+  midpoint={midpoint}
+  dimensions={dimensions}
+  satisfactionScale="1-5"
+  loyaltyScale="1-5"
+  onMidpointChange={handleMidpointChange}
+  isAdjustable={true}
+  apostlesZoneSize={2}
+  terroristsZoneSize={1}
+  showNearApostles={true}
+  onShowNearApostlesChange={setShowNearApostles}
+/>
+```
+
+## Key Features
+- Grid alignment
+- Special zone awareness
+- Position validation
+- Smooth transitions
+
+## Notes
+- Always validates positions
+- Considers zone boundaries
+- Supports touch devices
+- Maintains grid snap

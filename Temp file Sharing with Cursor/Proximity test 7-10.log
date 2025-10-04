@@ -1,0 +1,1120 @@
+Error: Not allowed to define cross-origin object as property on [Object] or [Array] XrayWrapper 3 content-script.js:376:604
+Feature Policy: Skipping unsupported feature name “clipboard-read”. content-script.js:39:3880
+Feature Policy: Skipping unsupported feature name “clipboard-write”. content-script.js:39:3880
+Feature Policy: Skipping unsupported feature name “clipboard-read”. content-script.js:39:89374
+Feature Policy: Skipping unsupported feature name “clipboard-write”. content-script.js:39:89374
+Error: Not allowed to define cross-origin object as property on [Object] or [Array] XrayWrapper 3 content-script.js:376:604
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (4,6) -> LOYALISTS: sat >= 4 AND loy >= 5 bundle.js:23325:15
+🎯 Point segmentorID-00079 at (4,6) assigned to: loyalists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00080 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00080: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00080 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00081 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00081: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00081 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00082 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00082: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00082 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00083 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00083: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00083 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00084 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00084: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00084 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00085 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00085: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00085 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00086 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00086: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00086 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00087 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00087: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00087 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00088 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00088: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00088 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00089 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00089: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00089 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00090 at (2,2) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00090: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (2,2) -> NEAR-TERRORISTS (top edge): sat<=2, loy=2 bundle.js:23292:23
+🎯 Point segmentorID-00090 at (2,2) assigned to: near_terrorists bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00091 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00091: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00091 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00092 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00092: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00092 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00093 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00093: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00093 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00094 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00094: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00094 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00095 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00095: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00095 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00096 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00096: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00096 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00097 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00097: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00097 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00098 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00098: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00098 at (3,4) assigned to: defectors bundle.js:19869:15
+🔍 getQuadrantForPoint called for point ID: segmentorID-00099 at (3,4) bundle.js:23191:13
+🔍 About to check manual assignments - map has segmentorID-00099: false bundle.js:23192:13
+🔧 calculateSpecialZoneBoundaries: apostlesZoneSize=1, terroristsZoneSize=1, satisfactionScale=1-7, loyaltyScale=0-10 bundle.js:27906:11
+🔧 Parsed scales: satMin=1, satMax=7, loyMin=0, loyMax=10 bundle.js:27907:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:27936:11
+🔧 Apostles zone: satisfaction >= 6, loyalty >= 9 bundle.js:27937:11
+🔧 Terrorists zone: satisfaction <= 2, loyalty <= 1 bundle.js:27938:11
+🔧 Calculated boundaries: 
+Object { apostles: {…}, terrorists: {…} }
+bundle.js:23212:13
+🔍 getQuadrantForPoint: showSpecialZones=true, showNearApostles=true bundle.js:23213:13
+📍 Current midpoint in classification: sat=4, loy=5 bundle.js:23214:13
+🔍 Near-apostles space check: apostlesMinSat=6, apostlesMinLoy=9, hasSpace=true bundle.js:23227:17
+🔍 Near-apostles bounds: nearSat=5, nearLoy=8, apostlesSat>=6, apostlesLoy>=9 bundle.js:23240:19
+🔍 Near-terrorists space check: terroristsMaxSat=2, terroristsMaxLoy=1, nearTerroristsMaxSat=3, nearTerroristsMaxLoy=2, midpoint=(4,5), hasSpace=true bundle.js:23279:19
+🎯 Point (3,4) -> DEFECTORS: sat < 4 AND loy < 5 bundle.js:23336:13
+🎯 Point segmentorID-00099 at (3,4) assigned to: defectors bundle.js:19869:15
+📊 Final context-based grouping (includes ALL customers from each quadrant): 
+Object { loyalists: 25, mercenaries: 16, hostages: 18, defectors: 15, apostles: 4, near_apostles: 5, terrorists: 2 }
+bundle.js:19876:13
+📊 Grouped customers: 
+Object { loyalists: 25, mercenaries: 16, hostages: 18, defectors: 15, apostles: 4, near_apostles: 5, terrorists: 2 }
+bundle.js:19739:13
+🚨 About to call analyzeQuadrantProximity methods - threshold: 2 bundle.js:19748:13
+🚨 Grouped customers available: 
+Object { loyalists: 25, mercenaries: 16 }
+bundle.js:19749:13
+🔍 analyzeQuadrantProximity: loyalists -> mercenaries | customers: 25 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING loyalists -> mercenaries: bundle.js:19899:13
+   Customer 1: segmentorID-00034 at (4, 5) bundle.js:19901:15
+   Customer 2: segmentorID-00035 at (4, 6) bundle.js:19901:15
+   Customer 3: segmentorID-00036 at (4, 7) bundle.js:19901:15
+   Customer 4: segmentorID-00037 at (4, 8) bundle.js:19901:15
+   Customer 5: segmentorID-00038 at (4, 9) bundle.js:19901:15
+   Customer 6: segmentorID-00039 at (4, 10) bundle.js:19901:15
+   Customer 7: segmentorID-00044 at (5, 5) bundle.js:19901:15
+   Customer 8: segmentorID-00045 at (5, 6) bundle.js:19901:15
+   Customer 9: segmentorID-00046 at (5, 7) bundle.js:19901:15
+   Customer 10: segmentorID-00054 at (6, 5) bundle.js:19901:15
+   Customer 11: segmentorID-00055 at (6, 6) bundle.js:19901:15
+   Customer 12: segmentorID-00056 at (6, 7) bundle.js:19901:15
+   Customer 13: segmentorID-00064 at (7, 5) bundle.js:19901:15
+   Customer 14: segmentorID-00065 at (7, 6) bundle.js:19901:15
+   Customer 15: segmentorID-00066 at (7, 7) bundle.js:19901:15
+   Customer 16: segmentorID-00070 at (4, 6) bundle.js:19901:15
+   Customer 17: segmentorID-00071 at (4, 6) bundle.js:19901:15
+   Customer 18: segmentorID-00072 at (4, 6) bundle.js:19901:15
+   Customer 19: segmentorID-00073 at (4, 6) bundle.js:19901:15
+   Customer 20: segmentorID-00074 at (4, 6) bundle.js:19901:15
+   Customer 21: segmentorID-00075 at (4, 6) bundle.js:19901:15
+   Customer 22: segmentorID-00076 at (4, 6) bundle.js:19901:15
+   Customer 23: segmentorID-00077 at (4, 6) bundle.js:19901:15
+   Customer 24: segmentorID-00078 at (4, 6) bundle.js:19901:15
+   Customer 25: segmentorID-00079 at (4, 6) bundle.js:19901:15
+🔍 LOYALIST segmentorID-00034 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00034 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00034: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00034 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00035 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00035 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00035: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00035 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00036 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00036 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00036: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00036 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00037 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+   🔍 Customer segmentorID-00037: isProximity=true, targets=[hostages], looking for mercenaries bundle.js:19911:15
+🔍 LOYALIST segmentorID-00038 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+   🔍 Customer segmentorID-00038: isProximity=true, targets=[hostages], looking for mercenaries bundle.js:19911:15
+🔍 LOYALIST segmentorID-00039 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+   🔍 Customer segmentorID-00039: isProximity=true, targets=[hostages], looking for mercenaries bundle.js:19911:15
+🔍 LOYALIST segmentorID-00044 NEAR HOSTAGES: sat=5, distance=1, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00044 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00044: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00044 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00045 NEAR HOSTAGES: sat=5, distance=1, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00045 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00045: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00045 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00046 NEAR HOSTAGES: sat=5, distance=1, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00046 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00046: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00046 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00054 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00054: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00054 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00055 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00055: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00055 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00056 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00056: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00056 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00064 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00064: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00064 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00065 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00065: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00065 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00066 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00066: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00066 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00070 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00070 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00070: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00070 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00071 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00071 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00071: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00071 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00072 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00072 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00072: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00072 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00073 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00073 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00073: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00073 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00074 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00074 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00074: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00074 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00075 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00075 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00075: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00075 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00076 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00076 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00076: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00076 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00077 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00077 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00077: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00077 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00078 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00078 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00078: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00078 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 LOYALIST segmentorID-00079 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00079 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00079: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00079 matches proximity criteria for mercenaries bundle.js:19915:17
+📊 FINAL RESULT for loyalists -> mercenaries: 22 customers, 12 positions bundle.js:19936:13
+🔍 analyzeQuadrantProximity: loyalists -> hostages | customers: 25 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING loyalists -> hostages: bundle.js:19899:13
+   Customer 1: segmentorID-00034 at (4, 5) bundle.js:19901:15
+   Customer 2: segmentorID-00035 at (4, 6) bundle.js:19901:15
+   Customer 3: segmentorID-00036 at (4, 7) bundle.js:19901:15
+   Customer 4: segmentorID-00037 at (4, 8) bundle.js:19901:15
+   Customer 5: segmentorID-00038 at (4, 9) bundle.js:19901:15
+   Customer 6: segmentorID-00039 at (4, 10) bundle.js:19901:15
+   Customer 7: segmentorID-00044 at (5, 5) bundle.js:19901:15
+   Customer 8: segmentorID-00045 at (5, 6) bundle.js:19901:15
+   Customer 9: segmentorID-00046 at (5, 7) bundle.js:19901:15
+   Customer 10: segmentorID-00054 at (6, 5) bundle.js:19901:15
+   Customer 11: segmentorID-00055 at (6, 6) bundle.js:19901:15
+   Customer 12: segmentorID-00056 at (6, 7) bundle.js:19901:15
+   Customer 13: segmentorID-00064 at (7, 5) bundle.js:19901:15
+   Customer 14: segmentorID-00065 at (7, 6) bundle.js:19901:15
+   Customer 15: segmentorID-00066 at (7, 7) bundle.js:19901:15
+   Customer 16: segmentorID-00070 at (4, 6) bundle.js:19901:15
+   Customer 17: segmentorID-00071 at (4, 6) bundle.js:19901:15
+   Customer 18: segmentorID-00072 at (4, 6) bundle.js:19901:15
+   Customer 19: segmentorID-00073 at (4, 6) bundle.js:19901:15
+   Customer 20: segmentorID-00074 at (4, 6) bundle.js:19901:15
+   Customer 21: segmentorID-00075 at (4, 6) bundle.js:19901:15
+   Customer 22: segmentorID-00076 at (4, 6) bundle.js:19901:15
+   Customer 23: segmentorID-00077 at (4, 6) bundle.js:19901:15
+   Customer 24: segmentorID-00078 at (4, 6) bundle.js:19901:15
+   Customer 25: segmentorID-00079 at (4, 6) bundle.js:19901:15
+🔍 LOYALIST segmentorID-00034 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00034 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00034: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00034 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00035 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00035 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00035: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00035 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00036 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00036 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00036: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00036 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00037 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+   🔍 Customer segmentorID-00037: isProximity=true, targets=[hostages], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00037 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00038 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+   🔍 Customer segmentorID-00038: isProximity=true, targets=[hostages], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00038 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00039 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+   🔍 Customer segmentorID-00039: isProximity=true, targets=[hostages], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00039 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00044 NEAR HOSTAGES: sat=5, distance=1, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00044 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00044: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00044 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00045 NEAR HOSTAGES: sat=5, distance=1, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00045 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00045: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00045 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00046 NEAR HOSTAGES: sat=5, distance=1, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00046 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00046: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00046 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00054 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00054: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 LOYALIST segmentorID-00055 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00055: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 LOYALIST segmentorID-00056 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00056: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 LOYALIST segmentorID-00064 NEAR MERCENARIES: loy=5, distance=0, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00064: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 LOYALIST segmentorID-00065 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00065: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 LOYALIST segmentorID-00066 NEAR MERCENARIES: loy=7, distance=2, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00066: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 LOYALIST segmentorID-00070 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00070 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00070: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00070 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00071 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00071 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00071: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00071 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00072 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00072 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00072: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00072 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00073 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00073 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00073: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00073 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00074 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00074 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00074: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00074 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00075 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00075 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00075: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00075 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00076 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00076 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00076: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00076 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00077 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00077 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00077: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00077 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00078 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00078 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00078: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00078 matches proximity criteria for hostages bundle.js:19915:17
+🔍 LOYALIST segmentorID-00079 NEAR HOSTAGES: sat=4, distance=0, threshold=1.5 bundle.js:19534:19
+🔍 LOYALIST segmentorID-00079 NEAR MERCENARIES: loy=6, distance=1, threshold=2.5 bundle.js:19542:19
+   🔍 Customer segmentorID-00079: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00079 matches proximity criteria for hostages bundle.js:19915:17
+📊 FINAL RESULT for loyalists -> hostages: 19 customers, 9 positions bundle.js:19936:13
+🔍 analyzeQuadrantProximity: mercenaries -> loyalists | customers: 16 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING mercenaries -> loyalists: bundle.js:19899:13
+   Customer 1: segmentorID-00030 at (4, 1) bundle.js:19901:15
+   Customer 2: segmentorID-00031 at (4, 2) bundle.js:19901:15
+   Customer 3: segmentorID-00032 at (4, 3) bundle.js:19901:15
+   Customer 4: segmentorID-00033 at (4, 4) bundle.js:19901:15
+   Customer 5: segmentorID-00040 at (5, 1) bundle.js:19901:15
+   Customer 6: segmentorID-00041 at (5, 2) bundle.js:19901:15
+   Customer 7: segmentorID-00042 at (5, 3) bundle.js:19901:15
+   Customer 8: segmentorID-00043 at (5, 4) bundle.js:19901:15
+   Customer 9: segmentorID-00050 at (6, 1) bundle.js:19901:15
+   Customer 10: segmentorID-00051 at (6, 2) bundle.js:19901:15
+   Customer 11: segmentorID-00052 at (6, 3) bundle.js:19901:15
+   Customer 12: segmentorID-00053 at (6, 4) bundle.js:19901:15
+   Customer 13: segmentorID-00060 at (7, 1) bundle.js:19901:15
+   Customer 14: segmentorID-00061 at (7, 2) bundle.js:19901:15
+   Customer 15: segmentorID-00062 at (7, 3) bundle.js:19901:15
+   Customer 16: segmentorID-00063 at (7, 4) bundle.js:19901:15
+   🔍 Customer segmentorID-00030: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00031: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00032 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00032: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00032 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 MERCENARIES segmentorID-00033 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00033 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00033: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00033 matches proximity criteria for loyalists bundle.js:19915:17
+   🔍 Customer segmentorID-00040: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00041: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00042 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00042: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00042 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 MERCENARIES segmentorID-00043 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00043 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00043: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00043 matches proximity criteria for loyalists bundle.js:19915:17
+   🔍 Customer segmentorID-00050: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00051: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00052 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00052: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00052 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 MERCENARIES segmentorID-00053 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00053 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00053: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00053 matches proximity criteria for loyalists bundle.js:19915:17
+   🔍 Customer segmentorID-00060: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00061: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00062 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00062: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00062 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 MERCENARIES segmentorID-00063 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00063 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00063: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00063 matches proximity criteria for loyalists bundle.js:19915:17
+📊 FINAL RESULT for mercenaries -> loyalists: 8 customers, 8 positions bundle.js:19936:13
+🔍 analyzeQuadrantProximity: mercenaries -> defectors | customers: 16 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING mercenaries -> defectors: bundle.js:19899:13
+   Customer 1: segmentorID-00030 at (4, 1) bundle.js:19901:15
+   Customer 2: segmentorID-00031 at (4, 2) bundle.js:19901:15
+   Customer 3: segmentorID-00032 at (4, 3) bundle.js:19901:15
+   Customer 4: segmentorID-00033 at (4, 4) bundle.js:19901:15
+   Customer 5: segmentorID-00040 at (5, 1) bundle.js:19901:15
+   Customer 6: segmentorID-00041 at (5, 2) bundle.js:19901:15
+   Customer 7: segmentorID-00042 at (5, 3) bundle.js:19901:15
+   Customer 8: segmentorID-00043 at (5, 4) bundle.js:19901:15
+   Customer 9: segmentorID-00050 at (6, 1) bundle.js:19901:15
+   Customer 10: segmentorID-00051 at (6, 2) bundle.js:19901:15
+   Customer 11: segmentorID-00052 at (6, 3) bundle.js:19901:15
+   Customer 12: segmentorID-00053 at (6, 4) bundle.js:19901:15
+   Customer 13: segmentorID-00060 at (7, 1) bundle.js:19901:15
+   Customer 14: segmentorID-00061 at (7, 2) bundle.js:19901:15
+   Customer 15: segmentorID-00062 at (7, 3) bundle.js:19901:15
+   Customer 16: segmentorID-00063 at (7, 4) bundle.js:19901:15
+   🔍 Customer segmentorID-00030: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+   🔍 Customer segmentorID-00031: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00032 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00032: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00033 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00033 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00033: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00033 matches proximity criteria for defectors bundle.js:19915:17
+   🔍 Customer segmentorID-00040: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+   🔍 Customer segmentorID-00041: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00042 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00042: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00043 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00043 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00043: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00043 matches proximity criteria for defectors bundle.js:19915:17
+   🔍 Customer segmentorID-00050: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+   🔍 Customer segmentorID-00051: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00052 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00052: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00053 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00053 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00053: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00053 matches proximity criteria for defectors bundle.js:19915:17
+   🔍 Customer segmentorID-00060: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+   🔍 Customer segmentorID-00061: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00062 NEAR LOYALISTS: loy=3, distance=2, threshold=2.5 bundle.js:19551:19
+   🔍 Customer segmentorID-00062: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 MERCENARIES segmentorID-00063 NEAR LOYALISTS: loy=4, distance=1, threshold=2.5 bundle.js:19551:19
+🔍 MERCENARIES segmentorID-00063 NEAR DEFECTORS: loy=4, distance=1, threshold=1.5 bundle.js:19559:19
+   🔍 Customer segmentorID-00063: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00063 matches proximity criteria for defectors bundle.js:19915:17
+📊 FINAL RESULT for mercenaries -> defectors: 4 customers, 4 positions bundle.js:19936:13
+🔍 analyzeQuadrantProximity: hostages -> loyalists | customers: 18 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING hostages -> loyalists: bundle.js:19899:13
+   Customer 1: segmentorID-00004 at (1, 5) bundle.js:19901:15
+   Customer 2: segmentorID-00005 at (1, 6) bundle.js:19901:15
+   Customer 3: segmentorID-00006 at (1, 7) bundle.js:19901:15
+   Customer 4: segmentorID-00007 at (1, 8) bundle.js:19901:15
+   Customer 5: segmentorID-00008 at (1, 9) bundle.js:19901:15
+   Customer 6: segmentorID-00009 at (1, 10) bundle.js:19901:15
+   Customer 7: segmentorID-00014 at (2, 5) bundle.js:19901:15
+   Customer 8: segmentorID-00015 at (2, 6) bundle.js:19901:15
+   Customer 9: segmentorID-00016 at (2, 7) bundle.js:19901:15
+   Customer 10: segmentorID-00017 at (2, 8) bundle.js:19901:15
+   Customer 11: segmentorID-00018 at (2, 9) bundle.js:19901:15
+   Customer 12: segmentorID-00019 at (2, 10) bundle.js:19901:15
+   Customer 13: segmentorID-00024 at (3, 5) bundle.js:19901:15
+   Customer 14: segmentorID-00025 at (3, 6) bundle.js:19901:15
+   Customer 15: segmentorID-00026 at (3, 7) bundle.js:19901:15
+   Customer 16: segmentorID-00027 at (3, 8) bundle.js:19901:15
+   Customer 17: segmentorID-00028 at (3, 9) bundle.js:19901:15
+   Customer 18: segmentorID-00029 at (3, 10) bundle.js:19901:15
+🔍 HOSTAGES segmentorID-00004 NEAR DEFECTORS: loy=5, distance=0, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00004: isProximity=true, targets=[defectors], looking for loyalists bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00005 NEAR DEFECTORS: loy=6, distance=1, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00005: isProximity=true, targets=[defectors], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00006: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00007: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00008: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+   🔍 Customer segmentorID-00009: isProximity=false, targets=[], looking for loyalists bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00014 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00014 NEAR DEFECTORS: loy=5, distance=0, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00014: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00014 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00015 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00015 NEAR DEFECTORS: loy=6, distance=1, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00015: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00015 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00016 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00016: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00016 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00017 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00017: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00017 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00018 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00018: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00018 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00019 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00019: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00019 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00024 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00024 NEAR DEFECTORS: loy=5, distance=0, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00024: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00024 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00025 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00025 NEAR DEFECTORS: loy=6, distance=1, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00025: isProximity=true, targets=[loyalists, defectors], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00025 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00026 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00026: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00026 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00027 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00027: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00027 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00028 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00028: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00028 matches proximity criteria for loyalists bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00029 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00029: isProximity=true, targets=[loyalists], looking for loyalists bundle.js:19911:15
+   ✅ Customer segmentorID-00029 matches proximity criteria for loyalists bundle.js:19915:17
+📊 FINAL RESULT for hostages -> loyalists: 12 customers, 12 positions bundle.js:19936:13
+🔍 analyzeQuadrantProximity: hostages -> defectors | customers: 18 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING hostages -> defectors: bundle.js:19899:13
+   Customer 1: segmentorID-00004 at (1, 5) bundle.js:19901:15
+   Customer 2: segmentorID-00005 at (1, 6) bundle.js:19901:15
+   Customer 3: segmentorID-00006 at (1, 7) bundle.js:19901:15
+   Customer 4: segmentorID-00007 at (1, 8) bundle.js:19901:15
+   Customer 5: segmentorID-00008 at (1, 9) bundle.js:19901:15
+   Customer 6: segmentorID-00009 at (1, 10) bundle.js:19901:15
+   Customer 7: segmentorID-00014 at (2, 5) bundle.js:19901:15
+   Customer 8: segmentorID-00015 at (2, 6) bundle.js:19901:15
+   Customer 9: segmentorID-00016 at (2, 7) bundle.js:19901:15
+   Customer 10: segmentorID-00017 at (2, 8) bundle.js:19901:15
+   Customer 11: segmentorID-00018 at (2, 9) bundle.js:19901:15
+   Customer 12: segmentorID-00019 at (2, 10) bundle.js:19901:15
+   Customer 13: segmentorID-00024 at (3, 5) bundle.js:19901:15
+   Customer 14: segmentorID-00025 at (3, 6) bundle.js:19901:15
+   Customer 15: segmentorID-00026 at (3, 7) bundle.js:19901:15
+   Customer 16: segmentorID-00027 at (3, 8) bundle.js:19901:15
+   Customer 17: segmentorID-00028 at (3, 9) bundle.js:19901:15
+   Customer 18: segmentorID-00029 at (3, 10) bundle.js:19901:15
+🔍 HOSTAGES segmentorID-00004 NEAR DEFECTORS: loy=5, distance=0, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00004: isProximity=true, targets=[defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00004 matches proximity criteria for defectors bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00005 NEAR DEFECTORS: loy=6, distance=1, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00005: isProximity=true, targets=[defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00005 matches proximity criteria for defectors bundle.js:19915:17
+   🔍 Customer segmentorID-00006: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+   🔍 Customer segmentorID-00007: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+   🔍 Customer segmentorID-00008: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+   🔍 Customer segmentorID-00009: isProximity=false, targets=[], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00014 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00014 NEAR DEFECTORS: loy=5, distance=0, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00014: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00014 matches proximity criteria for defectors bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00015 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00015 NEAR DEFECTORS: loy=6, distance=1, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00015: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00015 matches proximity criteria for defectors bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00016 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00016: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00017 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00017: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00018 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00018: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00019 NEAR LOYALISTS: sat=2, distance=2, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00019: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00024 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00024 NEAR DEFECTORS: loy=5, distance=0, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00024: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00024 matches proximity criteria for defectors bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00025 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+🔍 HOSTAGES segmentorID-00025 NEAR DEFECTORS: loy=6, distance=1, threshold=1.5 bundle.js:19576:19
+   🔍 Customer segmentorID-00025: isProximity=true, targets=[loyalists, defectors], looking for defectors bundle.js:19911:15
+   ✅ Customer segmentorID-00025 matches proximity criteria for defectors bundle.js:19915:17
+🔍 HOSTAGES segmentorID-00026 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00026: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00027 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00027: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00028 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00028: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+🔍 HOSTAGES segmentorID-00029 NEAR LOYALISTS: sat=3, distance=1, threshold=2.5 bundle.js:19568:19
+   🔍 Customer segmentorID-00029: isProximity=true, targets=[loyalists], looking for defectors bundle.js:19911:15
+📊 FINAL RESULT for hostages -> defectors: 6 customers, 6 positions bundle.js:19936:13
+🔍 analyzeQuadrantProximity: defectors -> mercenaries | customers: 15 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING defectors -> mercenaries: bundle.js:19899:13
+   Customer 1: segmentorID-00002 at (1, 3) bundle.js:19901:15
+   Customer 2: segmentorID-00003 at (1, 4) bundle.js:19901:15
+   Customer 3: segmentorID-00012 at (2, 3) bundle.js:19901:15
+   Customer 4: segmentorID-00013 at (2, 4) bundle.js:19901:15
+   Customer 5: segmentorID-00022 at (3, 3) bundle.js:19901:15
+   Customer 6: segmentorID-00023 at (3, 4) bundle.js:19901:15
+   Customer 7: segmentorID-00091 at (3, 4) bundle.js:19901:15
+   Customer 8: segmentorID-00092 at (3, 4) bundle.js:19901:15
+   Customer 9: segmentorID-00093 at (3, 4) bundle.js:19901:15
+   Customer 10: segmentorID-00094 at (3, 4) bundle.js:19901:15
+   Customer 11: segmentorID-00095 at (3, 4) bundle.js:19901:15
+   Customer 12: segmentorID-00096 at (3, 4) bundle.js:19901:15
+   Customer 13: segmentorID-00097 at (3, 4) bundle.js:19901:15
+   Customer 14: segmentorID-00098 at (3, 4) bundle.js:19901:15
+   Customer 15: segmentorID-00099 at (3, 4) bundle.js:19901:15
+🔍 DEFECTORS segmentorID-00002 NEAR MERCENARIES: loy=3, distance=2, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00002: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00002 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00003 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00003: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00003 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00012 NEAR MERCENARIES: loy=3, distance=2, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00012: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00012 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00013 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00013: isProximity=true, targets=[mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00013 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00022 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00022 NEAR MERCENARIES: loy=3, distance=2, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00022: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00022 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00023 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00023 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00023: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00023 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00091 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00091 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00091: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00091 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00092 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00092 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00092: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00092 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00093 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00093 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00093: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00093 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00094 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00094 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00094: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00094 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00095 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00095 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00095: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00095 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00096 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00096 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00096: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00096 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00097 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00097 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00097: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00097 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00098 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00098 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00098: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00098 matches proximity criteria for mercenaries bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00099 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00099 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00099: isProximity=true, targets=[hostages, mercenaries], looking for mercenaries bundle.js:19911:15
+   ✅ Customer segmentorID-00099 matches proximity criteria for mercenaries bundle.js:19915:17
+📊 FINAL RESULT for defectors -> mercenaries: 15 customers, 6 positions bundle.js:19936:13
+🔍 analyzeQuadrantProximity: defectors -> hostages | customers: 15 | threshold: 2 bundle.js:19892:13
+🔍 DEBUGGING defectors -> hostages: bundle.js:19899:13
+   Customer 1: segmentorID-00002 at (1, 3) bundle.js:19901:15
+   Customer 2: segmentorID-00003 at (1, 4) bundle.js:19901:15
+   Customer 3: segmentorID-00012 at (2, 3) bundle.js:19901:15
+   Customer 4: segmentorID-00013 at (2, 4) bundle.js:19901:15
+   Customer 5: segmentorID-00022 at (3, 3) bundle.js:19901:15
+   Customer 6: segmentorID-00023 at (3, 4) bundle.js:19901:15
+   Customer 7: segmentorID-00091 at (3, 4) bundle.js:19901:15
+   Customer 8: segmentorID-00092 at (3, 4) bundle.js:19901:15
+   Customer 9: segmentorID-00093 at (3, 4) bundle.js:19901:15
+   Customer 10: segmentorID-00094 at (3, 4) bundle.js:19901:15
+   Customer 11: segmentorID-00095 at (3, 4) bundle.js:19901:15
+   Customer 12: segmentorID-00096 at (3, 4) bundle.js:19901:15
+   Customer 13: segmentorID-00097 at (3, 4) bundle.js:19901:15
+   Customer 14: segmentorID-00098 at (3, 4) bundle.js:19901:15
+   Customer 15: segmentorID-00099 at (3, 4) bundle.js:19901:15
+🔍 DEFECTORS segmentorID-00002 NEAR MERCENARIES: loy=3, distance=2, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00002: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 DEFECTORS segmentorID-00003 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00003: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 DEFECTORS segmentorID-00012 NEAR MERCENARIES: loy=3, distance=2, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00012: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 DEFECTORS segmentorID-00013 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00013: isProximity=true, targets=[mercenaries], looking for hostages bundle.js:19911:15
+🔍 DEFECTORS segmentorID-00022 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00022 NEAR MERCENARIES: loy=3, distance=2, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00022: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00022 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00023 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00023 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00023: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00023 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00091 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00091 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00091: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00091 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00092 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00092 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00092: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00092 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00093 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00093 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00093: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00093 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00094 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00094 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00094: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00094 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00095 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00095 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00095: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00095 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00096 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00096 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00096: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00096 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00097 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00097 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00097: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00097 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00098 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00098 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00098: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00098 matches proximity criteria for hostages bundle.js:19915:17
+🔍 DEFECTORS segmentorID-00099 NEAR HOSTAGES: sat=3, distance=1, threshold=1.5 bundle.js:19585:19
+🔍 DEFECTORS segmentorID-00099 NEAR MERCENARIES: loy=4, distance=1, threshold=2.5 bundle.js:19593:19
+   🔍 Customer segmentorID-00099: isProximity=true, targets=[hostages, mercenaries], looking for hostages bundle.js:19911:15
+   ✅ Customer segmentorID-00099 matches proximity criteria for hostages bundle.js:19915:17
+📊 FINAL RESULT for defectors -> hostages: 11 customers, 2 positions bundle.js:19936:13
+🔍 CALCULATING loyalists_close_to_apostles: 
+Object { loyalistsCount: 25, showSpecialZones: true, showNearApostles: true }
+bundle.js:19766:17
+🔍 analyzeSpecialZoneProximity: loyalists -> apostles | customers: 25 | showSpecialZones: true | showNearApostles: true bundle.js:19962:13
+🔍 shouldAnalyzeSpecialZoneProximity result for loyalists -> apostles: false bundle.js:19966:13
+❌ Special zone proximity analysis skipped for loyalists -> apostles (conditions not met) bundle.js:19973:15
+🔍 CALCULATING loyalists_close_to_near_apostles: 
+Object { loyalistsCount: 25, showSpecialZones: true, showNearApostles: true }
+bundle.js:19774:17
+🔍 analyzeSpecialZoneProximity: loyalists -> near_apostles | customers: 25 | showSpecialZones: true | showNearApostles: true bundle.js:19962:13
+🔍 shouldAnalyzeSpecialZoneProximity result for loyalists -> near_apostles: true bundle.js:19966:13
+📊 After target zone exclusion: 25 customers (excluded 0 already in near_apostles zone) bundle.js:19992:13
+🔍 Customer segmentorID-00034 at (4,5) is on quadrant boundary: hostages=true, mercenaries=true bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00034 at (4,5) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00035 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00035 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00036 at (4,7) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00036 at (4,7) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00037 at (4,8) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00037 at (4,8) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00038 at (4,9) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00038 at (4,9) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00039 at (4,10) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00039 at (4,10) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00044 at (5,5) is on quadrant boundary: hostages=false, mercenaries=true bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00044 at (5,5) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00054 at (6,5) is on quadrant boundary: hostages=false, mercenaries=true bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00054 at (6,5) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00064 at (7,5) is on quadrant boundary: hostages=false, mercenaries=true bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00064 at (7,5) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00070 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00070 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00071 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00071 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00072 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00072 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00073 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00073 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00074 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00074 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00075 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00075 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00076 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00076 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00077 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00077 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00078 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00078 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+🔍 Customer segmentorID-00079 at (4,6) is on quadrant boundary: hostages=true, mercenaries=false bundle.js:20228:15
+🚫 EXCLUDING customer segmentorID-00079 at (4,6) - on quadrant boundary (Rule 8) bundle.js:19998:17
+📊 After boundary conflict exclusion: 6 customers (excluded 19 on quadrant boundaries) bundle.js:20002:13
+🎯 loyalists customer segmentorID-00046 at (5,7) is 1 positions from near_apostles zone bundle.js:20032:17
+🎯 loyalists customer segmentorID-00056 at (6,7) is 1 positions from near_apostles zone bundle.js:20032:17
+🎯 loyalists customer segmentorID-00066 at (7,7) is 1 positions from near_apostles zone bundle.js:20032:17
+📊 Special zone proximity result: loyalists -> near_apostles: 3 customers, 3 positions, avg distance: 1.00 bundle.js:20051:13
+🔍 CALCULATING defectors_close_to_terrorists: 
+Object { defectorsCount: 15, showSpecialZones: true, showNearApostles: true }
+bundle.js:19782:17
+🔍 analyzeSpecialZoneProximity: defectors -> terrorists | customers: 15 | showSpecialZones: true | showNearApostles: true bundle.js:19962:13
+🔍 shouldAnalyzeSpecialZoneProximity result for defectors -> terrorists: true bundle.js:19966:13
+📊 After target zone exclusion: 15 customers (excluded 0 already in terrorists zone) bundle.js:19992:13
+📊 After boundary conflict exclusion: 15 customers (excluded 0 on quadrant boundaries) bundle.js:20002:13
+📊 Special zone proximity result: defectors -> terrorists: 0 customers, 0 positions, avg distance: 0.00 bundle.js:20051:13
+🔍 analyzeSpecialZoneProximity: apostles -> loyalists | customers: 4 | showSpecialZones: true | showNearApostles: true bundle.js:19962:13
+🔍 shouldAnalyzeSpecialZoneProximity result for apostles -> loyalists: false bundle.js:19966:13
+❌ Special zone proximity analysis skipped for apostles -> loyalists (conditions not met) bundle.js:19973:15
+🔍 analyzeSpecialZoneProximity: near_apostles -> loyalists | customers: 5 | showSpecialZones: true | showNearApostles: true bundle.js:19962:13
+🔍 shouldAnalyzeSpecialZoneProximity result for near_apostles -> loyalists: true bundle.js:19966:13
+❌ No boundaries found for target zone: loyalists bundle.js:19980:15
+🔍 analyzeSpecialZoneProximity: terrorists -> defectors | customers: 2 | showSpecialZones: true | showNearApostles: true bundle.js:19962:13
+🔍 shouldAnalyzeSpecialZoneProximity result for terrorists -> defectors: true bundle.js:19966:13
+❌ No boundaries found for target zone: defectors bundle.js:19980:15
+🔍 DEBUGGING SUMMARY CALCULATION - About to call calculateSummaryMetrics bundle.js:19802:13
+🔍 Analysis details: 
+Object { loyalists_close_to_mercenaries: 22, loyalists_close_to_hostages: 19, mercenaries_close_to_loyalists: 8, mercenaries_close_to_defectors: 4, hostages_close_to_loyalists: 12, hostages_close_to_defectors: 6, defectors_close_to_mercenaries: 15, defectors_close_to_hostages: 11 }
+bundle.js:19803:13
+🔍 Special zones details: 
+Object { apostles_close_to_loyalists: 0, near_apostles_close_to_loyalists: 0, terrorists_close_to_defectors: 0 }
+bundle.js:19815:15
+🚨 SUMMARY CALCULATION RESULT: 
+Object { totalProximityCustomers: 100, totalProximityPositions: 62 }
+bundle.js:19824:13
+🚨 ENHANCED PROXIMITY CLASSIFIER FINAL RESULT: 
+Object { loyalists_close_to_apostles: 0, loyalists_close_to_near_apostles: 3, defectors_close_to_terrorists: 0, showSpecialZones: true, showNearApostles: true }
+bundle.js:19839:13
+🎯 Proximity Analysis Result: 
+Object { analysis: {…}, specialZones: {…}, summary: {…}, settings: {…} }
+bundle.js:19846:13
+📊 Proximity analysis result: 
+Object { analysis: {…}, specialZones: {…}, summary: {…}, settings: {…} }
+bundle.js:15270:13
+🔍 DETAILED RESULT INSPECTION FROM ENHANCEDPROXIMITY: 
+Object { resultType: "object", isAvailable: true, totalCustomersInResult: 100, unavailabilityReason: undefined, fullSummary: {…} }
+bundle.js:15271:13
+🔍 DETAILED RESULT INSPECTION: 
+Object { isAvailable: true, totalCustomersInResult: 100, unavailabilityReason: undefined }
+bundle.js:15278:13
+🔍 FINAL RESULT BEING RETURNED FROM USEMEMO: 
+Object { totalProximityCustomers: 100, isAvailable: true, objectReference: {…} }
+bundle.js:15283:13
+🔍 ABOUT TO USE proximityAnalysis.summary: 
+Object { totalProximityCustomers: 100, isAvailable: true, source: "proximityAnalysis.summary" }
+bundle.js:15350:11

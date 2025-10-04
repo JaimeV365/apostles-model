@@ -1,0 +1,393 @@
+/* src/components/reporting/filters/ReportFilterPanel.css */
+.report-filter-panel {
+  position: absolute;
+  top: 0;
+  right: 0;            /* Position on the right side instead of center */
+  width: 360px;        /* Narrower width for side panel */
+  max-width: 95vw;     /* Prevent overflow on mobile */
+  height: 100%;        /* Full height */
+  background-color: white;
+  border-radius: 8px 0 0 8px; /* Round only left corners */
+  box-shadow: -2px 0 16px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  transform: none;     /* Remove center transform */
+  left: auto;          /* Remove left position */
+}
+  
+.report-filter-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+  
+.report-filter-panel-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+  
+.report-filter-panel-close {
+  background: none;
+  border: none;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.report-filter-panel-close:hover {
+  background-color: #F3F4F6;
+  color: #374151;
+}
+  
+.report-filter-panel-content {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+  
+.report-filter-item {
+  display: grid;
+  grid-template-columns: 1fr;   /* Single column for side panel */
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Responsive layout for larger screens */
+@media screen and (min-width: 768px) {
+  .report-filter-item {
+    grid-template-columns: 1fr 1fr;  /* Two columns on larger screens */
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      "field operator"
+      "value value"
+      "button button";
+    gap: 12px;
+  }
+  
+  .report-filter-field {
+    grid-area: field;
+  }
+  
+  .report-filter-operator {
+    grid-area: operator;
+  }
+  
+  .report-filter-value {
+    grid-area: value;
+  }
+  
+  .report-filter-remove {
+    grid-area: button;
+    justify-self: end;
+  }
+}
+  
+.report-filter-field,
+.report-filter-operator,
+.report-filter-value {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+  
+.report-filter-field label,
+.report-filter-operator label,
+.report-filter-value label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280;
+}
+  
+.report-filter-field select,
+.report-filter-operator select,
+.report-filter-value select,
+.report-filter-value input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%; /* Make inputs full width within their container */
+  box-sizing: border-box;
+  background-color: white;
+  color: #374151;
+  transition: all 0.2s ease;
+  height: 40px;
+  appearance: auto;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+}
+
+/* Custom dropdown arrow for select elements */
+.report-filter-field select,
+.report-filter-operator select,
+.report-filter-value select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  padding-right: 30px;
+}
+  
+.report-filter-field select:hover,
+.report-filter-operator select:hover,
+.report-filter-value select:hover,
+.report-filter-value input:hover {
+  border-color: #9ca3af;
+}
+  
+.report-filter-field select:focus,
+.report-filter-operator select:focus,
+.report-filter-value select:focus,
+.report-filter-value input:focus {
+  outline: 2px solid rgba(58, 134, 62, 0.3);
+  border-color: #3a863e;
+  box-shadow: 0 0 0 1px #3a863e;
+}
+  
+.report-filter-remove {
+  align-self: flex-end;
+  background: none;
+  border: 1px solid #d1d5db;
+  color: #6B7280;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+  
+.report-filter-remove:hover {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+  color: #b91c1c;
+}
+  
+.report-filter-actions {
+  margin-top: 8px;
+}
+  
+.report-filter-add {
+  background-color: #f9fafb;
+  border: 1px dashed #d1d5db;
+  color: #6B7280;
+  padding: 12px 16px;
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+  
+.report-filter-add:hover {
+  border-color: #3a863e;
+  color: #3a863e;
+  background-color: rgba(58, 134, 62, 0.05);
+}
+  
+.report-filter-panel-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+  
+.report-filter-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+  
+.report-filter-button.primary {
+  background-color: #3a863e;
+  color: white;
+  border: 1px solid #3a863e;
+}
+  
+.report-filter-button.primary:hover {
+  background-color: #34753a;
+}
+  
+.report-filter-button.secondary {
+  background-color: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+  
+.report-filter-button.secondary:hover {
+  background-color: #F3F4F6;
+  border-color: #9ca3af;
+}
+
+/* Settings tab styling */
+.report-filter-settings {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.report-filter-settings p {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Tab styling - namespaced to avoid conflicts */
+.report-filter-tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+
+.report-filter-tab {
+  padding: 12px 24px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.report-filter-tab.active {
+  color: #3a863e;
+  border-bottom-color: #3a863e;
+}
+
+.report-filter-tab:hover:not(.active) {
+  color: #4b5563;
+  background-color: #f9fafb;
+}
+
+/* Empty state styling with namespaced class */
+.report-filter-empty-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.report-filter-empty-message .filter-icon {
+  color: #9ca3af;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.report-filter-empty-message p {
+  margin: 4px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.report-filter-empty-message .subtitle {
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: normal;
+}
+
+.report-filter-add-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Filter badge styling - namespaced to avoid conflicts */
+.report-filter-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.report-filter-badge.small {
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+  border-width: 1px;
+}
+
+/* Embedded mode */
+.report-filter-panel.embedded {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+  border: none;
+  overflow: visible;
+  transform: none;
+  left: auto;
+  top: auto;
+  max-height: none;
+  border-radius: 0;
+  height: auto;
+}
+
+.report-filter-panel.embedded .report-filter-panel-content {
+  padding: 0;
+}
+
+.report-filter-panel.embedded .report-filter-panel-header,
+.report-filter-panel.embedded .report-filter-panel-footer {
+  display: none;
+}
+
+/* Add slide-in animation for the side panel */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.report-filter-panel:not(.embedded) {
+  animation: slideInFromRight 0.3s ease-out forwards;
+}

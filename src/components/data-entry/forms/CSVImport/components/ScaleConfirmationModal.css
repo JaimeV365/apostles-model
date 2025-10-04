@@ -1,0 +1,256 @@
+.scale-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.scale-confirmation-modal {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+}
+
+.scale-confirmation-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f4f6;
+  border-radius: 8px 8px 0 0;
+}
+
+.scale-confirmation-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.scale-confirmation-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #9ca3af;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.scale-confirmation-close:hover {
+  color: #6b7280;
+  background-color: #e5e7eb;
+}
+
+.scale-confirmation-content {
+  padding: 20px;
+}
+
+.scale-confirmation-explanation {
+  margin: 0 0 20px 0;
+  color: #4b5563;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-left: 4px solid #3a863e;
+  border-radius: 0 4px 4px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.scale-choice-section {
+  margin-bottom: 24px;
+}
+
+.scale-choice-section:last-child {
+  margin-bottom: 0;
+}
+
+.scale-choice-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.scale-choice-section p {
+  margin: 0 0 16px 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.scale-choice-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.scale-choice-button {
+  flex: 1;
+  padding: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
+  min-height: 120px;
+  justify-content: center;
+}
+
+.scale-choice-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.scale-choice-button--selected {
+  background-color: #f0f9f0;
+  border-color: #3a863e;
+  color: #2f6f32;
+}
+
+.scale-choice-button--selected:hover {
+  background-color: #e6f7e6;
+  border-color: #2f6f32;
+}
+
+.scale-choice-button-icon {
+  margin-bottom: 12px;
+  width: 70px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  font-family: monospace;
+  color: #3a863e;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.scale-choice-button--selected .scale-choice-button-icon {
+  background-color: #3a863e;
+  color: white;
+  box-shadow: 0 3px 8px rgba(58, 134, 62, 0.3);
+}
+
+.scale-choice-button-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.scale-choice-button-description {
+  font-size: 13px;
+  font-weight: normal;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.scale-choice-button--selected .scale-choice-button-description {
+  color: #4b5563;
+}
+
+.scale-confirmation-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  margin-top: 0;
+}
+
+.scale-confirmation-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.scale-confirmation-button--cancel {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.scale-confirmation-button--cancel:hover {
+  background-color: #e5e7eb;
+}
+
+.scale-confirmation-button--confirm {
+  background-color: #3a863e;
+  color: white;
+}
+
+.scale-confirmation-button--confirm:hover:not(:disabled) {
+  background-color: #2f6b32;
+}
+
+.scale-confirmation-button--confirm:disabled {
+  background-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media screen and (max-width: 640px) {
+  .scale-confirmation-modal {
+    width: 95%;
+    margin: 10px;
+  }
+  
+  .scale-choice-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .scale-choice-button {
+    min-height: 100px;
+    padding: 16px;
+  }
+  
+  .scale-choice-button-icon {
+    width: 60px;
+    height: 40px;
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+  
+  .scale-confirmation-actions {
+    flex-direction: column;
+  }
+  
+  .scale-confirmation-button {
+    width: 100%;
+  }
+}

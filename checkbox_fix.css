@@ -1,0 +1,14 @@
+/* FIXED CHECKBOX STYLES FOR UNIFIED CHART CONTROLS */
+.unified-tab-body .filter-option input[type="checkbox"]:checked::after {
+  content: "✓" !important;
+  color: white !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  display: block !important;
+  line-height: 1 !important;
+  z-index: 2 !important;
+}

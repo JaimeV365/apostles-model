@@ -1,0 +1,39 @@
+.resize-handles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: nesw-resize;
+  pointer-events: all;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  transform: translate(-50%, -50%);
+  z-index: 110;
+  }
+
+.resize-handle svg {
+  transform: rotate(45deg);
+}
+
+.resize-handle:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.resize-handle:active {
+  background-color: #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+

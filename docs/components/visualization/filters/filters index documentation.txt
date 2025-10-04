@@ -1,0 +1,5 @@
+Apostles Model Filter System Documentation - Overview of the filter system's architecture, components, and data flow.
+Apostles Model Filter Component Reference - Detailed breakdown of each component's purpose, properties, and relationships.
+Apostles Model Filter Implementation Guide - Technical implementation details including code snippets and CSS explanations.
+Apostles Model Filter Technical Reference - In-depth look at core functions, DOM structure, and helper functions.
+Apostles Model Filter Troubleshooting Guide - Solutions for common issues with the filter system.

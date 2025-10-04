@@ -1,0 +1,84 @@
+.control-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;  /* Reduced from 12px */
+  font-size: 12px;  /* Reduced from 14px */
+  color: #374151;
+  min-width: 160px;  /* Added to keep consistent widths */
+}
+
+.control-switch__label {
+  font-weight: 500;
+  min-width: 45px;  /* Added to align all switches */
+}
+
+.control-switch__toggle {
+  position: relative;
+  display: inline-block;
+  width: 36px;  /* Reduced from 48px */
+  height: 20px;  /* Reduced from 24px */
+}
+  
+  .control-switch__toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .control-switch__slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #9CA3AF;
+    transition: .3s;
+    border-radius: 20px;
+  }
+  
+  .control-switch__slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;  /* Reduced from 18px */
+    width: 16px;   /* Reduced from 18px */
+    left: 2px;     /* Adjusted from 3px */
+    bottom: 2px;   /* Adjusted from 3px */
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+  }
+  
+  .control-switch__toggle input:checked + .control-switch__slider {
+    background-color: #4CAF50;
+  }
+  
+  .control-switch__toggle input:checked + .control-switch__slider:before {
+    transform: translateX(16px); 
+  }
+  
+  /* Hover effects */
+  .control-switch__toggle:hover .control-switch__slider {
+    background-color: #6B7280;
+  }
+  
+  .control-switch__toggle:hover input:checked + .control-switch__slider {
+    background-color: #3B8A3F;
+  }
+
+  .control-switch--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .control-switch--disabled .control-switch__toggle {
+    cursor: not-allowed;
+  }
+
+  .chart-controls {
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping if needed */
+    gap: 12px 20px;   /* Vertical gap 12px, horizontal gap 20px */
+    padding: 12px;    /* Reduced from 16px */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+  }

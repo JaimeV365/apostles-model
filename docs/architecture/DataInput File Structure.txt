@@ -1,0 +1,13 @@
+// File Structure:
+// src/components/data-entry/forms/DataInput/
+// ├── index.tsx                    # Main component
+// ├── components/
+// │   ├── BasicInfoFields.tsx      # ID, Name, Email fields
+// │   ├── SatisfactionField.tsx    # Satisfaction with scale
+// │   ├── LoyaltyField.tsx         # Loyalty with scale
+// │   ├── DateField.tsx            # Date input with format
+// │   └── FormActions.tsx          # Submit/Cancel buttons
+// ├── hooks/
+// │   ├── useDataInput.ts          # Main form logic
+// │   └── useFormValidation.ts     # Validation logic
+// └── types.ts                     # Component-specific types

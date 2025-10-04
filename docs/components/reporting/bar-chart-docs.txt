@@ -1,0 +1,129 @@
+# BarChart Component
+
+## Overview
+The BarChart component is a core visualization component that renders vertical bars from data. It supports both regular and mini variants, premium features like color customization, and interactive tooltips.
+
+## Features
+- Vertical bar visualization
+- Grid lines support
+- Value labels
+- Interactive tooltips
+- Premium color customization
+- Mini chart variant
+- Responsive layout
+
+## Interface
+
+### Props
+```typescript
+interface BarChartData {
+  value: number;
+  count: number;
+}
+
+interface BarChartProps {
+  /** Data to be displayed in the chart */
+  data: BarChartData[];
+  /** Whether to show grid lines */
+  showGrid?: boolean;
+  /** Whether to show value labels under bars */
+  showLabels?: boolean;
+  /** Whether bars can be clicked (for color customization) */
+  interactive?: boolean;
+  /** Optional custom bar colors keyed by value */
+  customColors?: Record<number, string>;
+  /** Callback when a bar color is changed */
+  onColorChange?: (value: number, color: string) => void;
+  /** Optional additional className */
+  className?: string;
+  /** Chart size variant */
+  chartType?: 'bar' | 'mini';
+}
+```
+
+## Usage
+
+### Basic Usage
+```tsx
+<BarChart
+  data={[
+    { value: 1, count: 10 },
+    { value: 2, count: 20 },
+    { value: 3, count: 15 }
+  ]}
+  showGrid={true}
+  showLabels={true}
+/>
+```
+
+### With Premium Features
+```tsx
+<BarChart
+  data={data}
+  showGrid={true}
+  showLabels={true}
+  interactive={true}
+  customColors={{ 1: '#ff0000', 2: '#00ff00' }}
+  onColorChange={(value, color) => {
+    console.log(`Bar ${value} color changed to ${color}`);
+  }}
+/>
+```
+
+### Mini Variant
+```tsx
+<BarChart
+  data={data}
+  chartType="mini"
+  showGrid={false}
+  showLabels={true}
+/>
+```
+
+## Styling
+The component uses dedicated CSS classes defined in `styles.css`:
+
+```css
+.bar-chart-container {
+  /* Base container styles */
+}
+
+.bar-chart-grid {
+  /* Grid lines styles */
+}
+
+.bar-chart-bars {
+  /* Bars container styles */
+}
+
+.bar-chart-bar {
+  /* Individual bar styles */
+}
+
+.bar-chart-tooltip {
+  /* Tooltip styles */
+}
+
+/* Mini variant styles */
+.bar-chart-container.mini {
+  /* Mini chart specific styles */
+}
+```
+
+## Accessibility
+- Semantic HTML structure
+- ARIA labels for interactive elements
+- Keyboard navigation support
+- Screen reader friendly tooltips
+
+## Premium Features
+- Color customization per bar
+- Interactive tooltips
+- Custom color persistence
+- Enhanced visual feedback
+
+## Notes
+- Uses absolute positioning for precise bar placement
+- Handles overflow for tooltips
+- Supports responsive layouts
+- Maintains consistent spacing

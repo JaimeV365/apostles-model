@@ -1,0 +1,63 @@
+# ResizeHandles Component
+
+## Overview
+The ResizeHandles component provides interactive controls for resizing special zones (Apostles/Advocates and Terrorists/Trolls areas) in the visualization. It supports both click and drag interactions with support for half-grid positions.
+
+## Features
+- Interactive resizing controls
+- Click-to-resize functionality
+- Grid snapping
+- Half-grid support
+- Size constraints
+- Premium interactions
+
+## Interface
+
+### Props
+```typescript
+interface ResizeHandlesProps {
+  /** Grid dimensions */
+  dimensions: GridDimensions;
+  /** Current zone sizes */
+  apostlesZoneSize: number;
+  terroristsZoneSize: number;
+  /** Resize callback */
+  onZoneResize: (zone: 'apostles' | 'terrorists', newSize: number) => void;
+  /** Enable/disable handles */
+  isAdjustable: boolean;
+}
+```
+
+## Usage
+```tsx
+<ResizeHandles
+  dimensions={dimensions}
+  apostlesZoneSize={apostlesZoneSize}
+  terroristsZoneSize={terroristsZoneSize}
+  onZoneResize={handleResize}
+  isAdjustable={true}
+/>
+```
+
+## Size Constraints
+```typescript
+// For apostles (must leave space for near-apostles)
+const spaceToMidpointX = dimensions.totalCols - midCol - 1;
+const spaceToMidpointY = dimensions.totalRows - midRow - 1;
+
+// For terrorists (can reach midpoint)
+const maxTerroristsX = Math.floor(midCol * 2) / 2;
+const maxTerroristsY = Math.floor(midRow * 2) / 2;
+```
+
+## Key Behaviors
+- Single click increases size by 1
+- Supports half-grid positions near midpoint
+- Auto-retracts at maximum size
+- Maintains grid alignment
+
+## Notes
+- Enforces minimum size of 1x1
+- Considers midpoint position
+- Maintains smooth transitions
+- Supports touch interactions

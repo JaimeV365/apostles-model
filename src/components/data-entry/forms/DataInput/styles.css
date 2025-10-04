@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
+
+/* Base styles */
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.data-entry-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #374151;
+  margin-bottom: 24px;
+  
+}
+
+/* Layout */
+.data-input {
+  width: 100%;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.data-input__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  row-gap: 70px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Input fields */
+.input-field-container {
+  width: auto; 
+  position: relative;
+  display: inline-block; /* This helps with width calculations */
+}
+
+.input-field {
+  width: 100%;
+  height: 42px;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+/* Scale sections */
+.satisfaction-field,
+.loyalty-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: start;
+  width: 100%;
+}
+
+.satisfaction-field .error-message,
+.loyalty-field .error-message {
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.satisfaction-field .input-field-container,
+.loyalty-field .input-field-container {
+  width: 100%;
+  max-width: fit-content;
+  display: block;
+}
+
+
+
+/* Scale selector container */
+.scale-selector {
+  display: block !important;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.scale-selector label {
+  display: block;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* Select elements base styles */
+.scale-selector select,
+.scale-selector_select,
+.date-format-select {
+  display: inline-block !important;
+  height: 42px !important;
+  padding: 8px 12px !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 4px !important;
+  font-size: 16px !important;
+  background-color: white !important;
+  color: #374151 !important;
+  font-family: 'Lato', sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+/* Specific widths */
+.scale-selector select {
+  width: 200px !important;
+}
+
+.date-format-select {
+  width: 140px !important;
+}
+
+/* Select options */
+.scale-selector select option,
+.date-format-select option {
+  font-size: 16px !important;
+  padding: 8px !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+/* Disabled states */
+.scale-selector select:disabled,
+.date-format-select:disabled {
+  background-color: #f3f4f6 !important;
+  color: #9ca3af !important;
+  cursor: not-allowed !important;
+}
+
+/* Warning/validation messages */
+.validation-message,
+.scale-selector__message {
+  position: absolute !important;
+  bottom: calc(100% + 8px) !important;
+  left: 0 !important;
+  z-index: 20 !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  background-color: #fef3c7 !important;
+  color: #d97706 !important;
+  border: 1px solid #f59e0b !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+  display: none;
+}
+
+.validation-message {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #fef3c7;
+  color: #f97316;
+  border: 1px solid #f97316;
+  border-radius: 4px;
+  z-index: 20;
+  width: max-content;  /* This ensures it fits the content */
+  max-width: 200px;    /* This prevents it from becoming too wide */
+  display: none;       /* Hidden by default */
+  white-space: normal; /* Allow text wrapping */
+}
+
+.scale-selector:hover .validation-message,
+.date-format-container:hover .validation-message,
+.scale-selector:hover .scale-warning-message {
+  display: block;      /* Show on hover */
+}
+
+.scale-warning-message {
+  position: absolute;
+  top: -38px; /* Position above the selector */
+  left: 0;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #fef3c7;
+  color: #f97316;
+  border: 1px solid #f97316;
+  border-radius: 4px;
+  z-index: 999; /* Very high z-index to ensure visibility */
+  width: max-content;
+  max-width: 200px;
+  display: none; /* Hidden by default */
+  white-space: normal;
+}
+
+/* Date field */
+.date-input-container {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.date-format-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Error Message */
+.error-message {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #dc2626;
+  background-color: #fee2e2;
+  border-radius: 4px;
+  border: 1px solid #fca5a5;
+  z-index: 15;
+  width: auto; /* Let it size to content */
+  min-width: 100%; /* At least as wide as the input */
+  max-width: max-content; /* Don't exceed content width */
+  box-sizing: border-box;
+}
+
+.input-field-container .error-message {
+  width: calc(100% - 0px); /* Adjust to match the input width */
+  max-width: 100%;
+}
+
+select + .error-message,
+.input-field--error + .error-message {
+  width: 100%; /* Match the width of the select element */
+}
+
+/* Button styles */
+.data-input__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+  padding-right: 24px;
+}
+
+.data-input__button {
+  height: 42px !important;
+  padding: 0 20px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.data-input__button--primary {
+  background-color: #3a863e !important;
+  color: white !important;
+}
+
+.data-input__button--primary:hover {
+  background-color: #2f6f32 !important;
+}
+
+.data-input__button--secondary {
+  background-color: #6b7280 !important;
+  color: white !important;
+}
+
+.data-input__button--secondary:hover {
+  background-color: #4b5563 !important;
+}
+
+/* Required field indicator styling */
+.required-field {
+  color: #dc2626; /* Red color */
+  margin-left: 2px;
+  font-weight: bold;
+}
+
+/* Form instruction notice */
+.form-instructions {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.form-instructions .required-field {
+  vertical-align: middle;
+}
+
+.date-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.warning-message {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #fef3c7;
+  color: #f97316; /* Changed from #92400E to #f97316 to match */
+  border: 1px solid #f97316; /* Changed from #F59E0B to #f97316 to match */
+  border-radius: 4px;
+  z-index: 15;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%; /* Ensures it doesn't exceed the width of the input */
+}
+
+.input-field--warning {
+  border-color: #F59E0B !important; /* Amber border for warning state */
+}
+
+.input-field--warning:focus {
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.1) !important; /* Amber shadow for focus state */
+}

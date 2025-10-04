@@ -1,0 +1,19 @@
+.quadrant {
+    position: absolute;
+    z-index: 1;  /* Base layer */
+  }
+  
+  .quadrants-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  
+  .grid-lines {
+    z-index: 3;
+  }
+  
+  .data-point {
+    z-index: 5;
+  }
+  

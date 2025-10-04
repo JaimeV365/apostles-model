@@ -1,0 +1,136 @@
+# FrequencySlider Component
+
+## Overview
+The FrequencySlider component is used in data visualization to control the display threshold for overlapping data points. It provides an interactive slider and direct input interface for precise control.
+
+## Features
+- Interactive slider control
+- Direct numeric input
+- Dynamic range handling
+- Visual feedback
+- Accessibility support
+- Smooth animations
+
+## Interface
+
+### Props
+```typescript
+interface FrequencySliderProps {
+  /** Maximum frequency from dataset */
+  maxFrequency: number;
+  /** Current threshold value */
+  currentThreshold: number;
+  /** Callback for threshold changes */
+  onThresholdChange: (value: number) => void;
+  /** Optional label visibility toggle */
+  showLabel?: boolean;
+}
+```
+
+## Usage
+
+### Basic Usage
+```tsx
+function FilterControls() {
+  const [threshold, setThreshold] = useState(1);
+  const maxFrequency = 5;
+
+  return (
+    <FrequencySlider
+      maxFrequency={maxFrequency}
+      currentThreshold={threshold}
+      onThresholdChange={setThreshold}
+    />
+  );
+}
+```
+
+### Direct Input Implementation
+```typescript
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setInputValue(e.target.value);
+};
+
+const handleInputBlur = () => {
+  let value = parseInt(inputValue);
+  if (isNaN(value)) value = 1;
+  value = Math.max(1, Math.min(value, maxFrequency));
+  onThresholdChange(value);
+  setIsEditing(false);
+};
+```
+
+## Styling
+
+### Core Styles
+```css
+.frequency-slider {
+  width: 90%;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.frequency-slider-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.frequency-range::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #3a863e;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.frequency-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+```
+
+## Accessibility
+- ARIA attributes for slider and input
+- Keyboard navigation support
+- Screen reader friendly labels
+- High contrast visual states
+
+## Event Handling
+
+### Value Updates
+```typescript
+useEffect(() => {
+  if (!isEditing) {
+    setInputValue(currentThreshold.toString());
+  }
+}, [currentThreshold, isEditing]);
+```
+
+### Input Validation
+```typescript
+const validateInput = (value: string): number => {
+  const parsed = parseInt(value);
+  if (isNaN(parsed)) return 1;
+  return Math.max(1, Math.min(parsed, maxFrequency));
+};
+```
+
+## Edge Cases
+- Handle non-numeric input
+- Manage out of range values
+- Handle empty input
+- Process decimal numbers
+- Handle zero frequency case
+- Manage maximum value limits
+
+## Notes
+- Always enforce minimum value of 1
+- Maintain smooth transitions
+- Support touch devices
+- Handle window resize events

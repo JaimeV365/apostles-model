@@ -1,0 +1,162 @@
+.frequency-slider {
+  width: 90%;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.frequency-slider-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.frequency-range {
+  width: 100%;
+  margin: 0;
+}
+
+.frequency-range:active,
+.frequency-range:focus,
+.frequency-range:active,
+.frequency-range:hover {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.frequency-range::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  border: 2px solid #3a863e;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease;
+}
+
+/* Thumb styles when active/focused */
+.frequency-range:active::-webkit-slider-thumb,
+.frequency-range:focus::-webkit-slider-thumb {
+  background: #ffffff !important;
+}
+
+.frequency-range::-moz-range-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  border: 2px solid #3a863e;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease;
+}
+
+/* Firefox thumb styles when active/focused */
+.frequency-range:active::-moz-range-thumb,
+.frequency-range:focus::-moz-range-thumb {
+  background: #ffffff !important;
+}
+
+.frequency-range::-moz-range-progress {
+  background-color: #e5e7eb !important;
+  border: none !important;
+}
+
+/* Track color for Firefox */
+.frequency-range::-moz-range-track,
+.frequency-range:focus::-moz-range-track,
+.frequency-range:active::-moz-range-track {
+  background: #e5e7eb !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Active state styling */
+.frequency-range::-webkit-slider-thumb:hover,
+.frequency-range::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+.frequency-range::-webkit-slider-thumb:active,
+.frequency-range::-moz-range-thumb:active {
+  transform: scale(0.95);
+}
+
+.frequency-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.frequency-input {
+  -webkit-appearance: textfield !important;
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+  width: 24px;
+  padding: 1px 2px;
+  font-size: 12px;
+  border: 1px solid #3a863e;
+  border-radius: 3px;
+  color: #3a863e;
+  font-weight: 500;
+  text-align: center;
+  background: white;
+  outline: none !important;
+}
+
+.frequency-input:focus {
+  outline: none !important;
+  border-color: #3a863e !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Override any browser default styles */
+.frequency-input:focus-visible {
+  outline: none !important;
+  border-color: #3a863e !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
+}
+
+.frequency-input::-webkit-outer-spin-button,
+.frequency-input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  margin: 0 !important;
+  display: none !important;
+}
+
+.frequency-input[type=number] {
+  -moz-appearance: textfield !important;
+}
+
+.frequency-number {
+  color: #3a863e;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 20px;
+  text-align: center;
+}
+
+.frequency-number:hover {
+  text-decoration: underline;
+}
+
+.frequency-separator {
+  color: #9ca3af;
+}
+
+.frequency-max {
+  color: #6b7280;
+  min-width: 20px;
+  text-align: center;
+}

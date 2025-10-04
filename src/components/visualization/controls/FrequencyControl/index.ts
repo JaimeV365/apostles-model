@@ -1,0 +1,1 @@
+export { FrequencySlider } from './FrequencySlider';

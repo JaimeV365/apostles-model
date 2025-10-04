@@ -1,0 +1,142 @@
+# SpecialZones Component
+
+## Overview
+The SpecialZones component manages specialized zones in the visualization, including Apostles/Advocates zone, Terrorists/Trolls zone, and Near-apostles zones. It provides interactive resizing and zone management.
+
+## Features
+- Dynamic zone sizing
+- Interactive resize handles
+- Near-apostles management
+- Zone labeling
+- Dynamic positioning
+- Classic/Modern terminology
+
+## Interface
+
+### Props
+```typescript
+interface SpecialZonesProps {
+  /** Grid dimensions */
+  dimensions: GridDimensions;
+  /** Zone sizes */
+  zoneSizes: ZoneSizes;
+  /** Current position */
+  position: Position;
+  /** Maximum sizes */
+  maxSizes: {
+    apostles: number;
+    terrorists: number;
+  };
+  /** Near-apostles visibility */
+  showNearApostles: boolean;
+  /** Terminology toggle */
+  isClassicModel: boolean;
+  /** Label visibility */
+  showLabels: boolean;
+  /** Handle visibility */
+  showHandles: boolean;
+  /** Resize handlers */
+  onResizeStart: (zone: 'apostles' | 'terrorists') => void;
+  onResize: (newSizes: ZoneSizes) => void;
+}
+
+interface ZoneSizes {
+  apostles: number;
+  terrorists: number;
+}
+```
+
+## Zone Management
+
+### Near-apostles Calculation
+```typescript
+const calculateNearApostlesPositions = (
+  showNearApostles: boolean,
+  apostlesSize: number,
+  dimensions: GridDimensions
+): ZonePosition[] => {
+  if (!showNearApostles) return [];
+
+  const positions = [];
+  const { cellWidth, cellHeight, totalRows } = dimensions;
+
+  // Calculate positions based on Apostles size
+  if (apostlesSize === 1) {
+    // Single cell positions
+    positions.push({
+      bottom: `${(totalRows - 2) * cellHeight}%`,
+      right: `${cellWidth}%`,
+      width: `${cellWidth}%`,
+      height: `${cellHeight}%`
+    });
+    // Additional positions...
+  } 
+  return positions;
+};
+```
+
+### Zone Positioning
+```typescript
+const calculateZonePositions = (
+  dimensions: GridDimensions,
+  zoneSizes: ZoneSizes
+): ZoneStyles => {
+  const { cellWidth, cellHeight } = dimensions;
+  
+  return {
+    apostles: {
+      top: 0,
+      right: 0,
+      width: `${zoneSizes.apostles * cellWidth}%`,
+      height: `${zoneSizes.apostles * cellHeight}%`
+    },
+    terrorists: {
+      bottom: 0,
+      left: 0,
+      width: `${zoneSizes.terrorists * cellWidth}%`,
+      height: `${zoneSizes.terrorists * cellHeight}%`
+    }
+  };
+};
+```
+
+## Styling
+
+### Core Styles
+```css
+.special-zones {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.special-zone {
+  position: absolute;
+  pointer-events: all;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+```
+
+## Usage Example
+```tsx
+<SpecialZones
+  dimensions={dimensions}
+  zoneSizes={{ apostles: 2, terrorists: 1 }}
+  position={{ x: 50, y: 50 }}
+  maxSizes={{ apostles: 3, terrorists: 2 }}
+  showNearApostles={true}
+  isClassicModel={true}
+  showLabels={true}
+  showHandles={true}
+  onResizeStart={handleResizeStart}
+  onResize={handleResize}
+/>
+```
+
+## Notes
+- Handles window resizing
+- Maintains z-index hierarchy
+- Supports touch interactions
+- Considers accessibility

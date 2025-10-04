@@ -1,0 +1,1335 @@
+/* ResponseConcentrationSection/styles.css */
+
+.response-concentration {
+  position: relative;
+  margin: 1.5rem 0;
+  width: 100%; /* Ensure full width */
+}
+
+.response-concentration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  background: #f9fafb; 
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  width: 100%; /* Ensure full width */
+  max-width: 100%; /* ADD: Prevent overflow */
+  box-sizing: border-box; /* Include padding in width calculation */
+  overflow: hidden; /* ADD: Contain any overflowing content */
+}
+
+.concentration-column h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.response-concentration-controls {
+  position: static;
+  align-self: flex-end;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  z-index: 50;
+}
+
+.response-concentration:hover .response-concentration-controls {
+  opacity: 1;
+}
+
+.miniplot-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.5rem 1.5rem 0rem;
+}
+
+.combination-marker {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.combination-values {
+  font-weight: 500;
+}
+
+.combination-stats {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.combinations-more {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.dial-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .response-concentration-grid {
+      position: relative; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      padding: 1.5rem;
+    }
+}
+
+.concentration-column {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;  /* Choose the padding you want */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #C93C35;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.panel-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100vh;
+  max-width: 95vw;
+  height: 100%;
+  background-color: white;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 0 16px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  animation: slideInFromRight 0.3s ease-out forwards;
+}
+
+.panel-container.active {
+  z-index: 1001; /* Higher z-index for active panel */
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: #f9fafb;
+  border-bottom: none;
+}
+
+.panel-header::after {
+  content: none;
+}
+
+.panel-close {
+  background: none;
+  border: none;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-close:hover {
+  background-color: #F3F4F6;
+  color: #374151;
+}
+
+.panel-tabs {
+  display: flex;
+  flex: 1;
+  border-bottom: none;
+  position: relative;
+}
+
+.panel-tabs::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e5e7eb; /* Light gray line */
+}
+
+.panel-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+transition: color 0.2s ease, border-color 0.2s ease;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #6b7280;
+  flex: 1;
+  text-align: center;
+}
+
+.panel-tab.active {
+  color: #3a863e;
+  border-bottom: 2px solid #3a863e;
+  background-color: transparent;
+  position: relative; 
+z-index: 1;
+}
+
+.panel-tab:hover:not(.active) {
+  background-color: #f3f4f6;
+}
+
+.panel-tab.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.panel-tab.disabled:hover {
+  background: none;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.panel-content {
+  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+margin-top: 0;
+border-top: none;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.embedded-settings {
+  padding: 0;
+  margin: 0;
+}
+
+.embedded-settings .response-concentration-settings-close {
+  display: none;
+}
+
+.response-settings-panel {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.panel-content .report-filter-field select,
+.panel-content .report-filter-operator select,
+.panel-content .report-filter-value select {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 8px center;
+background-size: 16px;
+padding-right: 30px;
+}
+
+
+
+/* Add to ResponseConcentrationSection/styles.css */
+
+/* Fix the double border issue */
+.panel-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.panel-tabs {
+  border-bottom: none;
+}
+
+.panel-tab.active {
+  position: relative;
+  border-bottom: 2px solid #3a863e;
+  margin-bottom: -1px; /* This makes the active tab's border cover the header border */
+}
+
+/* Style the embedded settings container to work with the ResponseSettings component */
+.embedded-settings {
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove any padding from the panel content */
+.panel-content {
+  padding: 0;
+}
+
+/* Target the response settings panel when it's embedded */
+.embedded-settings .response-settings-panel {
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  width: auto;
+  padding: 0 1.5rem;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: none;
+}
+
+/* Fix for the disappearing header in filter panel */
+.fixed-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 100;
+  background-color: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.filter-wrapper {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Highly specific selector to ensure these styles take precedence */
+.panel-container .panel-content .embedded-settings .response-settings-header {
+  margin: 0 !important;  /* We'll use !important just this once because we need to override multiple competing styles */
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Remove any border from the panel header */
+.panel-header {
+  border-bottom: none;
+}
+
+/* Add a single border to the tabs container */
+.panel-tabs {
+  position: relative;
+}
+
+/* Create a single line under all tabs */
+.panel-tabs::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e5e7eb;
+}
+
+/* Make the active tab's border stand out and cover the line */
+.panel-tab.active {
+  position: relative;
+  border-bottom: 2px solid #3a863e;
+  z-index: 2; /* Higher z-index to ensure it's on top */
+}
+
+/* Remove any potential borders from content area */
+.panel-content {
+  border-top: none;
+}
+
+.panel-container .panel-tabs::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e5e7eb;
+}
+
+.panel-container .panel-tab.active {
+  position: relative;
+  z-index: 3; /* Increase z-index to be extra sure it's on top */
+  border-bottom: 2px solid #3a863e;
+}
+
+/* Ensure no other borders exist */
+.panel-container .panel-header,
+.panel-container .panel-content,
+.panel-container .panel-tabs {
+  border-bottom: none;
+  border-top: none;
+}
+
+/* Add these styles to ResponseConcentrationSection/styles.css */
+
+/* Target the response-settings-header specifically */
+.embedded-settings .response-settings-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0.5rem;
+  border-bottom: none;
+}
+
+/* Also ensure no border on the header */
+.panel-container .response-settings-header {
+  border-bottom: none !important;
+}
+
+/* And to make doubly sure there's no gap, add this */
+.panel-content {
+  padding-top: 0;
+}
+
+.embedded-settings {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Add this to ensure all padding is removed */
+.panel-container .panel-content .embedded-settings .response-settings-header {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: none !important;
+}
+
+
+
+/* Check if it's coming from the underline of the active tab */
+.panel-tab.active::after {
+  content: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+/* Check if it's coming from a border on an element inside the settings container */
+.response-concentration-settings h3,
+.response-concentration-settings *,
+.panel-container .response-concentration-settings * {
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* Check if it's an outline */
+.panel-tab.active,
+.panel-header,
+.panel-tabs,
+.embedded-settings,
+.response-settings-panel {
+  outline: none !important;
+}
+
+/* Target the specific tab button container */
+.panel-container .panel-tabs button {
+  border-bottom: none !important;
+}
+
+.info-ribbon {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info-ribbon-icon {
+  color: #f59e0b; /* Brand-compatible amber color */
+  flex-shrink: 0;
+  margin-top: 0.5rem; /* Increase this value to move the icon down more */
+  display: inline-flex; /* Ensure the icon is displayed */
+  width: 18px; /* Set explicit width */
+  height: 18px; /* Set explicit height */
+  align-items: center;
+  justify-content: center;
+}
+
+.info-ribbon-content {
+  flex: 1;
+}
+
+.info-ribbon-title {
+  font-weight: 600;
+  color: #92400e;
+  font-size: 0.875rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.info-ribbon-text {
+  color: #78350f;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  margin: 0;
+}
+
+.info-ribbon-close {
+  background: none;
+  border: none;
+  color: #b45309;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.info-ribbon-close:hover {
+  opacity: 1;
+  background-color: rgba(180, 83, 9, 0.1);
+}
+
+
+
+
+.response-concentration .section-header {
+  position: relative;
+  width: 100%;
+  
+}
+
+/* Add or modify in styles.css */
+.response-concentration .header-title-area {
+  margin-bottom: 12px; /* Increase space between title and info ribbon */
+  padding-top: 8px; /* Add some space at the top */
+}
+
+
+
+.section-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.section-header .settings-button {
+  align-self: flex-end;
+  margin-top: 0.75rem;
+}
+
+.header-title-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.header-title-area .report-section-title {
+  flex: 1;
+}
+
+.report-section-title {
+  margin: 0;
+  flex: 1;
+  padding-top: 0.25rem; /* Add padding to align with button */
+}
+
+
+/* Add this to your styles.css */
+.info-ribbon-icon svg {
+  display: block !important; /* Force display */
+  width: 18px;
+  height: 18px;
+  color: #f59e0b;
+}
+
+/* Settings button positioned underneath info ribbon */
+.response-concentration .settings-button {
+  position: static;
+  align-self: flex-end;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  z-index: 10;
+}
+
+/* MiniPlot Legend */
+.miniplot-legend {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.average-dot {
+  background-color: white;
+  border: 2px solid #dc2626;
+  filter: drop-shadow(0 0 3px rgba(220, 38, 38, 0.6));
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.2);
+}
+
+.legend-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Existing styles - keeping all current styling */
+.response-concentration-section {
+  position: relative;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.response-concentration-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title-container h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.filter-indicator {
+  background: #3a863e;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+
+
+.response-concentration-section:hover .settings-button {
+  opacity: 1;
+}
+
+.settings-button:hover {
+  background: white;
+  color: #3a863e;
+}
+
+.info-ribbon {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.info-ribbon-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.info-icon {
+  color: #f59e0b;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.info-text {
+  font-size: 0.875rem;
+  color: #78350f;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.info-ribbon-close {
+  background: none;
+  border: none;
+  color: #b45309;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.info-ribbon-close:hover {
+  background-color: rgba(180, 83, 9, 0.1);
+}
+
+.response-concentration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  /* Removed duplicate background and padding - these are now on the main section */
+}
+
+
+
+.concentration-column h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 1rem 0;
+  /* Removed the border-bottom that was causing the unwanted border */
+}
+
+.miniplot-container {
+  width: 100%;
+  height: 200px;
+  background: #f9fafb;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+  margin-left: -.1rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Removed excessive padding that was causing layout issues */
+}
+
+.miniplot-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dot.average-dot {
+  background: #dc2626;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #dc2626;
+}
+
+.legend-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Phase 2: Tier-related styles */
+.tier-legend {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.legend-dot.tier-dot {
+  background: #3a863e;
+  transition: all 0.2s ease;
+}
+
+.tier-indicator {
+  font-size: 0.625rem;
+  font-weight: 600;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  margin-left: 0.25rem;
+  display: inline-block;
+}
+
+.tier-indicator.tier-1 {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.tier-indicator.tier-2 {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.tier-indicator.tier-3 {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.combinations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.combination-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  color: #374151;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.combination-item:last-child {
+  border-bottom: none;
+}
+
+.combination-item:hover {
+  background: #f9fafb;
+  border-radius: 0.25rem;
+  margin: 0 -0.5rem;
+  padding: 0.5rem;
+}
+
+.combination-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.combination-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.combination-values {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  align-items: center;
+}
+
+.combination-stats {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Panel styles */
+.response-concentration-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  background: white;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.panel-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.panel-tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.panel-tab.active {
+  background: white;
+  color: #3a863e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.panel-tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.panel-close {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.panel-close:hover {
+  background: rgba(107, 114, 128, 0.1);
+}
+
+.panel-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.embedded-settings {
+  height: 100%;
+}
+
+.embedded-settings .response-settings-panel {
+  position: static;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  top: auto;
+  right: auto;
+  bottom: auto;
+}
+
+.filter-wrapper {
+  padding: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 1400px) {
+  .response-concentration-panel {
+    width: 350px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .response-concentration-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .response-concentration-panel {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .response-concentration-section {
+    padding: 1rem;
+  }
+  
+  .response-concentration-grid {
+    gap: 1rem;
+  }
+}
+
+/* Control button styling to match BarChart pattern */
+.response-concentration-control-button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  color: #3a863e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.response-concentration-control-button:hover {
+  background-color: #F3F4F6;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.response-concentration-control-button.active,
+.response-concentration-control-button.has-filters {
+  background-color: #3a863e;
+  color: white;
+  border-color: #3a863e;
+}
+
+.response-concentration-control-button.active:hover,
+.response-concentration-control-button.has-filters:hover {
+  background-color: #34753a;
+}
+
+/* Filter badge styling */
+.response-concentration-control-button .filter-badge {
+  position: absolute !important;
+  top: -4px !important;
+  right: -4px !important;
+  width: 16px !important;
+  height: 16px !important;
+  font-size: 9px !important;
+  border-width: 1px !important;
+  flex: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  z-index: 10 !important;
+  background-color: #C93C35;
+  color: white;
+  font-weight: 600;
+  border: 1px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.filter-badge.small {
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+  border-width: 1px;
+  flex: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  aspect-ratio: 1 / 1 !important;
+  box-sizing: border-box !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  background-color: #C93C35;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  border: 1px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Settings Sub-tabs */
+.settings-sub-tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+  background-color: #f9fafb;
+}
+
+.settings-sub-tab {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: none;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid transparent;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.settings-sub-tab:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+.settings-sub-tab.active {
+  background-color: white;
+  color: #3a863e;
+  border-bottom: 2px solid #3a863e;
+  font-weight: 500;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Settings Content */
+.settings-content {
+  padding: 0 1rem;
+}
+
+.settings-section {
+  margin-bottom: 1.5rem;
+}
+
+.settings-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 1rem 0;
+}
+
+/* Settings Preview */
+.settings-preview {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mini-preview-placeholder {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+/* Distribution Preview */
+.preview-scatter-dots {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.preview-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3a863e;
+  transform: translate(-50%, -50%);
+}
+
+.preview-dot.average {
+  background-color: #dc2626;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #dc2626;
+}
+
+.preview-axes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.preview-axis-label {
+  position: absolute;
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.preview-axis-label.x {
+  bottom: 4px;
+  right: 8px;
+}
+
+.preview-axis-label.y {
+  top: 4px;
+  left: 4px;
+}
+
+/* Responses Preview */
+.preview-list {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preview-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #374151;
+}
+
+.preview-list-item .preview-dot {
+  position: static;
+  width: 6px;
+  height: 6px;
+  transform: none;
+}
+
+/* Intensity Preview */
+.preview-dial {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-dial-arc {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #3a863e;
+  border-radius: 50%;
+}
+
+.preview-dial-needle {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #dc2626;
+  transform-origin: bottom center;
+  top: 5px;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.preview-dial-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  z-index: 1;
+}
+
+/* Settings Options */
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.settings-option input[type="range"] {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.settings-option label {
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.settings-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3a863e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .settings-sub-tab {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .tab-label {
+    display: none;
+  }
+  
+  .tab-icon {
+    font-size: 1.2rem;
+  }
+}
+
+.filter-tab.disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  color: #9ca3af !important;
+  pointer-events: none !important;
+}
+
+.filter-tab.disabled:hover {
+  background: none !important;
+  color: #9ca3af !important;
+  pointer-events: none !important;
+}

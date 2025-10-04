@@ -1,0 +1,133 @@
+.combination-dial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.dial-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6B7280;
+  margin-bottom: 1rem;
+}
+
+.dial-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Arc styles */
+.dial-background {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-linecap: round;
+}
+
+.dial-value {
+  fill: none;
+  stroke-linecap: round;
+  transition: all 0.8s ease-in-out;
+}
+
+.dial-value.satisfaction {
+  stroke: #4CAF50;
+}
+
+.dial-value.loyalty {
+  stroke: #4682B4;
+}
+
+/* Legend and scores */
+.dial-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.dial-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dot.satisfaction {
+  background-color: #4CAF50;
+}
+
+.legend-dot.loyalty {
+  background-color: #4682B4;
+}
+
+.dial-score {
+  flex-grow: 1;
+}
+
+.dial-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.dial-percentage {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Position the scale directly under the dial arcs */
+.dial-scale {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  margin-top: -5px;
+  position: relative;
+}
+
+.scale-mark {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+}
+
+input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #3a863e !important;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #3a863e;
+  border-color: #3a863e;
+  position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}

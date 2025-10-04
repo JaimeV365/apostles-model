@@ -1,0 +1,158 @@
+Folder PATH listing for volume OS
+Volume serial number is 9C82-2B12
+C:\USERS\JAIME\ONEDRIVE\DOCUMENTS\XPERIENCE 360\WEBSITE\APOSTLES MODEL PROJECT\APOSTLES-MODEL\DOCS
+ª   CONTRIBUTING.md
+ª   doc-index-update.md
+ª   documentation-index-update.txt
+ª   documentation-index.md
+ª   DocumentationIndex.md
+ª   Response Distribution Map Concentration Plan.docx
+ª   
++---architecture
+ª       architecture.md
+ª       business-plan.md
+ª       data-entry-architecture-docs.md
+ª       DataInput File Structure.txt
+ª       ProjectMap.md
+ª       reporting-structure.md
+ª       StateFlow.md
+ª       types-architecture.md
+ª       
++---changelog
+ª       changelog-migration.md
+ª       csv-import-architecture.md
+ª       
++---components
+ª   +---data-entry
+ª   ª       CSV Import Documentation Index.txt
+ª   ª       csv upload workflow-diagram.svg
+ª   ª       csv upload workflow-diagram.txt
+ª   ª       csv-format-guide.md
+ª   ª       csv-import-components.md
+ª   ª       csv-import-docs 1of2.md
+ª   ª       csv-import-docs 2of2.md
+ª   ª       csv-import-documentation-updated.md
+ª   ª       csv-import-documentation.md
+ª   ª       csv-import-hooks (1).md
+ª   ª       csv-import-hooks.md
+ª   ª       csv-import-integration.md
+ª   ª       csv-import-overview.md
+ª   ª       csv-import-scale-detection.md
+ª   ª       csv-import-utilities (1).md
+ª   ª       csv-import-utilities.md
+ª   ª       CSVImport.md
+ª   ª       data entry documentation-index.md
+ª   ª       data-entry-architecture-docs.md
+ª   ª       data-entry-architecture.md
+ª   ª       data-entry-components.md
+ª   ª       data-entry-documentation-index.md
+ª   ª       data-entry-flowcharts-updated.md
+ª   ª       data-entry-hooks.md
+ª   ª       data-entry-module-documentation.md
+ª   ª       data-entry-module-updated.md
+ª   ª       data-entry-types.md
+ª   ª       data-entry-utils.md
+ª   ª       data-table-documentation.md
+ª   ª       DataDisplay.md
+ª   ª       DataEntryModule.md
+ª   ª       DataInput.md
+ª   ª       date-component-interaction.md
+ª   ª       date-entry-system.md
+ª   ª       date-field-integration.md
+ª   ª       date-handling.md
+ª   ª       date-system-documentation.md
+ª   ª       date-system-maintenance-guide.md
+ª   ª       date-validation-system.md
+ª   ª       duplicate-detection-documentation.md
+ª   ª       duplicate-handling-system-updated.md
+ª   ª       duplicate-handling-system.docx
+ª   ª       error-handling.md
+ª   ª       hooks-integration-examples.ts
+ª   ª       input-field-spec.md
+ª   ª       ScaleSelector.md
+ª   ª       service-architecture-maintenance-guide.md
+ª   ª       service-implementation-examples.ts
+ª   ª       service-workflow-diagrams.md
+ª   ª       
+ª   +---reporting
+ª   ª   ª   bar-chart-docs.txt
+ª   ª   ª   data-report-docs.txt
+ª   ª   ª   most-common-combinations-docs.md
+ª   ª   ª   quadrant-details-docs.txt
+ª   ª   ª   reporting-section-docs.txt
+ª   ª   ª   response-concentration-types-complete.md
+ª   ª   ª   response_distribution_update_guide.md
+ª   ª   ª   statistics-section-docs.txt
+ª   ª   ª   
+ª   ª   +---BarChart
+ª   ª   ª       bar-chart-docs.md
+ª   ª   ª       barchart-docs1.md
+ª   ª   ª       
+ª   ª   +---CombinationDial
+ª   ª   ª       combination-dial-complete.md
+ª   ª   ª       
+ª   ª   +---Highlighting
+ª   ª   ª       highlight-system-docs.md
+ª   ª   ª       highlighting-docs1md.md
+ª   ª   ª       
+ª   ª   +---MiniPlot
+ª   ª   ª       miniplot-api.md
+ª   ª   ª       
+ª   ª   +---ResponseConcentration
+ª   ª   ª       color-synchronization-technical-guide.md
+ª   ª   ª       response-concentration-developers-guide.md
+ª   ª   ª       response-concentration-docs.md
+ª   ª   ª       response-concentration-documentation.md
+ª   ª   ª       response-concentration-maintenance-guide.md
+ª   ª   ª       response-concentration-technical-reference.md
+ª   ª   ª       response-concentration-troubleshooting.md
+ª   ª   ª       
+ª   ª   +---ResponseSettings
+ª   ª           response-settings-api.md
+ª   ª           
+ª   +---ui
+ª   ª       Card.md
+ª   ª       ControlSwitch.md
+ª   ª       InputField.md
+ª   ª       NotificationSystem.md
+ª   ª       Switch.md
+ª   ª       ui-guidelines.md
+ª   ª       
+ª   +---visualization
+ª           chart-integration.md
+ª           midpoint-controls.md
+ª           quadrant-system.md
+ª           
++---features
+ª       historical-feature-spec-reviewed.md
+ª       historical-feature-spec.md
+ª       historical-implementation-plan-reviewed.md
+ª       historical-implementation-plan.md
+ª       historical-technical-implementation.md
+ª       
++---quickref
+ª       types-quickref.md
+ª       
++---security
+ª       premium-security.md
+ª       Security.md
+ª       
++---templates
+ª       API_DOCUMENTATION_TEMPLATE.md
+ª       COMPONENT_TEMPLATE.md
+ª       
++---testing
+ª       testing-guide.md
+ª       
++---types
+ª       BaseTypes.md
+ª       ComponentProps.md
+ª       VisualizationTypes.md
+ª       
+\---utils
+        frequencyCalculator.md
+        idCounter.md
+        positionCalculator.md
+        scaleManager.md
+        storageManager.md
+        zoneCalculator.md

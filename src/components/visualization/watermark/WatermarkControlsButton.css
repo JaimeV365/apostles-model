@@ -1,0 +1,261 @@
+/* Chart-integrated button - positioned at bottom-right */
+.watermark-controls-chart-button {
+  position: absolute;
+  bottom: 12px;
+  right: -5px; /* Position in bottom-right corner */
+  z-index: 20;
+}
+
+.watermark-controls-trigger {
+  background-color: white;
+  border: 1px solid #e5e7eb; /* Add border like other buttons */
+  border-radius: 6px; /* Rounded corners like other buttons */
+  color: #3a863e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+  padding: 8px; /* Slightly bigger padding */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.watermark-controls-trigger:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af; /* Hover border color */
+}
+
+.watermark-controls-trigger.active {
+  background-color: #3a863e;
+  color: white;
+  border-color: #3a863e;
+}
+
+.watermark-controls-trigger.active:hover {
+  background-color: #34753a;
+  border-color: #34753a;
+}
+
+/* Overlay */
+.watermark-controls-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+/* Panel styling - matching filter panel */
+.watermark-controls-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100%;
+  background: white;
+  border-left: 1px solid #e5e7eb;
+  box-shadow: -2px 0 16px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideInFromRight 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.watermark-controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.watermark-controls-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.watermark-controls-header button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watermark-controls-header button:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.watermark-controls-content {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Control groups */
+.watermark-control-group {
+  margin-bottom: 20px;
+}
+
+.watermark-control-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.watermark-control-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.watermark-control-label input[type="checkbox"] {
+  margin: 0;
+}
+
+.watermark-control-select,
+.watermark-control-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.watermark-control-select:focus,
+.watermark-control-input:focus {
+  outline: 2px solid rgba(58, 134, 62, 0.3);
+  border-color: #3a863e;
+  box-shadow: 0 0 0 1px #3a863e;
+}
+
+/* Size controls */
+.watermark-size-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.watermark-size-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.watermark-size-button:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #3a863e;
+  color: #3a863e;
+}
+
+.watermark-size-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.watermark-size-display {
+  font-weight: 500;
+  color: #374151;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Rotation controls */
+.watermark-rotation-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.watermark-rotation-button {
+  flex: 1;
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.watermark-rotation-button:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.watermark-rotation-button.active {
+  background: #3a863e;
+  border-color: #3a863e;
+  color: white;
+}
+
+.watermark-rotation-button.active:hover {
+  background: #34753a;
+}
+
+/* Footer with Reset Button - matching filter panel */
+.watermark-controls-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 16px;
+}
+
+.watermark-reset-button {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 8px 16px;
+  width: 100%;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.watermark-reset-button:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.watermark-reset-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

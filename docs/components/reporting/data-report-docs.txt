@@ -1,0 +1,95 @@
+# DataReport Component
+
+## Overview
+The DataReport component is responsible for presenting detailed statistical analysis and visualizations of satisfaction and loyalty data. It uses BarChart for visualizations and provides comprehensive insights through various sections.
+
+## Component Structure
+```
+DataReport/
+├── index.tsx              // Main wrapper
+├── DataReportComponent.tsx    // Core implementation
+├── StatisticsSection.tsx     // Statistics visualization
+└── QuadrantDetails.tsx       // Quadrant-specific analysis
+```
+
+## Features
+- Basic statistics display
+- Distribution visualization using BarChart
+- Quadrant analysis
+- Premium features
+- Export capabilities
+
+## Interfaces
+
+### Props
+```typescript
+interface DataReportProps {
+  report: DataReport | null;
+  onCustomize: (reportType: 'data') => void;
+  onExport: (reportType: 'data') => void;
+  onShare: (reportType: 'data') => void;
+  isClassicModel: boolean;
+  isPremium?: boolean;
+}
+```
+
+### Data Structure
+```typescript
+interface DataReport {
+  date: string;
+  satisfactionScale: ScaleFormat;
+  loyaltyScale: ScaleFormat;
+  totalEntries: number;
+  statistics: {
+    satisfaction: StatisticsData;
+    loyalty: StatisticsData;
+  };
+  distribution: {
+    loyalists: number;
+    defectors: number;
+    mercenaries: number;
+    hostages: number;
+  };
+}
+```
+
+## Usage
+
+### Basic Usage
+```tsx
+<DataReport
+  report={reportData}
+  onCustomize={handleCustomize}
+  onExport={handleExport}
+  onShare={handleShare}
+  isClassicModel={true}
+  isPremium={false}
+/>
+```
+
+## Sections
+
+### Basic Information
+- Date and scale information
+- Entry counts and distribution
+
+### Statistics Visualization
+- Uses BarChart component
+- Shows satisfaction and loyalty distributions
+- Displays averages and trends
+
+### Quadrant Analysis
+- Detailed quadrant breakdowns
+- Group-specific insights
+- Premium analysis features
+
+## Premium Features
+- Custom color schemes
+- Enhanced insights
+- Advanced export options
+- Interactive visualizations
+
+## Notes
+- Uses BarChart for all visualizations
+- Supports both classic and modern terminology
+- Maintains consistent styling with report theme

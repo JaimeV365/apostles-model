@@ -1,0 +1,82 @@
+# QuadrantDetails Component
+
+## Overview
+The QuadrantDetails component displays detailed analysis for specific quadrants in the Apostles Model, including statistics, trends, and insights. It uses mini BarCharts for compact visualizations.
+
+## Features
+- Detailed quadrant statistics
+- Mini distribution charts
+- Key findings display
+- Group insights
+- Premium analysis features
+
+## Interface
+
+### Props
+```typescript
+interface QuadrantDetailsProps {
+  quadrant: QuadrantType;
+  stats: QuadrantStatistics;
+  isPremium: boolean;
+  satisfactionScale: string;
+  loyaltyScale: string;
+}
+
+type QuadrantType = 'loyalists' | 'hostages' | 'mercenaries' | 'defectors';
+```
+
+## Usage
+
+### Basic Usage
+```tsx
+<QuadrantDetails
+  quadrant="loyalists"
+  stats={quadrantStats}
+  isPremium={false}
+  satisfactionScale="1-5"
+  loyaltyScale="1-5"
+/>
+```
+
+## Component Sections
+
+### Header
+- Quadrant title
+- Total count
+- Percentage of total
+
+### Distribution Charts
+- Mini BarChart components
+- Satisfaction distribution
+- Loyalty distribution
+
+### Key Findings
+- Most common scores
+- Distribution patterns
+- Score correlations (premium)
+
+### Group Insights
+- Quadrant-specific analysis
+- Trend information
+- Premium insights
+
+## Premium Features
+- Score correlation analysis
+- Trend significance
+- Custom visualization colors
+- Enhanced insights
+
+## Styling
+Uses quadrant-specific colors and styles:
+```css
+.quadrant-details {}
+.quadrant-detail-section {}
+.detail-grid {}
+.detail-item {}
+```
+
+## Notes
+- Uses mini variant of BarChart
+- Supports both classic and modern terminology
+- Color-coded by quadrant type
+- Responsive layout

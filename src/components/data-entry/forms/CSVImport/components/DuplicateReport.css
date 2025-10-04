@@ -1,0 +1,44 @@
+.csv-duplicate-report {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #FFFBEB;
+    border: 1px solid #FCD34D;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .csv-duplicate-report__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #92400E;
+    font-weight: 500;
+  }
+  
+  .csv-duplicate-report__icon {
+    color: #F59E0B;
+  }
+  
+  .csv-duplicate-report__download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: white;
+    border: 1px solid #F59E0B;
+    color: #92400E;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    align-self: flex-start;
+  }
+  
+  .csv-duplicate-report__download:hover {
+    background-color: #F59E0B;
+    color: white;
+  }

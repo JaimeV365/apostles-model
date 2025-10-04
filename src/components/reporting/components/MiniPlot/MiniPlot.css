@@ -1,0 +1,161 @@
+.mini-plot {
+    position: relative;
+    width: 280px;  /* Increased size */
+    height: 220px; /* Increased size */
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+      "y-axis plot"
+      "blank x-axis";
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 1fr 20px;
+    gap: 5px;
+  }
+  
+  /* Plot Area */
+  .mini-plot-area {
+  grid-area: plot;
+  position: relative;
+  border-left: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+  background: white;
+}
+  
+  /* Grid */
+  .mini-plot-grid-line {
+    position: absolute;
+    background-color: #f8fafc;  /* Lighter grid lines */
+  }
+  
+  .mini-plot-grid-line.horizontal {
+    left: 0;
+    right: 0;
+    height: 1px;
+  }
+  
+  .mini-plot-grid-line.vertical {
+    top: 0;
+    bottom: 0;
+    width: 1px;
+  }
+  
+  /* Points */
+  .mini-plot-point {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+  
+  .mini-plot-point:hover {
+    transform: translate(-50%, 50%) scale(1.2);
+    z-index: 10;
+  }
+  
+  /* Axes */
+  .mini-plot-y-axis {
+    width: 30px;
+    grid-area: y-axis;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  .mini-plot-x-axis {
+    grid-area: x-axis;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .mini-plot-y-label, .mini-plot-x-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .mini-plot-y-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-right: 6px;
+  }
+  
+  .mini-plot-x-label {
+    margin-top: 2px;
+  }
+  
+  .mini-plot-y-ticks, .mini-plot-x-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: #64748b;
+  }
+  
+  .mini-plot-y-ticks {
+    flex-direction: column-reverse;
+    padding-right: 8px;
+    margin-right: 4px;
+  }
+
+  /* Average Point Styles */
+.mini-plot-point--average {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border: 2px solid #dc2626;
+  filter: drop-shadow(0 0 3px rgba(220, 38, 38, 0.6));
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.2);
+  z-index: 10;
+}
+
+/* 
+ * Tier sizing values should match tierSizes.ts:
+ * tier1: 1, tier2: 0.9, tier3: 0.85 
+ */
+.mini-plot-point--tier1 {
+  opacity: 1;
+  transform: translate(-50%, 50%) scale(1);
+}
+
+.mini-plot-point--tier2 {
+  opacity: 0.7;
+  transform: translate(-50%, 50%) scale(0.9);
+}
+
+.mini-plot-point--tier3 {
+  opacity: 0.5;
+  transform: translate(-50%, 50%) scale(0.85);
+}
+
+/* Tier-based styling for multi-tier display */
+.mini-plot-point--tier1 {
+  opacity: 1;
+  transform: translate(-50%, 50%) scale(1);
+}
+
+.mini-plot-point--tier2 {
+  opacity: 0.7;
+  transform: translate(-50%, 50%) scale(0.9);
+}
+
+.mini-plot-point--tier3 {
+  opacity: 0.5;
+  transform: translate(-50%, 50%) scale(0.85);
+}
+
+.mini-plot-point--tier1:hover {
+  transform: translate(-50%, 50%) scale(1.2);
+}
+
+.mini-plot-point--tier2:hover {
+  transform: translate(-50%, 50%) scale(1.1);
+}
+
+.mini-plot-point--tier3:hover {
+  transform: translate(-50%, 50%) scale(1.05);
+}
