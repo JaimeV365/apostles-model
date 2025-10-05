@@ -281,11 +281,9 @@ const handleTerroristsZoneSizeChange = (size: number) => {
               </QuadrantAssignmentProvider>
             )}
           </main>
-           
         </>
-      
-    </div>
-  );
-};
+      </div>
+    );
+  };
 
 export default App;
