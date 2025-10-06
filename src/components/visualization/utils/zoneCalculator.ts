@@ -14,12 +14,28 @@ export function calculateAvailableSpace(position: Position, dimensions: GridDime
   };
 }
 
+// Cache for special zone boundaries to prevent repeated calculations
+const boundariesCache = new Map<string, SpecialZoneBoundaries>();
+
+// Function to clear cache when parameters change
+export function clearBoundariesCache(): void {
+  boundariesCache.clear();
+}
+
 export function calculateSpecialZoneBoundaries(
   apostlesZoneSize: number,
   terroristsZoneSize: number,
   satisfactionScale: string,
   loyaltyScale: string
 ): SpecialZoneBoundaries {
+  // Create cache key from all parameters
+  const cacheKey = `${apostlesZoneSize}-${terroristsZoneSize}-${satisfactionScale}-${loyaltyScale}`;
+  
+  // Return cached result if available
+  if (boundariesCache.has(cacheKey)) {
+    return boundariesCache.get(cacheKey)!;
+  }
+  
   // Parse scale ranges to get min/max values
   const [satMin, satMax] = satisfactionScale.split('-').map(Number);
   const [loyMin, loyMax] = loyaltyScale.split('-').map(Number);
@@ -59,6 +75,9 @@ export function calculateSpecialZoneBoundaries(
   console.log(`🔧 Calculated boundaries:`, boundaries);
   console.log(`🔧 Apostles zone: satisfaction >= ${apostlesEdgeVertixSat}, loyalty >= ${apostlesEdgeVertixLoy}`);
   console.log(`🔧 Terrorists zone: satisfaction <= ${terroristsEdgeVertixSat}, loyalty <= ${terroristsEdgeVertixLoy}`);
+  
+  // Cache the result
+  boundariesCache.set(cacheKey, boundaries);
   
   return boundaries;
 }

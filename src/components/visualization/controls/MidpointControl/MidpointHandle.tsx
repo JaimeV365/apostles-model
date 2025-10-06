@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Move } from 'lucide-react';
 import { Position, GridDimensions, Midpoint, ScaleFormat } from '@/types/base';
 import { isDraggingNearHalfCell } from '../../utils/positionCalculator';
+import { UnifiedLoadingPopup } from '../../../ui/UnifiedLoadingPopup';
 import './MidpointHandle.css';
+
 
 interface MidpointHandleProps {
   position: Position;
@@ -35,19 +37,21 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
 }) => {
   const [isNearHalf, setIsNearHalf] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [showLoadingPopup, setShowLoadingPopup] = useState(false);
   const [visualPosition, setVisualPosition] = useState(position);
   const finalMidpointRef = useRef<Midpoint | null>(null);
+  const calculationStartTime = useRef<number>(0);
 
   useEffect(() => {
     setIsNearHalf(isDraggingNearHalfCell(position, dimensions));
   }, [position, dimensions]);
 
-  // Sync visual position with actual position when not dragging
+  // Sync visual position with actual position when not dragging and not showing loading popup
   useEffect(() => {
-    if (!isDragging) {
+    if (!isDragging && !showLoadingPopup) {
       setVisualPosition(position);
     }
-  }, [position, isDragging]);
+  }, [position, isDragging, showLoadingPopup]);
 
   if (!isAdjustable) return null;
 
@@ -141,15 +145,29 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
 
     const handleMouseUp = () => {
       setIsDragging(false);
+      setShowLoadingPopup(true); // Show popup IMMEDIATELY
+      calculationStartTime.current = Date.now(); // Record start time
+      
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
       document.body.style.cursor = 'default';
       
-      // Now trigger the calculations with the final midpoint
-      if (finalMidpointRef.current) {
-        onMidpointChange(finalMidpointRef.current);
-        finalMidpointRef.current = null;
-      }
+      // Use setTimeout to ensure popup renders before calculations start
+      setTimeout(() => {
+        // Now trigger the calculations with the final midpoint
+        if (finalMidpointRef.current) {
+          onMidpointChange(finalMidpointRef.current);
+          finalMidpointRef.current = null;
+        }
+        
+        // Ensure loading popup shows for at least 1 second from start time
+        const elapsedTime = Date.now() - calculationStartTime.current;
+        const remainingTime = Math.max(0, 1000 - elapsedTime);
+        
+        setTimeout(() => {
+          setShowLoadingPopup(false); // Hide popup with fade animation
+        }, remainingTime);
+      }, 50); // Small delay to ensure popup renders first
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -157,31 +175,36 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
     document.body.style.cursor = 'move';
   };
 
-  // Use visual position when dragging, actual position when not
-  const currentPosition = isDragging ? visualPosition : position;
+  // Use visual position when dragging or showing loading popup, actual position otherwise
+  const currentPosition = (isDragging || showLoadingPopup) ? visualPosition : position;
 
   return (
-    <div 
-      className="midpoint-handle"
-      style={{
-        left: `${currentPosition.x}%`,
-        bottom: `${currentPosition.y}%`,
-        transform: 'translate(-50%, 50%)',
-        transition: isDragging ? 'none' : 'all 0.2s ease'
-      }}
-      onMouseDown={handleMouseDown}
-      role="button"
-      tabIndex={0}
-      title="Drag to move midpoint"
-    >
-      <div className={`midpoint-dot ${isNearHalf ? 'midpoint-dot--half' : ''}`}>
-        <Move 
-          size={16} 
-          color="#000"
-          strokeWidth={2} 
-        />
+    <>
+      <div 
+        className="midpoint-handle"
+        style={{
+          left: `${currentPosition.x}%`,
+          bottom: `${currentPosition.y}%`,
+          transform: 'translate(-50%, 50%)',
+          transition: (isDragging || showLoadingPopup) ? 'none' : 'all 0.2s ease'
+        }}
+        onMouseDown={handleMouseDown}
+        role="button"
+        tabIndex={0}
+        title="Drag to move midpoint"
+      >
+        <div className={`midpoint-dot ${isNearHalf ? 'midpoint-dot--half' : ''}`}>
+          <Move 
+            size={16} 
+            color="#000"
+            strokeWidth={2} 
+          />
+        </div>
       </div>
-    </div>
+      
+      {/* Prominent Loading Popup - centered on screen */}
+      <UnifiedLoadingPopup isVisible={showLoadingPopup} text="segmenting" size="medium" />
+    </>
   );
 };
 

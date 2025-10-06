@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { GridDimensions, Position, DataPoint, ScaleFormat, NormalizedPosition } from '@/types/base';
 import { calculatePointPosition } from '../../utils/positionCalculator';
-import InfoBox from './DataPointInfoBox';
 import { useQuadrantAssignment, QuadrantType } from '../../context/QuadrantAssignmentContext';
+import { useInfoBox } from '../InfoBoxLayer';
+import { useReassignmentLoading } from '../../context/ReassignmentLoadingContext';
 
 
 interface DataPointRendererProps {
@@ -67,6 +68,8 @@ const getQuadrantDisplayInfo = (quadrantType: QuadrantType, isClassic: boolean) 
       return { group: 'Hostages', color: '#3A6494' };
     case 'defectors':
       return { group: 'Defectors', color: '#CC0000' };
+    case 'neutral':
+      return { group: 'Neutral', color: '#9E9E9E' };
     default:
       return { group: 'Unknown', color: '#666666' };
   }
@@ -89,16 +92,19 @@ export const DataPointRenderer: React.FC<DataPointRendererProps> = React.memo(({
 }) => {
   const [selectedPoint, setSelectedPoint] = useState<string | null>(null);
   const { getQuadrantForPoint, updateManualAssignment, getBoundaryOptions } = useQuadrantAssignment();
+  const { showInfoBox, hideInfoBox } = useInfoBox();
+  const { showReassignmentLoading, hideReassignmentLoading } = useReassignmentLoading();
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (!(e.target as Element).closest('.data-point-info')) {
         setSelectedPoint(null);
+        hideInfoBox();
       }
     };
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, []);
+  }, [hideInfoBox]);
 
   // Memoize quadrant info calculation to prevent recalculation on every render
   const quadrantInfoCache = useMemo(() => {
@@ -233,7 +239,61 @@ export const DataPointRenderer: React.FC<DataPointRendererProps> = React.memo(({
               }}
               onClick={(e) => {
                 e.stopPropagation();
-                setSelectedPoint(selectedPoint === point.id ? null : point.id);
+                const newSelectedPoint = selectedPoint === point.id ? null : point.id;
+                setSelectedPoint(newSelectedPoint);
+                
+                if (newSelectedPoint) {
+                  // Show InfoBox in the dedicated layer
+                  showInfoBox({
+                    point,
+                    normalized: positionXY,
+                    quadrantInfo: {
+                      group: quadrantInfo.group,
+                      color: quadrantInfo.color
+                    },
+                    count,
+                    samePoints,
+                    availableOptions,
+                    onClose: () => {
+                      setSelectedPoint(null);
+                      hideInfoBox();
+                    },
+                    onGroupChange: (newGroup) => {
+                      // Show loading popup IMMEDIATELY - before any calculations
+                      showReassignmentLoading();
+                      
+                      // Use requestAnimationFrame to ensure the popup renders before calculations start
+                      requestAnimationFrame(() => {
+                        // Map the display name to our QuadrantType
+                        let quadrantType: QuadrantType = 'defectors'; // default
+                        
+                        if (newGroup.group === 'Loyalists') quadrantType = 'loyalists';
+                        else if (newGroup.group === 'Mercenaries') quadrantType = 'mercenaries';
+                        else if (newGroup.group === 'Hostages') quadrantType = 'hostages';
+                        else if (newGroup.group === 'Defectors') quadrantType = 'defectors';
+                        else if (newGroup.group === 'Apostles' || newGroup.group === 'Advocates') quadrantType = 'apostles';
+                        else if (newGroup.group === 'Terrorists' || newGroup.group === 'Trolls') quadrantType = 'terrorists';
+                        else if (newGroup.group === 'Near-Apostles' || newGroup.group === 'Near-Advocates') quadrantType = 'near_apostles';
+                        else if (newGroup.group === 'Neutral') quadrantType = 'neutral';
+                        
+                        // Update ALL customers at this position, not just the clicked one
+                        samePoints.forEach(customer => {
+                          updateManualAssignment(customer.id, quadrantType);
+                        });
+                        
+                        // Hide loading popup after calculations are complete
+                        hideReassignmentLoading();
+                        
+                        // Close the InfoBox after loading is complete
+                        setSelectedPoint(null);
+                        hideInfoBox();
+                      });
+                    }
+                  });
+                } else {
+                  hideInfoBox();
+                }
+                
                 if (onPointSelect) {
                   onPointSelect({
                     ...point,
@@ -245,38 +305,6 @@ export const DataPointRenderer: React.FC<DataPointRendererProps> = React.memo(({
                 }
               }}
             />
-            {selectedPoint === point.id && (
-              <InfoBox
-                point={point}
-                normalized={positionXY}
-                quadrantInfo={{
-                  group: quadrantInfo.group,
-                  color: quadrantInfo.color
-                }}
-                count={count}
-                samePoints={samePoints}
-                availableOptions={availableOptions}
-                onClose={() => setSelectedPoint(null)}
-                onGroupChange={(newGroup) => {
-                  // Map the display name to our QuadrantType
-                  let quadrantType: QuadrantType = 'defectors'; // default
-                  
-                  if (newGroup.group === 'Loyalists') quadrantType = 'loyalists';
-                  else if (newGroup.group === 'Mercenaries') quadrantType = 'mercenaries';
-                  else if (newGroup.group === 'Hostages') quadrantType = 'hostages';
-                  else if (newGroup.group === 'Defectors') quadrantType = 'defectors';
-                  else if (newGroup.group === 'Apostles' || newGroup.group === 'Advocates') quadrantType = 'apostles';
-                  else if (newGroup.group === 'Terrorists' || newGroup.group === 'Trolls') quadrantType = 'terrorists';
-                  else if (newGroup.group === 'Near-Apostles' || newGroup.group === 'Near-Advocates') quadrantType = 'near_apostles';
-                  else if (newGroup.group === 'Neutral') quadrantType = 'neutral';
-                  
-                  // Update ALL customers at this position, not just the clicked one
-                  samePoints.forEach(customer => {
-                    updateManualAssignment(customer.id, quadrantType);
-                  });
-                }}
-              />
-            )}
           </div>
         );
       })}

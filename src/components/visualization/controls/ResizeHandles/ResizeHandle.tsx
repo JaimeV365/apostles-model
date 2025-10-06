@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronsUpDown } from 'lucide-react';
 import { GridDimensions } from '@/types/base';
+import { UnifiedLoadingPopup } from '../../../ui/UnifiedLoadingPopup';
 import './ResizeHandle.css';
+
 
 interface ResizeHandleProps {
   dimensions: GridDimensions;
@@ -52,6 +54,8 @@ const ResizeHandle: React.FC<ResizeHandleProps> = ({
   // Then declare state
   const [isDragging, setIsDragging] = useState(false);
   const [isExpanding, setIsExpanding] = useState(true);
+  const [showLoadingPopup, setShowLoadingPopup] = useState(false);
+  const calculationStartTime = useRef<number>(0);
 
   // Then use effects
   useEffect(() => {
@@ -203,7 +207,35 @@ console.log(`🔧 ResizeHandle: Rendering with apostlesZoneSize=${apostlesZoneSi
       document.body.style.cursor = 'default';
       
       if (!hasMoved) {
-        handleClick(zone, e);
+        // Show loading popup for click events too
+        setShowLoadingPopup(true);
+        calculationStartTime.current = Date.now();
+        
+        setTimeout(() => {
+          handleClick(zone, e);
+          
+          // Ensure loading popup shows for at least 1 second
+          const elapsedTime = Date.now() - calculationStartTime.current;
+          const remainingTime = Math.max(0, 1000 - elapsedTime);
+          
+          setTimeout(() => {
+            setShowLoadingPopup(false);
+          }, remainingTime);
+        }, 50);
+      } else {
+        // Show loading popup for drag events
+        setShowLoadingPopup(true);
+        calculationStartTime.current = Date.now();
+        
+        setTimeout(() => {
+          // Ensure loading popup shows for at least 1 second
+          const elapsedTime = Date.now() - calculationStartTime.current;
+          const remainingTime = Math.max(0, 1000 - elapsedTime);
+          
+          setTimeout(() => {
+            setShowLoadingPopup(false);
+          }, remainingTime);
+        }, 50);
       }
       
       setTimeout(() => setIsDragging(false), 0);
@@ -268,6 +300,9 @@ console.log(`🔧 ResizeHandle: Visibility check - apostles: ${apostlesZoneSize 
       >
         <ChevronsUpDown size={16} />
       </div>
+      
+      {/* Loading Popup */}
+      <UnifiedLoadingPopup isVisible={showLoadingPopup} text="segmenting" size="medium" />
     </div>
   );
 };

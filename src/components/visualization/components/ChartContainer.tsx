@@ -9,6 +9,8 @@ import { MidpointHandle } from '../controls/MidpointControl';
 import { ResizeHandle } from '../controls/ResizeHandles';
 import { Watermark } from '../watermark';
 import { ChartErrorBoundary, DataProcessingErrorBoundary } from '../error';
+import { InfoBoxProvider, InfoBoxLayer } from './InfoBoxLayer';
+import { ReassignmentLoadingProvider } from '../context/ReassignmentLoadingContext';
 
 interface ChartContainerProps {
   // Chart dimensions and positioning
@@ -92,13 +94,15 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
 }) => {
   return (
     <ChartErrorBoundary>
-      <div 
-        className="chart-container"
-        data-apostles-boundary-sat={specialZoneBoundaries.apostles.edgeVertixSat}
-        data-apostles-boundary-loy={specialZoneBoundaries.apostles.edgeVertixLoy}
-        data-terrorists-boundary-sat={specialZoneBoundaries.terrorists.edgeVertixSat}
-        data-terrorists-boundary-loy={specialZoneBoundaries.terrorists.edgeVertixLoy}
-      >
+      <ReassignmentLoadingProvider>
+        <InfoBoxProvider>
+        <div 
+          className="chart-container"
+          data-apostles-boundary-sat={specialZoneBoundaries.apostles.edgeVertixSat}
+          data-apostles-boundary-loy={specialZoneBoundaries.apostles.edgeVertixLoy}
+          data-terrorists-boundary-sat={specialZoneBoundaries.terrorists.edgeVertixSat}
+          data-terrorists-boundary-loy={specialZoneBoundaries.terrorists.edgeVertixLoy}
+        >
         {/* Grid Layer */}
         <GridRenderer
           dimensions={dimensions}
@@ -154,6 +158,21 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
           />
         )}
         
+        {/* Independent Label Layer - Test Layer */}
+        <IndependentLabelLayer
+          dimensions={dimensions}
+          satisfactionScale={satisfactionScale}
+          loyaltyScale={loyaltyScale}
+          isClassicModel={isClassicModel}
+          showLabels={showLabels}
+          labelPositioning={labelPositioning}
+          showSpecialZones={showSpecialZones}
+          showNearApostles={showNearApostles}
+          showSpecialZoneLabels={showSpecialZoneLabels}
+          apostlesZoneSize={apostlesZoneSize}
+          terroristsZoneSize={terroristsZoneSize}
+        />
+        
         {/* Data Points Layer - Wrapped with Data Processing Error Boundary */}
         <DataProcessingErrorBoundary>
           <DataPointRendererSelector
@@ -172,20 +191,6 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
             labelPositioning={labelPositioning}
           />
         </DataProcessingErrorBoundary>
-        
-        {/* Independent Label Layer - Test Layer */}
-        <IndependentLabelLayer
-          dimensions={dimensions}
-          satisfactionScale={satisfactionScale}
-          loyaltyScale={loyaltyScale}
-          isClassicModel={isClassicModel}
-          showLabels={showLabels}
-          labelPositioning={labelPositioning}
-          showSpecialZones={showSpecialZones}
-          showNearApostles={showNearApostles}
-          apostlesZoneSize={apostlesZoneSize}
-          terroristsZoneSize={terroristsZoneSize}
-        />
         
         {/* Interactive Elements Layer */}
         <MidpointHandle
@@ -211,13 +216,28 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
           isAdjustable={isAdjustableMidpoint && showSpecialZones}
         />
         
+        {/* InfoBox Layer - Always on top of everything */}
+        <div 
+          className="infobox-layer"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            pointerEvents: 'none',
+            zIndex: 4000, // Higher than everything else
+          }}
+        >
+          <InfoBoxLayer />
+        </div>
+        
         {/* Watermark Layer */}
         <Watermark
           hide={hideWatermark}
           effects={activeEffects}
           dimensions={dimensions}
         />
-      </div>
+        </div>
+        </InfoBoxProvider>
+      </ReassignmentLoadingProvider>
     </ChartErrorBoundary>
   );
 };

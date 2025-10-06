@@ -60,6 +60,8 @@ const getQuadrantDisplayInfo = (quadrantType: QuadrantType, isClassic: boolean) 
       return { group: 'Hostages', color: '#3A6494' };
     case 'defectors':
       return { group: 'Defectors', color: '#CC0000' };
+    case 'neutral':
+      return { group: 'Neutral', color: '#9E9E9E' };
     default:
       return { group: 'Unknown', color: '#666666' };
   }

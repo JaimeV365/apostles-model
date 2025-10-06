@@ -13,6 +13,8 @@ interface IndependentLabelLayerProps {
   labelPositioning: 'above-dots' | 'below-dots';
   showSpecialZones?: boolean;
   showNearApostles?: boolean;
+  showQuadrantLabels?: boolean;
+  showSpecialZoneLabels?: boolean;
   apostlesZoneSize?: number;
   terroristsZoneSize?: number;
 }
@@ -26,6 +28,8 @@ export const IndependentLabelLayer: React.FC<IndependentLabelLayerProps> = ({
   labelPositioning,
   showSpecialZones = false,
   showNearApostles = false,
+  showQuadrantLabels = true,
+  showSpecialZoneLabels = true,
   apostlesZoneSize = 1,
   terroristsZoneSize = 1
 }) => {
@@ -42,7 +46,15 @@ export const IndependentLabelLayer: React.FC<IndependentLabelLayerProps> = ({
     );
   }, [contextApostlesZoneSize, contextTerroristsZoneSize, satisfactionScale, loyaltyScale]);
   
-  console.log('🔍 IndependentLabelLayer rendering:', { showLabels, labelPositioning, showSpecialZones, midpoint, specialZoneBoundaries });
+  console.log('🔍 IndependentLabelLayer rendering:', { 
+    showLabels, 
+    labelPositioning, 
+    showSpecialZones, 
+    showQuadrantLabels, 
+    showSpecialZoneLabels, 
+    midpoint, 
+    specialZoneBoundaries 
+  });
   
   if (!showLabels) {
     console.log('🔍 IndependentLabelLayer: showLabels is false, returning null');
@@ -117,9 +129,9 @@ export const IndependentLabelLayer: React.FC<IndependentLabelLayerProps> = ({
   const getLabelColor = (quadrant: 'loyalists' | 'mercenaries' | 'hostages' | 'defectors') => {
     switch (quadrant) {
       case 'loyalists': return '#4CAF50'; // Green
-      case 'mercenaries': return '#FF9800'; // Orange
-      case 'hostages': return '#2196F3'; // Blue
-      case 'defectors': return '#F44336'; // Red
+      case 'mercenaries': return '#F7B731'; // Orange
+      case 'hostages': return '#3A6494'; // Blue
+      case 'defectors': return '#CC0000'; // Red
     }
   };
 
@@ -144,10 +156,11 @@ export const IndependentLabelLayer: React.FC<IndependentLabelLayerProps> = ({
         position: 'absolute',
         inset: 0,
         pointerEvents: 'none',
-        zIndex: labelPositioning === 'above-dots' ? 2000 : 10, // Very high z-index for above, low for below
+        zIndex: labelPositioning === 'above-dots' ? 1500 : 10, // High z-index for above, low for below (but always below InfoBox)
       }}
     >
-      {quadrants.map((quadrant) => {
+      {/* Quadrant Labels - Only show if showQuadrantLabels is true */}
+      {showQuadrantLabels && quadrants.map((quadrant) => {
         const position = getLabelPosition(quadrant);
         const text = getLabelText(quadrant);
         const color = getLabelColor(quadrant);
@@ -179,8 +192,8 @@ export const IndependentLabelLayer: React.FC<IndependentLabelLayerProps> = ({
         );
       })}
       
-      {/* Special Zone Labels */}
-      {showSpecialZones && (
+      {/* Special Zone Labels - Only show if showSpecialZones and showSpecialZoneLabels are true */}
+      {showSpecialZones && showSpecialZoneLabels && (
         <>
           {/* Apostles/Advocates Zone */}
           <div
@@ -219,8 +232,8 @@ export const IndependentLabelLayer: React.FC<IndependentLabelLayerProps> = ({
               backgroundColor: 'rgba(255, 255, 255, 0.98)',
               padding: '6px 12px',
               borderRadius: '6px',
-              border: '2px solid #F44336',
-              color: '#F44336',
+              border: '2px solid #CC0000',
+              color: '#CC0000',
               fontWeight: '500',
               fontSize: '13px',
               whiteSpace: 'nowrap',

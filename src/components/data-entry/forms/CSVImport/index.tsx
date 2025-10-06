@@ -3,8 +3,6 @@ import Papa from 'papaparse';
 import { DataPoint, ScaleFormat } from '@/types/base';
 import { useNotification } from '../../NotificationSystem';
 import { FileUploader } from './components/FileUploader';
-import { ProgressIndicator } from './components/ProgressIndicator';
-
 import { UploadHistory, UploadHistoryItem } from './components/UploadHistory';
 import { ImportModeModal, ImportMode } from './components/ImportModeModal';
 import { ScaleConfirmationModal } from './components/ScaleConfirmationModal';
@@ -20,6 +18,99 @@ import {
 import { useCSVParser, useCSVValidation } from './hooks';
 import { HeaderScales } from './types';
 import './styles/index.css';
+
+// Inline loading popup to avoid import issues
+const LoadingPopup: React.FC<{ isVisible: boolean; text: string }> = ({ isVisible, text }) => {
+  if (!isVisible) return null;
+  
+  return (
+    <>
+      {/* Backdrop overlay */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.3)',
+          zIndex: 9999,
+          animation: 'fadeIn 0.2s ease-out'
+        }}
+      />
+      
+      {/* Loading popup */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10000,
+          pointerEvents: 'none'
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.98)',
+            border: '3px solid #3a863e',
+            borderRadius: '16px',
+            padding: '32px 40px',
+            boxShadow: '0 12px 48px rgba(0, 0, 0, 0.3)',
+            animation: 'fadeIn 0.3s ease-out',
+            backdropFilter: 'blur(8px)',
+            minWidth: '200px',
+            textAlign: 'center'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div
+              style={{
+                width: '32px',
+                height: '32px',
+                border: '2px solid rgba(58, 134, 62, 0.2)',
+                borderTop: '2px solid #3a863e',
+                borderRadius: '50%',
+                animation: 'spin 1s linear infinite'
+              }}
+            />
+            <div
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontWeight: '700',
+                fontSize: '18px',
+                color: '#333333'
+              }}
+            >
+              {text}
+              <span style={{ animation: 'blink 1.4s infinite' }}>.</span>
+              <span style={{ animation: 'blink 1.4s infinite', animationDelay: '0.2s' }}>.</span>
+              <span style={{ animation: 'blink 1.4s infinite', animationDelay: '0.4s' }}>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>{`
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes blink {
+          0%, 80%, 100% { opacity: 0; }
+          40% { opacity: 1; }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
+    </>
+  );
+};
 
 interface CSVImportProps {
   onImport: (
@@ -57,6 +148,16 @@ export const CSVImport: React.FC<CSVImportProps> = ({
   lastManualEntryTimestamp = 0
 }) => {
   const { showNotification } = useNotification();
+  
+  // Helper function to convert progress stages to loading text
+  const getLoadingText = (stage: string) => {
+    switch (stage) {
+      case 'reading': return 'Reading file';
+      case 'validating': return 'Validating data';
+      case 'processing': return 'Processing data';
+      default: return 'Loading data';
+    }
+  };
   const [showImportModeModal, setShowImportModeModal] = useState(false);
   const [pendingFileData, setPendingFileData] = useState<{
     file: File, 
@@ -65,6 +166,7 @@ export const CSVImport: React.FC<CSVImportProps> = ({
     headerResult?: any
   } | null>(null);
   const [showScaleConfirmationModal, setShowScaleConfirmationModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   
   const {
     error,
@@ -303,6 +405,35 @@ export const CSVImport: React.FC<CSVImportProps> = ({
     setPendingFileData,
     showImportModeDialog
   });
+  
+  // Manage loading state - only show for actual data processing
+  useEffect(() => {
+    // Hide loading popup if any user interaction modal is open
+    if (showImportModeModal || showScaleConfirmationModal) {
+      setIsLoading(false);
+      return;
+    }
+    
+    if (progress) {
+      // Only show loading popup for actual data processing stages
+      if (progress.stage === 'reading' || progress.stage === 'validating' || progress.stage === 'processing') {
+        setIsLoading(true);
+      } else {
+        // Hide for everything else (complete, error, user interaction, etc.)
+        setIsLoading(false);
+      }
+    } else {
+      // No progress means no loading
+      setIsLoading(false);
+    }
+  }, [progress, showImportModeModal, showScaleConfirmationModal]);
+  
+  // Additional safety: hide loading when no progress and no pending data
+  useEffect(() => {
+    if (!progress && !pendingFileData) {
+      setIsLoading(false);
+    }
+  }, [progress, pendingFileData]);
 
   // FIXED: Updated handleScaleConfirmation to prevent infinite loop
   const handleScaleConfirmation = useCallback((confirmedScales: { satisfaction?: ScaleFormat; loyalty?: ScaleFormat }) => {
@@ -598,9 +729,10 @@ export const CSVImport: React.FC<CSVImportProps> = ({
         processing={!!progress || !!pendingFileData}
       />
       
-      {progress && (
-        <ProgressIndicator progress={progress} />
-      )}
+      <LoadingPopup 
+        isVisible={isLoading} 
+        text={progress ? getLoadingText(progress.stage) : 'Loading...'}
+      />
 
       <ReportArea 
         errorReports={dateIssuesReport}

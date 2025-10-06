@@ -1,0 +1,152 @@
+<!-- ==================================== -->
+<!-- SMALL VERSION (Inline Use) -->
+<!-- ==================================== -->
+
+<div class="loading-indicator loading-indicator-small">
+  <div class="spinner spinner-small"></div>
+  <div class="loading-text loading-text-small">
+    seg<span class="highlight">m</span>enting<span class="loading-dots"><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span>
+  </div>
+</div>
+
+
+<!-- ==================================== -->
+<!-- MEDIUM VERSION (Pop-up/Modal Use) -->
+<!-- ==================================== -->
+
+<div class="loading-indicator loading-indicator-medium">
+  <div class="spinner spinner-medium"></div>
+  <div class="loading-text loading-text-medium">
+    seg<span class="highlight">m</span>enting<span class="loading-dots"><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span>
+  </div>
+</div>
+
+
+<!-- ==================================== -->
+<!-- CSS STYLES -->
+<!-- ==================================== -->
+
+<style>
+/* Import Montserrat Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* ============================================ */
+/* SHARED STYLES */
+/* ============================================ */
+
+.loading-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.spinner {
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #333333;
+}
+
+.loading-text .highlight {
+  color: #3a863e;
+}
+
+.dot {
+  animation: blink 1.4s infinite;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+/* ============================================ */
+/* SMALL VERSION (Inline) */
+/* ============================================ */
+
+.loading-indicator-small {
+  gap: 10px;
+}
+
+.spinner-small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(58, 134, 62, 0.2);
+  border-top: 2px solid #3a863e;
+}
+
+.loading-text-small {
+  font-size: 14px;
+}
+
+/* ============================================ */
+/* MEDIUM VERSION (Pop-up/Modal) */
+/* ============================================ */
+
+.loading-indicator-medium {
+  gap: 16px;
+}
+
+.spinner-medium {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(58, 134, 62, 0.2);
+  border-top: 3px solid #3a863e;
+}
+
+.loading-text-medium {
+  font-size: 18px;
+}
+</style>
+
+
+<!-- ==================================== -->
+<!-- USAGE NOTES -->
+<!-- ==================================== -->
+
+<!--
+WHEN TO USE EACH:
+
+SMALL (Inline):
+- Next to buttons or controls
+- In table cells or list items
+- Alongside other UI elements
+- When space is limited
+
+MEDIUM (Pop-up/Modal):
+- Center of modal dialogs
+- Loading overlays
+- Main content areas
+- When you want emphasis
+
+EXAMPLE PLACEMENTS:
+
+Inline (Small):
+<div style="display: flex; align-items: center; gap: 12px;">
+  <button disabled>Calculate</button>
+  <div class="loading-indicator loading-indicator-small">...</div>
+</div>
+
+Pop-up (Medium):
+<div style="display: flex; justify-content: center; padding: 40px;">
+  <div class="loading-indicator loading-indicator-medium">...</div>
+</div>
+
+INTEGRATION:
+1. Copy the HTML for the version you need
+2. Add the CSS to your stylesheet (only need to add once)
+3. Show/hide using JavaScript or conditional rendering
+4. Position where appropriate in your layout
+-->

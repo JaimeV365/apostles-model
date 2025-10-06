@@ -143,7 +143,8 @@ export const InfoBox: React.FC<{
                     key={option.group}
                     onClick={isActive ? undefined : () => {
                       onGroupChange?.(option);
-                      onClose?.();
+                      // Don't close immediately - let the loading popup show first
+                      // onClose will be called after the loading is complete
                       notification.showNotification({
                         title: 'Point Reassigned',
                         message: `Point ${point.satisfaction},${point.loyalty} changed to ${option.group}`,
