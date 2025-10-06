@@ -77,6 +77,7 @@ export interface QuadrantChartProps {
   frequencyFilterEnabled: boolean;
   frequencyThreshold: number;
   isAdjustableMidpoint: boolean;
+  useCanvasRenderer?: boolean; // Canvas renderer feature flag
   apostlesZoneSize: number; 
   terroristsZoneSize: number; 
   onFrequencyFilterEnabledChange: (enabled: boolean) => void;

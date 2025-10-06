@@ -459,3 +459,29 @@
   opacity: 1;
 }
 
+/* Collapsible Reports */
+.reports-header {
+  transition: all 0.2s ease;
+}
+
+.reports-header:hover {
+  opacity: 0.8;
+}
+
+.reports-container {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.reports-container.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.reports-container.expanded {
+  max-height: none;
+  opacity: 1;
+}
+

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DataReport } from './components/DataReport';
 import { ActionsReport } from './components/ActionsReport';
 import ProximitySection from './components/ProximitySection/ProximitySection';
@@ -27,6 +27,7 @@ export const ReportingSection: React.FC<ReportingSectionProps> = ({
   showSpecialZones = true,
   showNearApostles = false
 }) => {
+  const [isReportsExpanded, setIsReportsExpanded] = useState(false);
   const {
     dataReport,
     actionsReport,
@@ -62,7 +63,16 @@ console.log('🚨🚨🚨 About to render DistributionSection with:', {
   return (
     <div className="section reporting-section">
       <div className="flex justify-between items-center mb-4">
-        <h2>Reports</h2>
+        <div 
+          className="reports-header"
+          onClick={() => setIsReportsExpanded(!isReportsExpanded)}
+          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}
+        >
+          <h2>Reports</h2>
+          <span style={{ color: '#3a863e', fontSize: '16px' }}>
+            {isReportsExpanded ? '▲' : '▼'}
+          </span>
+        </div>
         <div className={`px-3 py-1 rounded-full text-sm ${
           isPremium 
             ? 'bg-green-50 text-green-700 border border-green-200' 
@@ -88,7 +98,7 @@ console.log('🚨🚨🚨 About to render DistributionSection with:', {
         </div>
       )}
       
-      <div className="reports-container">
+      <div className={`reports-container ${isReportsExpanded ? 'expanded' : 'collapsed'}`}>
 <DataReport
 report={dataReport}
 onCustomize={handleCustomizeReport}

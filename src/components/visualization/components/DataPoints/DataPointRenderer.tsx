@@ -87,6 +87,9 @@ export const DataPointRenderer: React.FC<DataPointRendererProps> = React.memo(({
   onPointSelect,
   selectedPointId
 }) => {
+  // 🕐 PERFORMANCE MEASUREMENT: Start SVG rendering
+  console.time('📊 SVG_RENDERING');
+  console.log(`🐌 SVG RENDERER: Starting render with ${data.length} data points`);
   const [selectedPoint, setSelectedPoint] = useState<string | null>(null);
   const { getQuadrantForPoint, updateManualAssignment, getBoundaryOptions } = useQuadrantAssignment();
 
@@ -187,8 +190,28 @@ export const DataPointRenderer: React.FC<DataPointRendererProps> = React.memo(({
     return cache;
   }, [filteredData, getBoundaryOptions]);
 
+  // 🕐 PERFORMANCE MEASUREMENT: SVG rendering complete
+  console.timeEnd('📊 SVG_RENDERING');
+  console.log(`✅ SVG RENDERER: Completed render of ${filteredData.length} points`);
+
   return (
     <div className="data-points" style={{ position: 'absolute', inset: 0, zIndex: 40, pointerEvents: 'none' }}>
+      {/* SVG Renderer Indicator */}
+      <div style={{
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        background: 'rgba(33, 150, 243, 0.9)',
+        color: 'white',
+        padding: '4px 8px',
+        borderRadius: '4px',
+        fontSize: '12px',
+        fontWeight: 'bold',
+        zIndex: 100,
+        pointerEvents: 'none'
+      }}>
+        🐌 SVG RENDERER
+      </div>
       {filteredData.map((point, index) => {
         const normalized = calculatePointPosition(
           point.satisfaction,

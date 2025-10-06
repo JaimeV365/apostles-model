@@ -32,7 +32,9 @@ export const useChartHandlers = ({ maxSizes }: UseChartHandlersProps): ChartHand
 
   // Handle midpoint change
   const handleMidpointChange = useCallback((newMidpoint: Midpoint) => {
+    console.time('🎯 MIDPOINT_MOVEMENT');
     setMidpoint(newMidpoint);
+    console.timeEnd('🎯 MIDPOINT_MOVEMENT');
   }, [setMidpoint]);
 
   // Handle zone resize

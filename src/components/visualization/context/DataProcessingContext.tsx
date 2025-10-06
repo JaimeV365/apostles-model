@@ -174,9 +174,11 @@ export const DataProcessingProvider: React.FC<DataProcessingProviderProps> = ({
 
   // Update manual assignment
   const updateManualAssignment = (pointId: string, quadrant: QuadrantType) => {
+    console.time('🎯 POINT_REASSIGNMENT');
     setManualAssignments(prev => {
       const updated = new Map(prev);
       updated.set(pointId, quadrant);
+      console.timeEnd('🎯 POINT_REASSIGNMENT');
       return updated;
     });
   };
@@ -379,6 +381,7 @@ export const DataProcessingProvider: React.FC<DataProcessingProviderProps> = ({
   const autoReassignPointsOnMidpointChange = useCallback(() => {
     if (manualAssignments.size === 0) return;
 
+    console.time('🔄 MIDPOINT_REASSIGNMENT');
     const config = {
       satisfactionScale,
       loyaltyScale,
@@ -403,6 +406,7 @@ export const DataProcessingProvider: React.FC<DataProcessingProviderProps> = ({
     if (updatedAssignments.size !== manualAssignments.size) {
       setManualAssignments(updatedAssignments);
     }
+    console.timeEnd('🔄 MIDPOINT_REASSIGNMENT');
   }, [manualAssignments, data, getNaturalQuadrantForPoint, shouldAutoReassignPoint, midpoint, satisfactionScale, loyaltyScale, apostlesZoneSize, terroristsZoneSize, showNearApostles, showSpecialZones, getQuadrantForPoint, getDisplayNameForQuadrant, isPointInSpecialZone]);
 
   // Track previous midpoint to detect actual changes
@@ -417,8 +421,10 @@ export const DataProcessingProvider: React.FC<DataProcessingProviderProps> = ({
     const midpointChanged = prevMidpoint.sat !== currentMidpoint.sat || prevMidpoint.loy !== currentMidpoint.loy;
     
     if (midpointChanged && manualAssignments.size > 0) {
+      console.time('🎯 MIDPOINT_CHANGE_DETECTION');
       console.log(`🔄 Midpoint changed from (${prevMidpoint.sat},${prevMidpoint.loy}) to (${currentMidpoint.sat},${currentMidpoint.loy}), checking ${manualAssignments.size} manual assignments`);
       autoReassignPointsOnMidpointChange();
+      console.timeEnd('🎯 MIDPOINT_CHANGE_DETECTION');
     }
     
     // Update the ref for next comparison

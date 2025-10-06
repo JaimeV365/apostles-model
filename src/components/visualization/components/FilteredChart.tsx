@@ -30,6 +30,7 @@ const FilteredChart: React.FC<FilteredChartProps> = React.memo(({
   frequencyFilterEnabled,
   frequencyThreshold,
   isAdjustableMidpoint,
+  useCanvasRenderer,
   apostlesZoneSize = 1,
   terroristsZoneSize = 1,
   onFrequencyFilterEnabledChange,
@@ -252,6 +253,7 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
   hideWatermark={hideWatermark}
   showAdvancedFeatures={showAdvancedFeatures}
   activeEffects={activeEffects}
+  useCanvasRenderer={useCanvasRenderer}
   frequencyFilterEnabled={frequencyFilterEnabled}
   frequencyThreshold={frequencyThreshold}
   isAdjustableMidpoint={isAdjustableMidpoint}

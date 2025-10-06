@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import DataEntryModule from './components/data-entry/DataEntryModule';
 import DataDisplay from './components/data-entry/table/DataDisplay';
 import { DataPoint, ScaleFormat, ScaleState } from './types/base';
@@ -33,6 +33,14 @@ const visualizationRef = useRef<HTMLDivElement>(null);
 
   
   const [isPremium, setIsPremium] = useState(false);
+  
+  // Automatic Canvas renderer selection based on dataset size
+  const useCanvasRenderer = useMemo(() => {
+    const dataPointCount = data.filter(p => !p.excluded).length;
+    const shouldUseCanvas = dataPointCount >= 500; // Auto-enable for large datasets
+    console.log(`🔍 Auto-selecting renderer: ${dataPointCount} points → ${shouldUseCanvas ? 'Canvas' : 'SVG'}`);
+    return shouldUseCanvas;
+  }, [data]);
 
 // Sync isPremium with activeEffects
 useEffect(() => {
@@ -55,6 +63,13 @@ useEffect(() => {
   const [showLabels, setShowLabels] = useState(true);
   const [showGrid, setShowGrid] = useState(true);
   const [isAdjustableMidpoint, setIsAdjustableMidpoint] = useState(false);
+  
+  // Wrapper for midpoint adjustment with timing
+  const handleMidpointAdjustmentChange = (adjustable: boolean) => {
+    console.time('🎯 MIDPOINT_ADJUSTMENT_TOGGLE');
+    setIsAdjustableMidpoint(adjustable);
+    console.timeEnd('🎯 MIDPOINT_ADJUSTMENT_TOGGLE');
+  };
   const [frequencyFilterEnabled, setFrequencyFilterEnabled] = useState(false);
   const [frequencyThreshold, setFrequencyThreshold] = useState(1);
   const [apostlesZoneSize, setApostlesZoneSize] = useState(1); // Default to 1
@@ -103,7 +118,9 @@ const handleTerroristsZoneSizeChange = (size: number) => {
         setScales(newScales);
       }
     }
+    console.time('📊 DATA_PROCESSING');
     setData(processedData);
+    console.timeEnd('📊 DATA_PROCESSING');
   };
 
   const handleDeleteDataPoint = (id: string) => {
@@ -245,6 +262,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
                       hideWatermark={hideWatermark}
                       showAdvancedFeatures={activeEffects.size > 0}
                       activeEffects={activeEffects}
+                      useCanvasRenderer={useCanvasRenderer}
                       frequencyFilterEnabled={frequencyFilterEnabled}
                       frequencyThreshold={frequencyThreshold}
                       isAdjustableMidpoint={isAdjustableMidpoint}
@@ -252,7 +270,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
                       terroristsZoneSize={terroristsZoneSize}
                       onFrequencyFilterEnabledChange={setFrequencyFilterEnabled}
                       onFrequencyThresholdChange={setFrequencyThreshold}
-                      onIsAdjustableMidpointChange={setIsAdjustableMidpoint}
+                      onIsAdjustableMidpointChange={handleMidpointAdjustmentChange}
                       onIsClassicModelChange={setIsClassicModel}
                       onShowNearApostlesChange={setShowNearApostles}
                       onShowSpecialZonesChange={setShowSpecialZones}

@@ -24,6 +24,7 @@ interface QuadrantChartProps {
   frequencyFilterEnabled: boolean;
   frequencyThreshold: number;
   isAdjustableMidpoint: boolean;
+  useCanvasRenderer?: boolean;
   onFrequencyFilterEnabledChange: (enabled: boolean) => void;
   onFrequencyThresholdChange: (threshold: number) => void;
   onIsAdjustableMidpointChange: (adjustable: boolean) => void;
@@ -49,6 +50,7 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
   frequencyFilterEnabled,
   frequencyThreshold,
   isAdjustableMidpoint,
+  useCanvasRenderer,
   onFrequencyFilterEnabledChange,
   onFrequencyThresholdChange,
   onIsAdjustableMidpointChange,
@@ -149,6 +151,7 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
         isAdjustableMidpoint={isAdjustableMidpoint}
         hideWatermark={hideWatermark}
         activeEffects={activeEffects}
+        useCanvasRenderer={useCanvasRenderer}
         frequencyFilterEnabled={frequencyFilterEnabled}
         frequencyThreshold={frequencyThreshold}
         frequencyData={frequencyData}

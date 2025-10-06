@@ -145,6 +145,8 @@ export const useCSVParser = ({
   }, []);
 
   const parseFile = useCallback(async (file: File) => {
+    console.time('📁 CSV_FILE_LOAD');
+    console.time('📊 CSV_PARSING');
     console.log("parseFile called for:", file.name);
     // Reset state
     setCurrentFileName(file.name);
@@ -269,6 +271,7 @@ console.log("Detected scales:", headerScales);
             setProgress(prev => prev ? { ...prev, progress: 90 } : null);
             
             // Pass the validated data to the parent component for further processing
+            console.timeEnd('📊 CSV_PARSING');
             console.log("Calling onComplete");
             const result = onComplete(
               validatedData, 

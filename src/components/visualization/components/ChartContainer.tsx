@@ -3,7 +3,7 @@ import { GridDimensions, Position, SpecialZoneBoundaries, ScaleFormat, Midpoint 
 import { GridRenderer, ScaleMarkers, AxisLegends } from '../grid';
 import { Quadrants } from '../zones/Quadrants';
 import { SpecialZones } from '../zones/SpecialZones';
-import { DataPointRenderer } from '../components/DataPoints';
+import { DataPointRendererSelector } from '../components/DataPoints/DataPointRendererSelector';
 import { MidpointHandle } from '../controls/MidpointControl';
 import { ResizeHandle } from '../controls/ResizeHandles';
 import { Watermark } from '../watermark';
@@ -39,6 +39,9 @@ interface ChartContainerProps {
   isAdjustableMidpoint: boolean;
   hideWatermark: boolean;
   activeEffects: Set<string>;
+  
+  // Performance options
+  useCanvasRenderer?: boolean;
   
   // Frequency filtering
   frequencyFilterEnabled: boolean;
@@ -76,6 +79,7 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
   isAdjustableMidpoint,
   hideWatermark,
   activeEffects,
+  useCanvasRenderer,
   frequencyFilterEnabled,
   frequencyThreshold,
   frequencyData,
@@ -149,7 +153,8 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
         
         {/* Data Points Layer - Wrapped with Data Processing Error Boundary */}
         <DataProcessingErrorBoundary>
-          <DataPointRenderer
+          <DataPointRendererSelector
+            useCanvasRenderer={useCanvasRenderer || false}
             data={data}
             dimensions={dimensions}
             position={position}

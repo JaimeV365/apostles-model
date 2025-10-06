@@ -30,9 +30,9 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ progress }
   
   const getProgressBarColor = () => {
     switch (stage) {
-      case 'error': return '#EF4444'; // Red
-      case 'complete': return '#10B981'; // Green
-      default: return '#4F46E5'; // Indigo
+      case 'error': return '#f44336'; // Red (brand color)
+      case 'complete': return '#3a863e'; // Green (brand color)
+      default: return '#3a863e'; // Brand green instead of blue
     }
   };
   

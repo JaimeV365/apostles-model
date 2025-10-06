@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Move } from 'lucide-react';
 import { Position, GridDimensions, Midpoint, ScaleFormat } from '@/types/base';
-import { isDraggingNearHalfCell } from '../../utils/positionCalculator';
+import { isDraggingNearHalfCell, calculateMidpointPosition } from '../../utils/positionCalculator';
 import './MidpointHandle.css';
 
 interface MidpointHandleProps {
@@ -34,10 +34,20 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
   showSpecialZones
 }) => {
   const [isNearHalf, setIsNearHalf] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [visualPosition, setVisualPosition] = useState(position);
+  const finalMidpointRef = useRef<Midpoint | null>(null);
 
   useEffect(() => {
     setIsNearHalf(isDraggingNearHalfCell(position, dimensions));
   }, [position, dimensions]);
+
+  // Sync visual position with calculated position when not dragging
+  useEffect(() => {
+    if (!isDragging) {
+      setVisualPosition(position);
+    }
+  }, [position, isDragging]);
 
   if (!isAdjustable) return null;
 
@@ -48,6 +58,7 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
     const container = e.currentTarget.parentElement;
     if (!container) return;
     
+    setIsDragging(true);
     const containerRect = container.getBoundingClientRect();
     const startX = e.clientX;
     const startY = e.clientY;
@@ -61,17 +72,17 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
       const deltaY = startY - moveEvent.clientY;
       
       // Check if using 1-3 scale
-    const is1To3Scale = satisfactionScale === '1-3' || loyaltyScale === '1-3';
-    
-    // For 1-3 scale, only allow vertical movement (keep same horizontal position)
-    const newSat = is1To3Scale ? startMidpoint.sat : startMidpoint.sat + (deltaX / containerRect.width) * (dimensions.totalCols - 1);
-    const newLoy = startMidpoint.loy + (deltaY / containerRect.height) * (dimensions.totalRows - 1);
+      const is1To3Scale = satisfactionScale === '1-3' || loyaltyScale === '1-3';
+      
+      // For 1-3 scale, only allow vertical movement (keep same horizontal position)
+      const newSat = is1To3Scale ? startMidpoint.sat : startMidpoint.sat + (deltaX / containerRect.width) * (dimensions.totalCols - 1);
+      const newLoy = startMidpoint.loy + (deltaY / containerRect.height) * (dimensions.totalRows - 1);
       
       // Calculate limits - use default zone sizes when areas hidden, actual sizes when shown
       const effectiveApostlesSize = showSpecialZones ? apostlesZoneSize : 1;
       const effectiveTerroristsSize = showSpecialZones ? terroristsZoneSize : 1;
       
-     // Calculate proper bounds - only fix loyalty axis for 0-10 scale
+      // Calculate proper bounds - only fix loyalty axis for 0-10 scale
       const minSat = effectiveTerroristsSize + 1;
       let maxSat = dimensions.totalCols - effectiveApostlesSize;
       
@@ -115,13 +126,28 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
         loy: Math.round(validLoy * 2) / 2
       };
       
-      onMidpointChange(newMidpoint);
+      // Update visual position immediately for instant feedback
+      const newVisualPosition = calculateMidpointPosition(newMidpoint, dimensions);
+      setVisualPosition(newVisualPosition);
+      
+      // Store the final midpoint for mouse up - DO NOT call onMidpointChange yet
+      // This prevents calculations from running during dragging
+      finalMidpointRef.current = newMidpoint;
     };
 
     const handleMouseUp = () => {
+      setIsDragging(false);
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
       document.body.style.cursor = 'default';
+      
+      // Now trigger the calculations with the final midpoint
+      if (finalMidpointRef.current) {
+        console.time('🎯 FINAL_MIDPOINT_CALCULATION');
+        onMidpointChange(finalMidpointRef.current);
+        console.timeEnd('🎯 FINAL_MIDPOINT_CALCULATION');
+        finalMidpointRef.current = null;
+      }
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -129,13 +155,17 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
     document.body.style.cursor = 'move';
   };
 
+  // Use visual position when dragging, calculated position when not
+  const currentPosition = isDragging ? visualPosition : position;
+
   return (
     <div 
       className="midpoint-handle"
       style={{
-        left: `${position.x}%`,
-        bottom: `${position.y}%`,
-        transform: 'translate(-50%, 50%)'
+        left: `${currentPosition.x}%`,
+        bottom: `${currentPosition.y}%`,
+        transform: 'translate(-50%, 50%)',
+        transition: isDragging ? 'none' : 'all 0.2s ease'
       }}
       onMouseDown={handleMouseDown}
       role="button"

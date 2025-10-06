@@ -28,6 +28,7 @@ interface UnifiedChartControlsProps {
     hasOverlaps: boolean;
   };
   
+  
   // Panel state
   isOpen: boolean;
   onClose: () => void;
@@ -299,6 +300,7 @@ export const UnifiedChartControls: React.FC<UnifiedChartControlsProps> = ({
       </div>
     );
   };
+
 
   return (
     <>
