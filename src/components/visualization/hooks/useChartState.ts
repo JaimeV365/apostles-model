@@ -14,6 +14,10 @@ export interface ChartState {
   setShowQuadrantLabels: (show: boolean) => void;
   showSpecialZoneLabels: boolean;
   setShowSpecialZoneLabels: (show: boolean) => void;
+  
+  // Label positioning
+  labelPositioning: 'above-dots' | 'below-dots';
+  setLabelPositioning: (positioning: 'above-dots' | 'below-dots') => void;
 }
 
 export const useChartState = (): ChartState => {
@@ -26,6 +30,9 @@ export const useChartState = (): ChartState => {
   const [showQuadrantLabels, setShowQuadrantLabels] = useState<boolean>(true);
   const [showSpecialZoneLabels, setShowSpecialZoneLabels] = useState<boolean>(true);
   
+  // State for label positioning
+  const [labelPositioning, setLabelPositioning] = useState<'above-dots' | 'below-dots'>('above-dots');
+  
   return {
     showScaleNumbers,
     setShowScaleNumbers,
@@ -37,5 +44,7 @@ export const useChartState = (): ChartState => {
     setShowQuadrantLabels,
     showSpecialZoneLabels,
     setShowSpecialZoneLabels,
+    labelPositioning,
+    setLabelPositioning,
   };
 };

@@ -26,6 +26,7 @@ interface DataPointRendererSelectorProps {
     normalizedLoyalty: number;
   }) => void;
   selectedPointId?: string;
+  labelPositioning?: 'above-dots' | 'below-dots';
 }
 
 export const DataPointRendererSelector: React.FC<DataPointRendererSelectorProps> = ({

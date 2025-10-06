@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Move } from 'lucide-react';
 import { Position, GridDimensions, Midpoint, ScaleFormat } from '@/types/base';
 import { isDraggingNearHalfCell } from '../../utils/positionCalculator';
@@ -34,16 +34,28 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
   showSpecialZones
 }) => {
   const [isNearHalf, setIsNearHalf] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [visualPosition, setVisualPosition] = useState(position);
+  const finalMidpointRef = useRef<Midpoint | null>(null);
 
   useEffect(() => {
     setIsNearHalf(isDraggingNearHalfCell(position, dimensions));
   }, [position, dimensions]);
+
+  // Sync visual position with actual position when not dragging
+  useEffect(() => {
+    if (!isDragging) {
+      setVisualPosition(position);
+    }
+  }, [position, isDragging]);
 
   if (!isAdjustable) return null;
 
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    
+    setIsDragging(true);
     
     const container = e.currentTarget.parentElement;
     if (!container) return;
@@ -115,13 +127,29 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
         loy: Math.round(validLoy * 2) / 2
       };
       
-      onMidpointChange(newMidpoint);
+      // Store the calculated midpoint for later use
+      finalMidpointRef.current = newMidpoint;
+      
+      // Update visual position immediately (no calculations triggered)
+      // Use the same calculation as calculateMidpointPosition
+      const newVisualPosition = {
+        x: ((newMidpoint.sat - dimensions.scaleRanges.satisfaction.min) / (dimensions.totalCols - 1)) * 100,
+        y: ((newMidpoint.loy - dimensions.scaleRanges.loyalty.min) / (dimensions.totalRows - 1)) * 100
+      };
+      setVisualPosition(newVisualPosition);
     };
 
     const handleMouseUp = () => {
+      setIsDragging(false);
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
       document.body.style.cursor = 'default';
+      
+      // Now trigger the calculations with the final midpoint
+      if (finalMidpointRef.current) {
+        onMidpointChange(finalMidpointRef.current);
+        finalMidpointRef.current = null;
+      }
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -129,13 +157,17 @@ const MidpointHandle: React.FC<MidpointHandleProps> = ({
     document.body.style.cursor = 'move';
   };
 
+  // Use visual position when dragging, actual position when not
+  const currentPosition = isDragging ? visualPosition : position;
+
   return (
     <div 
       className="midpoint-handle"
       style={{
-        left: `${position.x}%`,
-        bottom: `${position.y}%`,
-        transform: 'translate(-50%, 50%)'
+        left: `${currentPosition.x}%`,
+        bottom: `${currentPosition.y}%`,
+        transform: 'translate(-50%, 50%)',
+        transition: isDragging ? 'none' : 'all 0.2s ease'
       }}
       onMouseDown={handleMouseDown}
       role="button"

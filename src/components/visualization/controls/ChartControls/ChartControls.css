@@ -95,6 +95,20 @@
   background: #f3f4f6;
 }
 
+/* Label positioning controls */
+.label-positioning-controls {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.control-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
 .chart-controls::-webkit-scrollbar {
   height: 8px;
 }

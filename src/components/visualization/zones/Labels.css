@@ -9,15 +9,23 @@
   white-space: nowrap;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   pointer-events: none;
-  z-index: 1000;
   color: #1a1a1a;
+  transition: all 0.2s ease;
+}
+
+/* Smart layering - labels above data points by default */
+.zone-label--above-dots {
+  z-index: 1000 !important;
+}
+
+.zone-label--below-dots {
+  z-index: 5 !important;
 }
 
 /* Quadrant labels (Loyalists, Defectors) */
 .zone-label--quadrant {
   font-size: 15px;
   font-weight: 600;
-  z-index: 101;
 }
 
 /* Special zone labels (Apostles, Terrorists) */
@@ -25,14 +33,12 @@
   font-size: 14px;
   font-weight: 500;
   border: 1px solid rgba(76, 175, 80, 0.3);
-  z-index: 12;
 }
 
 .zone-label--terrorists {
   font-size: 13px;
   font-weight: 500;
   border: 1px solid rgba(244, 67, 54, 0.3);
-  z-index: 12;
 }
 
 /* Near-apostles label */
@@ -40,7 +46,6 @@
   font-size: 12px;
   font-weight: 500;
   padding: 4px 10px;
-  z-index: 11;
 }
 
 /* Handle overlapping cases */

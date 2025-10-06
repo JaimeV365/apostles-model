@@ -1,0 +1,47 @@
+/* Independent Label Layer - Test Layer */
+.independent-label-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.independent-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.98);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+/* Quadrant-specific styling */
+.independent-label--loyalists {
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+}
+
+.independent-label--mercenaries {
+  border: 2px solid #FF9800;
+  color: #FF9800;
+}
+
+.independent-label--hostages {
+  border: 2px solid #2196F3;
+  color: #2196F3;
+}
+
+.independent-label--defectors {
+  border: 2px solid #F44336;
+  color: #F44336;
+}
+
+/* Hover effect for testing */
+.independent-label:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

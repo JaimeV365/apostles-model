@@ -32,6 +32,8 @@ interface QuadrantChartProps {
   onShowSpecialZonesChange: (show: boolean) => void;
   onShowLabelsChange: (show: boolean) => void;
   onShowGridChange: (show: boolean) => void;
+  
+  specialZoneBoundaries?: any;
 }
 
 const QuadrantChart: React.FC<QuadrantChartProps> = ({
@@ -59,7 +61,7 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
   onShowGridChange
 }) => {
   // Get context values
-  const { midpoint, apostlesZoneSize, terroristsZoneSize, setApostlesZoneSize, setTerroristsZoneSize } = useQuadrantAssignment();
+  const { midpoint, apostlesZoneSize: contextApostlesZoneSize, terroristsZoneSize: contextTerroristsZoneSize, setApostlesZoneSize, setTerroristsZoneSize } = useQuadrantAssignment();
   
   // Use custom hooks for chart logic
   const {
@@ -88,10 +90,14 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
     setShowQuadrantLabels,
     showSpecialZoneLabels,
     setShowSpecialZoneLabels,
+    labelPositioning,
+    setLabelPositioning,
   } = useChartState();
   
   // Debug boundaries
   console.log('🔍 Special zone boundaries calculated in QuadrantChart:', specialZoneBoundaries);
+  console.log('🔍 Label positioning:', labelPositioning);
+  console.log('🔍 ChartControls props:', { labelPositioning, setLabelPositioning });
 
   return (
     <div className="quadrant-chart">
@@ -105,6 +111,8 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
         setShowSpecialZones={onShowSpecialZonesChange} 
         labelMode={labelMode}
         setLabelMode={setLabelMode}
+        labelPositioning={labelPositioning}
+        setLabelPositioning={setLabelPositioning}
         showQuadrantLabels={showQuadrantLabels}
         setShowQuadrantLabels={setShowQuadrantLabels}
         showSpecialZoneLabels={showSpecialZoneLabels}
@@ -134,8 +142,8 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
         data={data}
         satisfactionScale={satisfactionScale}
         loyaltyScale={loyaltyScale}
-        apostlesZoneSize={apostlesZoneSize}
-        terroristsZoneSize={terroristsZoneSize}
+        apostlesZoneSize={contextApostlesZoneSize}
+        terroristsZoneSize={contextTerroristsZoneSize}
         maxSizes={maxSizes}
         showGrid={showGrid}
         showScaleNumbers={showScaleNumbers}
@@ -143,6 +151,7 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
         showLabels={showLabels}
         showQuadrantLabels={showQuadrantLabels}
         showSpecialZoneLabels={showSpecialZoneLabels}
+        labelPositioning={labelPositioning}
         showSpecialZones={showSpecialZones}
         showNearApostles={showNearApostles}
         isClassicModel={isClassicModel}

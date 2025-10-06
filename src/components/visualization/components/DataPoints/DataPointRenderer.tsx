@@ -188,7 +188,7 @@ export const DataPointRenderer: React.FC<DataPointRendererProps> = React.memo(({
   }, [filteredData, getBoundaryOptions]);
 
   return (
-    <div className="data-points" style={{ position: 'absolute', inset: 0, zIndex: 40, pointerEvents: 'none' }}>
+    <div className="data-points" style={{ position: 'absolute', inset: 0, zIndex: 20, pointerEvents: 'none' }}>
       {filteredData.map((point, index) => {
         const normalized = calculatePointPosition(
           point.satisfaction,
@@ -226,10 +226,9 @@ export const DataPointRenderer: React.FC<DataPointRendererProps> = React.memo(({
                 transform: `translate(-50%, 50%) scale(${count > 1 ? 1.1 : 1})`,
                 transition: 'all 0.2s ease',
                 cursor: 'pointer',
-                border: '2px solid white',
+                border: '2px solid rgba(255, 255, 255, 0.9)',
                 borderRadius: '50%',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
-                zIndex: isSelected ? 45 : count > 1 ? 42 : 40,
+                zIndex: isSelected ? 35 : count > 1 ? 32 : 30,
                 pointerEvents: 'auto'
               }}
               onClick={(e) => {

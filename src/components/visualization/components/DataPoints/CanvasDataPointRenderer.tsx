@@ -22,6 +22,7 @@ interface CanvasDataPointRendererProps {
     normalizedLoyalty: number;
   }) => void;
   selectedPointId?: string;
+  labelPositioning?: 'above-dots' | 'below-dots';
 }
 
 interface CanvasPoint {
@@ -77,7 +78,8 @@ export const CanvasDataPointRenderer: React.FC<CanvasDataPointRendererProps> = R
   terroristsZoneSize,
   isClassicModel,
   onPointSelect,
-  selectedPointId
+  selectedPointId,
+  labelPositioning = 'above-dots'
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { getQuadrantForPoint } = useQuadrantAssignment();
@@ -155,22 +157,28 @@ export const CanvasDataPointRenderer: React.FC<CanvasDataPointRendererProps> = R
       const canvasX = (point.x / 100) * canvas.width;
       const canvasY = canvas.height - (point.y / 100) * canvas.height; // Flip Y axis
 
-      // Draw circle
+      // Draw subtle shadow for depth (modern UI design)
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.1)';
+      ctx.shadowBlur = 2;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 1;
+      
+      // Draw main circle
       ctx.fillStyle = point.color;
       ctx.beginPath();
       ctx.arc(canvasX, canvasY, point.size, 0, 2 * Math.PI);
       ctx.fill();
 
-      // Draw border
-      ctx.strokeStyle = 'white';
-      ctx.lineWidth = 2;
-      ctx.stroke();
+      // Reset shadow for border
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 0;
 
-      // Draw shadow effect
-      ctx.shadowColor = 'rgba(0,0,0,0.2)';
-      ctx.shadowBlur = 3;
-      ctx.shadowOffsetX = 1;
-      ctx.shadowOffsetY = 1;
+      // Draw modern white border with subtle transparency
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.lineWidth = 2; // Slightly thicker for better visibility
+      ctx.stroke();
     });
   }, [canvasPoints]);
 
@@ -255,7 +263,7 @@ export const CanvasDataPointRenderer: React.FC<CanvasDataPointRendererProps> = R
       style={{
         position: 'absolute',
         inset: 0,
-        zIndex: 40,
+        zIndex: labelPositioning === 'above-dots' ? 20 : 30, // Lower when labels should be above
         pointerEvents: 'auto',
         cursor: 'pointer'
       }}

@@ -16,6 +16,7 @@ interface SpecialZonesProps {
  isClassicModel: boolean;
  showLabels: boolean;
  showHandles: boolean;
+ labelPositioning: 'above-dots' | 'below-dots';
 }
 
 export const SpecialZones: React.FC<SpecialZonesProps> = ({
@@ -28,7 +29,8 @@ export const SpecialZones: React.FC<SpecialZonesProps> = ({
  onResize,
  isClassicModel,
  showLabels,
- showHandles 
+ showHandles,
+ labelPositioning
 }) => {
   console.log(`🔧 SpecialZones: Rendering zones only - apostles size=${zoneSizes.apostles}, terrorists size=${zoneSizes.terrorists}`);
   console.log(`🔧 SpecialZones: showHandles=${showHandles} (ignored - handles managed by ResizeHandle component)`);
@@ -84,6 +86,7 @@ export const SpecialZones: React.FC<SpecialZonesProps> = ({
               text={isClassicModel ? 'Near-apostles' : 'Near-advocates'} 
               type="near"
               variant="near"
+              positioning={labelPositioning}
             />
           ) : null
         }
@@ -108,14 +111,7 @@ export const SpecialZones: React.FC<SpecialZonesProps> = ({
           right: `${(zoneSizes.apostles - x) * dimensions.cellWidth}%`,
           borderBottom: '1px solid rgba(76, 175, 80, 0.3)',
           ...(x === 0 && {
-            borderLeft: '1px solid rgba(76, 175, 80, 0.3)',
-            children: showLabels ? (
-              <ZoneLabel 
-                text={isClassicModel ? 'Near-apostles' : 'Near-advocates'} 
-                type="near"
-                variant="near"
-              />
-            ) : null
+            borderLeft: '1px solid rgba(76, 175, 80, 0.3)'
           })
         });
       }
@@ -136,7 +132,7 @@ export const SpecialZones: React.FC<SpecialZonesProps> = ({
      </div>
 
      {/* Special zones layer - ZONES ONLY, no handles */}
-     <div className="special-zones-layer" style={{ position: 'absolute', inset: 0 }}>
+     <div className="special-zones-layer" style={{ position: 'absolute', inset: 0, zIndex: 10 }}>
        {/* Apostles zone */}
        <div
          style={{
@@ -149,13 +145,6 @@ export const SpecialZones: React.FC<SpecialZonesProps> = ({
            border: '2px solid rgba(76, 175, 80, 0.5)'
          }}
        >
-         {showLabels && (
-           <ZoneLabel 
-             text={isClassicModel ? 'Apostles' : 'Advocates'} 
-             type="apostles"
-             className={zoneSizes.apostles === 1 ? 'zone-label--overlapped-top' : ''}
-           />
-         )}
        </div>
 
        {/* Terrorists zone */}
@@ -170,13 +159,6 @@ export const SpecialZones: React.FC<SpecialZonesProps> = ({
            border: '2px solid rgba(244, 67, 54, 0.5)'
          }}
        >
-         {showLabels && (
-           <ZoneLabel 
-             text={isClassicModel ? 'Terrorists' : 'Trolls'} 
-             type="terrorists"
-             className="zone-label--overlapped-bottom"
-           />
-         )}
        </div>
      </div>
    </>

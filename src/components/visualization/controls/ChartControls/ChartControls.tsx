@@ -10,6 +10,7 @@ import './ChartControls.css';
 import { ThreeStateToggle, TogglePosition } from '../../../ui/ThreeStateToggle';
 
 type LabelMode = 'all' | 'quadrants' | 'sub-sections' | 'none';
+type LabelPositioning = 'above-dots' | 'below-dots';
 
 interface ChartControlsProps {
   /** Toggle between classic and modern terminology */
@@ -24,6 +25,10 @@ interface ChartControlsProps {
   /** Label display mode */
   labelMode: LabelMode;
   setLabelMode: (mode: LabelMode) => void;
+  
+  /** Label positioning relative to data points */
+  labelPositioning: LabelPositioning;
+  setLabelPositioning: (positioning: LabelPositioning) => void;
   
   /** Grid visibility */
   showGrid: boolean;
@@ -72,6 +77,8 @@ export const ChartControls: React.FC<ChartControlsProps> = ({
   loyaltyScale = '1-5',
   labelMode,
   setLabelMode,
+  labelPositioning,
+  setLabelPositioning,
   showQuadrantLabels = true,
   setShowQuadrantLabels = () => {},
   showSpecialZoneLabels = true,
@@ -90,6 +97,7 @@ export const ChartControls: React.FC<ChartControlsProps> = ({
   showLegends,
   setShowLegends,
 }) => {
+  console.log('🔍 ChartControls received labelPositioning:', labelPositioning);
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   // Check if using 1-3 scale
@@ -261,6 +269,20 @@ useEffect(() => {
           <div className="control-group-content">
             <div className="labels-buttons">
               {renderLabelButtons()}
+            </div>
+            
+            {/* Label Positioning Controls */}
+            <div className="label-positioning-controls">
+              <div className="control-label">Label Position:</div>
+              <TwoStateToggle
+                leftLabel="Above Dots"
+                rightLabel="Below Dots"
+                value={labelPositioning === 'above-dots' ? 'left' : 'right'}
+                onChange={(value: 'left' | 'right') => {
+                  const newPositioning = value === 'left' ? 'above-dots' : 'below-dots';
+                  setLabelPositioning(newPositioning);
+                }}
+              />
             </div>
           </div>
         </div>

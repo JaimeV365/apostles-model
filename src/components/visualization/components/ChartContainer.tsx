@@ -3,7 +3,8 @@ import { GridDimensions, Position, SpecialZoneBoundaries, ScaleFormat, Midpoint 
 import { GridRenderer, ScaleMarkers, AxisLegends } from '../grid';
 import { Quadrants } from '../zones/Quadrants';
 import { SpecialZones } from '../zones/SpecialZones';
-import { DataPointRenderer } from '../components/DataPoints';
+import { IndependentLabelLayer } from '../zones/IndependentLabelLayer';
+import { DataPointRendererSelector } from '../components/DataPoints/DataPointRendererSelector';
 import { MidpointHandle } from '../controls/MidpointControl';
 import { ResizeHandle } from '../controls/ResizeHandles';
 import { Watermark } from '../watermark';
@@ -33,11 +34,13 @@ interface ChartContainerProps {
   showLabels: boolean;
   showQuadrantLabels: boolean;
   showSpecialZoneLabels: boolean;
+  labelPositioning: 'above-dots' | 'below-dots';
   showSpecialZones: boolean;
   showNearApostles: boolean;
   isClassicModel: boolean;
   isAdjustableMidpoint: boolean;
   hideWatermark: boolean;
+  useCanvasRenderer?: boolean;
   activeEffects: Set<string>;
   
   // Frequency filtering
@@ -70,11 +73,13 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
   showLabels,
   showQuadrantLabels,
   showSpecialZoneLabels,
+  labelPositioning,
   showSpecialZones,
   showNearApostles,
   isClassicModel,
   isAdjustableMidpoint,
   hideWatermark,
+  useCanvasRenderer = false,
   activeEffects,
   frequencyFilterEnabled,
   frequencyThreshold,
@@ -125,6 +130,7 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
           isClassicModel={isClassicModel}
           showLabels={showLabels && showQuadrantLabels}
           showQuadrantLabels={showQuadrantLabels}
+          labelPositioning={labelPositioning}
         />
         
         {/* Special Zones Layer */}
@@ -144,12 +150,14 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
             isClassicModel={isClassicModel}
             showLabels={showLabels && showSpecialZoneLabels}
             showHandles={true}
+            labelPositioning={labelPositioning}
           />
         )}
         
         {/* Data Points Layer - Wrapped with Data Processing Error Boundary */}
         <DataProcessingErrorBoundary>
-          <DataPointRenderer
+          <DataPointRendererSelector
+            useCanvasRenderer={useCanvasRenderer}
             data={data}
             dimensions={dimensions}
             position={position}
@@ -161,8 +169,23 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
             apostlesZoneSize={apostlesZoneSize}
             terroristsZoneSize={terroristsZoneSize} 
             isClassicModel={isClassicModel}
+            labelPositioning={labelPositioning}
           />
         </DataProcessingErrorBoundary>
+        
+        {/* Independent Label Layer - Test Layer */}
+        <IndependentLabelLayer
+          dimensions={dimensions}
+          satisfactionScale={satisfactionScale}
+          loyaltyScale={loyaltyScale}
+          isClassicModel={isClassicModel}
+          showLabels={showLabels}
+          labelPositioning={labelPositioning}
+          showSpecialZones={showSpecialZones}
+          showNearApostles={showNearApostles}
+          apostlesZoneSize={apostlesZoneSize}
+          terroristsZoneSize={terroristsZoneSize}
+        />
         
         {/* Interactive Elements Layer */}
         <MidpointHandle

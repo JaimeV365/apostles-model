@@ -11,6 +11,7 @@
   background-color: white;
   border-radius: 4px;
   overflow: visible;
+  z-index: 1;
 }
 
 /* Quadrants */
@@ -90,19 +91,26 @@
   background-color: #333;
 }
 
-/* Data Points */
+/* Data Points - Modern UI/UX Design */
 .data-point {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border: 2px solid rgba(255, 255, 255, 0.9);
   cursor: pointer;
   transition: all 0.2s ease;
+  /* Subtle modern shadow for depth without pixelation */
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  /* Ensure crisp rendering */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .data-point:hover {
   transform: translate(-50%, 50%) scale(1.2) !important;
-  z-index: 40;
+  z-index: 35;
 }
 
 /* Tooltip */
