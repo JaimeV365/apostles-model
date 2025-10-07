@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { Filter } from 'lucide-react';
-import { DataPoint, SpecialZoneBoundaries } from '@/types/base';
+import { DataPoint } from '@/types/base';
 import { QuadrantChartProps } from '../types';
 import QuadrantChart from './QuadrantChart';
-import { FilterPanel, FilterToggle } from '../filters';
-import { calculateSpecialZoneBoundaries } from '../utils/zoneCalculator';
-import { WatermarkControlsButton } from '../watermark';
 import { UnifiedChartControls } from '../controls/UnifiedChartControls';
 import './FilteredChart.css';
 
@@ -47,7 +43,6 @@ const FilteredChart: React.FC<FilteredChartProps> = React.memo(({
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
   const [filteredData, setFilteredData] = useState<DataPoint[]>(data);
   const [activeFilterCount, setActiveFilterCount] = useState(0);
-  const [showPointCount, setShowPointCount] = useState(true);
   
   const filterPanelRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<HTMLDivElement>(null);
@@ -114,10 +109,6 @@ const FilteredChart: React.FC<FilteredChartProps> = React.memo(({
     };
   }, [isFilterPanelOpen]);
 
-  // Toggle filter panel
-  const toggleFilterPanel = () => {
-    setIsFilterPanelOpen(!isFilterPanelOpen);
-  };
 
   /// Handle filter changes
 const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []) => {
@@ -127,14 +118,6 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
   setActiveFilterCount(newFilters.length);
 };
 
-  const specialZoneBoundaries = useMemo(() => {
-    return calculateSpecialZoneBoundaries(
-      apostlesZoneSize,
-      terroristsZoneSize,
-      satisfactionScale,
-      loyaltyScale
-    );
-  }, [apostlesZoneSize, terroristsZoneSize, satisfactionScale, loyaltyScale]);
 
   // Calculate grid dimensions for watermark controls
   const gridDimensions = useMemo(() => {
@@ -161,54 +144,6 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
 
   return (
     <div className="filtered-chart-container" ref={chartRef}>
-      {/* Unified Controls Toggle Button */}
-      {data.length > 0 && (
-        <button 
-            className={`filter-toggle ${isUnifiedControlsOpen ? 'active' : ''} ${activeFilterCount > 0 ? 'has-filters' : ''}`}
-            onClick={() => setIsUnifiedControlsOpen(!isUnifiedControlsOpen)}
-            title="Unified Controls"
-            aria-label="Toggle unified controls panel"
-            style={{
-              position: 'absolute',
-              top: '12px',
-              right: '12px',
-              width: '36px',
-              height: '36px',
-              backgroundColor: isUnifiedControlsOpen ? '#3a863e' : 'white',
-              border: '1px solid #e5e7eb',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-              zIndex: 20,
-              transition: 'all 0.2s ease',
-              color: isUnifiedControlsOpen ? 'white' : '#3a863e'
-            }}
-          >
-            <Filter size={20} />
-            {activeFilterCount > 0 && (
-              <span style={{
-                position: 'absolute',
-                top: '-8px',
-                right: '-8px',
-                backgroundColor: '#ef4444',
-                color: 'white',
-                borderRadius: '50%',
-                width: '18px',
-                height: '18px',
-                fontSize: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 'bold'
-              }}>
-                {activeFilterCount}
-              </span>
-            )}
-          </button>
-      )}
       
       {/* Unified Controls Panel */}
       <UnifiedChartControls
@@ -232,12 +167,6 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
         onClose={() => setIsUnifiedControlsOpen(false)}
       />
       
-      {/* Point Count Display - only show if filter panel is available and checkbox is ON */}
-      {hasFilterableData && showPointCount && (
-        <div className="point-counter-display">
-          {filteredData.length} out of {data.filter(p => !p.excluded).length} {data.filter(p => !p.excluded).length === 1 ? 'data point' : 'data points'}
-        </div>
-      )}
       
       {/* Chart with Filtered Data */}
       <QuadrantChart
@@ -263,6 +192,13 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
   onShowSpecialZonesChange={onShowSpecialZonesChange || (() => {})}
   onShowLabelsChange={onShowLabelsChange}
   onShowGridChange={onShowGridChange}
+  isUnifiedControlsOpen={isUnifiedControlsOpen}
+  setIsUnifiedControlsOpen={setIsUnifiedControlsOpen}
+  activeFilterCount={activeFilterCount}
+  filteredData={filteredData}
+  totalData={data}
+  apostlesZoneSize={apostlesZoneSize}
+  terroristsZoneSize={terroristsZoneSize}
 />
     </div>
   );

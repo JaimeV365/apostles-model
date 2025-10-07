@@ -88,6 +88,16 @@ export interface QuadrantChartProps {
   onShowLabelsChange: (show: boolean) => void;
   onShowGridChange: (show: boolean) => void;
   
+  // Filter functionality
+  isUnifiedControlsOpen?: boolean;
+  setIsUnifiedControlsOpen?: (open: boolean) => void;
+  activeFilterCount?: number;
+  filteredData?: any[];
+  totalData?: any[];
+  
+  // Effects functionality
+  onEffectsChange?: (effects: Set<string>) => void;
+  
   specialZoneBoundaries?: SpecialZoneBoundaries;
 }
 

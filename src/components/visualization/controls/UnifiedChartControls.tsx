@@ -137,6 +137,7 @@ export const UnifiedChartControls: React.FC<UnifiedChartControlsProps> = ({
           onFrequencyFilterEnabledChange={onFrequencyFilterEnabledChange}
           onFrequencyThresholdChange={onFrequencyThresholdChange}
           frequencyData={frequencyData}
+          resetTrigger={filterResetTrigger}
         />
       </div>
       

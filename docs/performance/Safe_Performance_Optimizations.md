@@ -294,3 +294,6 @@ These optimizations target the real bottlenecks while preserving all functionali
 The key is to optimize the **bottlenecks** (CSV, rendering) while leaving the **reactive logic** (boundaries, classifications) untouched.
 
 
+
+
+

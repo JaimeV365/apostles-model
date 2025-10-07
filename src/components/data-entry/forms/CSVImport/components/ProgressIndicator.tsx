@@ -18,12 +18,12 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ progress }
   
   const getStatusText = () => {
     switch (stage) {
-      case 'reading': return 'Reading file...';
-      case 'validating': return 'Validating data...';
-      case 'processing': return 'Processing...';
+      case 'reading': return 'segmenting';
+      case 'validating': return 'segmenting';
+      case 'processing': return 'segmenting';
       case 'complete': return 'Complete!';
       case 'error': return 'Error';
-      default: return 'Processing...';
+      default: return 'segmenting';
     }
   };
   

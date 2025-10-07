@@ -3,38 +3,13 @@ import {
   DataPoint, 
   ScaleFormat
 } from '@/types/base';
+import { QuadrantChartProps } from '../types';
 import { useQuadrantAssignment } from '../context/QuadrantAssignmentContext';
 import { useChartCalculations, useChartHandlers, useChartState } from '../hooks';
 import { ChartControls } from '../controls/ChartControls';
 import { ChartContainer } from './ChartContainer';
 import './QuadrantChart.css';
 
-interface QuadrantChartProps {
-  data: DataPoint[];
-  satisfactionScale: ScaleFormat;
-  loyaltyScale: ScaleFormat;
-  isClassicModel: boolean;
-  showNearApostles: boolean;
-  showSpecialZones: boolean;
-  showLabels: boolean;
-  showGrid: boolean;
-  hideWatermark: boolean;
-  showAdvancedFeatures: boolean;
-  activeEffects: Set<string>;
-  frequencyFilterEnabled: boolean;
-  frequencyThreshold: number;
-  isAdjustableMidpoint: boolean;
-  onFrequencyFilterEnabledChange: (enabled: boolean) => void;
-  onFrequencyThresholdChange: (threshold: number) => void;
-  onIsAdjustableMidpointChange: (adjustable: boolean) => void;
-  onIsClassicModelChange: (isClassic: boolean) => void;
-  onShowNearApostlesChange: (show: boolean) => void;
-  onShowSpecialZonesChange: (show: boolean) => void;
-  onShowLabelsChange: (show: boolean) => void;
-  onShowGridChange: (show: boolean) => void;
-  
-  specialZoneBoundaries?: any;
-}
 
 const QuadrantChart: React.FC<QuadrantChartProps> = ({
   data,
@@ -58,7 +33,13 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
   onShowNearApostlesChange,
   onShowSpecialZonesChange,
   onShowLabelsChange,
-  onShowGridChange
+  onShowGridChange,
+  isUnifiedControlsOpen,
+  setIsUnifiedControlsOpen,
+  activeFilterCount,
+  filteredData,
+  totalData,
+  onEffectsChange
 }) => {
   // Get context values
   const { midpoint, apostlesZoneSize: contextApostlesZoneSize, terroristsZoneSize: contextTerroristsZoneSize, setApostlesZoneSize, setTerroristsZoneSize } = useQuadrantAssignment();
@@ -132,6 +113,15 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
         setShowLegends={setShowLegends}
         satisfactionScale={satisfactionScale}
         loyaltyScale={loyaltyScale}
+        data={data}
+        filteredData={filteredData}
+        totalData={totalData}
+        isUnifiedControlsOpen={isUnifiedControlsOpen || false}
+        setIsUnifiedControlsOpen={setIsUnifiedControlsOpen || (() => {})}
+        activeFilterCount={activeFilterCount || 0}
+        isPremium={activeEffects?.has('premium') || false}
+        effects={activeEffects || new Set()}
+        onEffectsChange={onEffectsChange || (() => {})}
       />
       
       <ChartContainer
@@ -152,7 +142,7 @@ const QuadrantChart: React.FC<QuadrantChartProps> = ({
         showQuadrantLabels={showQuadrantLabels}
         showSpecialZoneLabels={showSpecialZoneLabels}
         labelPositioning={labelPositioning}
-        showSpecialZones={showSpecialZones}
+        showSpecialZones={showSpecialZones ?? true}
         showNearApostles={showNearApostles}
         isClassicModel={isClassicModel}
         isAdjustableMidpoint={isAdjustableMidpoint}

@@ -43,6 +43,8 @@ interface FilterPanelProps {
     maxFrequency: number;
     hasOverlaps: boolean;
   };
+  // Reset trigger
+  resetTrigger?: number;
 }
 
 const DATE_PRESETS = [
@@ -71,7 +73,8 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
   frequencyThreshold = 1,
   onFrequencyFilterEnabledChange,
   onFrequencyThresholdChange,
-  frequencyData
+  frequencyData,
+  resetTrigger
 }) => {
   const [filterState, setFilterState] = useState<FilterState>({
     dateRange: {
@@ -196,6 +199,13 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
       })))
   ]);
 
+  // Handle external reset trigger
+  useEffect(() => {
+    if (resetTrigger !== undefined && resetTrigger > 0) {
+      resetFilters();
+    }
+  }, [resetTrigger]);
+
   // Check if date is in range
   const isDateInRange = (dateStr: string | undefined, range: DateRange): boolean => {
     if (!dateStr || !range.startDate) return true;
@@ -250,7 +260,26 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
         
         // Check if this item matches any selected value for this attribute
         const itemValue = (item as any)[attr.field];
-        if (!attr.values.has(itemValue)) return false;
+        
+        // Convert both values to strings for comparison to handle type mismatches
+        const itemValueStr = String(itemValue);
+        const hasMatch = Array.from(attr.values).some(selectedValue => 
+          String(selectedValue) === itemValueStr
+        );
+        
+        // Debug logging for Additional Attributes filter issues
+        if (attr.field !== 'group' && attr.field !== 'satisfaction' && attr.field !== 'loyalty') {
+          console.log('🔍 Additional Attribute Filter Debug:', {
+            field: attr.field,
+            itemValue,
+            itemValueStr,
+            selectedValues: Array.from(attr.values),
+            hasMatch,
+            itemId: item.id
+          });
+        }
+        
+        if (!hasMatch) return false;
       }
       
       return true;

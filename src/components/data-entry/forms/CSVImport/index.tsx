@@ -17,100 +17,9 @@ import {
 } from './utils';
 import { useCSVParser, useCSVValidation } from './hooks';
 import { HeaderScales } from './types';
+import { UnifiedLoadingPopup } from '../../../ui/UnifiedLoadingPopup';
 import './styles/index.css';
 
-// Inline loading popup to avoid import issues
-const LoadingPopup: React.FC<{ isVisible: boolean; text: string }> = ({ isVisible, text }) => {
-  if (!isVisible) return null;
-  
-  return (
-    <>
-      {/* Backdrop overlay */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.3)',
-          zIndex: 9999,
-          animation: 'fadeIn 0.2s ease-out'
-        }}
-      />
-      
-      {/* Loading popup */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 10000,
-          pointerEvents: 'none'
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.98)',
-            border: '3px solid #3a863e',
-            borderRadius: '16px',
-            padding: '32px 40px',
-            boxShadow: '0 12px 48px rgba(0, 0, 0, 0.3)',
-            animation: 'fadeIn 0.3s ease-out',
-            backdropFilter: 'blur(8px)',
-            minWidth: '200px',
-            textAlign: 'center'
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div
-              style={{
-                width: '32px',
-                height: '32px',
-                border: '2px solid rgba(58, 134, 62, 0.2)',
-                borderTop: '2px solid #3a863e',
-                borderRadius: '50%',
-                animation: 'spin 1s linear infinite'
-              }}
-            />
-            <div
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: '700',
-                fontSize: '18px',
-                color: '#333333'
-              }}
-            >
-              {text}
-              <span style={{ animation: 'blink 1.4s infinite' }}>.</span>
-              <span style={{ animation: 'blink 1.4s infinite', animationDelay: '0.2s' }}>.</span>
-              <span style={{ animation: 'blink 1.4s infinite', animationDelay: '0.4s' }}>.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <style>{`
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        @keyframes blink {
-          0%, 80%, 100% { opacity: 0; }
-          40% { opacity: 1; }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
-        }
-      `}</style>
-    </>
-  );
-};
 
 interface CSVImportProps {
   onImport: (
@@ -149,15 +58,6 @@ export const CSVImport: React.FC<CSVImportProps> = ({
 }) => {
   const { showNotification } = useNotification();
   
-  // Helper function to convert progress stages to loading text
-  const getLoadingText = (stage: string) => {
-    switch (stage) {
-      case 'reading': return 'Reading file';
-      case 'validating': return 'Validating data';
-      case 'processing': return 'Processing data';
-      default: return 'Loading data';
-    }
-  };
   const [showImportModeModal, setShowImportModeModal] = useState(false);
   const [pendingFileData, setPendingFileData] = useState<{
     file: File, 
@@ -729,9 +629,10 @@ export const CSVImport: React.FC<CSVImportProps> = ({
         processing={!!progress || !!pendingFileData}
       />
       
-      <LoadingPopup 
+      <UnifiedLoadingPopup 
         isVisible={isLoading} 
-        text={progress ? getLoadingText(progress.stage) : 'Loading...'}
+        text="segmenting"
+        size="medium"
       />
 
       <ReportArea 

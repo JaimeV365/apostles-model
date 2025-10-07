@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { FrequencySlider } from '../FrequencyControl';
+import React, { useState, useEffect } from 'react';
 import { Switch } from '../../../ui/Switch/Switch';
 import { TwoStateToggle } from '../../../ui/TwoStateToggle/TwoStateToggle';
-import { BookOpen, Tags, Monitor, Sliders } from 'lucide-react';
+import { BookOpen, Tags, Monitor, Filter, Crown } from 'lucide-react';
 import { ScaleFormat } from '../../../../types/base';
+import WatermarkPanel from '../../panels/WatermarkPanel';
 import './ChartControls.css';
 
-// Import ThreeStateToggle
-import { ThreeStateToggle, TogglePosition } from '../../../ui/ThreeStateToggle';
 
 type LabelMode = 'all' | 'quadrants' | 'sub-sections' | 'none';
 type LabelPositioning = 'above-dots' | 'below-dots';
@@ -54,6 +52,14 @@ interface ChartControlsProps {
   showLegends: boolean;
   setShowLegends: (show: boolean) => void;
   
+  // Filter functionality
+  data?: any[];
+  filteredData?: any[];
+  totalData?: any[];
+  isUnifiedControlsOpen: boolean;
+  setIsUnifiedControlsOpen: (open: boolean) => void;
+  activeFilterCount: number;
+  
   // Optional parameters for backward compatibility
   showSpecialZones?: boolean;
   setShowSpecialZones?: (show: boolean) => void;
@@ -63,6 +69,11 @@ interface ChartControlsProps {
   setSpecialZoneLabels?: (show: boolean) => void;
   satisfactionScale?: ScaleFormat;
   loyaltyScale?: ScaleFormat;
+  
+  // Watermark controls (Premium only)
+  isPremium?: boolean;
+  effects?: Set<string>;
+  onEffectsChange?: (effects: Set<string>) => void;
 }
 
 export const ChartControls: React.FC<ChartControlsProps> = ({
@@ -96,21 +107,29 @@ export const ChartControls: React.FC<ChartControlsProps> = ({
   setShowScaleNumbers,
   showLegends,
   setShowLegends,
+  data,
+  filteredData,
+  totalData,
+  isUnifiedControlsOpen,
+  setIsUnifiedControlsOpen,
+  activeFilterCount,
+  isPremium = false,
+  effects = new Set(),
+  onEffectsChange = () => {}
 }) => {
   console.log('🔍 ChartControls received labelPositioning:', labelPositioning);
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [showWatermarkPanel, setShowWatermarkPanel] = useState(false);
 
-  // Check if using 1-3 scale
-  const isUsing1To3Scale = satisfactionScale === '1-3' || loyaltyScale === '1-3';
 
   // Compute the areas display mode
-  const getAreaDisplayMode = (): TogglePosition => {
+  const getAreaDisplayMode = (): number => {
     if (!showSpecialZones) return 1;
     if (!showNearApostles) return 2;
     return 3;
   };
 
-  const [areasDisplayMode, setAreasDisplayMode] = useState<TogglePosition>(getAreaDisplayMode());
+  const [areasDisplayMode, setAreasDisplayMode] = useState<number>(getAreaDisplayMode());
 
   // Sync display mode with individual toggles
   useEffect(() => {
@@ -151,7 +170,7 @@ useEffect(() => {
     }
   };
   
-  const handleAreasDisplayModeChange = (position: TogglePosition) => {
+  const handleAreasDisplayModeChange = (position: number) => {
   setAreasDisplayMode(position);
   switch(position) {
     case 1: // No Areas - only main quadrants
@@ -215,19 +234,118 @@ useEffect(() => {
     );
   };
 
+  const renderAreasButtons = () => {
+    const buttons = [
+      {
+        mode: 1,
+        label: 'No Areas',
+        show: true
+      },
+      {
+        mode: 2,
+        label: 'Main Areas',
+        show: true
+      },
+      {
+        mode: 3,
+        label: 'All Areas',
+        show: hasSpaceForNearApostles
+      }
+    ];
+
+    return buttons.map(button => 
+      button.show && (
+        <button 
+          key={button.mode}
+          className={`label-button ${areasDisplayMode === button.mode ? 'active' : ''}`}
+          onClick={() => handleAreasDisplayModeChange(button.mode)}
+        >
+          {button.label}
+        </button>
+      )
+    );
+  };
+
   return (
-    <div className="chart-controls-wrapper">
+    <>
+      <div className="chart-controls-wrapper">
       <div className="chart-controls-header" onClick={() => setIsCollapsed(!isCollapsed)}>
         <div className="control-section-title-text">
           Controls {isCollapsed ? 
             <span style={{ color: '#3a863e' }}>▼</span> : 
             <span style={{ color: '#3a863e' }}>▲</span>}
         </div>
+        {/* Filter button and data counter integrated into header */}
+        {data && data.length > 0 && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* Data points counter */}
+            <div style={{
+              fontSize: '13px',
+              fontWeight: '500',
+              color: '#374151',
+              fontFamily: 'Lato, sans-serif',
+              backgroundColor: '#f9fafb',
+              padding: '4px 8px',
+              borderRadius: '4px',
+              border: '1px solid #e5e7eb'
+            }}>
+              {filteredData ? filteredData.length : (data ? data.filter(p => !p.excluded).length : 0)} of {totalData ? totalData.length : (data ? data.length : 0)} points
+            </div>
+            
+            {/* Filter button */}
+            <div style={{ position: 'relative' }}>
+              <button 
+                className={`chart-controls-filter-button ${isUnifiedControlsOpen ? 'active' : ''} ${activeFilterCount > 0 ? 'has-filters' : ''}`}
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent collapsing when clicking filter
+                  setIsUnifiedControlsOpen(!isUnifiedControlsOpen);
+                }}
+                title="Unified Controls"
+                aria-label="Toggle unified controls panel"
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  backgroundColor: isUnifiedControlsOpen ? '#3a863e' : 'white',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  transition: 'all 0.2s ease',
+                  color: isUnifiedControlsOpen ? 'white' : '#3a863e'
+                }}
+              >
+                <Filter size={16} />
+              </button>
+              {activeFilterCount > 0 && (
+                <span style={{
+                  position: 'absolute',
+                  top: '-6px',
+                  right: '-6px',
+                  backgroundColor: '#ef4444',
+                  color: 'white',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  fontSize: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: 'bold'
+                }}>
+                  {activeFilterCount}
+                </span>
+              )}
+            </div>
+          </div>
+        )}
       </div>
       
       <div className={`chart-controls ${isCollapsed ? 'collapsed' : ''}`}>
         {/* Display Group */}
-        <div className="control-group display-group">
+        <div className={`control-group display-group ${isPremium ? 'premium-mode' : ''}`}>
           <div className="control-section-title">
             <Monitor size={16} className="control-section-icon" />
             <span className="control-section-title-text">Display</span>
@@ -261,13 +379,13 @@ useEffect(() => {
         </div>
 
         {/* Labels Group */}
-        <div className="control-group labels-group">
+        <div className={`control-group labels-group ${isPremium ? 'premium-mode' : ''}`}>
           <div className="control-section-title">
             <Tags size={16} className="control-section-icon" />
             <span className="control-section-title-text">Labels</span>
           </div>
           <div className="control-group-content">
-            <div className="labels-buttons">
+            <div className={`labels-buttons ${isPremium ? 'premium-mode' : ''}`}>
               {renderLabelButtons()}
             </div>
             
@@ -289,7 +407,7 @@ useEffect(() => {
 
 
         {/* Terminology Group */}
-        <div className="control-group terminology-group">
+        <div className={`control-group terminology-group ${isPremium ? 'premium-mode' : ''}`}>
           <div className="control-section-title">
             <BookOpen size={16} className="control-section-icon" />
             <span className="control-section-title-text">Terminology</span>
@@ -303,18 +421,69 @@ useEffect(() => {
   disabled={areasDisplayMode === 1}
   disabledReason={areasDisplayMode === 1 ? "Not applicable when areas are hidden" : undefined}
 />
-            <ThreeStateToggle
-  position={areasDisplayMode}
-  onChange={handleAreasDisplayModeChange}
-  labels={["No Areas", "Main Areas", "All Areas"]}
-  disabled={false}
-  disabledPositions={!hasSpaceForNearApostles ? [3] : []}
-  disabledPositionReason="No space available for near areas"
-/>
+            <div className={`labels-buttons ${isPremium ? 'premium-mode' : ''}`}>
+              {renderAreasButtons()}
+            </div>
           </div>
         </div>
+
+        {/* Watermark Controls (Premium only) */}
+        {isPremium && (
+          <div className={`control-group watermark-group ${isPremium ? 'premium-mode' : ''}`}>
+            <div className="control-section-title">
+              <Crown size={16} className="control-section-icon" />
+              <span className="control-section-title-text">Watermark</span>
+            </div>
+            <div className="control-group-content">
+              <button 
+                className="watermark-toggle-button"
+                onClick={() => setShowWatermarkPanel(!showWatermarkPanel)}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: showWatermarkPanel ? '#3a863e' : 'white',
+                  color: showWatermarkPanel ? 'white' : '#3a863e',
+                  border: '1px solid #3a863e',
+                  borderRadius: '6px',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (!showWatermarkPanel) {
+                    e.currentTarget.style.backgroundColor = '#f0f9f0';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!showWatermarkPanel) {
+                    e.currentTarget.style.backgroundColor = 'white';
+                  }
+                }}
+              >
+                <Crown size={16} />
+                Watermark Controls
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
+
+    {/* Watermark Panel */}
+    {showWatermarkPanel && (
+      <WatermarkPanel
+        effects={effects}
+        onEffectsChange={onEffectsChange}
+        onClose={() => setShowWatermarkPanel(false)}
+        isOpen={showWatermarkPanel}
+      />
+    )}
+    </>
   );
 };
 

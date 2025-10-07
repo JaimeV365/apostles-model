@@ -29,8 +29,8 @@
 .chart-controls {
   display: flex;
   flex-wrap: nowrap;
-  gap: 16px;
-  padding: 16px;
+  gap: 20px;
+  padding: 20px;
   transition: all 0.2s ease;
 }
 
@@ -52,21 +52,24 @@
 }
 
 .control-group-content {
-  padding: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 .labels-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   width: 100%;
-  padding: 4px;
+  padding: 12px;
 }
 
 .label-button {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: calc(50% - 4px);
   padding: 8px 12px;
   background: white;
   border: 1px solid #e5e7eb;
@@ -199,4 +202,60 @@
     flex: 0 0 240px;
     width: 240px;
   }
+}
+
+
+/* Alternative approach using CSS custom properties for Premium mode */
+.labels-buttons.premium-mode {
+  flex-direction: column;
+  padding: 8px; /* Reduce padding to give more space */
+  gap: 6px; /* Add small gap between stacked buttons */
+}
+
+.labels-buttons.premium-mode .label-button {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px; /* Reduce button padding */
+  font-size: 12px; /* Smaller font for better fit */
+  margin: 0; /* Remove any default margins */
+}
+
+
+/* Watermark button styling */
+.watermark-toggle-button {
+  box-sizing: border-box;
+  max-width: 100%;
+  word-wrap: break-word;
+  padding: 8px 12px !important; /* Override inline styles for better fit */
+  font-size: 12px !important; /* Smaller font for better fit */
+}
+
+.watermark-toggle-button:focus {
+  outline: 2px solid #3a863e;
+  outline-offset: 2px;
+}
+
+/* Ensure watermark button stays within container */
+.watermark-group .control-group-content {
+  overflow: hidden;
+}
+
+/* Make watermark button more compact in Premium mode */
+.watermark-group .watermark-toggle-button {
+  padding: 6px 8px !important;
+  font-size: 11px !important;
+  gap: 4px !important;
+}
+
+
+/* Alternative approach using CSS custom properties for Premium mode */
+.control-group.premium-mode {
+  flex: 0 0 200px !important;
+  width: 200px !important;
+}
+
+.control-group.premium-mode .control-group-content {
+  padding: 8px !important;
+  gap: 8px; /* Add gap between elements in Premium mode */
 }

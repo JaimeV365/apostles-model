@@ -291,6 +291,11 @@ appearance: none;
   z-index: 1000;
 }
 
+/* Hide mode indicator when unified controls are open */
+body.unified-controls-open .mode-indicator {
+  display: none;
+}
+
 .mode-badge {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
