@@ -3,6 +3,7 @@ import DataEntryModule from './components/data-entry/DataEntryModule';
 import DataDisplay from './components/data-entry/table/DataDisplay';
 import { DataPoint, ScaleFormat, ScaleState } from './types/base';
 import { QuadrantAssignmentProvider } from './components/visualization/context/QuadrantAssignmentContext';
+import { FilterProvider } from './components/visualization/context/FilterContext';
 import { useNotification } from './components/data-entry/NotificationSystem';
 import FilteredChart from './components/visualization/components/FilteredChart';
 import { ReportingSection } from './components/reporting/ReportingSection';
@@ -64,6 +65,8 @@ useEffect(() => {
   const [apostlesZoneSize, setApostlesZoneSize] = useState(1); // Default to 1
   const [terroristsZoneSize, setTerroristsZoneSize] = useState(1); // Default to 1
   const [midpoint, setMidpoint] = useState<{ sat: number; loy: number } | null>(null); // For loaded .seg files
+  const [manualAssignments, setManualAssignments] = useState<Map<string, any> | null>(null); // For loaded .seg files
+  const [filterState, setFilterState] = useState<any>(null); // For loaded .seg files
 
   // Drawer state
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -120,6 +123,33 @@ useEffect(() => {
         // Load the context settings
         const context = saveData.context;
         setMidpoint(context.chartConfig.midpoint); // Set the midpoint for the provider
+        
+        // Load manual assignments
+        const manualAssignmentsMap = new Map<string, any>();
+        context.manualAssignments.forEach((assignment: any) => {
+          manualAssignmentsMap.set(assignment.pointId, assignment.quadrant);
+        });
+        setManualAssignments(manualAssignmentsMap);
+        
+        // Load filter state
+        if (context.filters) {
+          const loadedFilterState = {
+            dateRange: {
+              startDate: context.filters.dateRange.startDate ? new Date(context.filters.dateRange.startDate) : null,
+              endDate: context.filters.dateRange.endDate ? new Date(context.filters.dateRange.endDate) : null,
+              preset: context.filters.dateRange.preset || 'all'
+            },
+            attributes: context.filters.attributes.map((attr: any) => ({
+              field: attr.field,
+              values: new Set(attr.values),
+              availableValues: attr.availableValues,
+              expanded: attr.expanded
+            })),
+            isActive: context.filters.isActive
+          };
+          setFilterState(loadedFilterState);
+        }
+        
         setApostlesZoneSize(context.chartConfig.apostlesZoneSize);
         setTerroristsZoneSize(context.chartConfig.terroristsZoneSize);
         setShowGrid(context.uiState.showGrid);
@@ -333,17 +363,19 @@ const handleTerroristsZoneSizeChange = (size: number) => {
             )}
 
             {data.length > 0 && (
-              <QuadrantAssignmentProvider
-  data={data}
-  satisfactionScale={scales.satisfactionScale}
-  loyaltyScale={scales.loyaltyScale}
-  initialMidpoint={midpoint || undefined}
-  isClassicModel={isClassicModel}
-  showNearApostles={showNearApostles}
-  showSpecialZones={showSpecialZones}
-  apostlesZoneSize={apostlesZoneSize}
-  terroristsZoneSize={terroristsZoneSize}
->
+              <FilterProvider initialData={data} initialFilterState={filterState || undefined}>
+                <QuadrantAssignmentProvider
+                  data={data}
+                  satisfactionScale={scales.satisfactionScale}
+                  loyaltyScale={scales.loyaltyScale}
+                  initialMidpoint={midpoint || undefined}
+                  initialManualAssignments={manualAssignments || undefined}
+                  isClassicModel={isClassicModel}
+                  showNearApostles={showNearApostles}
+                  showSpecialZones={showSpecialZones}
+                  apostlesZoneSize={apostlesZoneSize}
+                  terroristsZoneSize={terroristsZoneSize}
+                >
                 <div className="section visualization-section" ref={visualizationRef}>
                   <h2 className="visualisation-title">Visualisation</h2>
                   <div className="visualization-content">
@@ -392,39 +424,40 @@ const handleTerroristsZoneSizeChange = (size: number) => {
   showNearApostles={showNearApostles}
 />
                 </div>
-              </QuadrantAssignmentProvider>
+                
+                {/* Left Drawer with Save Button - Inside providers for context access */}
+                <LeftDrawer
+                  isOpen={isDrawerOpen} 
+                  onToggle={() => setIsDrawerOpen(!isDrawerOpen)}
+                >
+                  {/* Save Button - Only show when there's data */}
+                  {data.length > 0 && (
+                    <DrawerSaveButton
+                      data={data}
+                      satisfactionScale={scales.satisfactionScale}
+                      loyaltyScale={scales.loyaltyScale}
+                      showGrid={showGrid}
+                      showScaleNumbers={true} // TODO: Get from context
+                      showLegends={true} // TODO: Get from context
+                      showNearApostles={showNearApostles}
+                      showSpecialZones={showSpecialZones}
+                      isAdjustableMidpoint={isAdjustableMidpoint}
+                      labelMode={1} // TODO: Get from context
+                      labelPositioning="below-dots" // TODO: Get from context
+                      areasDisplayMode={showNearApostles ? 3 : 2}
+                      frequencyFilterEnabled={frequencyFilterEnabled}
+                      frequencyThreshold={frequencyThreshold}
+                      isPremium={isPremium}
+                      effects={activeEffects}
+                    />
+                  )}
+                </LeftDrawer>
+                </QuadrantAssignmentProvider>
+              </FilterProvider>
             )}
           </main>
            
         </>
-        
-        {/* Left Drawer with Save Button */}
-        <LeftDrawer 
-          isOpen={isDrawerOpen} 
-          onToggle={() => setIsDrawerOpen(!isDrawerOpen)}
-        >
-          {/* Save Button - Only show when there's data */}
-          {data.length > 0 && (
-            <DrawerSaveButton
-              data={data}
-              satisfactionScale={scales.satisfactionScale}
-              loyaltyScale={scales.loyaltyScale}
-              showGrid={showGrid}
-              showScaleNumbers={true} // TODO: Get from context
-              showLegends={true} // TODO: Get from context
-              showNearApostles={showNearApostles}
-              showSpecialZones={showSpecialZones}
-              isAdjustableMidpoint={isAdjustableMidpoint}
-              labelMode={1} // TODO: Get from context
-              labelPositioning="below-dots" // TODO: Get from context
-              areasDisplayMode={showNearApostles ? 3 : 2}
-              frequencyFilterEnabled={frequencyFilterEnabled}
-              frequencyThreshold={frequencyThreshold}
-              isPremium={isPremium}
-              effects={activeEffects}
-            />
-          )}
-        </LeftDrawer>
       
     </div>
   );

@@ -2,8 +2,9 @@ import { useState, useCallback } from 'react';
 import { useNotification } from '../components/data-entry/NotificationSystem';
 import { comprehensiveSaveLoadService, CreateSaveDataParams } from '../services/ComprehensiveSaveLoadService';
 import { ApostlesSaveData } from '../types/save-export';
-import { useQuadrantAssignment } from '../components/visualization/context/QuadrantAssignmentContext';
-import { useChartConfig } from '../components/visualization/context/ChartConfigContext';
+import { useQuadrantAssignmentSafe } from '../components/visualization/context/UnifiedQuadrantContext';
+import { useChartConfigSafe } from '../components/visualization/context/ChartConfigContext';
+import { useFilterContextSafe } from '../components/visualization/context/FilterContext';
 
 export interface UseSaveLoadParams {
   // Data
@@ -41,17 +42,11 @@ export const useSaveLoad = (params: UseSaveLoadParams) => {
   const [isLoading, setIsLoading] = useState(false);
   const { showNotification } = useNotification();
   
-  // Try to access context data, fallback to defaults if not available
-  let contextData = null;
-  let chartConfig = null;
-  
-  try {
-    contextData = useQuadrantAssignment();
-    chartConfig = useChartConfig();
-  } catch (error) {
-    // Context not available, will use fallback values
-    console.log('Context not available in useSaveLoad, using fallback values');
-  }
+  // Always call hooks unconditionally (React rules)
+  // These safe hooks return null if contexts are not available
+  const contextData = useQuadrantAssignmentSafe();
+  const chartConfig = useChartConfigSafe();
+  const filterContext = useFilterContextSafe();
   
   // Use context data if available, otherwise use defaults
   const midpoint = contextData?.midpoint || { sat: 3, loy: 3 };
@@ -69,6 +64,16 @@ export const useSaveLoad = (params: UseSaveLoadParams) => {
     if (isSaving) return;
     
     setIsSaving(true);
+    
+    // Debug logging
+    console.log('🔍 useSaveLoad saveProgress - Context data:', {
+      contextData: contextData ? 'available' : 'null',
+      chartConfig: chartConfig ? 'available' : 'null', 
+      filterContext: filterContext ? 'available' : 'null',
+      midpoint: contextData?.midpoint,
+      filterState: filterContext?.filterState,
+      manualAssignments: contextData?.manualAssignments?.size || 0
+    });
     
     try {
       const saveDataParams: CreateSaveDataParams = {
@@ -97,8 +102,8 @@ export const useSaveLoad = (params: UseSaveLoadParams) => {
         frequencyFilterEnabled: params.frequencyFilterEnabled,
         frequencyThreshold: params.frequencyThreshold,
         
-        // Filter State
-        filterState: params.filterState,
+        // Filter State (use context if available, otherwise fallback to params)
+        filterState: filterContext?.filterState || params.filterState,
         
         // Premium
         isPremium: params.isPremium,
@@ -212,8 +217,21 @@ export const useSaveLoad = (params: UseSaveLoadParams) => {
             frequencyFilterEnabled: context.uiState.frequencyFilterEnabled,
             frequencyThreshold: context.uiState.frequencyThreshold,
             
-            // Filter State
-            filterState: context.filters,
+            // Filter State (convert from saved format to context format)
+            filterState: {
+              dateRange: {
+                startDate: context.filters.dateRange.startDate ? new Date(context.filters.dateRange.startDate) : null,
+                endDate: context.filters.dateRange.endDate ? new Date(context.filters.dateRange.endDate) : null,
+                preset: context.filters.dateRange.preset
+              },
+              attributes: context.filters.attributes.map((attr: any) => ({
+                field: attr.field,
+                values: new Set(attr.values),
+                availableValues: attr.availableValues,
+                expanded: attr.expanded
+              })),
+              isActive: context.filters.isActive
+            },
             
             // Premium
             isPremium: context.premium?.isPremium || false,
@@ -261,8 +279,25 @@ export const useSaveLoad = (params: UseSaveLoadParams) => {
             frequencyFilterEnabled: (saveData as any).uiState?.frequencyFilterEnabled ?? false,
             frequencyThreshold: (saveData as any).uiState?.frequencyThreshold || 1,
             
-            // Filter State
-            filterState: (saveData as any).filters || { dateRange: { startDate: null, endDate: null }, attributes: [], isActive: false },
+            // Filter State (legacy format - convert to context format)
+            filterState: (saveData as any).filters ? {
+              dateRange: {
+                startDate: (saveData as any).filters.dateRange?.startDate ? new Date((saveData as any).filters.dateRange.startDate) : null,
+                endDate: (saveData as any).filters.dateRange?.endDate ? new Date((saveData as any).filters.dateRange.endDate) : null,
+                preset: (saveData as any).filters.dateRange?.preset || 'all'
+              },
+              attributes: ((saveData as any).filters.attributes || []).map((attr: any) => ({
+                field: attr.field,
+                values: new Set(attr.values || []),
+                availableValues: attr.availableValues,
+                expanded: attr.expanded
+              })),
+              isActive: (saveData as any).filters.isActive || false
+            } : {
+              dateRange: { startDate: null, endDate: null, preset: 'all' },
+              attributes: [],
+              isActive: false
+            },
             
             // Premium
             isPremium: (saveData as any).premium?.isPremium || false,

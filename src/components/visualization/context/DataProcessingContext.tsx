@@ -44,6 +44,7 @@ interface DataProcessingProviderProps {
   data: DataPoint[];
   showNearApostles?: boolean;
   showSpecialZones?: boolean;
+  initialManualAssignments?: Map<string, QuadrantType>;
 }
 
 export const DataProcessingProvider: React.FC<DataProcessingProviderProps> = ({
@@ -51,6 +52,7 @@ export const DataProcessingProvider: React.FC<DataProcessingProviderProps> = ({
   data,
   showNearApostles = false,
   showSpecialZones = true,
+  initialManualAssignments,
 }) => {
   // Get chart config from parent context
   const { 
@@ -63,7 +65,9 @@ export const DataProcessingProvider: React.FC<DataProcessingProviderProps> = ({
   } = useChartConfig();
 
   // State
-  const [manualAssignments, setManualAssignments] = useState<Map<string, QuadrantType>>(new Map());
+  const [manualAssignments, setManualAssignments] = useState<Map<string, QuadrantType>>(
+    initialManualAssignments || new Map()
+  );
 
   // Natural classification function (bypasses manual assignments) - used for boundary detection
   const getNaturalQuadrantForPoint = useCallback((point: DataPoint): QuadrantType => {

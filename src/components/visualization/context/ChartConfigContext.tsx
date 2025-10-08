@@ -147,6 +147,12 @@ export const useChartConfig = (): ChartConfigContextType => {
   return context;
 };
 
+// Safe version that returns null if context is not available
+export const useChartConfigSafe = (): ChartConfigContextType | null => {
+  const context = useContext(ChartConfigContext);
+  return context || null;
+};
+
 
 
 

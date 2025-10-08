@@ -3,5 +3,6 @@
 export { 
   QuadrantAssignmentProvider, 
   useQuadrantAssignment,
+  useQuadrantAssignmentSafe,
   type QuadrantType 
 } from './UnifiedQuadrantContext';

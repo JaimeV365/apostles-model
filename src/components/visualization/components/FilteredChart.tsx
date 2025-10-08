@@ -3,6 +3,7 @@ import { DataPoint } from '@/types/base';
 import { QuadrantChartProps } from '../types';
 import QuadrantChart from './QuadrantChart';
 import { UnifiedChartControls } from '../controls/UnifiedChartControls';
+import { useFilterContextSafe } from '../context/FilterContext';
 import './FilteredChart.css';
 
 // Extend the QuadrantChartProps to create FilteredChartProps
@@ -46,7 +47,13 @@ const FilteredChart: React.FC<FilteredChartProps> = React.memo(({
   
   const filterPanelRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<HTMLDivElement>(null);
-  // const isPremium = activeEffects?.has('premium');
+  
+  // Try to access filter context if available
+  const filterContext = useFilterContextSafe();
+  
+  // Use filter context data if available, otherwise use local state
+  const effectiveFilteredData = filterContext?.filteredData || filteredData;
+  const effectiveActiveFilterCount = filterContext?.activeFilterCount || activeFilterCount;
 
   // Determine if we have filterable data
   const hasFilterableData = useMemo(() => {
@@ -112,10 +119,14 @@ const FilteredChart: React.FC<FilteredChartProps> = React.memo(({
 
   /// Handle filter changes
 const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []) => {
-  setFilteredData(newFilteredData);
-  
-  // Set active filter count based on the number of filters applied
-  setActiveFilterCount(newFilters.length);
+  // Use filter context if available, otherwise use local state
+  if (filterContext) {
+    filterContext.setFilteredData(newFilteredData);
+    filterContext.setActiveFilterCount(newFilters.length);
+  } else {
+    setFilteredData(newFilteredData);
+    setActiveFilterCount(newFilters.length);
+  }
 };
 
 
@@ -148,7 +159,7 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
       {/* Unified Controls Panel */}
       <UnifiedChartControls
         hasFilterableData={hasFilterableData}
-        activeFilterCount={activeFilterCount}
+        activeFilterCount={effectiveActiveFilterCount}
         data={data}
         onFilterChange={handleFilterChange}
         effects={activeEffects}
@@ -170,7 +181,7 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
       
       {/* Chart with Filtered Data */}
       <QuadrantChart
-  data={filteredData}
+  data={effectiveFilteredData}
   satisfactionScale={satisfactionScale}
   loyaltyScale={loyaltyScale}
   isClassicModel={isClassicModel}
@@ -194,8 +205,8 @@ const handleFilterChange = (newFilteredData: DataPoint[], newFilters: any[] = []
   onShowGridChange={onShowGridChange}
   isUnifiedControlsOpen={isUnifiedControlsOpen}
   setIsUnifiedControlsOpen={setIsUnifiedControlsOpen}
-  activeFilterCount={activeFilterCount}
-  filteredData={filteredData}
+  activeFilterCount={effectiveActiveFilterCount}
+  filteredData={effectiveFilteredData}
   totalData={data}
   apostlesZoneSize={apostlesZoneSize}
   terroristsZoneSize={terroristsZoneSize}

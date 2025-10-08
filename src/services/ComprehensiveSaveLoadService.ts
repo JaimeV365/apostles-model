@@ -36,8 +36,24 @@ export interface CreateSaveDataParams {
   frequencyFilterEnabled: boolean;
   frequencyThreshold: number;
   
-  // Filter State
-  filterState?: any;
+  // Filter State (Enhanced)
+  filterState?: {
+    dateRange: {
+      startDate: Date | null;
+      endDate: Date | null;
+      preset?: string;
+    };
+    attributes: Array<{
+      field: string;
+      values: Set<string | number>;
+      availableValues?: Array<{
+        value: string | number;
+        count: number;
+      }>;
+      expanded?: boolean;
+    }>;
+    isActive: boolean;
+  };
   
   // Premium
   isPremium?: boolean;
@@ -50,6 +66,14 @@ class ComprehensiveSaveLoadServiceImpl implements SaveLoadService {
    * Create comprehensive save data from all current state
    */
   createSaveData(params: CreateSaveDataParams): ApostlesSaveData {
+    // Debug logging
+    console.log('🔍 ComprehensiveSaveLoadService createSaveData - Filter state:', {
+      hasFilterState: !!params.filterState,
+      filterState: params.filterState,
+      midpoint: params.midpoint,
+      manualAssignmentsSize: params.manualAssignments.size
+    });
+    
     // Convert manual assignments Map to array
     const manualAssignmentsArray = Array.from(params.manualAssignments.entries()).map(
       ([pointId, quadrant]) => ({ pointId, quadrant })
@@ -143,8 +167,21 @@ class ComprehensiveSaveLoadServiceImpl implements SaveLoadService {
           frequencyThreshold: params.frequencyThreshold
         },
         
-        filters: params.filterState || {
-          dateRange: { startDate: null, endDate: null },
+        filters: params.filterState ? {
+          dateRange: {
+            startDate: params.filterState.dateRange.startDate?.toISOString() || null,
+            endDate: params.filterState.dateRange.endDate?.toISOString() || null,
+            preset: params.filterState.dateRange.preset
+          },
+          attributes: params.filterState.attributes.map(attr => ({
+            field: attr.field,
+            values: Array.from(attr.values),
+            availableValues: attr.availableValues,
+            expanded: attr.expanded
+          })),
+          isActive: params.filterState.isActive
+        } : {
+          dateRange: { startDate: null, endDate: null, preset: 'all' },
           attributes: [],
           isActive: false
         },

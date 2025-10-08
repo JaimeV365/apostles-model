@@ -63,6 +63,7 @@ interface QuadrantAssignmentProviderProps {
   satisfactionScale: ScaleFormat;
   loyaltyScale: ScaleFormat;
   initialMidpoint?: { sat: number; loy: number };
+  initialManualAssignments?: Map<string, import('./DataProcessingContext').QuadrantType>;
   isClassicModel?: boolean;
   showNearApostles?: boolean;
   showSpecialZones?: boolean;
@@ -91,6 +92,7 @@ export const QuadrantAssignmentProvider: React.FC<QuadrantAssignmentProviderProp
         data={props.data}
         showNearApostles={props.showNearApostles}
         showSpecialZones={props.showSpecialZones}
+        initialManualAssignments={props.initialManualAssignments}
       >
         <UnifiedContextWrapper>
           {props.children}
@@ -146,4 +148,10 @@ export const useQuadrantAssignment = (): QuadrantAssignmentContextType => {
     throw new Error('useQuadrantAssignment must be used within a QuadrantAssignmentProvider');
   }
   return context;
+};
+
+// Safe version that returns null if context is not available
+export const useQuadrantAssignmentSafe = (): QuadrantAssignmentContextType | null => {
+  const context = useContext(QuadrantAssignmentContext);
+  return context || null;
 };

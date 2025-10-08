@@ -3,6 +3,7 @@ import { Filter, X, Calendar, ChevronDown, Check, Sliders } from 'lucide-react';
 import { DataPoint } from '@/types/base';
 import { FrequencySlider } from '../controls/FrequencyControl/FrequencySlider';
 import { Switch } from '../../ui/Switch/Switch';
+import { useFilterContextSafe } from '../context/FilterContext';
 import './FilterPanel.css';
 
 // Types for filter state
@@ -15,7 +16,7 @@ interface DateRange {
 interface AttributeFilter {
   field: string;
   values: Set<string | number>;
-  availableValues: Array<{value: string | number, count: number}>;
+  availableValues?: Array<{value: string | number, count: number}>;
   expanded?: boolean;
 }
 
@@ -76,7 +77,11 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
   frequencyData,
   resetTrigger
 }) => {
-  const [filterState, setFilterState] = useState<FilterState>({
+  // Try to access filter context if available
+  const filterContext = useFilterContextSafe();
+  
+  // Use context state if available, otherwise use local state
+  const [localFilterState, setLocalFilterState] = useState<FilterState>({
     dateRange: {
       startDate: null,
       endDate: null,
@@ -85,6 +90,21 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
     attributes: [],
     isActive: false,
   });
+  
+  const filterState = filterContext?.filterState || localFilterState;
+  
+  // Create type-safe setter functions
+  const setFilterState = (newState: FilterState | ((prev: FilterState) => FilterState)) => {
+    if (filterContext) {
+      if (typeof newState === 'function') {
+        filterContext.setFilterState(newState(filterContext.filterState));
+      } else {
+        filterContext.setFilterState(newState);
+      }
+    } else {
+      setLocalFilterState(newState);
+    }
+  };
   
   const [datePickerVisible, setDatePickerVisible] = useState(false);
   const [customStartDate, setCustomStartDate] = useState<string>('');
@@ -174,7 +194,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
 
   // Initialize attributes on first render
   useEffect(() => {
-    if (availableFields.length > 0 && filterState.attributes.length === 0) {
+    if (!filterContext && availableFields.length > 0 && filterState.attributes.length === 0) {
       setFilterState(prev => ({
         ...prev,
         attributes: availableFields.map(field => ({
@@ -185,7 +205,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
         }))
       }));
     }
-  }, [availableFields, filterState.attributes.length]);
+  }, [availableFields, filterState.attributes.length, filterContext]);
 
   // Apply filters when filterState changes
   useEffect(() => {
@@ -422,18 +442,24 @@ onFilterChange(filteredData, activeFilters);
 
   // Reset all filters
   const resetFilters = () => {
-    setFilterState({
-      dateRange: {
-        startDate: null,
-        endDate: null,
-        preset: 'all'
-      },
-      attributes: filterState.attributes.map(attr => ({
-        ...attr,
-        values: new Set()
-      })),
-      isActive: false,
-    });
+    if (filterContext) {
+      // Use context reset if available
+      filterContext.resetFilters();
+    } else {
+      // Fallback to local state reset
+      setFilterState({
+        dateRange: {
+          startDate: null,
+          endDate: null,
+          preset: 'all'
+        },
+        attributes: filterState.attributes.map(attr => ({
+          ...attr,
+          values: new Set()
+        })),
+        isActive: false,
+      });
+    }
     setDatePickerVisible(false);
     setCustomStartDate('');
     setCustomEndDate('');
@@ -672,7 +698,7 @@ onFilterChange(filteredData, activeFilters);
               
               {attr.expanded && (
                 <div className="attribute-value-list">
-                  {attr.availableValues.map(({value, count}) => (
+                  {attr.availableValues?.map(({value, count}) => (
                     <div 
                       key={`${attr.field}-${value}`}
                       className={`attribute-value-item ${attr.values.has(value) ? 'selected' : ''}`}
@@ -727,7 +753,7 @@ onFilterChange(filteredData, activeFilters);
               
               {attr.expanded && (
                 <div className="attribute-value-list">
-                  {attr.availableValues.map(({value, count}) => (
+                  {attr.availableValues?.map(({value, count}) => (
                     <div 
                       key={`${attr.field}-${value}`}
                       className={`attribute-value-item ${attr.values.has(value) ? 'selected' : ''}`}
@@ -796,7 +822,7 @@ onFilterChange(filteredData, activeFilters);
                     
                     {attr.expanded && (
                       <div className="attribute-value-list">
-                        {attr.availableValues.map(({value, count}) => (
+                        {attr.availableValues?.map(({value, count}) => (
                           <div 
                             key={`${attr.field}-${value}`}
                             className={`attribute-value-item ${attr.values.has(value) ? 'selected' : ''}`}

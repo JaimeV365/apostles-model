@@ -74,18 +74,23 @@ export interface ApostlesSaveData {
       frequencyThreshold: number;
     };
     
-    // Filter State
+    // Filter State (Enhanced for comprehensive filter support)
     filters: {
       dateRange: {
-        startDate: string | null;
-        endDate: string | null;
-        preset?: string;
+        startDate: string | null; // ISO string or null
+        endDate: string | null; // ISO string or null
+        preset?: string; // 'all', 'today', 'yesterday', etc.
       };
       attributes: Array<{
-        field: string;
-        values: Array<string | number>;
+        field: string; // Field name (e.g., 'group', 'satisfaction', 'loyalty', custom fields)
+        values: Array<string | number>; // Selected values for this field
+        availableValues?: Array<{
+          value: string | number;
+          count: number;
+        }>; // Available values with counts (for UI restoration)
+        expanded?: boolean; // UI state for collapsible sections
       }>;
-      isActive: boolean;
+      isActive: boolean; // Whether any filters are currently applied
     };
     
     // Premium Features
