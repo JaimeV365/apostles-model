@@ -6,6 +6,8 @@ import { QuadrantAssignmentProvider } from './components/visualization/context/Q
 import { useNotification } from './components/data-entry/NotificationSystem';
 import FilteredChart from './components/visualization/components/FilteredChart';
 import { ReportingSection } from './components/reporting/ReportingSection';
+import LeftDrawer from './components/ui/LeftDrawer/LeftDrawer';
+import DrawerSaveButton from './components/ui/DrawerSaveButton/DrawerSaveButton';
 import './App.css';
 
 interface HeaderScales {
@@ -59,6 +61,15 @@ useEffect(() => {
   const [frequencyThreshold, setFrequencyThreshold] = useState(1);
   const [apostlesZoneSize, setApostlesZoneSize] = useState(1); // Default to 1
 const [terroristsZoneSize, setTerroristsZoneSize] = useState(1); // Default to 1
+
+  // Drawer state
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  // Simple load progress handler
+  const handleLoadProgress = async (file: File) => {
+    console.log('Loading progress from file:', file.name);
+    // TODO: Implement basic load functionality without touching visualization context
+  };
 
 // Add callbacks to handle zone size changes from the context
 const handleApostlesZoneSizeChange = (size: number) => {
@@ -202,6 +213,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
                 satisfactionScale={scales.satisfactionScale}
                 loyaltyScale={scales.loyaltyScale}
                 data={data}
+                onSegFileLoad={handleLoadProgress}
               />
             </div>
 
@@ -283,6 +295,32 @@ const handleTerroristsZoneSizeChange = (size: number) => {
           </main>
            
         </>
+        
+        {/* Left Drawer with Save Button */}
+        <LeftDrawer 
+          isOpen={isDrawerOpen} 
+          onToggle={() => setIsDrawerOpen(!isDrawerOpen)}
+        >
+          {/* Save Button - Only show when there's data */}
+          {data.length > 0 && (
+            <DrawerSaveButton
+              data={data}
+              showGrid={showGrid}
+              showScaleNumbers={true} // TODO: Get from context
+              showLegends={true} // TODO: Get from context
+              showNearApostles={showNearApostles}
+              showSpecialZones={showSpecialZones}
+              isAdjustableMidpoint={isAdjustableMidpoint}
+              labelMode={1} // TODO: Get from context
+              labelPositioning="below-dots" // TODO: Get from context
+              areasDisplayMode={showNearApostles ? 3 : 2}
+              frequencyFilterEnabled={frequencyFilterEnabled}
+              frequencyThreshold={frequencyThreshold}
+              isPremium={isPremium}
+              effects={activeEffects}
+            />
+          )}
+        </LeftDrawer>
       
     </div>
   );

@@ -43,6 +43,7 @@ interface CSVImportProps {
   uploadHistory: UploadHistoryItem[];
   onUploadSuccess: (fileName: string, count: number, ids: string[], wasOverwrite?: boolean) => void;
   lastManualEntryTimestamp?: number; // New prop to track manual entries
+  onSegFileLoad?: (file: File) => Promise<void>;
 }
 
 export const CSVImport: React.FC<CSVImportProps> = ({ 
@@ -54,7 +55,8 @@ export const CSVImport: React.FC<CSVImportProps> = ({
   scalesLocked,
   uploadHistory,
   onUploadSuccess,
-  lastManualEntryTimestamp = 0
+  lastManualEntryTimestamp = 0,
+  onSegFileLoad
 }) => {
   const { showNotification } = useNotification();
   
@@ -485,12 +487,39 @@ export const CSVImport: React.FC<CSVImportProps> = ({
     }
   }, [lastManualEntryTimestamp, clearValidationState]);
 
-  const handleFileSelect = useCallback((file: File) => {
+  const handleFileSelect = useCallback(async (file: File) => {
     console.log("File selected:", file.name);
     clearValidationState();
     setPendingFileData(null); // Reset pending data for new file
-    parseFile(file);
-  }, [clearValidationState, parseFile]);
+    
+    // Check if it's a .seg file
+    if (file.name.toLowerCase().endsWith('.seg')) {
+      if (onSegFileLoad) {
+        try {
+          setIsLoading(true);
+          await onSegFileLoad(file);
+        } catch (error) {
+          console.error('Failed to load progress:', error);
+          showNotification({
+            title: 'Error',
+            message: 'Failed to load progress file. Please check the file format.',
+            type: 'error'
+          });
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        showNotification({
+          title: 'Error',
+          message: 'Seg file loading is not available.',
+          type: 'error'
+        });
+      }
+    } else {
+      // Handle CSV files as before
+      parseFile(file);
+    }
+  }, [clearValidationState, parseFile, onImport, showNotification]);
 
   const handleDownloadDuplicateReport = useCallback(() => {
     if (duplicateReport) {

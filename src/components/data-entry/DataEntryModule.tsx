@@ -17,7 +17,8 @@ const DataEntryModule: React.FC<DataEntryModuleProps> = ({
   onDataChange,
   satisfactionScale,
   loyaltyScale,
-  data: externalData
+  data: externalData,
+  onSegFileLoad
 }) => {
   const [editingData, setEditingData] = useState<DataPoint | null>(null);
   const [data, setData] = useState<DataPoint[]>([]);
@@ -334,6 +335,7 @@ if (editingData) {
         }}
         lastManualEntryTimestamp={lastManualEntryTimestamp}
         existingData={data} // Add this missing prop
+        onSegFileLoad={onSegFileLoad}
       />
     </div>
   );

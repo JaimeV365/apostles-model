@@ -208,7 +208,7 @@
 /* Alternative approach using CSS custom properties for Premium mode */
 .labels-buttons.premium-mode {
   flex-direction: column;
-  padding: 8px; /* Reduce padding to give more space */
+  padding: 0; /* Remove padding since parent already has padding */
   gap: 6px; /* Add small gap between stacked buttons */
 }
 

@@ -74,6 +74,9 @@ interface ChartControlsProps {
   isPremium?: boolean;
   effects?: Set<string>;
   onEffectsChange?: (effects: Set<string>) => void;
+  
+  // Save Progress functionality
+  onSaveProgress?: () => void;
 }
 
 export const ChartControls: React.FC<ChartControlsProps> = ({
