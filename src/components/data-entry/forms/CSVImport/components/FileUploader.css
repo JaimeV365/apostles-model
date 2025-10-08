@@ -36,19 +36,21 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    color: #6b7280;
+    color: #3a863e;
     font-size: 14px;
+    font-weight: 500;
     text-decoration: none;
     cursor: pointer;
     margin-top: 4px;
-    padding: 6px 10px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+    padding: 0;
+    border: none;
+    background: none;
+    transition: color 0.2s ease;
   }
   
   .csv-file-uploader__template-button:hover {
-    background-color: #f3f4f6;
-    color: #4b5563;
+    color: #2d6a31;
+    text-decoration: underline;
   }
   
   .csv-file-uploader__dropzone {

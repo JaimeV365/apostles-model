@@ -12,6 +12,19 @@
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
+
+  /* Responsive Design for Filter Panel */
+  @media (max-width: 1400px) and (min-width: 769px) {
+    .filter-panel {
+      width: 320px; /* Reduced from 350px */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .filter-panel {
+      display: none !important;
+    }
+  }
   
   .filter-panel.open {
     transform: translateX(0);

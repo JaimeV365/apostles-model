@@ -8,7 +8,9 @@ import FilteredChart from './components/visualization/components/FilteredChart';
 import { ReportingSection } from './components/reporting/ReportingSection';
 import LeftDrawer from './components/ui/LeftDrawer/LeftDrawer';
 import DrawerSaveButton from './components/ui/DrawerSaveButton/DrawerSaveButton';
+import ScreenSizeWarning from './components/ui/ScreenSizeWarning/ScreenSizeWarning';
 import './App.css';
+import './components/visualization/controls/ResponsiveDesign.css';
 
 interface HeaderScales {
   satisfaction: ScaleFormat;
@@ -60,15 +62,114 @@ useEffect(() => {
   const [frequencyFilterEnabled, setFrequencyFilterEnabled] = useState(false);
   const [frequencyThreshold, setFrequencyThreshold] = useState(1);
   const [apostlesZoneSize, setApostlesZoneSize] = useState(1); // Default to 1
-const [terroristsZoneSize, setTerroristsZoneSize] = useState(1); // Default to 1
+  const [terroristsZoneSize, setTerroristsZoneSize] = useState(1); // Default to 1
+  const [midpoint, setMidpoint] = useState<{ sat: number; loy: number } | null>(null); // For loaded .seg files
 
   // Drawer state
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Simple load progress handler
+  // Load progress handler
   const handleLoadProgress = async (file: File) => {
     console.log('Loading progress from file:', file.name);
-    // TODO: Implement basic load functionality without touching visualization context
+    try {
+      // Import the comprehensive save/load service
+      const { comprehensiveSaveLoadService } = await import('./services/ComprehensiveSaveLoadService');
+      
+      // Load the .seg file
+      const saveData = await comprehensiveSaveLoadService.loadComprehensiveProgress(file);
+      
+      // Handle both old and new format
+      if (saveData.version === '2.0.0' && saveData.dataTable) {
+        // New format: Load from dataTable
+        const dataPoints = saveData.dataTable.rows.map(row => {
+          const point: any = {
+            id: row.id,
+            name: row.name,
+            satisfaction: row.satisfaction,
+            loyalty: row.loyalty,
+            group: row.group || 'Default',
+            excluded: row.excluded || false
+          };
+          
+          // Add optional fields
+          if (row.email) point.email = row.email;
+          if (row.date) point.date = row.date;
+          if (row.dateFormat) point.dateFormat = row.dateFormat;
+          
+          // Reconstruct additionalAttributes from flattened columns
+          const additionalAttributes: Record<string, any> = {};
+          Object.keys(row).forEach(key => {
+            if (!['id', 'name', 'satisfaction', 'loyalty', 'email', 'date', 'dateFormat', 'group', 'excluded', 'reassigned'].includes(key)) {
+              additionalAttributes[key] = row[key];
+            }
+          });
+          
+          if (Object.keys(additionalAttributes).length > 0) {
+            point.additionalAttributes = additionalAttributes;
+          }
+          
+          return point;
+        });
+        
+        // Load the data with proper scales from headers
+        handleDataChange(dataPoints, {
+          satisfaction: saveData.dataTable.headers.satisfaction as ScaleFormat,
+          loyalty: saveData.dataTable.headers.loyalty as ScaleFormat
+        });
+        
+        // Load the context settings
+        const context = saveData.context;
+        setMidpoint(context.chartConfig.midpoint); // Set the midpoint for the provider
+        setApostlesZoneSize(context.chartConfig.apostlesZoneSize);
+        setTerroristsZoneSize(context.chartConfig.terroristsZoneSize);
+        setShowGrid(context.uiState.showGrid);
+        setShowNearApostles(context.uiState.showNearApostles);
+        setShowSpecialZones(context.uiState.showSpecialZones);
+        setIsAdjustableMidpoint(context.uiState.isAdjustableMidpoint);
+        setFrequencyFilterEnabled(context.uiState.frequencyFilterEnabled);
+        setFrequencyThreshold(context.uiState.frequencyThreshold);
+        setIsPremium(context.premium?.isPremium || false);
+        setActiveEffects(new Set(context.premium?.effects || []));
+        
+      } else {
+        // Old format: Handle legacy structure (for backward compatibility during transition)
+        console.warn('Loading legacy .seg format - consider re-saving for better compatibility');
+        
+        const dataPoints = (saveData as any).data?.points?.map((point: any) => ({
+          ...point,
+          group: point.group || 'Default'
+        })) || [];
+        
+        handleDataChange(dataPoints, {
+          satisfaction: (saveData as any).data?.scales?.satisfaction as ScaleFormat || '1-5',
+          loyalty: (saveData as any).data?.scales?.loyalty as ScaleFormat || '1-5'
+        });
+        
+        // Load legacy settings
+        if ((saveData as any).chartConfig) {
+          setMidpoint((saveData as any).chartConfig.midpoint || { sat: 3, loy: 3 });
+          setApostlesZoneSize((saveData as any).chartConfig.apostlesZoneSize || 1);
+          setTerroristsZoneSize((saveData as any).chartConfig.terroristsZoneSize || 1);
+        }
+        if ((saveData as any).uiState) {
+          setShowGrid((saveData as any).uiState.showGrid ?? true);
+          setShowNearApostles((saveData as any).uiState.showNearApostles ?? false);
+          setShowSpecialZones((saveData as any).uiState.showSpecialZones ?? true);
+          setIsAdjustableMidpoint((saveData as any).uiState.isAdjustableMidpoint ?? false);
+          setFrequencyFilterEnabled((saveData as any).uiState.frequencyFilterEnabled ?? false);
+          setFrequencyThreshold((saveData as any).uiState.frequencyThreshold ?? 1);
+        }
+        if ((saveData as any).premium) {
+          setIsPremium((saveData as any).premium.isPremium || false);
+          setActiveEffects(new Set((saveData as any).premium.effects || []));
+        }
+      }
+      
+      console.log('Progress loaded successfully:', saveData);
+    } catch (error) {
+      console.error('Failed to load progress:', error);
+      // You might want to show a notification here
+    }
   };
 
 // Add callbacks to handle zone size changes from the context
@@ -165,7 +266,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
 
   return (
     <div className="app">
-      
+      <ScreenSizeWarning />
         <>
           <header className="app-header">
             <h1>Apostles Model Builder</h1>
@@ -236,6 +337,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
   data={data}
   satisfactionScale={scales.satisfactionScale}
   loyaltyScale={scales.loyaltyScale}
+  initialMidpoint={midpoint || undefined}
   isClassicModel={isClassicModel}
   showNearApostles={showNearApostles}
   showSpecialZones={showSpecialZones}
@@ -305,6 +407,8 @@ const handleTerroristsZoneSizeChange = (size: number) => {
           {data.length > 0 && (
             <DrawerSaveButton
               data={data}
+              satisfactionScale={scales.satisfactionScale}
+              loyaltyScale={scales.loyaltyScale}
               showGrid={showGrid}
               showScaleNumbers={true} // TODO: Get from context
               showLegends={true} // TODO: Get from context

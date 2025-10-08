@@ -23,14 +23,25 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
     if (processing) return;
     
     const file = event.dataTransfer.files[0];
-    if (file && (file.type === 'text/csv' || file.type === 'application/vnd.ms-excel' || file.name.toLowerCase().endsWith('.seg'))) {
+    if (file && (file.type === 'text/csv' || file.type === 'application/vnd.ms-excel')) {
       onFileSelect(file);
+    } else if (file && file.name.toLowerCase().endsWith('.seg')) {
+      // Show error for .seg files in CSV tab
+      alert('Please use the "Load Project" tab to load .seg files.');
+      return;
     }
   };
   
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file || processing) return;
+    
+    if (file.name.toLowerCase().endsWith('.seg')) {
+      // Show error for .seg files in CSV tab
+      alert('Please use the "Load Project" tab to load .seg files.');
+      return;
+    }
+    
     onFileSelect(file);
   };
 
@@ -40,7 +51,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
         <div>
           <div className="csv-file-uploader__title">Import Data</div>
           <div className="csv-file-uploader__description">
-            Upload a CSV file with, at least, Satisfaction and Loyalty data, or load a saved progress file (.seg). You can also add dates, emails, names, countries, languages... Anything you'd like!
+            Upload a CSV file with, at least, Satisfaction and Loyalty data. You can also add dates, emails, names, countries, languages... Anything you'd like!
           </div>
           <div className="csv-file-uploader__note">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -71,22 +82,22 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
         onClick={() => !processing && fileInputRef.current?.click()}
       >
         <div className="csv-file-uploader__dropzone-icon">
-          <UploadCloud size={24} stroke="#6B7280" />
+          <UploadCloud size={24} stroke="#3a863e" />
         </div>
         <div className="csv-file-uploader__dropzone-text">
           {processing 
             ? 'Processing file...' 
-            : 'Drop your CSV or .seg file here or click to browse'}
+            : 'Drop your CSV file here or click to browse'}
         </div>
         <div className="csv-file-uploader__dropzone-subtext">
-          Supports CSV files up to 10MB and .seg progress files
+          Supports CSV files up to 10MB
         </div>
       </div>
 
       <input 
         ref={fileInputRef}
         type="file" 
-        accept=".csv,.seg" 
+        accept=".csv" 
         onChange={handleFileChange} 
         className="csv-file-uploader__file-input"
         disabled={processing}

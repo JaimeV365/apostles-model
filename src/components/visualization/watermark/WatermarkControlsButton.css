@@ -6,6 +6,13 @@
   z-index: 20;
 }
 
+/* Responsive Design for Watermark Controls Button */
+@media (max-width: 768px) {
+  .watermark-controls-chart-button {
+    display: none !important;
+  }
+}
+
 .watermark-controls-trigger {
   background-color: white;
   border: 1px solid #e5e7eb; /* Add border like other buttons */

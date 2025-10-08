@@ -1,7 +1,7 @@
 import { ApostlesSaveData, SaveExportService } from '../types/save-export';
 
 class SaveExportServiceImpl implements SaveExportService {
-  private readonly VERSION = '1.0.0';
+  private readonly VERSION = '2.0.0';
   private readonly FILE_EXTENSION = '.seg';
 
   /**
@@ -68,6 +68,27 @@ class SaveExportServiceImpl implements SaveExportService {
    * Validate save data structure
    */
   validateSaveData(data: any): data is ApostlesSaveData {
+    // Check for new format (2.0.0)
+    if (data.version === '2.0.0') {
+      return (
+        data &&
+        typeof data === 'object' &&
+        typeof data.version === 'string' &&
+        typeof data.timestamp === 'string' &&
+        data.dataTable &&
+        data.dataTable.headers &&
+        Array.isArray(data.dataTable.rows) &&
+        data.context &&
+        data.context.chartConfig &&
+        typeof data.context.chartConfig.midpoint === 'object' &&
+        typeof data.context.chartConfig.midpoint.sat === 'number' &&
+        typeof data.context.chartConfig.midpoint.loy === 'number' &&
+        data.context.uiState &&
+        data.context.filters
+      );
+    }
+    
+    // Check for legacy format (1.0.0) for backward compatibility
     return (
       data &&
       typeof data === 'object' &&

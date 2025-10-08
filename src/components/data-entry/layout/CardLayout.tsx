@@ -12,7 +12,7 @@ const CardLayout: React.FC<CardLayoutProps> = ({ children, title }) => (
       fontSize: '16px',
       fontWeight: '500',
       color: THEME.colors.text.primary,
-      marginBottom: THEME.spacing.md
+      marginBottom: THEME.spacing.sm
     }}>
       {title}
     </div>

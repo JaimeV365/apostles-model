@@ -97,6 +97,13 @@ export const ChartConfigProvider: React.FC<ChartConfigProviderProps> = ({
       setMidpoint(calculatedInitialMidpoint);
     }
   }, [satisfactionScale, loyaltyScale, calculatedInitialMidpoint, providedInitialMidpoint]);
+  
+  // Update midpoint when providedInitialMidpoint changes (for .seg file loading)
+  useEffect(() => {
+    if (providedInitialMidpoint) {
+      setMidpoint(providedInitialMidpoint);
+    }
+  }, [providedInitialMidpoint]);
 
   // Update isClassicModel when prop changes
   useEffect(() => {

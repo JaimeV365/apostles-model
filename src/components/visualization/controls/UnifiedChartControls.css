@@ -746,9 +746,30 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1400px) and (min-width: 769px) {
+  /* Medium screens - smaller panels */
   .unified-controls-panel {
-    width: 100%;
+    width: 320px; /* Reduced from 380px */
+  }
+  
+  .unified-controls-content {
+    padding: 12px; /* Reduced from 16px */
+  }
+  
+  .unified-tab {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Small screens - hide contextual menus */
+  .unified-controls-panel {
+    display: none !important;
+  }
+  
+  .unified-chart-controls-trigger {
+    display: none !important;
   }
   
   .unified-controls-tabs {

@@ -1,0 +1,149 @@
+/* Screen Size Warning Component Styles */
+
+.screen-size-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(58, 134, 62, 0.1);
+  color: #3a863e;
+  padding: 6px 16px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  z-index: 1001;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideInFromTop 0.3s ease-out;
+  max-height: 32px;
+  border-bottom: 1px solid rgba(58, 134, 62, 0.2);
+}
+
+.warning-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.warning-icon {
+  display: flex;
+  align-items: center;
+  color: #92400e;
+}
+
+.warning-message {
+  line-height: 1.4;
+}
+
+.warning-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #92400e;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warning-close:hover {
+  background-color: rgba(146, 64, 14, 0.1);
+}
+
+.warning-close:focus {
+  outline: 2px solid #92400e;
+  outline-offset: 2px;
+}
+
+/* Different warning types */
+.screen-size-warning.very-small-screen {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.screen-size-warning.very-small-screen .warning-icon,
+.screen-size-warning.very-small-screen .warning-close {
+  color: white;
+}
+
+.screen-size-warning.very-small-screen .warning-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.screen-size-warning.small-screen {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.screen-size-warning.small-screen .warning-icon,
+.screen-size-warning.small-screen .warning-close {
+  color: white;
+}
+
+.screen-size-warning.small-screen .warning-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.screen-size-warning.medium-screen {
+  background: linear-gradient(135deg, #3a863e, #2d6a31);
+  color: white;
+}
+
+.screen-size-warning.medium-screen .warning-icon,
+.screen-size-warning.medium-screen .warning-close {
+  color: white;
+}
+
+.screen-size-warning.medium-screen .warning-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animation */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .screen-size-warning {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .warning-close {
+    right: 8px;
+    padding: 2px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .screen-size-warning {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .screen-size-warning {
+    border: 2px solid currentColor;
+  }
+}

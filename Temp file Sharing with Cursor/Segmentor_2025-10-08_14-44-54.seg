@@ -1,0 +1,172 @@
+{
+  "version": "2.0.0",
+  "timestamp": "2025-10-08T13:44:54.395Z",
+  "fileName": "Segmentor_2025-10-08_14-44-54.seg",
+  "dataTable": {
+    "headers": {
+      "satisfaction": "1-5",
+      "loyalty": "1-5",
+      "group": "text",
+      "excluded": "boolean",
+      "reassigned": "boolean",
+      "email": "text",
+      "date": "date",
+      "dateFormat": "text"
+    },
+    "rows": [
+      {
+        "id": "ABC123",
+        "name": "John Smith",
+        "satisfaction": 5,
+        "loyalty": 5,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "john@example.com",
+        "date": "01/01/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC124",
+        "name": "Alice Brown",
+        "satisfaction": 4,
+        "loyalty": 6,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "alice@example.com",
+        "date": "05/01/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC125",
+        "name": "Bob Green",
+        "satisfaction": 3,
+        "loyalty": 4,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "bob@example.com",
+        "date": "10/02/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC126",
+        "name": "Sara White",
+        "satisfaction": 5,
+        "loyalty": 8,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "sara@example.com",
+        "date": "15/02/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC127",
+        "name": "Tom Black",
+        "satisfaction": 2,
+        "loyalty": 3,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "tom@example.com",
+        "date": "20/03/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC128",
+        "name": "Emma Davis",
+        "satisfaction": 4,
+        "loyalty": 7,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "emma@example.com",
+        "date": "25/03/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC129",
+        "name": "Liam van Mender",
+        "satisfaction": 5,
+        "loyalty": 9,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "liam@example.com",
+        "date": "01/04/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC130",
+        "name": "Olivia Lee",
+        "satisfaction": 3,
+        "loyalty": 5,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "olivia@example.com",
+        "date": "05/04/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC131",
+        "name": "Jack Wilson",
+        "satisfaction": 4,
+        "loyalty": 6,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "jack@example.com",
+        "date": "10/05/2024",
+        "dateFormat": "dd/MM/yyyy"
+      },
+      {
+        "id": "ABC132",
+        "name": "Mia McTaylor",
+        "satisfaction": 5,
+        "loyalty": 10,
+        "group": "Undefined",
+        "excluded": false,
+        "reassigned": false,
+        "email": "mia@example.com",
+        "date": "15/05/2024",
+        "dateFormat": "dd/MM/yyyy"
+      }
+    ]
+  },
+  "context": {
+    "manualAssignments": [],
+    "chartConfig": {
+      "midpoint": {
+        "sat": 3,
+        "loy": 3
+      },
+      "apostlesZoneSize": 1,
+      "terroristsZoneSize": 1,
+      "isClassicModel": false
+    },
+    "uiState": {
+      "showGrid": true,
+      "showScaleNumbers": true,
+      "showLegends": true,
+      "showNearApostles": false,
+      "showSpecialZones": true,
+      "isAdjustableMidpoint": true,
+      "labelMode": 1,
+      "labelPositioning": "below-dots",
+      "areasDisplayMode": 2,
+      "frequencyFilterEnabled": false,
+      "frequencyThreshold": 1
+    },
+    "filters": {
+      "dateRange": {
+        "startDate": null,
+        "endDate": null
+      },
+      "attributes": [],
+      "isActive": false
+    }
+  }
+}

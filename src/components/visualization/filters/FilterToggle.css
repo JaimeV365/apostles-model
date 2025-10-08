@@ -63,8 +63,7 @@
 
 @media (max-width: 768px) {
   .filter-toggle {
-    width: 32px;
-    height: 32px;
+    display: none !important;
   }
 }
 

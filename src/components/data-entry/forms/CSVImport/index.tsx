@@ -492,33 +492,8 @@ export const CSVImport: React.FC<CSVImportProps> = ({
     clearValidationState();
     setPendingFileData(null); // Reset pending data for new file
     
-    // Check if it's a .seg file
-    if (file.name.toLowerCase().endsWith('.seg')) {
-      if (onSegFileLoad) {
-        try {
-          setIsLoading(true);
-          await onSegFileLoad(file);
-        } catch (error) {
-          console.error('Failed to load progress:', error);
-          showNotification({
-            title: 'Error',
-            message: 'Failed to load progress file. Please check the file format.',
-            type: 'error'
-          });
-        } finally {
-          setIsLoading(false);
-        }
-      } else {
-        showNotification({
-          title: 'Error',
-          message: 'Seg file loading is not available.',
-          type: 'error'
-        });
-      }
-    } else {
-      // Handle CSV files as before
-      parseFile(file);
-    }
+    // Handle CSV files
+    parseFile(file);
   }, [clearValidationState, parseFile, onImport, showNotification]);
 
   const handleDownloadDuplicateReport = useCallback(() => {

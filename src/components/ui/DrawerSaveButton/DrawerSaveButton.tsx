@@ -9,6 +9,10 @@ interface DrawerSaveButtonProps {
   // Data to save
   data: any[];
   
+  // Scales
+  satisfactionScale: string;
+  loyaltyScale: string;
+  
   // UI State
   showGrid: boolean;
   showScaleNumbers: boolean;
@@ -32,6 +36,8 @@ interface DrawerSaveButtonProps {
 
 export const DrawerSaveButton: React.FC<DrawerSaveButtonProps> = ({
   data,
+  satisfactionScale,
+  loyaltyScale,
   showGrid,
   showScaleNumbers,
   showLegends,
@@ -58,6 +64,8 @@ export const DrawerSaveButton: React.FC<DrawerSaveButtonProps> = ({
   try {
     const saveLoadHook = useSaveLoad({
       data,
+      satisfactionScale,
+      loyaltyScale,
       showGrid,
       showScaleNumbers,
       showLegends,
@@ -87,15 +95,17 @@ export const DrawerSaveButton: React.FC<DrawerSaveButtonProps> = ({
     
     try {
       if (saveProgress) {
-        // Use context-based save
+        // Use context-based save (this will show its own notification)
         await saveProgress();
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 2000);
       } else {
         // Fallback save without context data
         const saveData = comprehensiveSaveLoadService.createSaveData({
           data,
           manualAssignments: new Map(), // No manual assignments available
-          satisfactionScale: '1-5', // Default scale
-          loyaltyScale: '1-5', // Default scale
+          satisfactionScale, // Use actual scale from props
+          loyaltyScale, // Use actual scale from props
           midpoint: { sat: 3, loy: 3 }, // Default midpoint
           apostlesZoneSize: 1, // Default zone size
           terroristsZoneSize: 1, // Default zone size
@@ -117,16 +127,17 @@ export const DrawerSaveButton: React.FC<DrawerSaveButtonProps> = ({
         });
         
         await comprehensiveSaveLoadService.saveComprehensiveProgress(saveData);
+        
+        // Only show notification for fallback save
+        setShowSuccess(true);
+        showNotification({
+          title: 'Success',
+          message: 'Progress saved successfully!',
+          type: 'success'
+        });
+        
+        setTimeout(() => setShowSuccess(false), 2000);
       }
-      
-      setShowSuccess(true);
-      showNotification({
-        title: 'Success',
-        message: 'Progress saved successfully!',
-        type: 'success'
-      });
-      
-      setTimeout(() => setShowSuccess(false), 2000);
       
     } catch (error) {
       console.error('Failed to save progress:', error);

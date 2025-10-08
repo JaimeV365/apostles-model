@@ -17,6 +17,19 @@
   transition: transform 0.3s ease-out;
 }
 
+/* Responsive Design for Watermark Panel */
+@media (max-width: 1400px) and (min-width: 769px) {
+  .watermark-panel {
+    width: 320px; /* Reduced from 360px */
+  }
+}
+
+@media (max-width: 768px) {
+  .watermark-panel {
+    display: none !important;
+  }
+}
+
 .watermark-panel.open {
   transform: translateX(0);
 }

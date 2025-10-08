@@ -2,6 +2,9 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import DataInput from './forms/DataInput';
 import { CSVImport } from './forms/CSVImport';
+import SegFileLoader from './forms/SegFileLoader/SegFileLoader';
+import TabContainer, { Tab } from '../ui/TabContainer/TabContainer';
+import { Upload, Edit3, FolderOpen } from 'lucide-react';
 import { idCounter } from './utils/idCounter';
 import { DataPoint, ScaleFormat } from '@/types/base';
 import StateManagementService from './services/StateManagementService';
@@ -12,6 +15,7 @@ import {
 } from './types';
 import { useNotification } from './NotificationSystem';
 import { storageManager } from './utils/storageManager';
+import './DataEntryModule.css';
 
 const DataEntryModule: React.FC<DataEntryModuleProps> = ({ 
   onDataChange,
@@ -279,63 +283,93 @@ if (editingData) {
     onDataChange(data, headerScales);
   };
 
-  return (
-    <div className="data-entry-module">
-      <h1 className="data-entry-title">Data Entry</h1>
-      <div ref={inputSectionRef}>
-        <DataInput
-          onSubmit={handleDataSubmit}
+  // Define tabs with existing components
+  const tabs: Tab[] = [
+    {
+      id: 'csv-upload',
+      label: 'Upload CSV',
+      icon: <Upload size={16} />,
+      content: (
+        <CSVImport 
+          onImport={handleCSVImport}
           satisfactionScale={satisfactionScale}
           loyaltyScale={loyaltyScale}
           existingIds={data.map(d => d.id)}
-          data={data}
-          editingData={editingData}
-          onCancelEdit={() => setEditingData(null)}
           scalesLocked={isScalesLocked}
-          showScales={true}
-          onScaleUpdate={handleScaleUpdate}
+          uploadHistory={uploadHistory}
+          onUploadSuccess={(fileName: string, count: number, ids: string[], wasOverwrite?: boolean) => {
+            // If it was an overwrite operation, reset the history
+            let newHistory;
+            
+            if (wasOverwrite) {
+              // Start fresh with just this upload
+              newHistory = [{
+                fileName,
+                timestamp: new Date(),
+                count,
+                remainingCount: count,
+                associatedIds: ids
+              }];
+            } else {
+              // Append to existing history
+              newHistory = [...uploadHistory, {
+                fileName,
+                timestamp: new Date(),
+                count,
+                remainingCount: count,
+                associatedIds: ids
+              }];
+            }
+            
+            setUploadHistory(newHistory);
+            storageManager.saveState({
+              uploadHistory: newHistory
+            });
+          }}
+          lastManualEntryTimestamp={lastManualEntryTimestamp}
+          existingData={data}
+          onSegFileLoad={onSegFileLoad}
         />
-      </div>
-      
-      <CSVImport 
-        onImport={handleCSVImport}
-        satisfactionScale={satisfactionScale}
-        loyaltyScale={loyaltyScale}
-        existingIds={data.map(d => d.id)}
-        scalesLocked={isScalesLocked}
-        uploadHistory={uploadHistory}
-        onUploadSuccess={(fileName: string, count: number, ids: string[], wasOverwrite?: boolean) => {
-          // If it was an overwrite operation, reset the history
-          let newHistory;
-          
-          if (wasOverwrite) {
-            // Start fresh with just this upload
-            newHistory = [{
-              fileName,
-              timestamp: new Date(),
-              count,
-              remainingCount: count,
-              associatedIds: ids
-            }];
-          } else {
-            // Append to existing history
-            newHistory = [...uploadHistory, {
-              fileName,
-              timestamp: new Date(),
-              count,
-              remainingCount: count,
-              associatedIds: ids
-            }];
-          }
-          
-          setUploadHistory(newHistory);
-          storageManager.saveState({
-            uploadHistory: newHistory
-          });
-        }}
-        lastManualEntryTimestamp={lastManualEntryTimestamp}
-        existingData={data} // Add this missing prop
-        onSegFileLoad={onSegFileLoad}
+      )
+    },
+    {
+      id: 'manual-entry',
+      label: 'Manual Entry',
+      icon: <Edit3 size={16} />,
+      content: (
+        <div ref={inputSectionRef} className="manual-entry-wrapper">
+          <DataInput
+            onSubmit={handleDataSubmit}
+            satisfactionScale={satisfactionScale}
+            loyaltyScale={loyaltyScale}
+            existingIds={data.map(d => d.id)}
+            data={data}
+            editingData={editingData}
+            onCancelEdit={() => setEditingData(null)}
+            scalesLocked={isScalesLocked}
+            showScales={true}
+            onScaleUpdate={handleScaleUpdate}
+          />
+        </div>
+      )
+    },
+    {
+      id: 'load-project',
+      label: 'Load Project',
+      icon: <FolderOpen size={16} />,
+      content: (
+        <SegFileLoader onSegFileLoad={onSegFileLoad} />
+      )
+    }
+  ];
+
+  return (
+    <div className="data-entry-module">
+      <h1 className="data-entry-title">Data Entry</h1>
+      <TabContainer 
+        tabs={tabs} 
+        defaultActiveTab="csv-upload"
+        className="data-entry-tabs"
       />
     </div>
   );

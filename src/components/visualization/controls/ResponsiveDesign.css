@@ -1,0 +1,358 @@
+/* Responsive Design Strategy for Small Screens */
+
+/* ========================================
+   BREAKPOINT STRATEGY:
+   - 1024px+: Full contextual menus (current behavior)
+   - 768px-1024px: Inline controls + warning message
+   - <768px: Warning message + simplified interface
+   ======================================== */
+
+/* ========================================
+   SCREEN SIZE WARNING SYSTEM
+   ======================================== */
+
+.screen-size-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #92400e;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  max-height: 40px;
+}
+
+/* Add body padding when warning is shown */
+body.screen-warning-active {
+  padding-top: 32px;
+}
+
+.screen-size-warning.show {
+  display: block;
+}
+
+.screen-size-warning .warning-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.screen-size-warning .warning-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #92400e;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.screen-size-warning .warning-close:hover {
+  background-color: rgba(146, 64, 14, 0.1);
+}
+
+/* ========================================
+   MEDIUM SCREENS (768px - 1400px)
+   ======================================== */
+
+@media (max-width: 1400px) and (min-width: 769px) {
+  /* Show warning for medium screens */
+  .screen-size-warning.medium-screen {
+    display: block !important;
+  }
+  
+  /* Debug banner removed for production */
+  
+  /* Make contextual menus smaller but still functional */
+  .unified-controls-panel {
+    width: 320px; /* Reduced from 380px */
+  }
+  
+  .watermark-panel {
+    width: 320px; /* Reduced from 360px */
+  }
+  
+  .filter-panel {
+    width: 320px; /* Reduced from 360px */
+  }
+  
+  /* Adjust chart container to account for smaller panels */
+  .filtered-chart-container {
+    margin-right: 0; /* Remove any right margin */
+  }
+  
+  /* Make buttons more compact */
+  .unified-tab {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  
+  .unified-controls-content {
+    padding: 12px; /* Reduced from 16px */
+  }
+}
+
+/* ========================================
+   SMALL SCREENS (768px and below)
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Show warning for small screens */
+  .screen-size-warning.small-screen {
+    display: block !important;
+  }
+  
+  /* Debug banner removed for production */
+  
+  /* Hide contextual menus completely */
+  .unified-controls-panel {
+    display: none !important;
+  }
+  
+  .watermark-panel {
+    display: none !important;
+  }
+  
+  .filter-panel {
+    display: none !important;
+  }
+  
+  /* Hide contextual menu triggers */
+  .unified-chart-controls-trigger {
+    display: none !important;
+  }
+  
+  .watermark-controls-chart-button {
+    display: none !important;
+  }
+  
+  .filter-toggle-button {
+    display: none !important;
+  }
+  
+  /* Show inline alternatives */
+  .inline-controls {
+    display: block !important;
+  }
+  
+  /* Adjust main layout */
+  .filtered-chart-container {
+    padding: 16px;
+    margin: 0;
+  }
+  
+  /* Make chart controls more compact */
+  .chart-controls {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .control-group {
+    width: 100%;
+    flex: none;
+  }
+  
+  /* Stack buttons vertically in Premium mode */
+  .labels-buttons.premium-mode {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .labels-buttons.premium-mode .label-button {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* ========================================
+   VERY SMALL SCREENS (480px and below)
+   ======================================== */
+
+@media (max-width: 480px) {
+  /* Show warning for very small screens */
+  .screen-size-warning.very-small-screen {
+    display: block !important;
+  }
+  
+  /* Debug banner removed for production */
+  
+  /* Further simplify interface */
+  .chart-controls {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .control-group {
+    padding: 12px;
+  }
+  
+  .control-group-content {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  /* Make buttons even more compact */
+  .label-button {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .unified-tab {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+
+/* ========================================
+   INLINE CONTROLS (Alternative to contextual menus)
+   ======================================== */
+
+.inline-controls {
+  display: none;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inline-controls.show {
+  display: block;
+}
+
+.inline-controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.inline-controls-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inline-controls-close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.inline-controls-close:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.inline-controls-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inline-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inline-control-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.inline-control-input,
+.inline-control-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.inline-control-input:focus,
+.inline-control-select:focus {
+  outline: none;
+  border-color: #3a863e;
+  box-shadow: 0 0 0 3px rgba(58, 134, 62, 0.1);
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.hide-on-small {
+  display: block;
+}
+
+.show-on-small {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-on-small {
+    display: none !important;
+  }
+  
+  .show-on-small {
+    display: block !important;
+  }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.screen-size-warning {
+  animation: slideInFromTop 0.3s ease-out;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .screen-size-warning {
+    animation: none;
+  }
+  
+  .unified-controls-panel,
+  .watermark-panel,
+  .filter-panel {
+    animation: none;
+  }
+}

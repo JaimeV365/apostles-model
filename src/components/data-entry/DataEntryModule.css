@@ -1,0 +1,34 @@
+/* Data Entry Module Styles */
+.data-entry-module {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.data-entry-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Tab Container Integration */
+.data-entry-tabs {
+  margin-top: 20px;
+}
+
+.data-entry-tabs .tab-content {
+  background: white;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  min-height: auto;
+}
+
+.manual-entry-wrapper {
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-top: 16px;
+}

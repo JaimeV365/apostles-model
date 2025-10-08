@@ -1,0 +1,784 @@
+# Website Structure & UX Strategy
+## Segmentor.app - Complete Design Philosophy & Implementation Guide
+
+**Date:** October 8, 2025  
+**Status:** Planning & Strategy Document  
+**Purpose:** Reference document for all website structure, UX decisions, and implementation strategies
+
+---
+
+## Table of Contents
+
+1. [Core Philosophy & Principles](#core-philosophy--principles)
+2. [Website Structure Debate](#website-structure-debate)
+3. [Recommended Site Architecture](#recommended-site-architecture)
+4. [New vs Returning User Experience](#new-vs-returning-user-experience)
+5. [Help & Onboarding Strategies](#help--onboarding-strategies)
+6. [Privacy-First Approach](#privacy-first-approach)
+7. [Navigation & Information Architecture](#navigation--information-architecture)
+8. [Marketing & Traffic Strategy](#marketing--traffic-strategy)
+9. [Implementation Priorities](#implementation-priorities)
+10. [Open Questions & Future Decisions](#open-questions--future-decisions)
+
+---
+
+## Core Philosophy & Principles
+
+### The Product Vision
+
+**Segmentor is a privacy-first, tool-first customer segmentation application based on the Apostles Model.**
+
+**Core Values:**
+- **Privacy First:** No data collection, no cookies, no cloud storage, 100% local processing
+- **Tool-First:** The actual product is the star, not marketing fluff
+- **Immediate Value:** Users should experience value quickly
+- **Guided but Not Intrusive:** Help available, never forced
+- **Returning User Friendly:** Power users get direct access without friction
+
+**Selling Points:**
+1. Turn customer feedback into actionable segments in 3 clicks
+2. Your data never leaves your device
+3. No tracking, no cookies, no cloud storage
+4. Based on proven Apostles Model methodology
+5. Visual, intuitive interface
+
+---
+
+## Website Structure Debate
+
+### Initial Proposal (Questioned)
+
+**Structure:**
+1. Landing page = Marketing/Product description page
+2. Tool = Secondary page accessed via CTA
+3. FAQ = Tertiary
+4. Contact = Quaternary
+
+**Arguments FOR this structure:**
+- ✅ Traditional marketing funnel approach
+- ✅ Educates users before they try the tool
+- ✅ Builds trust through persuasion content
+- ✅ Works well for cold traffic (LinkedIn ads, etc.)
+- ✅ Allows for sophisticated marketing content
+
+**Arguments AGAINST this structure:**
+- ❌ Returning users have to navigate to tool every time
+- ❌ Adds friction for the #1 top task: "segment my customers"
+- ❌ Tool is the real value, marketing page is just talk
+- ❌ Not aligned with Product-Led Growth (PLG) model
+- ❌ Forces users through persuasion when they want to try
+
+**Gerry McGovern Top Tasks Concern:**
+- If the #1 user task is "learn about segmentation" → Marketing first ✅
+- If the #1 user task is "segment my customers" → Tool first ✅
+- **For Segmentor, the top task IS using the tool** → Tool-first might be right
+
+---
+
+### Counter-Proposal (Preferred)
+
+**Structure:**
+1. Landing page = THE TOOL (with smart onboarding)
+2. /about = Marketing/Product page (secondary, accessible via nav)
+3. /faq = Self-service support
+4. /contact = Direct support + lead generation
+
+**Arguments FOR this structure:**
+- ✅ Returning users land directly on the tool (zero friction)
+- ✅ Aligns with Product-Led Growth (PLG) best practices
+- ✅ "Show don't tell" - users experience value immediately
+- ✅ Matches user expectation: segmentor.app = segmentation tool
+- ✅ New users can be guided without leaving the tool
+
+**Arguments AGAINST this structure:**
+- ❌ Cold traffic might be confused without context
+- ❌ Requires excellent onboarding to avoid high bounce rate
+- ❌ Marketing content becomes secondary
+- ❌ Harder to build trust with first-time visitors
+- ❌ Need smart welcome experience to avoid confusion
+
+**Real-World Examples Supporting Tool-First:**
+- **Excalidraw.com** - Landing page is the drawing canvas
+- **Remove.bg** - Landing page is the upload area  
+- **Hemingway Editor** - Landing page is the editor itself
+- **Figma/Miro** (recent versions) - Tool-first, marketing secondary
+
+---
+
+### The Hybrid Reality
+
+**Both approaches can work - it depends on execution.**
+
+**Key Success Factors for Tool-First:**
+1. ✅ Smart onboarding for new users
+2. ✅ Contextual help throughout the tool
+3. ✅ Clear "What is this?" links to marketing page
+4. ✅ Sample data option for immediate exploration
+5. ✅ Progressive disclosure (don't overwhelm)
+
+**Without these, tool-first WILL fail with high bounce rates.**
+
+---
+
+## Recommended Site Architecture
+
+### Primary Structure (Tool-First with Marketing Support)
+
+```
+📱 segmentor.app
+│
+├─ 🏠 / (HOME = TOOL)
+│   ├─ New users: Smart onboarding experience
+│   ├─ Returning users: Direct tool access (after loading file)
+│   └─ Navigation: Links to /about, /faq, /contact, help button
+│
+├─ 📄 /about (MARKETING/PRODUCT PAGE)
+│   ├─ Hero: Value proposition + compelling visuals
+│   ├─ Problem/Solution narrative
+│   ├─ How it works (3 steps with visuals/video)
+│   ├─ Benefits & features
+│   ├─ Social proof (testimonials, stats)
+│   ├─ Privacy promise (major differentiator)
+│   ├─ Pricing (if applicable)
+│   └─ CTA: "Try it free" → back to tool
+│
+├─ ❓ /faq
+│   └─ Organized by user task frequency (McGovern style)
+│
+└─ 📧 /contact
+    ├─ Support form (for existing users)
+    └─ Business inquiry (lead generation)
+```
+
+### Page Purposes
+
+| Page | Primary Audience | Goal | Success Metric |
+|------|------------------|------|----------------|
+| **/ (Tool)** | All users | Deliver value, enable segmentation | Tasks completed, files saved |
+| **/about** | Cold prospects, skeptics | Persuade, educate, build trust | Click "Try it free" |
+| **/faq** | Confused users | Self-service support | Problem solved without contact |
+| **/contact** | Stuck users, potential customers | Support + lead generation | Issues resolved, demos booked |
+
+---
+
+## New vs Returning User Experience
+
+### The Privacy Constraint
+
+**Core Principle:** Cannot use cookies, localStorage, or any persistent tracking.
+
+**Implication:** Cannot detect "returning" users automatically.
+
+**Solution:** State-based detection, not user-based detection.
+
+### User States
+
+#### State 1: Empty State (No Data Loaded)
+**Assumption:** New user OR returning user who hasn't loaded a file yet
+
+**Experience:**
+- Show welcome guidance
+- Highlight CSV upload area
+- Offer sample data option
+- Provide "What is this?" links
+- Make help immediately accessible
+
+#### State 2: Data Loaded (Working State)
+**Assumption:** User is actively working (new or returning)
+
+**Experience:**
+- Hide welcome guidance (no longer needed)
+- Show full tool interface
+- Provide contextual tooltips
+- Keep help button accessible
+- Enable save/export functions
+
+#### State 3: Returning User (Loaded Previous File)
+**Detection:** User has loaded a .seg project file
+
+**Experience:**
+- Skip all onboarding (they know the tool)
+- Direct access to full functionality
+- No welcome messages
+- Just let them work
+
+### State Transition Logic
+
+```
+User arrives → Check if data exists
+│
+├─ NO DATA → Show welcome guidance (State 1)
+│   │
+│   ├─ User uploads CSV → Hide guidance (State 2)
+│   ├─ User loads .seg file → Skip guidance (State 3)
+│   └─ User clicks sample data → Hide guidance (State 2)
+│
+└─ DATA EXISTS → Tool interface only (State 2/3)
+```
+
+**Privacy-Compliant Implementation:**
+- Use in-memory state management
+- Optional: Use `sessionStorage` (cleared when tab closes)
+- Never use `localStorage`, cookies, or server tracking
+
+---
+
+## Help & Onboarding Strategies
+
+### Option 1: Always-Visible, Non-Intrusive Guidance ⭐ RECOMMENDED
+
+**Concept:** Help banner is visible but doesn't block the tool.
+
+**Implementation:**
+```
+┌─────────────────────────────────────────────────┐
+│  [Logo] [About] [FAQ] [Help]                    │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│  ┌─────────────────────────────────┐           │
+│  │ 👋 New here?                     │ [X]       │
+│  │ [Take Quick Tour] [See Example]  │           │
+│  │ or just start by uploading data →│           │
+│  └─────────────────────────────────┘           │
+│                                                 │
+│  [CSV Upload Area - Tool Interface Visible]     │
+│                                                 │
+└─────────────────────────────────────────────────┘
+```
+
+**Pros:**
+- ✅ New users see help immediately
+- ✅ Power users can dismiss (X button)
+- ✅ Non-blocking (tool still usable)
+- ✅ No delay, no false triggers
+
+**Cons:**
+- ⚠️ Takes up screen space
+- ⚠️ Some users might ignore it
+
+**Best for:** General audiences, mix of new and returning users
+
+---
+
+### Option 2: Contextual Help (Progressive Disclosure)
+
+**Concept:** Guidance appears where and when users need it.
+
+**Implementation:**
+
+**Empty state:**
+```
+┌─────────────────────────────────────────┐
+│  Step 1: Upload Customer Data            │
+│  ─────────────────────────────────       │
+│  📄 [Click to upload CSV]                │
+│     or drag & drop here                  │
+│                                          │
+│  ℹ️ Need help? [CSV Format Guide]        │
+│  📊 Or [Try sample data]                 │
+└─────────────────────────────────────────┘
+```
+
+**After upload:**
+```
+┌─────────────────────────────────────────┐
+│  ✅ Data loaded: 150 customers           │
+│                                          │
+│  Step 2: Review Your Segments            │
+│  [Visualization appears]                 │
+│                                          │
+│  💡 Tip: Click any point for details     │
+│  ℹ️ [What do these zones mean?]          │
+└─────────────────────────────────────────┘
+```
+
+**Pros:**
+- ✅ Help exactly when needed
+- ✅ Doesn't interrupt confident users
+- ✅ Guides step-by-step naturally
+- ✅ Progressive disclosure (UX best practice)
+
+**Cons:**
+- ⚠️ Users might miss optional help links
+- ⚠️ Requires careful UX design
+
+**Best for:** Self-service tools, confident user base
+
+---
+
+### Option 3: Persistent "?" Help Button ⭐ PREFERRED BY USER
+
+**Concept:** Help is always accessible, never intrusive.
+
+**Implementation:**
+```
+┌──────────────────────────────────────────┐
+│  [Logo] [About] [FAQ]           [? Help] │ ← Always visible
+├──────────────────────────────────────────┤
+│                                          │
+│  [Tool Interface - Clean, Unobstructed]  │
+│                                          │
+└──────────────────────────────────────────┘
+```
+
+**Click "?" opens side panel:**
+```
+                    ┌──────────────────────┐
+                    │ Quick Start Guide    │
+                    ├──────────────────────┤
+                    │ 1. Upload CSV data   │
+                    │ 2. View segments     │
+                    │ 3. Analyze results   │
+                    │                      │
+                    │ [Full Tutorial →]    │
+                    │ [FAQ →]              │
+                    │ [Sample Data →]      │
+                    └──────────────────────┘
+```
+
+**Pros:**
+- ✅ Zero intrusion for power users
+- ✅ Immediate access for confused users
+- ✅ Clean interface (help when needed only)
+- ✅ Simple implementation
+
+**Cons:**
+- ⚠️ Some users might not discover it
+- ⚠️ Requires user to be proactive
+
+**Best for:** Users who prefer to explore first, ask later (modern UX trend)
+
+---
+
+### Option 4: Smart Empty State Detection ⭐ COMPLEMENTARY
+
+**Concept:** If no data loaded, show guidance. If data exists, hide it.
+
+**Implementation:**
+```javascript
+function shouldShowGuidance() {
+  return dataPoints.length === 0 && !hasLoadedFile;
+}
+```
+
+**Pros:**
+- ✅ Automatic based on context
+- ✅ No cookies needed
+- ✅ Smart logic, not guesswork
+- ✅ Works for both new and returning users
+
+**Cons:**
+- ⚠️ Still needs UI components (banner/tooltips/help button)
+
+**Best for:** Backend logic to support Options 1-3
+
+---
+
+### ❌ Option 5: Delay-Based Triggering (NOT RECOMMENDED)
+
+**Concept:** Show guidance after X seconds of inactivity.
+
+**Why it fails:**
+1. **False Positive:** Power user pauses to think → Interrupted by modal
+2. **False Negative:** Confused user clicks randomly → No help triggered
+3. **Bad UX:** Help should be immediate, not delayed
+4. **Unreliable:** Can't distinguish "thinking" from "confused"
+
+**Verdict:** Do not implement this approach.
+
+---
+
+### Recommended Hybrid Strategy
+
+**Combine Options 1, 3, and 4 for best results:**
+
+1. **Always-visible help button** (Option 3) - for proactive users
+2. **Dismissible welcome banner** when empty (Option 1) - for guidance
+3. **State-based logic** (Option 4) - to show/hide automatically
+4. **Contextual tooltips** throughout - for in-context help
+
+**User Flow:**
+```
+New user arrives (no data)
+    ↓
+Welcome banner visible (dismissible)
+    ↓
+User can: [Take Tour] [Sample Data] [Upload CSV] [Dismiss]
+    ↓
+Once data loaded → Banner disappears automatically
+    ↓
+Help still accessible via [?] button
+    ↓
+Tooltips appear on hover throughout tool
+```
+
+---
+
+## Privacy-First Approach
+
+### The Core Promise
+
+**"Your Data. Your Device. Your Privacy."**
+
+- ✅ No cookies
+- ✅ No cloud storage
+- ✅ No tracking
+- ✅ 100% local processing
+- ✅ Data never leaves your computer
+
+### What This Means Technically
+
+#### ❌ Cannot Use:
+- `localStorage` - persists across sessions
+- Cookies - any kind, including session cookies
+- IndexedDB - persistent browser storage
+- Server-side tracking - no cloud data
+- Analytics - Google Analytics, etc.
+
+#### ✅ Can Use:
+- `sessionStorage` - cleared when tab closes (acceptable for UX, not tracking)
+- In-memory state - current session only
+- File-based state - when user loads .seg project file
+- URL parameters - for one-time marketing tracking (e.g., `?source=linkedin`)
+
+### Session-Only State (Privacy-Compliant)
+
+```javascript
+// Acceptable: Cleared when tab closes
+sessionStorage.setItem('tourDismissed', 'true');
+
+// On page load
+if (sessionStorage.getItem('tourDismissed') === 'true') {
+  hideTourBanner();
+}
+```
+
+**Why this is OK:**
+- Cleared automatically when tab closes
+- Doesn't persist across sessions
+- Doesn't track users long-term
+- Only for UX convenience (dismissing help banners)
+- User-controlled (can clear manually)
+
+### Marketing Copy for Privacy Promise
+
+**Homepage/About Page:**
+```
+🔒 Your Data. Your Device. Your Privacy.
+
+✅ No cookies
+✅ No cloud storage  
+✅ No tracking
+✅ 100% local processing
+
+Your customer data never leaves your computer.
+```
+
+**FAQ:**
+```
+Q: Is my data safe?
+A: Your data never leaves your device. We don't store, 
+   transmit, or track anything. Ever.
+
+Q: Do you use cookies?
+A: No. We don't use cookies or any persistent tracking.
+
+Q: Where is my data stored?
+A: Only on your device. You can save projects as files
+   and load them later - but we never see them.
+
+Q: Can I trust Segmentor with sensitive customer data?
+A: Yes. Since all processing happens locally in your browser,
+   we never have access to your data. It's technically 
+   impossible for us to see it.
+```
+
+---
+
+## Navigation & Information Architecture
+
+### Header Navigation (All Pages)
+
+**Primary Navigation:**
+```
+╔════════════════════════════════════════════════════╗
+║ [Logo]  About  |  FAQ  |  Contact  |  [? Help]  [Try It Free →] ║
+╚════════════════════════════════════════════════════╝
+```
+
+**When in Tool (working state):**
+```
+╔════════════════════════════════════════════════════╗
+║ [Logo]  About  |  FAQ  |  Contact  |  [? Help]  [Save/Export] ║
+╚════════════════════════════════════════════════════╝
+```
+
+### Information Hierarchy
+
+**McGovern Top Tasks Priority:**
+
+| Priority | Task | Implementation |
+|----------|------|----------------|
+| 1 | Segment my customers | Tool (homepage) |
+| 2 | Understand what this does | About page + [?] Help |
+| 3 | Get help with tool | FAQ + Help panel |
+| 4 | Save/export my work | Save button (in tool) |
+| 5 | Is my data safe? | Privacy info (About + FAQ) |
+| 6 | Contact for support | Contact page |
+
+### FAQ Structure (Top Tasks Order)
+
+**Organized by frequency of need, NOT alphabetically:**
+
+**Section 1: Getting Started (Highest Priority)**
+1. "How do I get started?"
+2. "What data do I need to upload?"
+3. "What format should my CSV be?"
+4. "Can I try it without my own data?"
+
+**Section 2: Using the Tool**
+5. "What do the quadrants mean?"
+6. "How do I interpret Apostles vs Terrorists?"
+7. "How do I identify Near-Apostles?"
+8. "Can I filter or exclude certain customers?"
+
+**Section 3: Saving & Exporting**
+9. "Can I save my work?"
+10. "How do I load a previous project?"
+11. "Can I export reports?"
+
+**Section 4: Privacy & Security (Trust)**
+12. "Is my data safe?"
+13. "Do you use cookies?"
+14. "Where is my data stored?"
+
+**Section 5: Understanding the Model**
+15. "What is the Apostles Model?"
+16. "How is this different from NPS?"
+17. "What makes someone an Apostle?"
+
+---
+
+## Marketing & Traffic Strategy
+
+### Traffic Sources & Landing Page Strategy
+
+#### LinkedIn Traffic (Primary Channel)
+
+**Type A: Problem-Focused Posts**
+*Example: "Struggling to identify your true brand advocates?"*
+
+**Best landing page:** `/about` (marketing page)
+- Use UTM: `segmentor.app/about?utm_source=linkedin&utm_content=problem-post`
+- Why: They're problem-aware, need persuasion first
+- CTA on marketing page: "Try it free" → Tool
+
+**Type B: Product Demo Posts**
+*Example: "Watch how Segmentor segments customers in 30 seconds"*
+
+**Best landing page:** `/` (tool with context)
+- Use UTM: `segmentor.app?utm_source=linkedin&utm_content=demo`
+- Why: They've seen demo, want to try it
+- Show shorter welcome message or sample data prompt
+
+#### SEO Traffic
+
+**Keyword:** "customer segmentation tool", "apostles model", "NPS alternative"
+
+**Best landing page:** `/about` (marketing page)
+- Why: Educational intent, need context first
+- Rich content for SEO ranking
+- Clear path to tool via CTAs
+
+#### Direct Traffic
+
+**Bookmark/Word of Mouth:** `segmentor.app`
+
+**Best landing page:** `/` (tool)
+- Why: They know what it is, want to use it
+- Returning users should land on tool directly
+
+### UTM Parameter Strategy
+
+**Track campaign effectiveness without cookies:**
+
+```javascript
+// Read UTM on page load (doesn't persist)
+const urlParams = new URLSearchParams(window.location.search);
+const source = urlParams.get('utm_source');
+const content = urlParams.get('utm_content');
+
+// Customize welcome experience (this session only)
+if (source === 'linkedin' && content === 'demo') {
+  showQuickStartGuide(); // Shorter onboarding
+} else if (source === 'linkedin' && content === 'problem-post') {
+  showFullTour(); // More education needed
+}
+
+// Don't store this data - just use it for immediate UX
+```
+
+**Privacy compliance:** UTM parameters are read once, used for UX customization, never stored.
+
+---
+
+## Implementation Priorities
+
+### Phase 1: MVP (Tool-First Foundation)
+
+**Goal:** Working tool with basic guidance
+
+1. ✅ Tool interface as homepage
+2. ✅ Basic CSV upload functionality
+3. ✅ Visualization (Apostles Model grid)
+4. ✅ Empty state with upload prompt
+5. ✅ Sample data option
+6. ✅ Help button (?) in header
+7. ✅ Basic tooltips on hover
+8. ✅ Save/Export functionality (.seg files)
+
+**Success Criteria:**
+- Users can upload data and see visualization
+- Users can save and reload work
+- Help is accessible when needed
+
+---
+
+### Phase 2: Onboarding & Marketing
+
+**Goal:** Guide new users, persuade prospects
+
+1. Welcome banner (dismissible, state-based)
+2. Contextual help throughout tool
+3. /about marketing page (compelling story)
+4. FAQ page (top tasks organized)
+5. Contact form (support + leads)
+6. Privacy messaging (differentiator)
+
+**Success Criteria:**
+- New users understand tool within 30 seconds
+- Clear path from marketing content to tool
+- Privacy promise communicated clearly
+
+---
+
+### Phase 3: Polish & Optimization
+
+**Goal:** Smooth experience, reduce friction
+
+1. Progressive disclosure in tool
+2. Smart state detection (empty vs working)
+3. UTM-based welcome customization
+4. Advanced tooltips (GIFs, videos)
+5. In-app tutorial mode (optional walkthrough)
+6. Help panel with searchable content
+
+**Success Criteria:**
+- Reduced support requests
+- Higher conversion from /about to tool
+- Positive user feedback on onboarding
+
+---
+
+## Open Questions & Future Decisions
+
+### Questions Still To Resolve
+
+1. **Premium Features:**
+   - Do we need a premium tier?
+   - If yes, how to handle access control without cookies?
+   - Secret codes vs credentials?
+
+2. **Welcome Banner Persistence:**
+   - Should dismissed banner stay gone across sessions? (Needs sessionStorage)
+   - Or reappear every new session? (More privacy-pure, possibly annoying)
+
+3. **Marketing Page Depth:**
+   - How sophisticated should /about be?
+   - Videos? Animations? Interactive demos?
+   - What's the right level of investment?
+
+4. **Sample Data:**
+   - What customer segment data to include?
+   - How many data points?
+   - Should it be randomized or fixed?
+
+5. **Mobile Experience:**
+   - Is the tool mobile-friendly?
+   - Should mobile users be directed to /about first?
+   - Touch-friendly help buttons?
+
+6. **Localization:**
+   - Multi-language support needed?
+   - Which markets to target?
+
+---
+
+### Decisions Made (For Reference)
+
+✅ **Tool-first structure** - Landing page = Tool (with smart onboarding)  
+✅ **Privacy-first approach** - No cookies, no cloud, no tracking  
+✅ **Help button in header** - Always accessible, never intrusive  
+✅ **State-based guidance** - Show help when empty, hide when working  
+✅ **sessionStorage is acceptable** - For UX only, cleared on tab close  
+✅ **Marketing page is secondary** - /about exists but tool is primary  
+✅ **FAQ organized by top tasks** - Not alphabetical, by user need frequency  
+
+---
+
+## Key Principles Summary
+
+### UX Design Principles
+
+1. **Tool is the star** - Marketing supports, doesn't overshadow
+2. **Privacy is a feature** - Communicate it clearly and proudly
+3. **Help when needed, not forced** - Always accessible, never blocking
+4. **Respect power users** - Direct access for returning users
+5. **Guide new users gently** - Onboarding without overwhelm
+6. **Progressive disclosure** - Show complexity gradually
+7. **Top tasks first** - Prioritize by frequency of user need
+8. **State-based, not cookie-based** - Smart detection without tracking
+
+### Development Principles
+
+1. **Privacy-compliant by design** - Never compromise on data promise
+2. **Modular components** - Keep files under 300 lines
+3. **Performance matters** - Local processing should be fast
+4. **Mobile-friendly** - Responsive design throughout
+5. **Accessible** - WCAG 2.1 AA compliance
+6. **Brand consistency** - Follow style guide (Lato, Montserrat, colors)
+
+---
+
+## Next Steps
+
+1. **Review this document** - Ensure all stakeholders agree on approach
+2. **Create wireframes** - Visual mockups of homepage/tool states
+3. **Draft welcome banner copy** - Specific wording for new users
+4. **Design help button panel** - Content hierarchy and structure
+5. **Build /about marketing page** - Compelling narrative and visuals
+6. **Test with users** - Validate onboarding approach works
+7. **Iterate based on feedback** - Refine guidance and messaging
+
+---
+
+## Document History
+
+| Version | Date | Changes | Author |
+|---------|------|---------|--------|
+| 1.0 | Oct 8, 2025 | Initial strategy document | Planning Discussion |
+
+---
+
+## Related Documents
+
+- `brand-style-guide.md` - Colors, fonts, component styles
+- `reporting_roadmap.md` - Report generation features
+- `Export Import Save before leaving.docx` - Save/load functionality
+- `FAQ structure` - To be created based on top tasks
+
+---
+
+**END OF DOCUMENT**
+
+*This document captures the complete discussion, debate, and decisions around Segmentor.app's website structure, UX strategy, and implementation approach. Refer back to this when making design or development decisions to maintain consistency with the core philosophy.*

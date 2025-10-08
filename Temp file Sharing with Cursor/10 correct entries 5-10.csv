@@ -1,0 +1,11 @@
+ID,Name,Email,Sat-5,Loy-10,Date,Country,TrueLoyalist,NumPurchases,NumComplaints,Region,Language,Persona,CES
+ABC123,John Smith,john@example.com,5,5,01/01/2024,France,Yes,5,0,EMEA,French,Rushed,5
+ABC124,Alice Brown,alice@example.com,4,6,05/01/2024,UK,No,3,1,EMEA,English,Analytical,4
+ABC125,Bob Green,bob@example.com,3,4,10/02/2024,Germany,No,2,2,EMEA,German,Pragmatic,3
+ABC126,Sara White,sara@example.com,5,8,15/02/2024,Spain,Yes,6,0,EMEA,Spanish,Loyalist,5
+ABC127,Tom Black,tom@example.com,2,3,20/03/2024,USA,No,1,3,Americas,English,Detached,2
+ABC128,Emma Davis,emma@example.com,4,7,25/03/2024,Canada,Yes,4,1,Americas,English,Advocate,4
+ABC129,Liam van Mender,liam@example.com,5,9,01/04/2024,Australia,Yes,7,0,APAC,English,Enthusiast,5
+ABC130,Olivia Lee,olivia@example.com,3,5,05/04/2024,Japan,No,2,2,APAC,Japanese,Neutral,3
+ABC131,Jack Wilson,jack@example.com,4,6,10/05/2024,Italy,No,3,1,EMEA,Italian,Sceptical,4
+ABC132,Mia McTaylor,mia@example.com,5,10,15/05/2024,Brazil,Yes,8,0,LATAM,Portuguese,Champion,5

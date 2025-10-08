@@ -1,0 +1,250 @@
+/* Screen Size Visual Indicator */
+
+.screen-size-indicator {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1002;
+  max-width: 260px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.screen-size-indicator.green {
+  border-color: #3a863e;
+}
+
+.screen-size-indicator.orange {
+  border-color: #f59e0b;
+}
+
+.screen-size-indicator.red {
+  border-color: #ef4444;
+}
+
+.indicator-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.screen-size-indicator.green .indicator-icon {
+  background: #3a863e;
+  color: white;
+}
+
+.screen-size-indicator.orange .indicator-icon {
+  background: #f59e0b;
+  color: white;
+}
+
+.screen-size-indicator.red .indicator-icon {
+  background: #ef4444;
+  color: white;
+}
+
+.indicator-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.indicator-message {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1px;
+}
+
+.indicator-description {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.2;
+}
+
+.indicator-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.screen-representation {
+  position: relative;
+  width: 50px;
+  height: 32px;
+}
+
+.screen-outline {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  background: #f9fafb;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen-content {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.content-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: 100%;
+}
+
+.bar {
+  background: #3a863e;
+  border-radius: 1px;
+  height: 3px;
+  transition: all 0.3s ease;
+}
+
+.bar-1 {
+  width: 100%;
+}
+
+.bar-2 {
+  width: 80%;
+}
+
+.bar-3 {
+  width: 60%;
+}
+
+/* Different bar styles for different screen sizes */
+.screen-size-indicator.orange .bar {
+  background: #f59e0b;
+}
+
+.screen-size-indicator.orange .bar-2 {
+  width: 60%;
+}
+
+.screen-size-indicator.orange .bar-3 {
+  width: 40%;
+}
+
+.screen-size-indicator.red .bar {
+  background: #ef4444;
+}
+
+.screen-size-indicator.red .bar-2 {
+  width: 40%;
+}
+
+.screen-size-indicator.red .bar-3 {
+  width: 20%;
+}
+
+.cramped-indicator {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.screen-size-indicator {
+  animation: slideInFromRight 0.4s ease-out;
+}
+
+.screen-size-indicator.red {
+  animation: slideInFromRight 0.4s ease-out, pulse 2s infinite 0.4s;
+}
+
+.screen-size-indicator.fade-out {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .screen-size-indicator {
+    top: 10px;
+    right: 10px;
+    max-width: 240px;
+    padding: 12px;
+  }
+  
+  .screen-representation {
+    width: 50px;
+    height: 32px;
+  }
+  
+  .indicator-message {
+    font-size: 13px;
+  }
+  
+  .indicator-description {
+    font-size: 11px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .screen-size-indicator.red {
+    animation: none;
+  }
+  
+  .bar {
+    transition: none;
+  }
+}
