@@ -55,6 +55,7 @@ export interface DataEntryModuleProps {
   loyaltyScale: ScaleFormat;
   data: DataPoint[];
   onSegFileLoad?: (file: File) => Promise<void>;
+  onDemoDataLoad?: () => void;
 }
 
 export interface HeaderScales {

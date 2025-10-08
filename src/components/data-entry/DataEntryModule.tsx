@@ -5,6 +5,7 @@ import { CSVImport } from './forms/CSVImport';
 import SegFileLoader from './forms/SegFileLoader/SegFileLoader';
 import TabContainer, { Tab } from '../ui/TabContainer/TabContainer';
 import { Upload, Edit3, FolderOpen } from 'lucide-react';
+import DemoButton from '../ui/DemoButton/DemoButton';
 import { idCounter } from './utils/idCounter';
 import { DataPoint, ScaleFormat } from '@/types/base';
 import StateManagementService from './services/StateManagementService';
@@ -22,7 +23,8 @@ const DataEntryModule: React.FC<DataEntryModuleProps> = ({
   satisfactionScale,
   loyaltyScale,
   data: externalData,
-  onSegFileLoad
+  onSegFileLoad,
+  onDemoDataLoad
 }) => {
   const [editingData, setEditingData] = useState<DataPoint | null>(null);
   const [data, setData] = useState<DataPoint[]>([]);
@@ -371,6 +373,14 @@ if (editingData) {
         defaultActiveTab="csv-upload"
         className="data-entry-tabs"
       />
+      
+      {/* Demo Button - Always visible below tabs */}
+      {data.length === 0 && onDemoDataLoad && (
+        <DemoButton 
+          onDemoDataLoad={onDemoDataLoad}
+          disabled={false}
+        />
+      )}
     </div>
   );
 };

@@ -10,6 +10,8 @@ import { ReportingSection } from './components/reporting/ReportingSection';
 import LeftDrawer from './components/ui/LeftDrawer/LeftDrawer';
 import DrawerSaveButton from './components/ui/DrawerSaveButton/DrawerSaveButton';
 import ScreenSizeWarning from './components/ui/ScreenSizeWarning/ScreenSizeWarning';
+import DemoBanner from './components/ui/DemoBanner/DemoBanner';
+import WelcomeBanner from './components/ui/WelcomeBanner/WelcomeBanner';
 import './App.css';
 import './components/visualization/controls/ResponsiveDesign.css';
 
@@ -38,6 +40,92 @@ const visualizationRef = useRef<HTMLDivElement>(null);
 
   
   const [isPremium, setIsPremium] = useState(false);
+  const [isDemoMode, setIsDemoMode] = useState(false);
+  const [showWelcomeBanner, setShowWelcomeBanner] = useState(true);
+
+  // Demo data loading function
+  const handleDemoDataLoad = async () => {
+    try {
+      setIsDemoMode(true);
+      setIsPremium(true); // Auto-enable Premium mode for demo
+      
+      const response = await fetch('/apostles_model_template.csv');
+      const csvText = await response.text();
+      
+      // Parse CSV data
+      const lines = csvText.split('\n');
+      const headers = lines[0].split(',');
+      const dataRows = lines.slice(1).filter(line => line.trim());
+      
+      const demoData: DataPoint[] = dataRows.map((row, index) => {
+        const values = row.split(',');
+        return {
+          id: `DEMO_${index + 1}`,
+          name: values[1] || `Demo User ${index + 1}`,
+          satisfaction: parseInt(values[2]) || 1,
+          loyalty: parseInt(values[3]) || 1,
+          email: `demo${index + 1}@example.com`,
+          date: new Date(2024, 0, 1 + (index % 30)).toISOString().split('T')[0],
+          group: ['Apostles', 'Loyalists', 'Defectors', 'Terrorists'][index % 4],
+          additionalAttributes: {
+            country: ['USA', 'Canada', 'UK', 'Australia'][index % 4],
+            language: ['English', 'French', 'Spanish', 'German'][index % 4],
+            purchases: Math.floor(Math.random() * 10) + 1
+          }
+        };
+      });
+      
+      setData(demoData);
+      setScales({
+        satisfactionScale: '1-5',
+        loyaltyScale: '0-10',
+        isLocked: false
+      });
+      
+      notification.showNotification({
+        title: 'Demo Data Loaded',
+        message: 'Explore the full potential of the tool with sample data!',
+        type: 'success'
+      });
+    } catch (error) {
+      console.error('Error loading demo data:', error);
+      notification.showNotification({
+        title: 'Error',
+        message: 'Failed to load demo data. Please try again.',
+        type: 'error'
+      });
+      setIsDemoMode(false);
+      setIsPremium(false);
+    }
+  };
+
+  // Demo banner handlers
+  const handleDismissDemo = () => {
+    setIsDemoMode(false);
+  };
+
+  const handleLoadRealData = () => {
+    // Full page refresh to reset everything
+    window.location.reload();
+  };
+
+  // Welcome banner handlers
+  const handleDismissWelcome = () => {
+    setShowWelcomeBanner(false);
+  };
+
+  const handleStartTour = () => {
+    // For now, just dismiss the banner
+    // In the future, we can implement the actual tour highlighting
+    setShowWelcomeBanner(false);
+  };
+
+  const handleUploadData = () => {
+    // Scroll to data entry section
+    if (dataEntryRef.current) {
+      dataEntryRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
 // Sync isPremium with activeEffects
 useEffect(() => {
@@ -338,6 +426,23 @@ const handleTerroristsZoneSizeChange = (size: number) => {
           </header>
           
           <main className="app-content">
+            {/* Demo Banner */}
+        {showWelcomeBanner && data.length === 0 && !isDemoMode && (
+          <WelcomeBanner
+            onDismiss={handleDismissWelcome}
+            onStartTour={handleStartTour}
+            onLoadSampleData={handleDemoDataLoad}
+            onUploadData={handleUploadData}
+          />
+        )}
+        
+        {isDemoMode && (
+          <DemoBanner
+            onDismiss={handleDismissDemo}
+            onLoadRealData={handleLoadRealData}
+          />
+        )}
+            
             <div className="section data-entry-section" ref={dataEntryRef}>
               <DataEntryModule 
                 onDataChange={handleDataChange}
@@ -345,6 +450,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
                 loyaltyScale={scales.loyaltyScale}
                 data={data}
                 onSegFileLoad={handleLoadProgress}
+                onDemoDataLoad={handleDemoDataLoad}
               />
             </div>
 
@@ -378,7 +484,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
                 >
                 <div className="section visualization-section" ref={visualizationRef}>
                   <h2 className="visualisation-title">Visualisation</h2>
-                  <div className="visualization-content">
+                  <div className="visualization-content visualization-container">
                     <FilteredChart
                       data={data}
                       satisfactionScale={scales.satisfactionScale}
