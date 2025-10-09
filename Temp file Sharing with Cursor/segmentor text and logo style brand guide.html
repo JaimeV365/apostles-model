@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>segmentor.app — Brand Style Palette</title>
+    <link href='https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Jaro&display=swap' rel='stylesheet'>
+    <style>
+        :root {
+            /* Primary Brand Colors */
+            --primary-green: #3a863e;
+            --secondary-green: #3a8540;
+            --dark-grey: #333333;
+            
+            /* Extended Palette */
+            --light-green: #4CAF50;
+            --red: #dc2626;
+            --yellow: #F7B731;
+            --blue: #4682B4;
+            
+            /* Text Colors */
+            --text-primary: #333333;
+            --text-secondary: #6b7280;
+            --text-disabled: rgba(0, 0, 0, 0.38);
+            
+            /* UI Elements */
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: #f9fafb;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        /* Color Palette Grid */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .color-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .color-swatch {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .color-info {
+            padding: 1rem;
+            background: #f9fafb;
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .color-usage {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Typography Section */
+        .font-sample {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .font-name {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .font-display {
+            margin: 1rem 0;
+        }
+
+        .lato-sample {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .montserrat-sample {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .jaro-sample {
+            font-family: 'Jaro', sans-serif;
+        }
+
+        /* Text Sizes */
+        .text-sizes {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .text-size-example {
+            padding: 0.5rem;
+            border-left: 3px solid var(--secondary-green);
+            padding-left: 1rem;
+        }
+
+        /* Button Examples */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2f6e32;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-green);
+            border: 1px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f7f1;
+        }
+
+        .btn-disabled {
+            background-color: rgba(0, 0, 0, 0.12);
+            color: rgba(0, 0, 0, 0.38);
+            cursor: not-allowed;
+        }
+
+        /* Form Elements */
+        .form-examples {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .form-control {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(58, 134, 62, 0.1);
+        }
+
+        /* Spacing Scale */
+        .spacing-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .spacing-example {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .spacing-visual {
+            background: var(--primary-green);
+            height: 24px;
+        }
+
+        .spacing-label {
+            font-family: 'Courier New', monospace;
+            color: var(--text-secondary);
+        }
+
+        /* Zone Colors */
+        .zone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .zone-card {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid;
+        }
+
+        /* Cards */
+        .card-example {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+  <h1 style="display: flex; align-items: baseline; justify-content: center; gap: 0; font-size: 2.5rem; margin-bottom: 0.5rem;">
+    <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: #333333;">
+      seg<span style="color: #3a863e;">m</span>entor</span>
+    <span style="font-family: 'Jaro', sans-serif; color: #3a863e; text-transform: uppercase; font-size: 0.6em; transform: translateY(2px); display: inline-block;">.APP</span>
+  </h1>
+  <p class="subtitle">Brand Style Guide & Visual Palette</p>
+</header>
+
+
+        <!-- Primary Brand Colors -->
+        <section>
+            <h2>Primary Brand Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #3a863e;">
+                        <span style="color: white; font-weight: 600;">Primary Green</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Green</div>
+                        <div class="color-hex">#3a863e</div>
+                        <div class="color-usage">Primary buttons, success states, active states</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #3a8540;">
+                        <span style="color: white; font-weight: 600;">Secondary Green</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary Green</div>
+                        <div class="color-hex">#3a8540</div>
+                        <div class="color-usage">Links, icons, accents</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #333333;">
+                        <span style="color: white; font-weight: 600;">Dark Grey</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Grey</div>
+                        <div class="color-hex">#333333</div>
+                        <div class="color-usage">Primary text, headers</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extended Color Palette -->
+<section>
+    <h2>Extended Color Palette (Quadrant Zones)</h2>
+    <div class="color-grid">
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #4CAF50;">
+                <span style="color: white; font-weight: 600;">Light Green</span>
+            </div>
+            <div class="color-info">
+                <div class="color-name">Light Green</div>
+                <div class="color-hex">#4CAF50</div>
+                <div class="color-usage">Loyalists/Apostles zone, success indicators</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #CC0000;">
+                <span style="color: white; font-weight: 600;">Red</span>
+            </div>
+            <div class="color-info">
+                <div class="color-name">Red</div>
+                <div class="color-hex">#CC0000</div>
+                <div class="color-usage">Defectors/Terrorists zone, error states</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #F7B731;">
+                <span style="color: black; font-weight: 600;">Yellow</span>
+            </div>
+            <div class="color-info">
+                <div class="color-name">Yellow</div>
+                <div class="color-hex">#F7B731</div>
+                <div class="color-usage">Mercenaries zone, warning states</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #3A6494;">
+                <span style="color: white; font-weight: 600;">Blue</span>
+            </div>
+            <div class="color-info">
+                <div class="color-name">Blue (Hostages)</div>
+                <div class="color-hex">#3A6494</div>
+                <div class="color-usage">Hostages zone - currently in use</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Typography -->
+        <section>
+            <h2>Typography</h2>
+            
+            <h3>Logo Construction</h3>
+            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid var(--primary-green);">
+                <div style="margin-bottom: 1rem;">
+                    <strong>Logo breakdown:</strong>
+                </div>
+                <ul style="list-style: none; padding-left: 0; margin: 0;">
+                    <li style="margin-bottom: 0.5rem;">
+                        <code style="background: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">seg<span style="color: #3a863e; font-weight: bold;">m</span>entor</code> 
+                        — <strong>Montserrat Bold</strong> in charcoal (#333333), with middle '<strong style="color: #3a863e;">m</strong>' in green (#3a863e)
+                    </li>
+                    <li>
+                        <code style="background: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace; color: #3a863e;">.APP</code> 
+                        — <strong>Jaro</strong> in green (#3a863e), uppercase
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="font-sample lato-sample">
+                <div class="font-name">Primary Font: Lato</div>
+                <div class="font-display" style="font-size: 2rem; font-weight: 700;">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                </div>
+                <div class="font-display" style="font-size: 1.5rem; font-weight: 400;">
+                    abcdefghijklmnopqrstuvwxyz 0123456789
+                </div>
+                <div class="font-display" style="font-size: 1rem;">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+            </div>
+
+            <div class="font-sample montserrat-sample">
+                <div class="font-name">Brand Font: Montserrat (Logo - segmentor)</div>
+                <div class="font-display" style="font-size: 2rem; font-weight: 700; color: #333333;">
+                    seg<span style="color: #3a863e;">m</span>entor
+                </div>
+                <div class="font-display" style="font-size: 1.5rem; font-weight: 700;">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                </div>
+                <div class="font-display" style="font-size: 1.2rem; font-weight: 400;">
+                    abcdefghijklmnopqrstuvwxyz 0123456789
+                </div>
+            </div>
+
+            <div class="font-sample jaro-sample">
+                <div class="font-name">Accent Font: Jaro (Logo - .APP)</div>
+                <div class="font-display" style="font-size: 2rem; color: var(--primary-green);">
+                    .APP
+                </div>
+                <div class="font-display" style="font-size: 1.5rem;">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                </div>
+            </div>
+
+            <h3>Text Sizes & Weights</h3>
+            <div class="text-sizes lato-sample">
+                <div class="text-size-example" style="font-size: 24px; font-weight: 700;">
+                    H1: 24px / Bold (700) - Main Headers
+                </div>
+                <div class="text-size-example" style="font-size: 20px; font-weight: 600;">
+                    H2: 20px / Semi-Bold (600) - Section Headers
+                </div>
+                <div class="text-size-example" style="font-size: 16px; font-weight: 600;">
+                    H3: 16px / Semi-Bold (600) - Subsection Headers
+                </div>
+                <div class="text-size-example" style="font-size: 14px; font-weight: 400;">
+                    Body: 14px / Regular (400) - Standard Text
+                </div>
+                <div class="text-size-example" style="font-size: 12px; font-weight: 400;">
+                    Small: 12px / Regular (400) - Captions & Labels
+                </div>
+            </div>
+
+            <h3>Text Colors</h3>
+            <div style="display: grid; gap: 0.5rem; margin-top: 1rem;">
+                <div style="color: #333333;">Primary Text: #333333</div>
+                <div style="color: #6b7280;">Secondary Text: #6b7280</div>
+                <div style="color: rgba(0, 0, 0, 0.38);">Disabled Text: rgba(0, 0, 0, 0.38)</div>
+            </div>
+        </section>
+
+        <!-- UI Components -->
+        <section>
+            <h2>UI Components</h2>
+            
+            <h3>Buttons</h3>
+            <div class="button-grid">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-disabled" disabled>Disabled Button</button>
+            </div>
+
+            <h3>Form Elements</h3>
+            <div class="form-examples">
+                <input type="text" class="form-control" placeholder="Input Field">
+                <select class="form-control">
+                    <option>Dropdown Menu</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+                <textarea class="form-control" rows="3" placeholder="Text Area"></textarea>
+            </div>
+
+            <h3>Card Component</h3>
+            <div class="card-example">
+                <h4 style="margin-bottom: 0.5rem;">Card Title</h4>
+                <p style="color: var(--text-secondary);">This is an example of the standard card component with rounded corners and subtle shadow.</p>
+            </div>
+        </section>
+
+        <!-- Zone Colors -->
+        <section>
+            <h2>Quadrant Zone Colors</h2>
+            <div class="zone-grid">
+                <div class="zone-card" style="background: rgba(76, 175, 80, 0.4); border-color: rgba(76, 175, 80, 0.5);">
+                    <strong>Apostles Zone</strong>
+                    <div style="font-size: 0.85rem; margin-top: 0.5rem;">rgba(76, 175, 80, 0.4)</div>
+                </div>
+                <div class="zone-card" style="background: rgba(244, 67, 54, 0.4); border-color: rgba(244, 67, 54, 0.5);">
+                    <strong>Terrorists Zone</strong>
+                    <div style="font-size: 0.85rem; margin-top: 0.5rem;">rgba(244, 67, 54, 0.4)</div>
+                </div>
+                <div class="zone-card" style="background: rgba(76, 175, 80, 0.2); border-color: rgba(76, 175, 80, 0.3);">
+                    <strong>Near-Apostles</strong>
+                    <div style="font-size: 0.85rem; margin-top: 0.5rem;">rgba(76, 175, 80, 0.2)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing Scale -->
+        <section>
+            <h2>Spacing Scale</h2>
+            <div class="spacing-grid">
+                <div class="spacing-example">
+                    <div class="spacing-visual" style="width: 4px;"></div>
+                    <span class="spacing-label">--space-1: 4px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-visual" style="width: 8px;"></div>
+                    <span class="spacing-label">--space-2: 8px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-visual" style="width: 12px;"></div>
+                    <span class="spacing-label">--space-3: 12px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-visual" style="width: 16px;"></div>
+                    <span class="spacing-label">--space-4: 16px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-visual" style="width: 20px;"></div>
+                    <span class="spacing-label">--space-5: 20px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-visual" style="width: 24px;"></div>
+                    <span class="spacing-label">--space-6: 24px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-visual" style="width: 32px;"></div>
+                    <span class="spacing-label">--space-8: 32px</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI States -->
+        <section>
+            <h2>UI States</h2>
+            <div style="display: grid; gap: 1rem;">
+                <div style="padding: 1rem; background: rgba(0, 0, 0, 0.05); border-radius: 4px;">
+                    <strong>Normal State:</strong> Default appearance
+                </div>
+                <div style="padding: 1rem; background: rgba(58, 134, 62, 0.1); border-radius: 4px;">
+                    <strong>Hover State:</strong> Darken base color by 10%
+                </div>
+                <div style="padding: 1rem; background: rgba(58, 134, 62, 0.2); border-radius: 4px;">
+                    <strong>Active State:</strong> Darken base color by 15%
+                </div>
+                <div style="padding: 1rem; background: rgba(0, 0, 0, 0.12); color: rgba(0, 0, 0, 0.38); border-radius: 4px;">
+                    <strong>Disabled State:</strong> rgba(0, 0, 0, 0.38)
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <section>
+            <h2>Usage Guidelines</h2>
+            <h3>Accessibility</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">✓ All color combinations meet WCAG 2.1 AA standards</li>
+                <li style="margin-bottom: 0.5rem;">✓ Text on light backgrounds uses #333333</li>
+                <li style="margin-bottom: 0.5rem;">✓ Text on dark backgrounds uses #FFFFFF</li>
+                <li style="margin-bottom: 0.5rem;">✓ Focus states are visible with high contrast</li>
+            </ul>
+
+            <h3>Responsive Design</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">✓ Mobile-first approach</li>
+                <li style="margin-bottom: 0.5rem;">✓ Breakpoints: 640px, 768px, 1024px, 1280px</li>
+                <li style="margin-bottom: 0.5rem;">✓ Touch targets minimum 44x44px on mobile</li>
+            </ul>
+        </section>
+
+        <footer style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+            <p><span style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: #333333;">seg<span style="color: #3a863e;">m</span>entor</span><span style="font-family: 'Jaro', sans-serif; color: #3a863e; text-transform: uppercase;">.app</span> Brand Style Guide © 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html>
+

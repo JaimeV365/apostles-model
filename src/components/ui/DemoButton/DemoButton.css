@@ -39,7 +39,7 @@
   gap: 8px;
   background: transparent;
   color: #3a863e;
-  border: 1px solid #3a863e;
+  border: none;
   border-radius: 6px;
   padding: 8px 16px;
   font-size: 13px;
@@ -47,12 +47,13 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  text-decoration: underline;
 }
 
 .demo-button:hover:not(:disabled) {
-  background: rgba(58, 134, 62, 0.1);
+  background: transparent;
   color: #2d6a31;
-  border-color: #2d6a31;
+  border: none;
   transform: translateY(-1px);
 }
 
@@ -63,13 +64,13 @@
 .demo-button:disabled {
   background: transparent;
   color: #ccc;
-  border-color: #ccc;
+  border: none;
   cursor: not-allowed;
   transform: none;
 }
 
 .demo-button:disabled:hover {
-  background: #9ca3af;
+  background: transparent;
   transform: none;
   box-shadow: none;
 }

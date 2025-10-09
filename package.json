@@ -29,12 +29,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "start": "react-scripts start",
-  "build": "CI=false react-scripts build",
-  "test": "jest --config jest.config.js",
-  "test:watch": "jest --watch --config jest.config.js",
-  "eject": "react-scripts eject"
-},
+    "start": "react-scripts start",
+    "build": "CI=false react-scripts build",
+    "build:deploy": "npm run build && npm run deploy:prepare",
+    "deploy:prepare": "mkdir -p public/tool && cp -r build/* public/tool/",
+    "test": "jest --config jest.config.js",
+    "test:watch": "jest --watch --config jest.config.js",
+    "eject": "react-scripts eject"
+  },
+  "homepage": ".",
   "eslintConfig": {
     "extends": [
       "react-app",

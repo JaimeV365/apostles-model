@@ -25,14 +25,14 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: #6c757d;
+  color: #3a863e;
   transition: all 0.2s ease;
   border-bottom: 3px solid transparent;
 }
 
 .tab-button:hover {
   background: #e9ecef;
-  color: #495057;
+  color: #2d6a31;
 }
 
 .tab-button.active {

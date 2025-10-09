@@ -6,10 +6,39 @@
 }
 
 .data-entry-title {
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-left: 16px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+.data-entry-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(135deg, #3a863e 0%, #2d6a31 100%);
+  border-radius: 2px;
+}
+
+.data-entry-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3a863e 0%, #2d6a31 100%);
+  border-radius: 2px;
 }
 
 /* Tab Container Integration */

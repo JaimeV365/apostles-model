@@ -154,7 +154,7 @@ const DataDisplay: React.FC<DataDisplayProps> = ({
   return (
     <div className="data-display">
       <div style={{ textAlign: 'center', marginBottom: '16px' }}>
-  <h1 className="data-entry-title">Entered Data</h1>
+  <h1 className="data-table-title">Data Table</h1>
 </div>
 
       {sortedData.length > 0 ? (

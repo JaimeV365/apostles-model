@@ -139,6 +139,20 @@ useEffect(() => {
     });
   }
 }, [isPremium, activeEffects]);
+
+// Listen for header mode toggle events
+useEffect(() => {
+  const handleHeaderModeToggle = (event: CustomEvent) => {
+    const { isPremium: headerIsPremium } = event.detail;
+    setIsPremium(headerIsPremium);
+  };
+  
+  window.addEventListener('headerModeToggle', handleHeaderModeToggle as EventListener);
+  
+  return () => {
+    window.removeEventListener('headerModeToggle', handleHeaderModeToggle as EventListener);
+  };
+}, []);
   
   
   // Chart control states
@@ -384,48 +398,52 @@ const handleTerroristsZoneSizeChange = (size: number) => {
 
   return (
     <div className="app">
-      <ScreenSizeWarning />
-        <>
-          <header className="app-header">
-            <h1>Apostles Model Builder</h1>
+      {/* <ScreenSizeWarning /> */}
+      
+      {/* App Header - Simplified */}
+      <div className="app-header">
+        <div className="header-content">
+          <div className="header-right">
             <div className="mode-indicator">
               {isPremium ? (
-  <span 
-    className="mode-badge mode-badge--premium" 
-    title="Click to disable premium mode (testing)"
-    role="button"
-    onClick={() => {
-      setIsPremium(false);
-      notification.showNotification({
-        title: 'Standard Mode Enabled',
-        message: 'Switched to standard mode.',
-        type: 'info'
-      });
-    }}
-  >
-    👑 Premium Mode
-  </span>
-) : (
-  <span 
-    className="mode-badge mode-badge--standard" 
-    title="Click to enable premium mode (testing)"
-    role="button"
-    onClick={() => {
-      setIsPremium(true);
-      notification.showNotification({
-        title: 'Premium Mode Enabled',
-        message: 'All premium features are now available.',
-        type: 'success'
-      });
-    }}
-  >
-    ⚪ Standard Mode
-  </span>
-)}
+                <span 
+                  className="mode-badge mode-badge--premium" 
+                  title="Click to disable premium mode (testing)"
+                  role="button"
+                  onClick={() => {
+                    setIsPremium(false);
+                    notification.showNotification({
+                      title: 'Standard Mode Enabled',
+                      message: 'Switched to standard mode.',
+                      type: 'info'
+                    });
+                  }}
+                >
+                  👑 Premium Mode
+                </span>
+              ) : (
+                <span 
+                  className="mode-badge mode-badge--standard" 
+                  title="Click to enable premium mode (testing)"
+                  role="button"
+                  onClick={() => {
+                    setIsPremium(true);
+                    notification.showNotification({
+                      title: 'Premium Mode Enabled',
+                      message: 'All premium features are now available.',
+                      type: 'success'
+                    });
+                  }}
+                >
+                  ⚪ Standard Mode
+                </span>
+              )}
             </div>
-          </header>
-          
-          <main className="app-content">
+          </div>
+        </div>
+      </div>
+      
+      <main className="app-content">
             {/* Demo Banner */}
         {showWelcomeBanner && data.length === 0 && !isDemoMode && (
           <WelcomeBanner
@@ -483,7 +501,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
                   terroristsZoneSize={terroristsZoneSize}
                 >
                 <div className="section visualization-section" ref={visualizationRef}>
-                  <h2 className="visualisation-title">Visualisation</h2>
+                  <h1 className="customer-segmentation-title">Customer Segmentation</h1>
                   <div className="visualization-content visualization-container">
                     <FilteredChart
                       data={data}
@@ -562,10 +580,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
               </FilterProvider>
             )}
           </main>
-           
-        </>
-      
-    </div>
+        </div>
   );
 };
 
