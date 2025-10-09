@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Professional customer segmentation tool using the Apostles Model. Analyze CSAT, NPS, CES data to identify Defectors, Loyalists, Advocates, and Trolls. Transform customer experience (CX) and employee experience (EX) with advanced statistics and behavioral analysis."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
     <title>segmentor.app - Professional Customer Segmentation Tool | Apostles Model Analysis</title>
     
     <!-- SEO Meta Tags -->
@@ -25,14 +25,14 @@
     <meta property="og:description" content="Transform your customer data with the Apostles Model. Identify Defectors, Loyalists, Advocates, and Trolls using advanced CSAT, NPS, and CES analysis." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://segmentor.app" />
-    <meta property="og:image" content="%PUBLIC_URL%/segmentor-logo.png" />
+    <meta property="og:image" content="/segmentor-logo.png" />
     <meta property="og:site_name" content="segmentor.app" />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="segmentor.app - Professional Customer Segmentation Tool" />
     <meta name="twitter:description" content="Transform your customer data with the Apostles Model. Identify Defectors, Loyalists, Advocates, and Trolls using advanced CSAT, NPS, and CES analysis." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/segmentor-logo.png" />
+    <meta name="twitter:image" content="/segmentor-logo.png" />
     
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#3a863e" />
@@ -114,6 +114,10 @@
     }
     </script>
     
+    <!-- Header CSS for unified navigation -->
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    
     <!-- Cross-Browser Compatibility & Reset Styles -->
     <style>
       /* CSS Reset for Cross-Browser Compatibility */
@@ -178,112 +182,7 @@
       }
       
       /* Website Header Styles */
-      .website-header {
-        background: #fff;
-        border-bottom: 1px solid #e9ecef;
-        padding: 1rem 0;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-      
-      .header-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-      }
-      
-      .header-logo {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        text-decoration: none;
-      }
-      
-      .header-logo img {
-        height: 32px;
-        width: auto;
-        margin-right: 0.5rem;
-        -webkit-border-radius: 0;
-        border-radius: 0;
-      }
-      
-      .header-nav {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        gap: 2rem;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-      }
-      
-      .header-nav a {
-        color: #3a863e;
-        text-decoration: none;
-        font-weight: 500;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-        padding: 0.5rem 0.75rem;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        position: relative;
-        display: inline-block;
-      }
-      
-      .header-nav a:hover {
-        color: #2d6a31;
-        background: rgba(58, 134, 62, 0.1);
-        text-decoration: none;
-      }
-      
-      .header-nav a::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: #3a863e;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-      }
-      
-      .header-nav a:hover::after {
-        width: 80%;
-      }
+      /* Header styles now in shared.css */
       
           .help-button {
             background: transparent;
@@ -356,12 +255,11 @@
     <header class="website-header">
       <div class="header-container">
         <a href="/" class="header-logo">
-          <img src="%PUBLIC_URL%/segmentor-logo.png" alt="Segmentor.app" />
+          <img src="/segmentor-logo.png" alt="Segmentor.app" />
         </a>
         <nav class="header-nav">
           <a href="/about.html">About</a>
           <a href="/faq.html">FAQ</a>
-          <a href="/contact.html">Contact</a>
           <span class="mode-badge mode-badge--standard" id="mode-badge" onclick="toggleMode()">
             ⚪ Standard Mode
           </span>
@@ -374,6 +272,10 @@
     
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
+    <!-- React App Scripts -->
+    <script defer="defer" src="/static/js/main.142fd2fa.js"></script>
+    <link href="/static/css/main.a1061a7f.css" rel="stylesheet">
     
     <!-- Mode Toggle JavaScript -->
     <script>

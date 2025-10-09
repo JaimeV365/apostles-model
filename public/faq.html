@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Basic SEO Meta Tags (Minimal as recommended) -->
+    <title>FAQ - segmentor.app</title>
+    <meta name="description" content="Frequently asked questions about segmentor.app and the Apostles Model customer segmentation tool.">
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- Branding -->
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <link href="/static/css/main.a1061a7f.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Jaro&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Cross-Browser Compatibility & Reset Styles -->
+    <style>
+      /* CSS Reset for Cross-Browser Compatibility */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Ensure consistent rendering across browsers */
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 0;
+        vertical-align: middle;
+      }
+      
+      button, input, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+      }
+      
+      button {
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: none;
+        outline: none;
+      }
+      
+      a {
+        color: inherit;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      /* Flexbox fallbacks for older browsers */
+      .flex-container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+      }
+      
+      /* Cross-browser compatibility for common properties */
+      .cross-browser-shadow {
+        -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .cross-browser-border-radius {
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+      }
+      
+      .cross-browser-transition {
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+      
+      .cross-browser-transform {
+        -webkit-transform: translateY(-1px);
+        -moz-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+        -o-transform: translateY(-1px);
+        transform: translateY(-1px);
+      }
+      
+      /* Ensure consistent appearance across browsers */
+      input, select, textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      
+      /* Cross-browser sticky positioning */
+      .sticky-element {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
+      
+      /* Header styles now in shared.css */
+      
+      .help-button {
+        background: transparent;
+        color: #3a863e;
+        border: 1px solid #3a863e;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      
+      .help-button:hover {
+        background: #3a863e;
+        color: white;
+        border-color: #2d6a31;
+      }
+      
+      .mode-badge {
+        background: #f8f9fa;
+        color: #6c757d;
+        border: 1px solid #e9ecef;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        display: inline-block;
+      }
+      
+      .mode-badge:hover {
+        background: #e9ecef;
+        border-color: #dee2e6;
+      }
+      
+      .mode-badge--premium {
+        background: #fff3cd;
+        color: #856404;
+        border-color: #ffeaa7;
+      }
+      
+      .mode-badge--premium:hover {
+        background: #ffeaa7;
+        border-color: #fdcb6e;
+      }
+    </style>
+
+    <!-- Website Header -->
+    <header class="website-header">
+        <div class="header-container">
+            <a href="/" class="header-logo">
+                <img src="/segmentor-logo.png" alt="Segmentor.app" />
+            </a>
+            <nav class="header-nav">
+                <a href="/">Launch Tool</a>
+                <a href="/about.html">About</a>
+                <span class="mode-badge mode-badge--standard" id="mode-badge" onclick="toggleMode()">⚪ Standard Mode</span>
+                <button class="help-button"><span>?</span> Help</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="faq-page">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="main-page-title">Frequently Asked Questions</h1>
+                <p class="hero-subtitle">
+                    Find answers to common questions about segmentor.app and the Apostles Model. 
+                    Can't find what you're looking for? Check our documentation or try the tool directly.
+                </p>
+            </section>
+
+            <!-- FAQ Content -->
+            <section class="faq-content">
+                <!-- Privacy & Security Section -->
+                <div class="faq-section">
+                    <h2>🔒 Privacy & Security</h2>
+                    
+                    <div class="faq-item">
+                        <h3>Is my data safe?</h3>
+                        <p><strong>Yes, absolutely.</strong> Your data never leaves your device. Segmentor.app runs entirely in your browser using local processing—we never see, store, or transmit your customer data anywhere. Think of it like using a calculator: the numbers you enter stay on your device.</p>
+                        <p><strong>Key security features:</strong></p>
+                        <ul>
+                            <li>✅ Zero cloud storage—all processing happens locally</li>
+                            <li>✅ No data transmission to external servers</li>
+                            <li>✅ Your files stay on your computer</li>
+                            <li>✅ You can work offline once the page loads</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do you use cookies?</h3>
+                        <p><strong>No, we don't use cookies.</strong> Segmentor.app doesn't track you, create user profiles, or store any browsing data. We respect your privacy by design. Since the tool runs entirely in your browser without requiring accounts or logins, there's no need for cookies.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Where is my data stored?</h3>
+                        <p><strong>Only on your device.</strong> Your customer data is stored in two ways, both completely under your control:</p>
+                        <p><strong>1. Browser temporary storage (automatic):</strong> When you're working on a segmentation, your data is temporarily held in your browser's memory. You can clear this anytime through your browser settings.</p>
+                        <p><strong>2. .seg project files (manual):</strong> Use the Save button to export your complete project as a .seg file to your computer. You choose where to store it—it's just a regular file you control.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I trust Segmentor with sensitive customer data?</h3>
+                        <p><strong>Yes, because we never see it.</strong> This isn't just a privacy promise—it's how the technology works. Segmentor.app uses a privacy-by-design architecture. All calculations happen in your browser using JavaScript, similar to how a spreadsheet works.</p>
+                    </div>
+                </div>
+
+                <!-- Understanding the Model Section -->
+                <div class="faq-section">
+                    <h2>📊 Understanding the Model</h2>
+                    
+                    <div class="faq-item">
+                        <h3>What is the Apostles Model?</h3>
+                        <p><strong>The Apostles Model is a customer segmentation framework</strong> that classifies customers into four groups based on two dimensions: satisfaction and loyalty. It was developed by Thomas O. Jones and W. Earl Sasser Jr. in their groundbreaking 1995 Harvard Business Review article "Why Satisfied Customers Defect."</p>
+                        <p><strong>The original model identified four customer types:</strong></p>
+                        <ul>
+                            <li><strong>Apostles</strong> (now called *Advocates*): High satisfaction + High loyalty</li>
+                            <li><strong>Mercenaries</strong>: High satisfaction + Low loyalty</li>
+                            <li><strong>Hostages</strong>: Low satisfaction + High loyalty</li>
+                            <li><strong>Terrorists</strong> (now called *Trolls*): Low satisfaction + Low loyalty</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How is this different from NPS?</h3>
+                        <p><strong>Net Promoter Score (NPS) measures one dimension; the Apostles Model measures two.</strong> This gives you a much richer understanding of your customers.</p>
+                        <p><strong>NPS tells you:</strong> How likely customers are to recommend you (loyalty) - One single number: -100 to +100</p>
+                        <p><strong>The Apostles Model (Segmentor.app) tells you:</strong></p>
+                        <ul>
+                            <li>How satisfied customers are (satisfaction)</li>
+                            <li>How loyal customers are (loyalty/advocacy)</li>
+                            <li>Which of four distinct groups each customer belongs to</li>
+                            <li>Specific actions needed for each segment</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What makes someone an Advocate?</h3>
+                        <p><strong>An Advocate (Apostle in the original terminology) is a customer with both high satisfaction AND high loyalty</strong>—your best customers who genuinely love what you do.</p>
+                        <p><strong>Characteristics of Advocates:</strong></p>
+                        <ul>
+                            <li>✅ Highly satisfied with your product/service</li>
+                            <li>✅ Actively recommend you to others</li>
+                            <li>✅ Resist competitive offers</li>
+                            <li>✅ Forgive occasional mistakes</li>
+                            <li>✅ Provide valuable feedback</li>
+                            <li>✅ Drive most of your organic growth</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Why does Segmentor.app use different terminology than the original model?</h3>
+                        <p><strong>We use modern, inclusive language while maintaining the framework's integrity.</strong> The original 1995 model used terms that made sense then but feel outdated today.</p>
+                        <p><strong>Original → Modern terminology:</strong></p>
+                        <ul>
+                            <li><strong>Apostles</strong> → <strong>Advocates</strong>: More secular and professional</li>
+                            <li><strong>Terrorists</strong> → <strong>Trolls</strong>: Removes violent connotations while keeping the meaning (destructive critics)</li>
+                            <li>Mercenaries & Hostages: Unchanged (still relevant metaphors)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Help Section -->
+            <section class="help-section">
+                <div class="card text-center">
+                    <h2>Still Need Help?</h2>
+                    <p>Can't find the answer you're looking for? We're here to help.</p>
+                    <div class="help-actions">
+                        <a href="/" class="btn btn-primary">Use Tool</a>
+                        <a href="/" class="btn btn-secondary">Try the Tool</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (Shared Component) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Segmentor.app. All rights reserved.</p>
+                <nav class="footer-nav">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Page-specific styles with cross-browser compatibility -->
+    <style>
+      /* CSS Reset for Cross-Browser Compatibility */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 0;
+        vertical-align: middle;
+      }
+      
+      button, input, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+      }
+      
+      button {
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: 0 0;
+        border: none;
+        outline: 0;
+      }
+      
+      a {
+        color: inherit;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      .flex-container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+      }
+      
+        .faq-page {
+            padding: var(--space-8) 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: var(--space-16) 0;
+            background: -webkit-linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 100%);
+            background: -moz-linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 100%);
+            background: -o-linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 100%);
+            background: linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 100%);
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            margin-bottom: var(--space-16);
+        }
+
+        .hero-section h1 {
+            font-size: var(--text-3xl);
+            color: var(--primary-green);
+            margin-bottom: var(--space-4);
+        }
+
+        .hero-subtitle {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-content {
+            margin-bottom: var(--space-16);
+        }
+
+        .faq-section {
+            margin-bottom: var(--space-12);
+        }
+
+        .faq-section h2 {
+            color: var(--primary-green);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-2xl);
+        }
+
+        .faq-item {
+            background: var(--background-white);
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            padding: var(--space-6);
+            margin-bottom: var(--space-4);
+            -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item h3 {
+            color: var(--primary-green);
+            margin-bottom: var(--space-3);
+            font-size: var(--text-lg);
+        }
+
+        .faq-item p {
+            margin-bottom: var(--space-3);
+        }
+
+        .faq-item ul {
+            margin-left: var(--space-4);
+            margin-bottom: var(--space-3);
+        }
+
+        .faq-item li {
+            margin-bottom: var(--space-2);
+        }
+
+        .help-section {
+            margin-bottom: var(--space-8);
+        }
+
+        .help-actions {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            gap: var(--space-4);
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-top: var(--space-6);
+        }
+
+        @media (max-width: 768px) {
+            .help-actions {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+    
+    <!-- Mode Toggle JavaScript -->
+    <script>
+        let isPremium = false;
+        
+        function toggleMode() {
+            const badge = document.getElementById('mode-badge');
+            
+            if (isPremium) {
+                // Switch to Standard Mode
+                isPremium = false;
+                badge.className = 'mode-badge mode-badge--standard';
+                badge.innerHTML = '⚪ Standard Mode';
+                badge.title = 'Click to enable premium mode (testing)';
+                
+                // Show notification
+                showNotification('Standard Mode Enabled', 'Switched to standard mode.', 'info');
+            } else {
+                // Switch to Premium Mode
+                isPremium = true;
+                badge.className = 'mode-badge mode-badge--premium';
+                badge.innerHTML = '👑 Premium Mode';
+                badge.title = 'Click to disable premium mode (testing)';
+                
+                // Show notification
+                showNotification('Premium Mode Enabled', 'All premium features are now available.', 'success');
+            }
+        }
+        
+        function showNotification(title, message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#d4edda' : '#d1ecf1'};
+                color: ${type === 'success' ? '#155724' : '#0c5460'};
+                border: 1px solid ${type === 'success' ? '#c3e6cb' : '#bee5eb'};
+                border-radius: 6px;
+                padding: 12px 16px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 10000;
+                max-width: 300px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                font-size: 14px;
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            notification.innerHTML = `
+                <div style="font-weight: 600; margin-bottom: 4px;">${title}</div>
+                <div>${message}</div>
+            `;
+            
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+        
+        // Set initial tooltip
+        document.addEventListener('DOMContentLoaded', function() {
+            const badge = document.getElementById('mode-badge');
+            if (badge) {
+                badge.title = 'Click to enable premium mode (testing)';
+            }
+        });
+    </script>
+</body>
+</html>

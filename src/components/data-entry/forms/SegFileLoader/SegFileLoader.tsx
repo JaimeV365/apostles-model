@@ -94,7 +94,7 @@ const SegFileLoader: React.FC<SegFileLoaderProps> = ({ onSegFileLoad }) => {
             Drop your .seg file here or click to browse
           </div>
           <div className="seg-file-loader__dropzone-subtext">
-            Supports .seg progress files with all your data and settings
+            Supports .seg files
           </div>
         </div>
         
@@ -111,7 +111,7 @@ const SegFileLoader: React.FC<SegFileLoaderProps> = ({ onSegFileLoad }) => {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line>
           </svg>
-          <span>Supports .seg files</span>
+          <span>Supported file format: .seg (segmentor project files). What's included: Your data, settings, filters, and customisations.</span>
         </div>
       </div>
       

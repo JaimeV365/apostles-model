@@ -33,6 +33,7 @@
     "build": "CI=false react-scripts build",
     "build:deploy": "npm run build && npm run deploy:prepare",
     "deploy:prepare": "mkdir -p public/tool && cp -r build/* public/tool/",
+    "deploy": "npm run build:deploy && git add . && git commit -m 'Deploy to GitHub Pages' && git push",
     "test": "jest --config jest.config.js",
     "test:watch": "jest --watch --config jest.config.js",
     "eject": "react-scripts eject"
@@ -75,7 +76,6 @@
     "jsdom": "^25.0.1",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",
-    "ts-jest": "^29.2.5",
-    "vercel": "^41.4.1"
+    "ts-jest": "^29.2.5"
   }
 }
