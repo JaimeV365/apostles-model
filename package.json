@@ -1,5 +1,5 @@
 {
-  "name": "apostles-model",
+  "name": "segmentor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

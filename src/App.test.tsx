@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
 
-test('renders Apostles Model Builder title', () => {
+test('renders Segmentor title', () => {
   render(<App />);
-  const titleElement = screen.getByText(/Apostles Model Builder/i);
+  const titleElement = screen.getByText(/Segmentor/i);
   expect(titleElement).toBeInTheDocument();
 });

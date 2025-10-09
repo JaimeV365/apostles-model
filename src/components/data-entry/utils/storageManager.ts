@@ -8,7 +8,7 @@ interface StorageState {
   lastUpdated: string;
 }
 
-const STORAGE_KEY = 'apostles-model-state';
+const STORAGE_KEY = 'segmentor-state';
 
 class StorageManager {
   private static instance: StorageManager;
