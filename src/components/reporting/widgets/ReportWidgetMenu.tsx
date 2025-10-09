@@ -95,7 +95,7 @@ const ReportWidgetMenu: React.FC<ReportWidgetMenuProps> = ({
                     setIsOpen(false);
                   }}
                 >
-                  Customize Appearance
+                  Customise Appearance
                 </button>
               </div>
             )}

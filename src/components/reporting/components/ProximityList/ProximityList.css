@@ -362,7 +362,7 @@
   transition: all 0.3s ease;
 }
 
-/* Color-coded borders for opportunities and warnings */
+/* Colour-coded borders for opportunities and warnings */
 .proximity-list-row.opportunity {
   border-left: 3px solid #4CAF50;
 }

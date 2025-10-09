@@ -370,7 +370,7 @@ useEffect(() => {
             </>
           )}
           <div className="settings-group">
-            <div className="settings-title">Bar Colors</div>
+            <div className="settings-title">Bar Colours</div>
             <div className="color-palette">
               {[
                 '#3a863e', // Brand green
