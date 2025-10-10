@@ -12,7 +12,6 @@
     <!-- Branding -->
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/shared.css">
-    <link href="/static/css/main.a1061a7f.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Jaro&display=swap" rel="stylesheet">
     
@@ -205,7 +204,7 @@
 
     <!-- Main Content -->
     <main class="faq-page">
-        <div class="container">
+        <div class="app-content">
             <!-- Hero Section -->
             <section class="hero-section">
                 <h1 class="main-page-title">Frequently Asked Questions</h1>
@@ -215,115 +214,278 @@
                 </p>
             </section>
 
+            <!-- Search Bar -->
+            <div class="section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="faq-search" placeholder="Search FAQ articles..." class="search-input">
+                        <button class="search-button" onclick="searchFAQ()">
+                            <span>🔍</span>
+                        </button>
+                    </div>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="all">All Questions</button>
+                <button class="category-btn" data-category="privacy">Privacy & Security</button>
+                <button class="category-btn" data-category="model">Understanding the Model</button>
+                <button class="category-btn" data-category="usage">Using the Tool</button>
+                <button class="category-btn" data-category="data">Data & Export</button>
+            </div>
+
             <!-- FAQ Content -->
-            <section class="faq-content">
+            <div class="faq-content">
                 <!-- Privacy & Security Section -->
-                <div class="faq-section">
-                    <h2>🔒 Privacy & Security</h2>
+                <div class="faq-section" data-category="privacy">
+                    <h2 class="section-title">🔒 Privacy & Security</h2>
                     
-                    <div class="faq-item">
-                        <h3>Is my data safe?</h3>
-                        <p><strong>Yes, absolutely.</strong> Your data never leaves your device. Segmentor.app runs entirely in your browser using local processing—we never see, store, or transmit your customer data anywhere. Think of it like using a calculator: the numbers you enter stay on your device.</p>
-                        <p><strong>Key security features:</strong></p>
-                        <ul>
-                            <li>✅ Zero cloud storage—all processing happens locally</li>
-                            <li>✅ No data transmission to external servers</li>
-                            <li>✅ Your files stay on your computer</li>
-                            <li>✅ You can work offline once the page loads</li>
-                        </ul>
+                    <div class="faq-item" data-keywords="data safe privacy security">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Is my data safe?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes, absolutely.</strong> Your data never leaves your device. Segmentor.app runs entirely in your browser using local processing—we never see, store, or transmit your customer data anywhere. Think of it like using a calculator: the numbers you enter stay on your device.</p>
+                            <p><strong>Key security features:</strong></p>
+                            <ul>
+                                <li>✅ Zero cloud storage—all processing happens locally</li>
+                                <li>✅ No data transmission to external servers</li>
+                                <li>✅ Your files stay on your computer</li>
+                                <li>✅ You can work offline once the page loads</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="faq-item">
-                        <h3>Do you use cookies?</h3>
-                        <p><strong>No, we don't use cookies.</strong> Segmentor.app doesn't track you, create user profiles, or store any browsing data. We respect your privacy by design. Since the tool runs entirely in your browser without requiring accounts or logins, there's no need for cookies.</p>
+                    <div class="faq-item" data-keywords="cookies tracking privacy">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Do you use cookies?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>No, we don't use cookies.</strong> Segmentor.app doesn't track you, create user profiles, or store any browsing data. We respect your privacy by design. Since the tool runs entirely in your browser without requiring accounts or logins, there's no need for cookies.</p>
+                        </div>
                     </div>
 
-                    <div class="faq-item">
-                        <h3>Where is my data stored?</h3>
-                        <p><strong>Only on your device.</strong> Your customer data is stored in two ways, both completely under your control:</p>
-                        <p><strong>1. Browser temporary storage (automatic):</strong> When you're working on a segmentation, your data is temporarily held in your browser's memory. You can clear this anytime through your browser settings.</p>
-                        <p><strong>2. .seg project files (manual):</strong> Use the Save button to export your complete project as a .seg file to your computer. You choose where to store it—it's just a regular file you control.</p>
+                    <div class="faq-item" data-keywords="data storage where files">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Where is my data stored?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Only on your device.</strong> Your customer data is stored in two ways, both completely under your control:</p>
+                            <p><strong>1. Browser temporary storage (automatic):</strong> When you're working on a segmentation, your data is temporarily held in your browser's memory. You can clear this anytime through your browser settings.</p>
+                            <p><strong>2. .seg project files (manual):</strong> Use the Save button to export your complete project as a .seg file to your computer. You choose where to store it—it's just a regular file you control.</p>
+                        </div>
                     </div>
 
-                    <div class="faq-item">
-                        <h3>Can I trust Segmentor with sensitive customer data?</h3>
-                        <p><strong>Yes, because we never see it.</strong> This isn't just a privacy promise—it's how the technology works. Segmentor.app uses a privacy-by-design architecture. All calculations happen in your browser using JavaScript, similar to how a spreadsheet works.</p>
+                    <div class="faq-item" data-keywords="trust sensitive data security">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can I trust Segmentor with sensitive customer data?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes, because we never see it.</strong> This isn't just a privacy promise—it's how the technology works. Segmentor.app uses a privacy-by-design architecture. All calculations happen in your browser using JavaScript, similar to how a spreadsheet works.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Understanding the Model Section -->
-                <div class="faq-section">
-                    <h2>📊 Understanding the Model</h2>
+                <div class="faq-section" data-category="model">
+                    <h2 class="section-title">📊 Understanding the Model</h2>
                     
-                    <div class="faq-item">
-                        <h3>What is the Apostles Model?</h3>
-                        <p><strong>The Apostles Model is a customer segmentation framework</strong> that classifies customers into four groups based on two dimensions: satisfaction and loyalty. It was developed by Thomas O. Jones and W. Earl Sasser Jr. in their groundbreaking 1995 Harvard Business Review article "Why Satisfied Customers Defect."</p>
+                    <div class="faq-item" data-keywords="apostles model what is framework">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What is the Apostles Model?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>The Apostles Model is a customer segmentation framework</strong> that classifies customers into four groups based on two dimensions: satisfaction and loyalty. It was developed by Thomas O. Jones and W. Earl Sasser Jr. in their groundbreaking 1995 Harvard Business Review article "Why Satisfied Customers Defect."</p>
                         <p><strong>The original model identified four customer types:</strong></p>
                         <ul>
-                            <li><strong>Apostles</strong> (now called *Advocates*): High satisfaction + High loyalty</li>
+                            <li><strong>Loyalists</strong>: High satisfaction + High loyalty (includes Apostles/Advocates sub-zone)</li>
                             <li><strong>Mercenaries</strong>: High satisfaction + Low loyalty</li>
                             <li><strong>Hostages</strong>: Low satisfaction + High loyalty</li>
-                            <li><strong>Terrorists</strong> (now called *Trolls*): Low satisfaction + Low loyalty</li>
+                            <li><strong>Defectors</strong>: Low satisfaction + Low loyalty (includes Terrorists/Trolls sub-zone)</li>
                         </ul>
+                        </div>
                     </div>
 
-                    <div class="faq-item">
-                        <h3>How is this different from NPS?</h3>
-                        <p><strong>Net Promoter Score (NPS) measures one dimension; the Apostles Model measures two.</strong> This gives you a much richer understanding of your customers.</p>
-                        <p><strong>NPS tells you:</strong> How likely customers are to recommend you (loyalty) - One single number: -100 to +100</p>
-                        <p><strong>The Apostles Model (Segmentor.app) tells you:</strong></p>
-                        <ul>
-                            <li>How satisfied customers are (satisfaction)</li>
-                            <li>How loyal customers are (loyalty/advocacy)</li>
-                            <li>Which of four distinct groups each customer belongs to</li>
-                            <li>Specific actions needed for each segment</li>
-                        </ul>
+                    <div class="faq-item" data-keywords="NPS difference comparison">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How is this different from NPS?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Net Promoter Score* (NPS*) measures one dimension; the Apostles Model measures two.</strong> This gives you a much richer understanding of your customers.</p>
+                            <p><strong>NPS* tells you:</strong> How likely customers are to recommend you (loyalty) - One single number: -100 to +100</p>
+                            <p><strong>The Apostles Model (Segmentor.app) tells you:</strong></p>
+                            <ul>
+                                <li>How satisfied customers are (satisfaction)</li>
+                                <li>How loyal customers are (loyalty/advocacy)</li>
+                                <li>Which of four distinct groups each customer belongs to</li>
+                                <li>Specific actions needed for each segment</li>
+                            </ul>
+                            <p><small>*Net Promoter®, NPS®, NPS Prism®, and the NPS-related emoticons are registered trademarks of Bain & Company, Inc., NICE Systems, Inc., and Fred Reichheld. Net Promoter ScoreSM and Net Promoter SystemSM are service marks of Bain & Company, Inc., NICE Systems, Inc., and Fred Reichheld.</small></p>
+                        </div>
                     </div>
 
-                    <div class="faq-item">
-                        <h3>What makes someone an Advocate?</h3>
-                        <p><strong>An Advocate (Apostle in the original terminology) is a customer with both high satisfaction AND high loyalty</strong>—your best customers who genuinely love what you do.</p>
-                        <p><strong>Characteristics of Advocates:</strong></p>
-                        <ul>
-                            <li>✅ Highly satisfied with your product/service</li>
-                            <li>✅ Actively recommend you to others</li>
-                            <li>✅ Resist competitive offers</li>
-                            <li>✅ Forgive occasional mistakes</li>
-                            <li>✅ Provide valuable feedback</li>
-                            <li>✅ Drive most of your organic growth</li>
-                        </ul>
+                    <div class="faq-item" data-keywords="advocate apostle characteristics">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What makes someone an Advocate?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>An Advocate (Apostle in the original terminology) is a sub-zone within the Loyalists quadrant</strong>—customers with both high satisfaction AND high loyalty who are your best customers and genuinely love what you do.</p>
+                            <p><strong>Characteristics of Advocates:</strong></p>
+                            <ul>
+                                <li>✅ Highly satisfied with your product/service</li>
+                                <li>✅ Actively recommend you to others</li>
+                                <li>✅ Resist competitive offers</li>
+                                <li>✅ Forgive occasional mistakes</li>
+                                <li>✅ Provide valuable feedback</li>
+                                <li>✅ Drive most of your organic growth</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="faq-item">
-                        <h3>Why does Segmentor.app use different terminology than the original model?</h3>
-                        <p><strong>We use modern, inclusive language while maintaining the framework's integrity.</strong> The original 1995 model used terms that made sense then but feel outdated today.</p>
-                        <p><strong>Original → Modern terminology:</strong></p>
-                        <ul>
-                            <li><strong>Apostles</strong> → <strong>Advocates</strong>: More secular and professional</li>
-                            <li><strong>Terrorists</strong> → <strong>Trolls</strong>: Removes violent connotations while keeping the meaning (destructive critics)</li>
-                            <li>Mercenaries & Hostages: Unchanged (still relevant metaphors)</li>
-                        </ul>
+                    <div class="faq-item" data-keywords="terminology language modern">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Why does Segmentor.app use different terminology than the original model?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>We use modern, inclusive language while maintaining the framework's integrity.</strong> The original 1995 model used terms that made sense then but feel outdated today.</p>
+                            <p><strong>Original → Modern terminology:</strong></p>
+                            <ul>
+                                <li><strong>Loyalists</strong>: High satisfaction + High loyalty (includes Apostles/Advocates sub-zone)</li>
+                                <li><strong>Mercenaries</strong>: High satisfaction + Low loyalty (unchanged)</li>
+                                <li><strong>Hostages</strong>: Low satisfaction + High loyalty (unchanged)</li>
+                                <li><strong>Defectors</strong>: Low satisfaction + Low loyalty (includes Terrorists/Trolls sub-zone)</li>
+                            </ul>
+                            <p><strong>Sub-zone terminology updates:</strong></p>
+                            <ul>
+                                <li><strong>Apostles</strong> → <strong>Advocates</strong>: More secular and professional</li>
+                                <li><strong>Terrorists</strong> → <strong>Trolls</strong>: Removes violent connotations while keeping the meaning (destructive critics)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </section>
+
+                <!-- Using the Tool Section -->
+                <div class="faq-section" data-category="usage">
+                    <h2 class="section-title">🛠️ Using the Tool</h2>
+                    
+                    <div class="faq-item" data-keywords="how to use get started">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How do I get started with the tool?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Getting started is simple:</strong></p>
+                            <ol>
+                                <li><strong>Upload your data:</strong> Click "Upload CSV" and select your customer data file</li>
+                                <li><strong>Or try sample data:</strong> Click "Load Sample Data" to see how it works</li>
+                                <li><strong>View your segments:</strong> The tool automatically categorizes your customers</li>
+                                <li><strong>Analyze results:</strong> Click on any customer point to see details</li>
+                                <li><strong>Save your work:</strong> Use the Save button to download your project</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="CSV format data requirements">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What format should my CSV data be in?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Your CSV should have these columns:</strong></p>
+                            <ul>
+                                <li><strong>Customer ID:</strong> Unique identifier for each customer</li>
+                                <li><strong>Satisfaction Score:</strong> 1-10 scale (or 1-5, we'll normalize it)</li>
+                                <li><strong>Loyalty Score:</strong> 1-10 scale (or 1-5, we'll normalize it)</li>
+                                <li><strong>Optional:</strong> Customer name, email, or other details</li>
+                            </ul>
+                            <p><strong>Example:</strong></p>
+                            <pre>Customer ID,Satisfaction,Loyalty,Customer Name
+CUST001,8,9,John Smith
+CUST002,6,4,Jane Doe</pre>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="sample data try demo">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can I try the tool without my own data?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Absolutely!</strong> Click the "Load Sample Data" button to see how the tool works with example customer data. This is perfect for:</p>
+                            <ul>
+                                <li>✅ Understanding how the Apostles Model works</li>
+                                <li>✅ Seeing what your results will look like</li>
+                                <li>✅ Testing the tool's features</li>
+                                <li>✅ Demonstrating to colleagues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data & Export Section -->
+                <div class="faq-section" data-category="data">
+                    <h2 class="section-title">💾 Data & Export</h2>
+                    
+                    <div class="faq-item" data-keywords="save export project file">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can I save my work?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes! You can save your complete project.</strong> Use the Save button to download a .seg file that contains:</p>
+                            <ul>
+                                <li>✅ All your customer data</li>
+                                <li>✅ Segmentation results</li>
+                                <li>✅ Any custom settings</li>
+                                <li>✅ Analysis notes</li>
+                            </ul>
+                            <p><strong>To load it later:</strong> Use the Load button and select your .seg file. Everything will be restored exactly as you left it.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="export reports download">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can I export reports or results?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes, you can export your results in multiple formats:</strong></p>
+                            <ul>
+                                <li><strong>CSV Export:</strong> Download your segmented customer data</li>
+                                <li><strong>Summary Report:</strong> Get key statistics and insights</li>
+                                <li><strong>Visual Charts:</strong> Export charts as images</li>
+                                <li><strong>Project File:</strong> Save everything for later use</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Help Section -->
-            <section class="help-section">
-                <div class="card text-center">
+            <div class="section text-center">
                     <h2>Still Need Help?</h2>
                     <p>Can't find the answer you're looking for? We're here to help.</p>
                     <div class="help-actions">
                         <a href="/" class="btn btn-primary">Use Tool</a>
                         <a href="/" class="btn btn-secondary">Try the Tool</a>
                     </div>
-                </div>
-            </section>
+            </div>
         </div>
     </main>
 
     <!-- Footer (Shared Component) -->
     <footer class="site-footer">
-        <div class="container">
+        <div class="app-content">
             <div class="footer-content">
                 <p>&copy; 2025 Segmentor.app. All rights reserved.</p>
                 <nav class="footer-nav">
@@ -396,12 +558,37 @@
       }
       
         .faq-page {
-            padding: var(--space-8) 0;
+            /* Removed padding to match home page structure */
+        }
+
+        /* App Content - matches React app layout exactly */
+        .app-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px 16px 16px;
+        }
+
+        /* Section - matches React app section styling */
+        .section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        .section h2 {
+            margin: 0 0 16px 0;
+            font-size: 20px;
+            font-weight: 500;
+            color: #111827;
         }
 
         .hero-section {
             text-align: center;
-            padding: var(--space-16) 0;
+            padding: 24px 0;
             background: -webkit-linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 100%);
             background: -moz-linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 100%);
             background: -o-linear-gradient(135deg, var(--background-light) 0%, var(--background-white) 100%);
@@ -409,14 +596,225 @@
             -webkit-border-radius: 12px;
             -moz-border-radius: 12px;
             border-radius: 12px;
-            margin-bottom: var(--space-16);
+            margin-bottom: 24px;
         }
 
-        .hero-section h1 {
-            font-size: var(--text-3xl);
-            color: var(--primary-green);
-            margin-bottom: var(--space-4);
+        /* Override hero-section text-align for main page title */
+        .hero-section .main-page-title {
+            text-align: left !important;
         }
+
+        /* FAQ Search Styles */
+        .search-container {
+            margin-bottom: 24px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: #3a863e;
+        }
+
+        .search-button {
+            padding: 12px 16px;
+            background: #3a863e;
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .search-button:hover {
+            background: #2d6a31;
+        }
+
+        .search-results {
+            margin-top: 16px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+
+        /* FAQ Categories */
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+            justify-content: center;
+        }
+
+        .category-btn {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            border: 2px solid #e5e7eb;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            color: #6b7280;
+        }
+
+        .category-btn:hover {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .category-btn.active {
+            background: #3a863e;
+            border-color: #3a863e;
+            color: white;
+        }
+
+        /* FAQ Content */
+        .faq-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .faq-section {
+            display: block;
+        }
+
+        .faq-section.hidden {
+            display: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        /* FAQ Items */
+        .faq-item {
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3a863e;
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 1000px;
+        }
+
+        .faq-answer p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul, .faq-answer ol {
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .faq-answer pre {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .faq-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category-btn {
+                width: 200px;
+                text-align: center;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-input {
+                border-radius: 8px 8px 0 0;
+            }
+
+            .search-button {
+                border-radius: 0 0 8px 8px;
+            }
+        }
+
 
         .hero-subtitle {
             font-size: var(--text-lg);
@@ -585,7 +983,104 @@
             if (badge) {
                 badge.title = 'Click to enable premium mode (testing)';
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+
+        // FAQ Functionality
+        function initializeFAQ() {
+            // Add event listeners to category buttons
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            categoryButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    filterByCategory(category);
+                    
+                    // Update active button
+                    categoryButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Add search functionality
+            const searchInput = document.getElementById('faq-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.toLowerCase().trim();
+                    if (query.length > 0) {
+                        searchFAQ(query);
+                    } else {
+                        clearSearch();
+                    }
+                });
+            }
+        }
+
+        function toggleFAQ(element) {
+            const faqItem = element.closest('.faq-item');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        function filterByCategory(category) {
+            const sections = document.querySelectorAll('.faq-section');
+            
+            sections.forEach(section => {
+                if (category === 'all' || section.getAttribute('data-category') === category) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+
+        function searchFAQ(query) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const results = [];
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                const keywords = item.getAttribute('data-keywords').toLowerCase();
+                
+                if (question.includes(query) || answer.includes(query) || keywords.includes(query)) {
+                    results.push(item);
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show search results
+            const searchResults = document.getElementById('search-results');
+            if (results.length > 0) {
+                searchResults.innerHTML = `<p><strong>Found ${results.length} result(s) for "${query}"</strong></p>`;
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.innerHTML = `<p>No results found for "${query}". Try different keywords.</p>`;
+                searchResults.style.display = 'block';
+            }
+        }
+
+        function clearSearch() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.style.display = 'block';
+            });
+            
+            const searchResults = document.getElementById('search-results');
+            searchResults.style.display = 'none';
+        }
     </script>
 </body>
 </html>

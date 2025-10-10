@@ -31,7 +31,7 @@ h1, h2 {
   font-weight: 700;
   letter-spacing: -0.02em;
   position: relative;
-  padding-left: 16px;
+  padding-left: 48px;
   padding-bottom: 12px;
   text-align: left;
 }
@@ -41,7 +41,7 @@ h1, h2 {
 .reports-title::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: 32px;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
@@ -56,7 +56,7 @@ h1, h2 {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 32px;
   width: 60px;
   height: 3px;
   background: linear-gradient(90deg, #3a863e 0%, #2d6a31 100%);
