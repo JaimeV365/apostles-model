@@ -239,51 +239,10 @@ appearance: none;
 .app {
   min-height: 100vh;
   background-color: #f3f4f6;
-  padding: 16px;
+  padding: 0 0 16px 0;
 }
 
-.app-header {
-  background: var(--background-light);
-  border-bottom: 1px solid var(--border-color);
-  padding: var(--space-4) 0;
-  margin-bottom: var(--space-6);
-  position: sticky;
-  top: 80px; /* Below the main site header */
-  z-index: 999;
-}
-
-.app-header .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.app-header .header-left {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.app-header .header-right {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.app-header .header-scales {
-  display: flex;
-  gap: var(--space-4);
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-}
-
-.app-header .scale-item {
-  padding: var(--space-1) var(--space-2);
-  background: var(--background-white);
-  border-radius: 4px;
-  border: 1px solid var(--border-color);
-}
+/* App header styles removed - no longer needed */
 
 .app-content {
   display: flex;
@@ -291,7 +250,7 @@ appearance: none;
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 0 16px 16px 16px;
 }
 
 .section {

@@ -66,7 +66,7 @@ const WelcomeBanner: React.FC<WelcomeBannerProps> = ({
   onDismiss, 
   onStartTour, 
   onLoadSampleData, 
-  onUploadData 
+  onUploadData
 }) => {
   const [isTourActive, setIsTourActive] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);

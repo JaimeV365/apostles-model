@@ -400,48 +400,7 @@ const handleTerroristsZoneSizeChange = (size: number) => {
     <div className="app">
       {/* <ScreenSizeWarning /> */}
       
-      {/* App Header - Simplified */}
-      <div className="app-header">
-        <div className="header-content">
-          <div className="header-right">
-            <div className="mode-indicator">
-              {isPremium ? (
-                <span 
-                  className="mode-badge mode-badge--premium" 
-                  title="Click to disable premium mode (testing)"
-                  role="button"
-                  onClick={() => {
-                    setIsPremium(false);
-                    notification.showNotification({
-                      title: 'Standard Mode Enabled',
-                      message: 'Switched to standard mode.',
-                      type: 'info'
-                    });
-                  }}
-                >
-                  👑 Premium Mode
-                </span>
-              ) : (
-                <span 
-                  className="mode-badge mode-badge--standard" 
-                  title="Click to enable premium mode (testing)"
-                  role="button"
-                  onClick={() => {
-                    setIsPremium(true);
-                    notification.showNotification({
-                      title: 'Premium Mode Enabled',
-                      message: 'All premium features are now available.',
-                      type: 'success'
-                    });
-                  }}
-                >
-                  ⚪ Standard Mode
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* App Header - Removed redundant header, mode indicator moved to welcome banner */}
       
       <main className="app-content">
             {/* Demo Banner */}
