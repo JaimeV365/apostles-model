@@ -37,7 +37,7 @@
       }
       
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'Lato', sans-serif;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -52,7 +52,7 @@
       }
       
       button, input, select, textarea {
-        font-family: inherit;
+        font-family: 'Lato', sans-serif;
         font-size: inherit;
         line-height: inherit;
         margin: 0;
@@ -209,8 +209,7 @@
             <section class="hero-section">
                 <h1 class="main-page-title">Frequently Asked Questions</h1>
                 <p class="hero-subtitle">
-                    Find answers to common questions about segmentor.app and the Apostles Model. 
-                    Can't find what you're looking for? Check our documentation or try the tool directly.
+                    Everything you need to know about using segmentor.app and getting the most from it.
                 </p>
             </section>
 
@@ -220,7 +219,10 @@
                     <div class="search-box">
                         <input type="text" id="faq-search" placeholder="Search FAQ articles..." class="search-input">
                         <button class="search-button" onclick="searchFAQ()">
-                            <span>🔍</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
                         </button>
                     </div>
                     <div class="search-results" id="search-results"></div>
@@ -240,7 +242,13 @@
             <div class="faq-content">
                 <!-- Privacy & Security Section -->
                 <div class="faq-section" data-category="privacy">
-                    <h2 class="section-title">🔒 Privacy & Security</h2>
+                    <h2 class="section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px; color: #3a863e;">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                        Privacy & Security
+                    </h2>
                     
                     <div class="faq-item" data-keywords="data safe privacy security">
                         <div class="faq-question" onclick="toggleFAQ(this)">
@@ -265,7 +273,7 @@
                             <span class="faq-toggle">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p><strong>No, we don't use cookies.</strong> Segmentor.app doesn't track you, create user profiles, or store any browsing data. We respect your privacy by design. Since the tool runs entirely in your browser without requiring accounts or logins, there's no need for cookies.</p>
+                            <p><strong>No, we don't use cookies.</strong> Segmentor.app doesn't track you, create user profiles, or store any browsing data. We respect your privacy by design. The tool runs entirely in your browser with no account requirements for standard use.</p>
                         </div>
                     </div>
 
@@ -283,18 +291,56 @@
 
                     <div class="faq-item" data-keywords="trust sensitive data security">
                         <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>Can I trust Segmentor with sensitive customer data?</h3>
+                            <h3>Can I trust segmentor.app with sensitive customer data?</h3>
                             <span class="faq-toggle">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p><strong>Yes, because we never see it.</strong> This isn't just a privacy promise—it's how the technology works. Segmentor.app uses a privacy-by-design architecture. All calculations happen in your browser using JavaScript, similar to how a spreadsheet works.</p>
+                            <p><strong>Yes, because we never see it.</strong> This isn't just a privacy promise—it's how the technology works. segmentor.app uses a privacy-by-design architecture. All calculations happen in your browser using JavaScript, similar to how a spreadsheet works.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Understanding the Model Section -->
                 <div class="faq-section" data-category="model">
-                    <h2 class="section-title">📊 Understanding the Model</h2>
+                    <h2 class="section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px; color: #3a863e;">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                        </svg>
+                        Understanding the Model
+                    </h2>
+                    
+                    <div class="faq-item" data-keywords="terminology classic modern apostles advocates terrorists trolls">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Does segmentor.app use the original Apostles Model terminology?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes and no—we give you the choice!</strong> The original 1995 Apostles Model used specific terminology:</p>
+                            <ul>
+                                <li><strong>Apostles</strong> (a sub-zone within Loyalists)</li>
+                                <li><strong>Terrorists</strong> (a sub-zone within Defectors)</li>
+                            </ul>
+                            <p><strong>We've modernised these terms to:</strong></p>
+                            <ul>
+                                <li><strong>Advocates</strong> (instead of Apostles)</li>
+                                <li><strong>Trolls</strong> (instead of Terrorists)</li>
+                            </ul>
+                            <p><strong>You choose:</strong> In the visualisation controls, switch between 'Modern' and 'Classic' terminology. The segmentation logic stays the same—only the labels change. We default to modern terms but respect those who prefer the original academic language.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="loyalists advocates difference superfans">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What's the difference between Loyalists and Advocates?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Loyalists are the full quadrant (top-right) of customers with both high satisfaction and high loyalty.</strong></p>
+                            <p><strong>Advocates are the most loyal and satisfied customers within that quadrant—essentially 'Loyalists Plus.'</strong> They don't just stay—they actively promote you.</p>
+                            <p><strong>Think of it like this:</strong> All Advocates are Loyalists, but not all Loyalists are Advocates. Advocates are your superfans.</p>
+                        </div>
+                    </div>
                     
                     <div class="faq-item" data-keywords="apostles model what is framework">
                         <div class="faq-question" onclick="toggleFAQ(this)">
@@ -303,12 +349,12 @@
                         </div>
                         <div class="faq-answer">
                             <p><strong>The Apostles Model is a customer segmentation framework</strong> that classifies customers into four groups based on two dimensions: satisfaction and loyalty. It was developed by Thomas O. Jones and W. Earl Sasser Jr. in their groundbreaking 1995 Harvard Business Review article "Why Satisfied Customers Defect."</p>
-                        <p><strong>The original model identified four customer types:</strong></p>
+                        <p><strong>The classic model identified four customer types:</strong></p>
                         <ul>
-                            <li><strong>Loyalists</strong>: High satisfaction + High loyalty (includes Apostles/Advocates sub-zone)</li>
+                            <li><strong>Loyalists</strong>: High satisfaction + High loyalty (includes Apostles sub-zone)</li>
                             <li><strong>Mercenaries</strong>: High satisfaction + Low loyalty</li>
                             <li><strong>Hostages</strong>: Low satisfaction + High loyalty</li>
-                            <li><strong>Defectors</strong>: Low satisfaction + Low loyalty (includes Terrorists/Trolls sub-zone)</li>
+                            <li><strong>Defectors</strong>: Low satisfaction + Low loyalty (includes Terrorists sub-zone)</li>
                         </ul>
                         </div>
                     </div>
@@ -319,27 +365,22 @@
                             <span class="faq-toggle">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p><strong>Net Promoter Score* (NPS*) measures one dimension; the Apostles Model measures two.</strong> This gives you a much richer understanding of your customers.</p>
-                            <p><strong>NPS* tells you:</strong> How likely customers are to recommend you (loyalty) - One single number: -100 to +100</p>
-                            <p><strong>The Apostles Model (Segmentor.app) tells you:</strong></p>
-                            <ul>
-                                <li>How satisfied customers are (satisfaction)</li>
-                                <li>How loyal customers are (loyalty/advocacy)</li>
-                                <li>Which of four distinct groups each customer belongs to</li>
-                                <li>Specific actions needed for each segment</li>
-                            </ul>
+                            <p><strong>NPS* and segmentor.app complement each other perfectly.</strong></p>
+                            <p><strong>NPS gives you a single score and asks, 'Would you recommend us?'</strong></p>
+                            <p><strong>Segmentor.app adds context by showing why customers behave that way—plotting them across satisfaction and loyalty.</strong></p>
+                            <p><strong>Great news:</strong> If you already use NPS, you can use those scores as your loyalty metric in segmentor.app! Many of our users do exactly that. NPS tells you the score; we help you understand the segments behind it.</p>
                             <p><small>*Net Promoter®, NPS®, NPS Prism®, and the NPS-related emoticons are registered trademarks of Bain & Company, Inc., NICE Systems, Inc., and Fred Reichheld. Net Promoter ScoreSM and Net Promoter SystemSM are service marks of Bain & Company, Inc., NICE Systems, Inc., and Fred Reichheld.</small></p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-keywords="advocate apostle characteristics">
                         <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>What makes someone an Advocate?</h3>
+                            <h3>What makes someone an Apostle?</h3>
                             <span class="faq-toggle">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p><strong>An Advocate (Apostle in the original terminology) is a sub-zone within the Loyalists quadrant</strong>—customers with both high satisfaction AND high loyalty who are your best customers and genuinely love what you do.</p>
-                            <p><strong>Characteristics of Advocates:</strong></p>
+                            <p><strong>An Apostle is a sub-zone within the Loyalists quadrant</strong>—customers with both high satisfaction AND high loyalty who are your best customers and genuinely love what you do.</p>
+                            <p><strong>Characteristics of Apostles:</strong></p>
                             <ul>
                                 <li>✅ Highly satisfied with your product/service</li>
                                 <li>✅ Actively recommend you to others</li>
@@ -351,32 +392,16 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-keywords="terminology language modern">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>Why does Segmentor.app use different terminology than the original model?</h3>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p><strong>We use modern, inclusive language while maintaining the framework's integrity.</strong> The original 1995 model used terms that made sense then but feel outdated today.</p>
-                            <p><strong>Original → Modern terminology:</strong></p>
-                            <ul>
-                                <li><strong>Loyalists</strong>: High satisfaction + High loyalty (includes Apostles/Advocates sub-zone)</li>
-                                <li><strong>Mercenaries</strong>: High satisfaction + Low loyalty (unchanged)</li>
-                                <li><strong>Hostages</strong>: Low satisfaction + High loyalty (unchanged)</li>
-                                <li><strong>Defectors</strong>: Low satisfaction + Low loyalty (includes Terrorists/Trolls sub-zone)</li>
-                            </ul>
-                            <p><strong>Sub-zone terminology updates:</strong></p>
-                            <ul>
-                                <li><strong>Apostles</strong> → <strong>Advocates</strong>: More secular and professional</li>
-                                <li><strong>Terrorists</strong> → <strong>Trolls</strong>: Removes violent connotations while keeping the meaning (destructive critics)</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Using the Tool Section -->
                 <div class="faq-section" data-category="usage">
-                    <h2 class="section-title">🛠️ Using the Tool</h2>
+                    <h2 class="section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px; color: #3a863e;">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                        Using the Tool
+                    </h2>
                     
                     <div class="faq-item" data-keywords="how to use get started">
                         <div class="faq-question" onclick="toggleFAQ(this)">
@@ -401,15 +426,25 @@
                             <span class="faq-toggle">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p><strong>Your CSV should have these columns:</strong></p>
+                            <p><strong>Your CSV only needs these two mandatory columns:</strong></p>
                             <ul>
-                                <li><strong>Customer ID:</strong> Unique identifier for each customer</li>
-                                <li><strong>Satisfaction Score:</strong> 1-10 scale (or 1-5, we'll normalize it)</li>
-                                <li><strong>Loyalty Score:</strong> 1-10 scale (or 1-5, we'll normalize it)</li>
-                                <li><strong>Optional:</strong> Customer name, email, or other details</li>
+                                <li><strong>Satisfaction Score:</strong> 1-10 scale (or 1-5, we'll normalize it automatically)</li>
+                                <li><strong>Loyalty Score:</strong> 1-10 scale (or 1-5, we'll normalize it automatically)</li>
                             </ul>
-                            <p><strong>Example:</strong></p>
-                            <pre>Customer ID,Satisfaction,Loyalty,Customer Name
+                            <p><strong>Optional columns:</strong></p>
+                            <ul>
+                                <li><strong>Customer ID:</strong> If you don't provide this, segmentor.app will assign automatic IDs</li>
+                                <li><strong>Customer Name, Email, etc.:</strong> Any additional details you want to include</li>
+                            </ul>
+                            <p><strong>Accepted scales:</strong> We automatically detect and normalize 1-5, 1-10, or 0-10 scales.</p>
+                            <p><strong>Examples:</strong></p>
+                            <pre>// Minimal format (anonymous feedback)
+Satisfaction,Loyalty
+8,9
+6,4
+
+// With customer details
+Customer ID,Satisfaction,Loyalty,Customer Name
 CUST001,8,9,John Smith
 CUST002,6,4,Jane Doe</pre>
                         </div>
@@ -434,7 +469,14 @@ CUST002,6,4,Jane Doe</pre>
 
                 <!-- Data & Export Section -->
                 <div class="faq-section" data-category="data">
-                    <h2 class="section-title">💾 Data & Export</h2>
+                    <h2 class="section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px; color: #3a863e;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Data & Export
+                    </h2>
                     
                     <div class="faq-item" data-keywords="save export project file">
                         <div class="faq-question" onclick="toggleFAQ(this)">
@@ -473,7 +515,7 @@ CUST002,6,4,Jane Doe</pre>
 
             <!-- Help Section -->
             <div class="section text-center">
-                    <h2>Still Need Help?</h2>
+                    <h2 style="font-family: 'Montserrat', sans-serif;">Still Need Help?</h2>
                     <p>Can't find the answer you're looking for? We're here to help.</p>
                     <div class="help-actions">
                         <a href="/" class="btn btn-primary">Use Tool</a>
@@ -487,7 +529,7 @@ CUST002,6,4,Jane Doe</pre>
     <footer class="site-footer">
         <div class="app-content">
             <div class="footer-content">
-                <p>&copy; 2025 Segmentor.app. All rights reserved.</p>
+                <p>&copy; 2025 segmentor.app. All rights reserved.</p>
                 <nav class="footer-nav">
                     <a href="/privacy.html">Privacy Policy</a>
                     <a href="/terms.html">Terms of Service</a>
@@ -514,7 +556,7 @@ CUST002,6,4,Jane Doe</pre>
       }
       
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'Lato', sans-serif;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -528,7 +570,7 @@ CUST002,6,4,Jane Doe</pre>
       }
       
       button, input, select, textarea {
-        font-family: inherit;
+        font-family: 'Lato', sans-serif;
         font-size: inherit;
         line-height: inherit;
         margin: 0;
@@ -701,6 +743,7 @@ CUST002,6,4,Jane Doe</pre>
         }
 
         .section-title {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
             color: #2c3e50;
@@ -944,7 +987,7 @@ CUST002,6,4,Jane Doe</pre>
                 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                 z-index: 10000;
                 max-width: 300px;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                font-family: 'Lato', sans-serif;
                 font-size: 14px;
                 animation: slideIn 0.3s ease-out;
             `;
