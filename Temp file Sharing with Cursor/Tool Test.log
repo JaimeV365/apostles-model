@@ -1,0 +1,11 @@
+Error: Not allowed to define cross-origin object as property on [Object] or [Array] XrayWrapper 3 content-script.js:376:604
+The stylesheet http://localhost:3000/static/css/main.1b2823fa.css was not loaded because its MIME type, "text/html", is not "text/css". localhost:3000
+The script from “http://localhost:3000/static/js/main.142fd2fa.js” was loaded even though its MIME type (“text/html”) is not a valid JavaScript MIME type. localhost:3000
+Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools bundle.js:81615:21
+Uncaught SyntaxError: expected expression, got '<' main.142fd2fa.js:1:1
+Feature Policy: Skipping unsupported feature name “clipboard-read”. content-script.js:39:3880
+Feature Policy: Skipping unsupported feature name “clipboard-write”. content-script.js:39:3880
+Feature Policy: Skipping unsupported feature name “clipboard-read”. content-script.js:39:89374
+Feature Policy: Skipping unsupported feature name “clipboard-write”. content-script.js:39:89374
+Error: Not allowed to define cross-origin object as property on [Object] or [Array] XrayWrapper 6 content-script.js:376:604
+InternalError: too much recursion 91 content.js:2:531863

@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "build:deploy": "npm run build && npm run deploy:prepare",
     "deploy:prepare": "mkdir -p public/tool && cp -r build/* public/tool/",
     "deploy": "npm run build:deploy && git add . && git commit -m 'Deploy to GitHub Pages' && git push",

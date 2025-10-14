@@ -12,14 +12,21 @@ interface TabContainerProps {
   tabs: Tab[];
   defaultActiveTab?: string;
   className?: string;
+  activeTab?: string;
+  onTabChange?: (tabId: string) => void;
 }
 
 const TabContainer: React.FC<TabContainerProps> = ({ 
   tabs, 
   defaultActiveTab, 
-  className = '' 
+  className = '',
+  activeTab: externalActiveTab,
+  onTabChange
 }) => {
-  const [activeTab, setActiveTab] = useState(defaultActiveTab || tabs[0]?.id);
+  const [internalActiveTab, setInternalActiveTab] = useState(defaultActiveTab || tabs[0]?.id);
+  
+  // Use external activeTab if provided, otherwise use internal state
+  const activeTab = externalActiveTab !== undefined ? externalActiveTab : internalActiveTab;
 
   const activeTabContent = tabs.find(tab => tab.id === activeTab)?.content;
 
@@ -30,7 +37,13 @@ const TabContainer: React.FC<TabContainerProps> = ({
           <button
             key={tab.id}
             className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => {
+              if (onTabChange) {
+                onTabChange(tab.id);
+              } else {
+                setInternalActiveTab(tab.id);
+              }
+            }}
             type="button"
           >
             {tab.icon && <span className="tab-icon">{tab.icon}</span>}

@@ -30,7 +30,9 @@ const DataEntryModule: React.FC<DataEntryModuleProps> = ({
   const [data, setData] = useState<DataPoint[]>([]);
   const [uploadHistory, setUploadHistory] = useState<UploadHistoryItem[]>([]);
   const [lastManualEntryTimestamp, setLastManualEntryTimestamp] = useState(0);
+  const [activeTab, setActiveTab] = useState('csv-upload');
   const inputSectionRef = useRef<HTMLDivElement>(null);
+  const dataEntryModuleRef = useRef<HTMLDivElement>(null);
   const { showNotification } = useNotification();
 
   const isScalesLocked = StateManagementService.shouldLockScales(
@@ -44,10 +46,17 @@ const DataEntryModule: React.FC<DataEntryModuleProps> = ({
     const dataPoint = data.find(item => item.id === id);
     if (dataPoint) {
       setEditingData(dataPoint);
-      inputSectionRef.current?.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start' 
-      });
+      // Switch to Manual Entry tab
+      setActiveTab('manual-entry');
+      // Scroll to the data entry module header (which includes the tabs) after a brief delay
+      setTimeout(() => {
+        if (dataEntryModuleRef.current) {
+          dataEntryModuleRef.current.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' 
+          });
+        }
+      }, 100);
     }
   }, [data]);
 
@@ -366,12 +375,14 @@ if (editingData) {
   ];
 
   return (
-    <div className="data-entry-module">
+    <div className="data-entry-module" ref={dataEntryModuleRef}>
       <h1 className="data-entry-title">Data Entry</h1>
       <TabContainer 
         tabs={tabs} 
         defaultActiveTab="csv-upload"
         className="data-entry-tabs"
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
       />
       
       {/* Demo Button - Always visible below tabs */}
